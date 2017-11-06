@@ -1,4 +1,8 @@
 <h3><%= @user.username%></h3>
+<h3>Favorite Teams</h3>
+<% @user.teams.each do |team| %>
+	<p><%= link_to team.name, teams_path(team) %></p>
+<% end %>
 <h3> Recent User Posts </h3>
 <% @user.posts.each do |post| %>
 
@@ -10,3 +14,5 @@
 </br>
 </br>
 <% end %>
+
+

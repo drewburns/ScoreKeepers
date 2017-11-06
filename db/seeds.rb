@@ -11,7 +11,7 @@ sports = ["basketball","football","soccer","hockey","baseball"]
 	Team.create(name: Faker::Team.name)
 end
 10.times do
-	user = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: "test12345")
+	user = User.create(username: Faker::Twitter.screen_name, email: Faker::Internet.email, password: "test12345")
 	team_int = Random.rand(6)
 	team_int.times do
 		UserTeam.create(user_id: user.id, team_id: Team.offset(rand(Team.count)).first.id)

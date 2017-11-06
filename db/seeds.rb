@@ -5,3 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+sports = ["basketball","football","soccer","hockey","baseball"]
+20.times do
+	Team.create(name: Faker::Team.name)
+end
+10.times do
+	user = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: "test12345")
+	team_int = Random.rand(6)
+	team_int.times do
+		UserTeam.create(user_id: user.id, team_id: Team.offset(rand(Team.count)).first.id)
+	end
+
+	rand_int = Random.rand(8)
+	rand_int.times do
+		new_rand_int = Random.rand(5)
+		post = Post.create(user_id: user.id, title: Faker::Lorem.sentence(3), content: Faker::Lorem.paragraph(7), image_url: nil, sport: sports[new_rand_int], approved: nil)
+		post_rant_int = Random.rand(2)
+		post_rant_int.times do
+			team = Team.offset(rand(Team.count)).first
+			PostTeam.create(post_id: post.id, team_id: team.id)
+		end
+	end
+end
+
+Post.all.each do |post|
+	User.all.each do |user|
+		rand = Random.rand(3)
+		if rand == 1 or rand == 2
+			value = 1
+		else
+			value = -1
+		end
+		post.add_or_update_evaluation(:votes, value, user)
+	end
+end

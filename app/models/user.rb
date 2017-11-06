@@ -13,6 +13,7 @@ class User < ApplicationRecord
 	has_many :userTeams
 	has_many :teams, through: :userTeams
 	has_many :posts
+  has_many :comments
 
 	def this_weeks_score
 		posts = self.posts.where('created_at >= ?', 1.week.ago)

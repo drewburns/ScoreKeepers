@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   resources :teams , only: [:index,:show]
   resources :user_teams
+  resources :comments
+  # update these two later
 
+  post '/comment/vote' => "comments#vote"
 
   get '/search/teams' => "teams#search"
 

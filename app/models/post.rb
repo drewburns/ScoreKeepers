@@ -3,6 +3,7 @@ class Post < ApplicationRecord
 	has_many :teams, through: :postTeams
 	has_reputation :votes, source: :user, aggregated_by: :sum
 	belongs_to :user
+	has_many :comments
 
 
 	def score

@@ -38,5 +38,20 @@ Post.all.each do |post|
 			value = -1
 		end
 		post.add_or_update_evaluation(:votes, value, user)
+		comment = Comment.create(user_id: user.id, post_id: post.id, text: Faker::Simpsons.quote )
 	end
 end
+
+Comment.all.each do |comment|
+	User.all.each do |user|
+		rand2 = Random.rand(3)
+		if rand2 == 1 or rand2 == 2
+			value2 = 1
+		else
+			value2 = -1
+		end
+		comment.add_or_update_evaluation(:votes, value2, user)
+	end
+end
+
+

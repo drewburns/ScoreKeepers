@@ -1,6 +1,36 @@
 <h3 style="display:inline;"><%= @post.title%> - Score: <%= @post.score %></h3>
-<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post%></p>
-<p style="display:inline;"><%=link_to "Down", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id), method: :post%></p>
+<% if user_signed_in? %>
+	<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post%></p>
+	<p style="display:inline;"><%=link_to "Down", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id), method: :post%></p>
+<% end %>
+<p >Teams:</p>
+<% @post.teams.each do |team| %>
+	<p style="display:inline;"><%= link_to team.name, team %></p>
+<% end %>
 <p>Written by: <%= link_to @post.user.username, user_path(@post.user) %></p>
 <p> <i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
 <h5><%= @post.content%></h5>
+
+<h3>Comments:</h3>
+<% if user_signed_in? %>
+	<% comment = Comment.new %>
+	<%= form_for(comment) do |f| %>
+		<%= f.label :text %>
+	  <%= f.text_field :text %><br />
+
+	  <%= f.hidden_field :post_id, :value => @post.id %>
+	  <%= f.hidden_field :user_id, :value => current_user.id%>
+
+	  <%= f.submit %>
+	<% end %>
+<% end %>
+</br>
+<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
+	<p style="display:inline;"><%= comment.user.username %></p>
+	<p style="display:inline;">Score: <%= comment.score %></p>
+	<% if user_signed_in? %>
+		<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post%></p>
+		<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post%></p>
+	<% end %>
+	<p><%= comment.text %></p>
+<% end %>

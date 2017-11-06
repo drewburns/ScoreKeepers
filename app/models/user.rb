@@ -16,10 +16,10 @@ class User < ApplicationRecord
 
 	def this_weeks_score
 		posts = self.posts.where('created_at >= ?', 1.week.ago)
-		scores = posts.map{|post| post.score}
+		scores = posts.map{|post| post.score}.inject{|sum, post| sum + post}
 		puts "__________"
-		puts scores.first
-		return scores.first
+		puts scores
+		return scores
 	end
 
 	def self.valid_login?(email, password)

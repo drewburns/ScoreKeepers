@@ -1,11 +1,10 @@
- <% if user_signed_in? %>
-  <p>Logged in</p>
- <% else %>
-  <p><%= link_to "Sign In" , new_user_session_path %> </p>
-  <p><%= link_to "Create Account" , new_user_registration_path %> </p>
-<% end %>
+
 
 <h3>
 This will be the homepage. On here we can have the leaderboard and all the elements we need. Or break it up into smaller parts and pull them all together
-
 </h3>
+
+<h3>Leaderboard:</h3>
+<% @users.each do |user| %>
+<p><%= user.username %> - Score: <%= user.this_weeks_score %></p>
+<% end %>

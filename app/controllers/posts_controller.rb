@@ -8,7 +8,12 @@ class PostsController < ApplicationController
 	end
 
 	def index
-		print(params[:page])
+		users = []
+		User.all.each do |user|
+			users << user if user.posts.count > 0
+		end
+    @users = users.sort_by{|author| author.posts.map{|post| post.score}.inject{|sum,post| sum + post }}.reverse.first(5)
+
 		if params[:page] == nil or params[:page].to_i == 1
 			@posts = Post.last(10).reverse
 		else 
@@ -83,6 +88,10 @@ class PostsController < ApplicationController
 		 	 	redirect_to :back , :alert => "Error"
 			end
 
+	end
+
+	def new
+		@post = Post.new
 	end
 
 	# def top

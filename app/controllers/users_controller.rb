@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   def leaderboard
-    @users = User.where(author: true)
-    @users.sort_by{|author| author.posts.where('created_at >= ?', 1.week.ago).inject {|sum, post| sum + post.score }}.first(5)
+    @users = User.all
+    @users.sort_by{|author| author.posts.map{|post| post.score}.inject{|sum,post| sum + post }}.reverse
 
   end
 

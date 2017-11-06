@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/search/posts' => "posts#search"
 
   resources :users, only: [:index, :show, :create, :update, :destroy]
-  resources :posts, only: [:index, :show, :create, :update, :destroy]
+  resources :posts, only: [:index, :show, :create, :update, :destroy, :new]
   # resources :teams , only: [:index,:show, :create, :update, :destroy]
 
   get '/search/teams' => "teams#search"

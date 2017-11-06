@@ -10,7 +10,7 @@ class Post < ApplicationRecord
 	end
 
 	def writer
-		return self.user.name
+		return self.user.username
 	end
 
 	def writer_id

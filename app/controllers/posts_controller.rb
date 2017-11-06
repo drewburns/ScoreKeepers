@@ -83,9 +83,9 @@ class PostsController < ApplicationController
 			@user = User.find(params[:user_id])
 			if @user && @post 
 				@post.add_or_update_evaluation(:votes, value, @user)
-		  	redirect_to :back , :notice => "Vote counted"
+		  	redirect_to @post , :notice => "Vote counted"
 			else
-		 	 	redirect_to :back , :alert => "Error"
+		 	 	redirect_to @post , :alert => "Error"
 			end
 
 	end

@@ -50,6 +50,7 @@
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.3.0, ruby-2.4.2-p198) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.7.0, ruby-2.4.2-p198) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, ruby-2.4.2-p198) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faker (v1.8.4, ruby-2.4.2-p198) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.18, ruby-2.4.2-p198) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="foundation-rails (v5.4.5.0, ruby-2.4.2-p198) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.1, ruby-2.4.2-p198) [gem]" level="application" />

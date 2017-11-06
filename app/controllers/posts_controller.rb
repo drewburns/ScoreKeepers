@@ -1,9 +1,9 @@
-class PostsController < ApplicationController 
+class PostsController < ApplicationController
 	# wrap_parameters :post, include: [:user_id, :title, :content , :image_url, :sport ]
 	# before_action :require_login , only: [:create]
 	before_action :authenticate_user!, only: :create
 
-	def show 
+	def show
 		@post = Post.find(params[:id])
 	end
 
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
 		if params[:page] == nil or params[:page].to_i == 1
 			@posts = Post.last(10).reverse
-		else 
+		else
 			page = params[:page].to_i
 			@posts = Post.order(:created_at).reverse_order.limit(10).offset(page*10)
 
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 		@user = User.find(params[:user_id])
 	    if @post.save
 	    	redirect_to post_path(@post) , :notice => "Post Created!"
-	    else 
+	    else
 	    	redirect_to 'posts/new' , :alert => "Please retry"
 	    end
 	end
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
 		if params[:page] == nil or params[:page].to_i == 1
 			sport = params[:sport]
 			@posts = Post.where(sport: sport).last(10)
-		else 
+		else
 			page = params[:page].to_i
 			sport = params[:sport]
 			@posts = Post.where(sport: sport).order(:created_at).reverse_order.limit(10).offset(page*10)
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
 		if params[:page] == nil or params[:page].to_i == 1
 			team = params[:sport]
 			@posts = team.posts.last(10)
-		else 
+		else
 			page = params[:page].to_i
 			team = params[:sport]
 			@posts = team.posts.reverse.limit(10).offset(page*10)
@@ -69,7 +69,7 @@ class PostsController < ApplicationController
 		if params[:page] == nil or params[:page].to_i == 1
 			user = params[:id]
 			@posts = Post.where(user_id: user).last(10)
-		else 
+		else
 			page = params[:page].to_i
 			user = params[:id]
 			@posts = Post.where(user_id: user).order(:created_at).reverse_order.limit(10).offset(page*10)
@@ -81,7 +81,7 @@ class PostsController < ApplicationController
 			value = params[:type] == "up" ? 1 : -1
 			@post = Post.find(params[:id])
 			@user = User.find(params[:user_id])
-			if @user && @post 
+			if @user && @post
 				@post.add_or_update_evaluation(:votes, value, @user)
 		  	redirect_back fallback_location: root_path , :notice => "Vote counted"
 			else

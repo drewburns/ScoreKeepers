@@ -2,10 +2,10 @@ class Post < ApplicationRecord
 	has_many :postTeams
 	has_many :teams, through: :postTeams
 	has_reputation :votes, source: :user, aggregated_by: :sum
-	belongs_to :user 
+	belongs_to :user
 
 
-	def score 
+	def score
 		return self.reputation_for(:votes)
 	end
 

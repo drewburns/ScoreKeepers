@@ -1,0 +1,15 @@
+<h3> Team List</h3>
+<% @teams.each do |team| %>
+    <p style="display:inline;"><%= link_to team.name, team_path(team) %> </p>
+    <% if user_signed_in? %>
+        <% u = UserTeam.new %>
+        <%= form_for(u) do |t| %>
+          <%= hidden_field_tag 'user_id', current_user.id %>
+            <%= hidden_field_tag 'team_id', team.id %>
+          <%= t.submit "Add to my Teams" %>
+        <% end %>
+
+    <% end %>
+    </br>
+    </br>
+<% end %>

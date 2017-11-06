@@ -94,9 +94,6 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
-	# def top
-
-	# end
 
 
   private

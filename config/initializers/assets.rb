@@ -18,3 +18,6 @@ Rails.application.config.assets.precompile += %w( content-tools.min.css )
 Rails.application.config.assets.precompile += %w( content-tools.css )
 Rails.application.config.assets.precompile += %w( content-tools.js )
 Rails.application.config.assets.precompile += %w( editor.js )
+
+Rails.application.config.assets.precompile += %w( icons.woff )
+

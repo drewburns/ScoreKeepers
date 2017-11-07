@@ -63,7 +63,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    contenttools-rails (1.2.4.1)
     crass (1.0.2)
     devise (4.3.0)
       bcrypt (~> 3.0)
@@ -200,7 +199,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  contenttools-rails
   devise
   faker
   foundation-rails

@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
 
 
     editor.addEventListener('saved', function (ev) {
-        var name, payload, regions, xhr;
+        var regions
 
         // Check that something changed
         regions = ev.detail().regions;
@@ -19,13 +19,13 @@ window.addEventListener('load', function() {
         // Set the editor as busy while we save our changes
         this.busy(true);
 
-        // Collect the contents of each region into a FormData instance
-        payload = new FormData();
-        for (name in regions) {
-            if (regions.hasOwnProperty(name)) {
-                payload.append(name, regions[name]);
-            }
-        }
+        var title = document.getElementById('post_title');
+        title.value = document.getElementById('post-title-block').textContent
+
+        var content= document.getElementById('post_content');
+        content.value = JSON.stringify(regions['main-content']);
+
+        $('#postsubmit').submit();
 
         // Send the update content to the server to be saved
         function onStateChange(ev) {
@@ -40,12 +40,8 @@ window.addEventListener('load', function() {
                     new ContentTools.FlashUI('no');
                 }
             }
-        };
+        }
 
-        xhr = new XMLHttpRequest();
-        xhr.addEventListener('readystatechange', onStateChange);
-        xhr.open('POST', '/post/create');
-        xhr.send(payload);
     });
 
 

@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'contenttools-rails'
+#gem 'contenttools-rails'
 gem 'faker'
 gem 'activerecord-reputation-system'
 gem 'devise'

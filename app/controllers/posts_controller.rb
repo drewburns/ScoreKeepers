@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # wrap_parameters :post, include: [:user_id, :title, :content , :image_url, :sport ]
   # before_action :require_login , only: [:create]
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!, only: [:create, :new]
 
   def index
     users = []
@@ -31,7 +31,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @user = User.find(params[:user_id])
     if @post.save
       redirect_to post_path(@post), notice: 'Post Created!'
     else

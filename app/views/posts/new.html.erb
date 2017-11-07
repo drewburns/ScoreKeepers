@@ -1,6 +1,6 @@
 <head>
   <title>My page</title>
-  <%= stylesheet_link_tag 'content-tools.min' %>
+  <%= stylesheet_link_tag 'ContentTools/build/content-tools.min' %>
 
   <style>
     .author {
@@ -17,14 +17,20 @@
     </br>
     </br>
   </div>
-  </div>
 
-  <% u = Post.create %>
-  <div align='center' class="meta">
-    <h6>Post ID=<%= u.id %></h6>
+
+  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :title, :value => nil %>
+    <%= f.hidden_field :content, :value => nil %>
+    <%= f.submit 'Create Post' %>
+  <% end %>
+
+  <div align="center" data-editable data-name="title">
+    <h2 id="post-title-block">Title Me</h2>
   </div>
-  <div align="center" text-align="left" data-editable data-name="main-content">
-    <h2>Title Me</h2>
+  <div align="center" data-editable data-name="main-content">
     <blockquote>
       You should be able to edit this.
     </blockquote>
@@ -34,6 +40,6 @@
     <p>Author Signature Information</p>
   </div>
 
-  <%= javascript_include_tag 'content-tools' %>
+  <%= javascript_include_tag 'ContentTools/build/content-tools' %>
   <%= javascript_include_tag 'editor' %>
 </body>

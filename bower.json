@@ -1,0 +1,6 @@
+{
+  "name": "sports_site",
+  "dependencies": {
+    "ContentTools": "^1.5.6"
+  }
+}

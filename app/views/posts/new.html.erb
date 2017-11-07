@@ -1,1 +1,39 @@
-<h3>New Post</h3>
+<head>
+  <title>My page</title>
+  <%= stylesheet_link_tag 'content-tools.min' %>
+
+  <style>
+    .author {
+      font-style: italic;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div data-name="main-content" align="center">
+    <h2>
+      Create your post in the section below.
+    </h2>
+    </br>
+    </br>
+  </div>
+  </div>
+
+  <% u = Post.create %>
+  <div align='center' class="meta">
+    <h6>Post ID=<%= u.id %></h6>
+  </div>
+  <div align="center" text-align="left" data-editable data-name="main-content">
+    <h2>Title Me</h2>
+    <blockquote>
+      You should be able to edit this.
+    </blockquote>
+    <p>John F. Woods</p>
+  </div>
+  <div data-name="main-content" align="center">
+    <p>Author Signature Information</p>
+  </div>
+
+  <%= javascript_include_tag 'content-tools' %>
+  <%= javascript_include_tag 'editor' %>
+</body>

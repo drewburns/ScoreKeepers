@@ -13,5 +13,6 @@
 //= require rails-ujs
 
 //= require_tree .
+//= require content-tools
 
 $(function(){ $(document).foundation(); });

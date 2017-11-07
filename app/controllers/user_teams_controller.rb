@@ -4,18 +4,24 @@ class UserTeamsController < ApplicationController
 	def create
 		@userTeam = UserTeam.new(user_team_params)
 		if @userTeam.save 
-			redirect_to :back , :notice => "Favorite Team Added"
+			redirect_back fallback_location: root_path, :notice => "Team added"
 		else
-			redirect_to :back , :error => "Error"
+			redirect_back fallback_location: root_path, :alert => "Error"
 		end
 	end
 
 	def destroy
+		@userTeam = UserTeam.find(params[:id])
+		if @userTeam.destroy
+			redirect_back fallback_location: root_path, :notice => "Team Removed"
+		else
+			redirect_back fallback_location: root_path, :alert => "Error"
+		end
 	end
 
 	private
 	  def user_team_params
-      params.require(:user_team).permit(:user_id, :team_id )
+      params.permit(:user_id, :team_id, :id)
     end
 end
 

@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   resources :teams , only: [:index,:show]
   resources :user_teams
+  resources :comments
+  # update these two later
 
+  post '/comment/vote' => "comments#vote"
 
   get '/search/teams' => "teams#search"
 
@@ -26,7 +29,7 @@ Rails.application.routes.draw do
   post '/postTeams' => "post_teams#create"
   delete '/postTeams' => "post_teams#destroy"
 
-  post '/userTeams' => "user_teams#create"
-  delete '/userTeams' => "user_teams#destroy"
+  # post '/userTeams' => "user_teams#create"
+  # delete '/userTeams' => "user_teams#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

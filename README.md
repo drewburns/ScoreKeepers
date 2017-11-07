@@ -1,24 +1,13 @@
-# README
+Welcome to Sports Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1) To start clone the repo
+   git clone (insert the repo http from bitbucket)
 
-Things you may want to cover:
+2) Or if you have it 
+   git pull origin master
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3) If first time using project
+   bundle install
+   rake db:migrate
+   rake db:seed (this might take a bit)
+   rails s

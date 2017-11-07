@@ -2,12 +2,13 @@
 <% @teams.each do |team| %>
     <p style="display:inline;"><%= link_to team.name, team_path(team) %> </p>
     <% if user_signed_in? %>
-        <% u = UserTeam.new %>
-        <%= form_for(u) do |t| %>
-          <%= hidden_field_tag 'user_id', current_user.id %>
-            <%= hidden_field_tag 'team_id', team.id %>
-          <%= t.submit "Add to my Teams" %>
+        <% if current_user.teams.include?(team) %>
+        <% userTeam = current_user.userTeams.where(team_id:team.id).first.id%>
+            <%= link_to "Remove" , user_team_path(id: userTeam), method: :delete%>
+        <% else %>
+            <%= link_to "Add to favorites" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post%>
         <% end %>
+
 
     <% end %>
     </br>

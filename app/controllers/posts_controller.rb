@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 	# wrap_parameters :post, include: [:user_id, :title, :content , :image_url, :sport ]
 	# before_action :require_login , only: [:create]
-	before_action :authenticate_user!, only: :create
+	before_action :authenticate_user!, only: [:create, :new]
 
 	def show
 		@post = Post.find(params[:id])
@@ -91,7 +91,7 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
+		@post = Post.create(user_id: current_user.id)
 	end
 
 

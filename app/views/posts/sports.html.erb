@@ -1,3 +1,14 @@
-<h3>
-This page will show the posts for a certain sport (Maybe we can change this)
-</h3>
+<h3><%= @posts.first.sport.capitalize %> Page</h3>
+
+<h3>Recent <%= @posts.first.sport.capitalize %> Posts </h3>
+
+<% @posts.each do |post| %>
+	<p style="display:inline;"><%= link_to post.title, post_path(post) %> | Score: <%= post.score %></p> |
+	<p style="display:inline;">By: <%= link_to post.user.username, post.user %></p> |
+	<% if user_signed_in? %>
+	<p style="display:inline;"><%=link_to "Up", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
+	<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>
+<% end %>
+</br>
+</br>
+<% end %>

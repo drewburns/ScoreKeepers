@@ -11,7 +11,9 @@
 <p> <i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
 <h5><%= @post.content%></h5>
 
+<% if @post.sport != nil %>
 <p> Sport: <%= link_to @post.sport, sports_posts_path(:sport => @post.sport) %></p>
+<% end %>
 <h3>Comments:</h3>
 <% if user_signed_in? %>
 	<% comment = Comment.new %>

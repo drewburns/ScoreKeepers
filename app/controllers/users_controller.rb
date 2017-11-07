@@ -7,11 +7,11 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
 
-  def leaderboard
-    @users = User.all
-    @users.sort_by{|author| author.posts.map{|post| post.score}.inject{|sum,post| sum + post }}.reverse
+  # def leaderboard
+  #   @users = User.all
+  #   @users.sort_by{|author| author.posts.map{|post| post.score}.inject{|sum,post| sum + post }}.reverse
 
-  end
+  # end
 
 
   private

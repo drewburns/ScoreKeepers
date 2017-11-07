@@ -20,13 +20,30 @@ class User < ApplicationRecord
 		scores = posts.map{|post| post.score}.inject{|sum, post| sum + post}
 		puts "__________"
 		puts scores
-		return scores
+    if scores == nil
+      return 0
+    else
+		  return scores
+    end
 	end
 
 	def self.valid_login?(email, password)
     user = find_by(email: email)
     if user && user.authenticate(password)
       user
+    end
+  end
+
+  def this_weeks_rank
+    users = []
+    User.all.each do |user|
+      users << user if user.posts.count > 0
+    end
+    if users.include?(self)
+      rank = users.sort_by{|author| author.posts.map{|post| post.score}.inject{|sum,post| sum + post }}.reverse.index(self)
+      return rank + 1
+    else 
+      return "Not ranked"
     end
   end
 end

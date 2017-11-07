@@ -1,4 +1,5 @@
-<h3><%= @user.username%></h3>
+<h3><%= @user.username%> </h3>
+<h3>#<%= @user.this_weeks_rank %> this week | Score: <%= @user.this_weeks_score%> </h3>
 <h3>Favorite Teams</h3>
 <% @user.teams.each do |team| %>
 	<p><%= link_to team.name, team %></p>
@@ -6,7 +7,7 @@
 <h3> Recent User Posts </h3>
 <% @user.posts.each do |post| %>
 
-<p style="display:inline;"><%= link_to post.title, post_path(post) %> - Score: <%= post.score %></p>
+<p style="display:inline;"><%= link_to post.title, post_path(post) %> | Score: <%= post.score %></p> | 
 <% if user_signed_in? %>
 	<p style="display:inline;"><%=link_to "Up", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
 	<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>

@@ -5,10 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-#group :production do
-#  gem 'rails_12factor'
-#end
-
 #gem 'contenttools-rails'
 gem 'faker'
 gem 'activerecord-reputation-system'

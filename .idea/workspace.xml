@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="549f37e0-51e5-4642-8db9-5a0e6a71333e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -482,7 +482,7 @@
       <workItem from="1510034774521" duration="2349000" />
       <workItem from="1510038691045" duration="2520000" />
       <workItem from="1510080577813" duration="10265000" />
-      <workItem from="1510162668908" duration="903000" />
+      <workItem from="1510162668908" duration="1073000" />
     </task>
     <task id="LOCAL-00001" summary="Add team index page as well as team index page button in toobar.  &quot;Add to team&quot; button broken.">
       <created>1509959342701</created>
@@ -495,7 +495,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30694000" />
+    <option name="totallyTimeSpent" value="30864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="640" y="0" width="640" height="1061" extended-state="0" />

@@ -1,4 +1,11 @@
-<h3 style="display:inline;"><%= @post.title%> | Score: <%= @post.score %> |</h3> 
+<% if 1==1 %>
+    <a href="new.html" class="button">Edit Post</a>
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+<% end %>
+
+<br>
+
+<h3 style="display:inline;"><%= @post.title%> | Score: <%= @post.score %> |</h3>
 <% if user_signed_in? %>
 	<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post%></p> 
 	<p style="display:inline;"><%=link_to "Down", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id), method: :post%></p>

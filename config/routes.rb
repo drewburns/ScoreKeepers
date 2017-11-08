@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :create, :update, :destroy]
   resources :posts, only: [:index, :show, :create, :update, :destroy, :new]
 
-  resources :teams , only: [:index,:show]
+  resources :teams, only: [:index,:show]
   resources :user_teams
   resources :comments
   # update these two later

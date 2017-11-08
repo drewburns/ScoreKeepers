@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="549f37e0-51e5-4642-8db9-5a0e6a71333e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-    </list>
+    <list default="true" id="549f37e0-51e5-4642-8db9-5a0e6a71333e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -139,8 +137,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
+    <option name="width" value="1920" />
     <option name="height" value="1061" />
   </component>
   <component name="ProjectView">
@@ -470,7 +467,7 @@
       <workItem from="1510034774521" duration="2349000" />
       <workItem from="1510038691045" duration="2520000" />
       <workItem from="1510080577813" duration="10265000" />
-      <workItem from="1510162668908" duration="273000" />
+      <workItem from="1510162668908" duration="477000" />
     </task>
     <task id="LOCAL-00001" summary="Add team index page as well as team index page button in toobar.  &quot;Add to team&quot; button broken.">
       <created>1509959342701</created>
@@ -483,10 +480,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30064000" />
+    <option name="totallyTimeSpent" value="30268000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1061" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1061" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65690374" sideWeight="0.4959514" order="0" side_tool="false" content_ui="combo" />

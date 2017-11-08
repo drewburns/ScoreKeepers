@@ -27,6 +27,24 @@ class User < ApplicationRecord
     end
 	end
 
+  def drafts
+    puts "____________"
+    p self.posts.where(status: "draft")
+    return self.posts.where(status: "draft")
+  end
+
+  def approved
+    return self.posts.where(status: "approved")
+  end
+
+  def pending
+    return self.posts.where(status: "pending")
+  end
+
+  def rejected
+     return self.posts.where(status: "rejected")
+  end
+
 	def self.valid_login?(email, password)
     user = find_by(email: email)
     if user && user.authenticate(password)

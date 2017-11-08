@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   get '/teams/posts' => "posts#teams"
   get '/userposts'  => "posts#user"
 
+  get '/creator' => "users#creator"
+
   get '/search/posts' => "posts#search"
 
+  get '/poststatus' => "posts#status"
+
   resources :users, only: [:index, :show, :create, :update, :destroy]
-  resources :posts, only: [:index, :show, :create, :update, :destroy, :new]
+  resources :posts, only: [:index, :show, :create, :update, :destroy, :new, :edit]
 
   resources :teams, only: [:index,:show]
   resources :user_teams

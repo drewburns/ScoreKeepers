@@ -1,14 +1,29 @@
-<% if 1==1 %>
-    <a href="new.html" class="button">Edit Post</a>
-    <%= link_to 'Edit Post', edit_post_path(@post) %>
-<% end %>
 
-<br>
 
-<h3 style="display:inline;"><%= @post.title%> | Score: <%= @post.score %> |</h3>
+<h3 style="display:inline;"><%= @post.title%> | Score: <%= @post.score %> |</h3> 
 <% if user_signed_in? %>
 	<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post%></p> 
 	<p style="display:inline;"><%=link_to "Down", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id), method: :post%></p>
+<% end %>
+<% if @post.user == current_user %>
+<h3><%= @post.status %></h3>
+	<% if @post.status == "rejected" %>
+		<p>Admin Message: <%= @post.admin_message %></p>
+	<% end %>
+	<% if @post.status == "draft" or @post.status == "rejected"%>
+		  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+	    <%= f.hidden_field :user_id, :value => current_user.id %>
+	    <%= f.hidden_field :title, :value => @post.title %>
+	    <%= f.hidden_field :content, :value => @post.content %>
+	    <%= f.hidden_field :status, :value => "pending" %>
+	    <%= f.submit 'Submit Post' %>
+	  <% end %>
+	<% end %>
+<% end %>
+
+<% if @post.status == "draft" %>
+	<h3>Message From Admin:</h3>
+	<p><%= @post.admin_message %></p>
 <% end %>
 <p >Teams:</p>
 <% @post.teams.each do |team| %>
@@ -16,9 +31,7 @@
 <% end %>
 <p>Written by: <%= link_to @post.user.username, user_path(@post.user) %></p>
 <p> <i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
-
-
-<h5><%= raw @post.content %></h5>
+<h5><%= @post.content%></h5>
 
 <% if @post.sport != nil %>
 <p> Sport: <%= link_to @post.sport, sports_posts_path(:sport => @post.sport) %></p>

@@ -24,6 +24,7 @@
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :title, :value => nil %>
     <%= f.hidden_field :content, :value => nil %>
+    <%= f.hidden_field :status, :value => "draft" %>
     <%= f.submit 'Create Post' %>
   <% end %>
 

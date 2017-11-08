@@ -20,7 +20,7 @@ end
 	rand_int = Random.rand(8)
 	rand_int.times do
 		new_rand_int = Random.rand(5)
-		post = Post.create(user_id: user.id, title: Faker::Lorem.sentence(3), content: Faker::Lorem.paragraph(7), image_url: nil, sport: sports[new_rand_int], approved: nil)
+		post = Post.create(user_id: user.id, title: Faker::Lorem.sentence(3), content: Faker::Lorem.paragraph(7), thumbnail_url: nil, sport: sports[new_rand_int], status: "approved")
 		post_rant_int = Random.rand(2)
 		post_rant_int.times do
 			team = Team.offset(rand(Team.count)).first

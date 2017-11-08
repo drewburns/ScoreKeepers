@@ -69,11 +69,6 @@ class PostsController < ApplicationController
       page = params[:page].to_i
       user = params[:id]
       @posts = Post.where(user_id: user).order(:created_at).reverse_order.limit(10).offset(page * 10)
-# =======
-# 	def new
-# 		@post = Post.create(user_id: current_user.id)
-# 	end
-# >>>>>>> 88f4fb37c4f8ee79e4b9372588c64950b9d7391c
 
     end
   end

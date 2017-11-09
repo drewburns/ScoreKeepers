@@ -17,3 +17,20 @@
  *= require ContentTools/build/content-tools.min
 
  */
+
+.body {
+  background-color: #d8d8d8;
+}
+
+
+.posttitle a{
+  color: black;
+}
+
+.postscore {
+  float: right;
+}
+
+.vote {
+  float: right;
+}

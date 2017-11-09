@@ -1,0 +1,26 @@
+<h3>Pending Posts</h3>
+<ul>
+<% @posts.each do |post| %>
+	<li>
+		<%= link_to post.title, post %> by
+		<%= link_to post.user.username, post.user %>
+		<% if post.status == "pending"%>
+	  	<%= form_for [post], :html => {:id => 'postsubmit1'} do |f| %>
+		    <%= f.hidden_field :user_id, :value => post.user.id %>
+		    <%= f.hidden_field :title, :value => post.title %>
+		    <%= f.hidden_field :content, :value => post.content %>
+		    <%= f.hidden_field :status, :value => "approved" %>
+    		<%= f.submit 'Accept Post' %>
+    	<% end %>
+	   	<%= form_for(post) do |f| %>
+				Input : <%= f.text_field :admin_message , :style => "width:300px;" %>
+		    <%= f.hidden_field :user_id, :value => post.user.id %>
+		    <%= f.hidden_field :title, :value => post.title %>
+		    <%= f.hidden_field :content, :value => post.content %>
+		    <%= f.hidden_field :status, :value => "rejected" %>
+		    <%= f.submit 'Reject Post' %>
+		  <% end %>
+  	<% end %>
+	</li>
+<% end %>
+</ul>

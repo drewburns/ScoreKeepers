@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="549f37e0-51e5-4642-8db9-5a0e6a71333e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/editor.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/editor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/admin.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20171109044558_add_admin_to_users.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20171109045734_add_time_submitted_to_posts.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/add_admin.rake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_header.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/creator.html.erb" afterPath="$PROJECT_DIR$/app/views/users/creator.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -28,28 +35,35 @@
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/editor.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts_controller.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="posts_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+            <state relative-caret-position="2575">
+              <caret line="112" column="27" lean-forward="false" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="75">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding>
+                <marker date="1510266710733" expanded="true" signature="6552:6589" ph="..." />
+                <marker date="1510266710733" expanded="true" signature="6632:7004" ph="..." />
+                <marker date="1510266710733" expanded="true" signature="7030:7408" ph="..." />
+                <marker date="1510266710733" expanded="true" signature="7079:7397" ph="if ... end" />
+                <marker date="1510266710733" expanded="false" signature="7114:7129" ph="..." />
+                <marker date="1510266710733" expanded="false" signature="7256:7271" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,8 +91,8 @@
       <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="525">
+              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -147,10 +161,10 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/editor.js" />
         <option value="$PROJECT_DIR$/app/views/posts/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
       </list>
     </option>
   </component>
@@ -496,7 +510,7 @@
       <workItem from="1510038691045" duration="2520000" />
       <workItem from="1510080577813" duration="10265000" />
       <workItem from="1510162668908" duration="9923000" />
-      <workItem from="1510264069651" duration="2327000" />
+      <workItem from="1510264069651" duration="2532000" />
     </task>
     <task id="LOCAL-00001" summary="Add team index page as well as team index page button in toobar.  &quot;Add to team&quot; button broken.">
       <created>1509959342701</created>
@@ -509,7 +523,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42041000" />
+    <option name="totallyTimeSpent" value="42246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="480" height="1053" extended-state="0" />
@@ -867,8 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        <state relative-caret-position="525">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -904,26 +918,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/editor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1510266710733" expanded="true" signature="6552:6589" ph="..." />
+            <marker date="1510266710733" expanded="true" signature="6632:7004" ph="..." />
+            <marker date="1510266710733" expanded="true" signature="7030:7408" ph="..." />
+            <marker date="1510266710733" expanded="true" signature="7079:7397" ph="if ... end" />
+            <marker date="1510266710733" expanded="false" signature="7114:7129" ph="..." />
+            <marker date="1510266710733" expanded="false" signature="7256:7271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2575">
+          <caret line="112" column="27" lean-forward="false" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
           <folding />
         </state>
       </provider>

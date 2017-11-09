@@ -25,6 +25,9 @@ window.addEventListener('load', function() {
         var content= document.getElementById('post_content');
         content.value = JSON.stringify(regions['main-content']);
 
+        var status = document.getElementById('status');
+        console.log(status);
+
         $('#postsubmit').submit();
 
         // Send the update content to the server to be saved

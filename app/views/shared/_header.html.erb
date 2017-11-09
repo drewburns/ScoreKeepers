@@ -17,7 +17,7 @@
 
 			 <ul class="menu">
          <li class=""><%= link_to "Team Index" , teams_path %></li>
-			  <li class=""><%= link_to "Create Post" , new_post_path %></li>
+			  <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
 			  <li class=""><%= link_to current_user.username , user_path(current_user) %></li>
 			  <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
 			</ul>

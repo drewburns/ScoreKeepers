@@ -4,9 +4,11 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     	t.belongs_to :user, foreign_key: true
     	t.string :title
     	t.text :content
-    	t.string :image_url
+    	t.string :thumbnail_url
     	t.string :sport
-      t.boolean :approved
+      t.datetime :time_approved
+      t.string :status
+      t.string :admin_message
       t.timestamps
     end
   end

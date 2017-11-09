@@ -1,6 +1,28 @@
 <div class="row">
 	<div class="large-12 columns">
 		<h1 class="posttitle"><%= @post.title%></h1>
+
+		<% if @post.user == current_user %>
+		<h3><%= @post.status %></h3>
+			<% if @post.status == "rejected" %>
+				<p>Admin Message: <%= @post.admin_message %></p>
+			<% end %>
+			<% if @post.status == "draft" or @post.status == "rejected"%>
+				  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+			    <%= f.hidden_field :user_id, :value => current_user.id %>
+			    <%= f.hidden_field :title, :value => @post.title %>
+			    <%= f.hidden_field :content, :value => @post.content %>
+			    <%= f.hidden_field :status, :value => "pending" %>
+			    <%= f.submit 'Submit Post' %>
+			  <% end %>
+			<% end %>
+		<% end %>
+
+		<% if @post.status == "draft" %>
+			<h3>Message From Admin:</h3>
+			<p><%= @post.admin_message %></p>
+		<% end %>
+
 		<div class="postauthor">
 			<p>By <%= link_to @post.user.username, user_path(@post.user) %></p>
 			</div>

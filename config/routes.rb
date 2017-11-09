@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   get '/teams/posts' => "posts#teams"
   get '/userposts'  => "posts#user"
 
+  get '/creator' => "users#creator"
+
   get '/search/posts' => "posts#search"
 
-  resources :users, only: [:index, :show, :create, :update, :destroy]
-  resources :posts, only: [:index, :show, :create, :update, :destroy, :new]
+  get '/poststatus' => "posts#status"
 
-  resources :teams , only: [:index,:show]
+  resources :users, only: [:index, :show, :create, :update, :destroy]
+  resources :posts, only: [:index, :show, :create, :update, :destroy, :new, :edit]
+
+  resources :teams, only: [:index,:show]
   resources :user_teams
   resources :comments
   # update these two later

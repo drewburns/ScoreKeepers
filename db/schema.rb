@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101211159) do
+ActiveRecord::Schema.define(version: 20171108211223) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -35,9 +35,11 @@ ActiveRecord::Schema.define(version: 20171101211159) do
     t.integer "user_id"
     t.string "title"
     t.text "content"
-    t.string "image_url"
+    t.string "thumbnail_url"
     t.string "sport"
-    t.boolean "approved"
+    t.datetime "time_approved"
+    t.string "status"
+    t.string "admin_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(version: 20171101211159) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sport_string"
   end
 
   create_table "user_teams", force: :cascade do |t|

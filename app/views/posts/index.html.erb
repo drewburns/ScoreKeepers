@@ -1,13 +1,14 @@
 <div class="row">
+
 	<div class="large-9 columns">
-	<h3> Recent Posts </h3>
+	<h3 class="itemheader"> Recent Posts </h3>
 		<div class='post'>
 			<% @posts.each do |post| %>
 			<h6 class="postscore">Score: <%= post.score %></h6>
 			<h3 class="posttitle"><%= link_to post.title, post_path(post) %></h3>
 			<div class="vote">
 				<% if user_signed_in? %>
-				<p style="display:inline;"><%=link_to "Up", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
+				<p style="display:inline;"><%=link_to "Ups", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
 				<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>
 				<% end %>
 			</div>
@@ -18,11 +19,9 @@
 	</div>
 
 	<div class="large-3 columns">
-		<h3>Leaderboard</h3>
+		<h3 class="itemheader">Leaderboard</h3>
 		<% @users.each do |user| %>
 		<p><%= link_to user.username, user_path(user) %> | <%= user.this_weeks_score %></p>
 		<% end %>
 	</div>
 </div>
-
-<img scr="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiD2NiZ9K_XAhVCOBQKHVS8AAYQjRwIBw&url=https%3A%2F%2Fwww.si.com%2Fextra-mustard%2F2017%2F11%2F06%2Fjohn-lynch-asked-bill-belichick-if-he-would-trade-tom-brady&psig=AOvVaw0pdvDL3qtPJneVaDTDfdBZ&ust=1510262448567730" width="100px">

@@ -17,20 +17,73 @@
  *= require ContentTools/build/content-tools.min
 
  */
+/* Homepage CSS*/
 
-.body {
-  background-color: #d8d8d8;
-}
+ @font-face {
+   font-family: 'Open Sans', sans-serif;
+   src: url('https://fonts.googleapis.com/css?family=Open+Sans')}
 
+
+body {
+  background-color: #f9f9f9;}
+
+.row {
+  background-color: #fff;}
+
+.itemheader{
+  background-color: #000000;
+  color: #ffffff;}
+
+.postimage {
+  width: 100px;}
 
 .posttitle a{
   color: black;
 }
 
 .postscore {
-  float: right;
-}
+  float: right;}
 
 .vote {
-  float: right;
+  float: right;}
+
+
+/*Post CSS*/
+
+.posttitle {
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;}
+
+.postcontent h5{
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;}
+
+.postauthor p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.authorname {
+  font-size: 24px;
+  float: left;
+  margin-top: 25px;
+  margin-left: 30px;
+}
+
+.authorbio {
+  float: left;
+  width: 80%;
+  margin-left: 30px;
+  a
+}
+
+.authorfooter img{
+  float: left;
+}
+
+.authorfooter{
+  height: 200px;
+  margin-left: 30px;
+  margin-top: 20px;
 }

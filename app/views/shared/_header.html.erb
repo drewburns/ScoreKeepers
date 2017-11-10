@@ -16,6 +16,9 @@
 
 
 			 <ul class="menu">
+        <% if current_user.admin == true %>
+          <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>
+        <% end %>
          <li class=""><%= link_to "Team Index" , teams_path %></li>
 			  <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
 			  <li class=""><%= link_to current_user.username , user_path(current_user) %></li>

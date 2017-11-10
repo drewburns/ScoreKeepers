@@ -12,12 +12,14 @@ Rails.application.routes.draw do
 
   get '/search/posts' => "posts#search"
 
-  get '/poststatus' => "posts#status"
+  get '/admin' => "users#admin"
+
+  post '/reject' => "posts#reject"
 
   resources :users, only: [:index, :show, :create, :update, :destroy]
   resources :posts, only: [:index, :show, :create, :update, :destroy, :new, :edit]
 
-  resources :teams, only: [:index,:show]
+  resources :teams , only: [:index,:show]
   resources :user_teams
   resources :comments
   # update these two later

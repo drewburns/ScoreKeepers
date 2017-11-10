@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108211223) do
+ActiveRecord::Schema.define(version: 20171109045734) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20171108211223) do
     t.string "admin_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "time_submitted"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -122,6 +123,7 @@ ActiveRecord::Schema.define(version: 20171108211223) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -28,7 +28,20 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def status
+  def reject
+  	@post = Post.find(params[:id])
+  	new_params = post_params
+  	new_params[:time_approved] = DateTime.now if post_params[:status] == "approved"
+  	new_params[:time_submitted] = DateTime.now if post_params[:status] == "submitted"
+  	p "---------------------------"
+  	p post_params
+
+
+  	if @post.update_attributes(post_params)
+      redirect_to @post , notice: 'Post Saved!'
+    else
+      redirect_to 'users/creator', alert: 'Please retry'
+     end
   end
 
   def search
@@ -41,6 +54,10 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
   	new_params = post_params
   	new_params[:time_approved] = DateTime.now if post_params[:status] == "approved"
+  	new_params[:time_submitted] = DateTime.now if post_params[:status] == "submitted"
+  	p "---------------------------"
+  	p post_params
+
 
   	if @post.update_attributes(post_params)
       redirect_to @post , notice: 'Post Saved!'

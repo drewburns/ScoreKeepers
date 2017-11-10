@@ -2,28 +2,7 @@
 	<div class="large-12 columns">
 		<h1 class="posttitle"><%= @post.title%></h1>
 
-		<% if @post.user == current_user %>
-		<h3><%= @post.status %></h3>
-			<% if @post.status == "rejected" %>
-				<p>Admin Message: <%= @post.admin_message %></p>
-			<% end %>
-			<% if @post.status == "draft" or @post.status == "rejected"%>
-				  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
-			    <%= f.hidden_field :user_id, :value => current_user.id %>
-			    <%= f.hidden_field :title, :value => @post.title %>
-			    <%= f.hidden_field :content, :value => @post.content %>
-			    <%= f.hidden_field :status, :value => "pending" %>
-			    <%= f.submit 'Submit Post' %>
-			  <% end %>
-			<% end %>
-		<% end %>
 
-<<<<<<< HEAD
-<h3 style="display:inline;"><%= @post.title%> | Score: <%= @post.score %> |</h3> 
-<% if user_signed_in? %>
-	<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post%></p> 
-	<p style="display:inline;"><%=link_to "Down", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id), method: :post%></p>
-<% end %>
 <% if @post.user == current_user %>
 <h3><%= @post.status %></h3>
 	<% if @post.status == "rejected" %>
@@ -45,30 +24,13 @@
 	<h3>Message From Admin:</h3>
 	<p><%= @post.admin_message %></p>
 <% end %>
-<p >Teams:</p>
-<% @post.teams.each do |team| %>
-	<p style="display:inline;"><%= link_to team.name, team %></p>
-<% end %>
-<p>Written by: <%= link_to @post.user.username, user_path(@post.user) %></p>
-<p> <i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
-<h5><%= @post.content%></h5>
+
+
 
 <% if @post.sport != nil %>
 <p> Sport: <%= link_to @post.sport, sports_posts_path(:sport => @post.sport) %></p>
 <% end %>
-<h3>Comments:</h3>
-<% if user_signed_in? %>
-	<% comment = Comment.new %>
-	<%= form_for(comment) do |f| %>
-		<%= f.label :text %>
-	  <%= f.text_field :text %><br />
 
-	  <%= f.hidden_field :post_id, :value => @post.id %>
-	  <%= f.hidden_field :user_id, :value => current_user.id%>
-
-	  <%= f.submit %>
-	<% end %>
-<% end %>
 </br>
 <% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
 	<p style="display:inline;"><%= link_to comment.user.username , comment.user %></p> | 
@@ -79,7 +41,7 @@
 	<% end %>
 	<p><%= comment.text %></p>
 <% end %>
-=======
+
 		<% if @post.status == "draft" %>
 			<h3>Message From Admin:</h3>
 			<p><%= @post.admin_message %></p>
@@ -167,4 +129,3 @@
 
 
 </div>
->>>>>>> 8988cbc6017cca3885fec5a76f4275c1a2fb1b35

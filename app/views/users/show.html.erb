@@ -1,29 +1,38 @@
-<h3><%= @user.username%> </h3>
-<h3>#<%= @user.this_weeks_rank %> this week | Score: <%= @user.this_weeks_score%> </h3>
-<h3>Favorite Teams</h3>
-<% @user.teams.each do |team| %>
-	<p style="display:inline;"><%= link_to team.name, team %></p> | 
-	 <% if user_signed_in? and current_user == @user %>
-        <% if current_user.teams.include?(team) %>
-        <% userTeam = current_user.userTeams.where(team_id:team.id).first.id%>
-            <%= link_to "Remove" , user_team_path(id: userTeam), method: :delete%>
-        <% else %>
-            <%= link_to "Add to favorites" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post%>
-        <% end %>
-      <br><br>
+<div class="row">
+	<div class="large-8 columns">
+		<div class="userauthorfooter">
+			<img src='https://upload.wikimedia.org/wikipedia/commons/c/cb/Barack_Obama_Circle.png' width='135px'>
+			<h3 class="userauthorscore">#<%= @user.this_weeks_rank %> this week | <%= @user.this_weeks_score%></h3>
+			<h3 class="userauthorname"><b><%= @user.username%></b></h3>
+			<h6 class="userauthorbio">Barack Obama is the 44th president of the United States. He writers for the Huffington Post and enjoys playing basketball in his free time</h6>
+		</div><hr>
 
-  <% end %>
-<% end %>
-<h3> Recent User Posts </h3>
-<% @user.posts.each do |post| %>
+		<div class='userauthorpost'>
+			<% @user.posts.each do |post| %>
+			<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
+			<h3 class="uaptitle"><%= link_to post.title, post_path(post) %></h3>
+			<h6 class="uapscore">Score: <%= post.score %></h6>
+			<hr>
+			<% end %>
+		</div>
+	</div>
 
-<p style="display:inline;"><%= link_to post.title, post_path(post) %> | Score: <%= post.score %></p> | 
-<% if user_signed_in? %>
-	<p style="display:inline;"><%=link_to "Up", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
-	<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>
-<% end %>
-</br>
-</br>
-<% end %>
+	<div class="large-4 columns">
 
+		<img src="https://www.bluecorona.com/wp-content/uploads/2015/09/Paid-Social-Platforms-Banner.jpg"><hr>
 
+		<h3 class="itemheader1">Top Posts</h3>
+			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
+			<h3><%= post.title %></h3>
+			<hr>
+
+			<% end %>
+
+		<h3 class="itemheader1">Today's Leaderboard</h3>
+		<ul class="lboardul">
+			<% @users.each do |user| %>
+			<li class="lboard"><%= link_to user.username, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
+			<% end %>
+		</ul>
+	</div>
+</div>

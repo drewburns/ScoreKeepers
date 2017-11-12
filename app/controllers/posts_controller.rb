@@ -131,10 +131,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit
-    @post = Post.all
-  end
-
   private
 
   def post_params

@@ -56,3 +56,13 @@
 </li>
 <% end %>
 </ul>
+
+
+<h3>Upload Profile Photo</h3>
+<ul>
+  <div id = 'uploader'></div>
+  <button type="button" class="upload button" onclick="openUploader();">Upload Profile Photo</button>
+  <%= javascript_include_tag 'ContentTools/build/content-tools' %>
+  <%= javascript_include_tag 'editor' %>
+
+</ul>

@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
 
 	def score
-		return self.reputation_for(:votes)
+		return self.reputation_for(:votes).to_int
 	end
 
 	def writer

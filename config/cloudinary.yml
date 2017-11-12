@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: andrewburns
+  api_key: '638539191971878'
+  api_secret: lS08u6wf40N_yJSlXfc8EOx9kDM
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: andrewburns
+  api_key: '638539191971878'
+  api_secret: lS08u6wf40N_yJSlXfc8EOx9kDM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: andrewburns
+  api_key: '638539191971878'
+  api_secret: lS08u6wf40N_yJSlXfc8EOx9kDM
+  enhance_image_tag: true
+  static_image_support: false

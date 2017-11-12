@@ -16,7 +16,6 @@ class PostsController < ApplicationController
     else
       page = params[:page].to_i
       @posts = Post.where(status: "approved").order(:created_at).reverse_order.limit(10).offset(page * 10)
-
     end
   end
 
@@ -33,8 +32,6 @@ class PostsController < ApplicationController
   	new_params = post_params
   	new_params[:time_approved] = DateTime.now if post_params[:status] == "approved"
   	new_params[:time_submitted] = DateTime.now if post_params[:status] == "submitted"
-  	p "---------------------------"
-  	p post_params
 
 
   	if @post.update_attributes(post_params)

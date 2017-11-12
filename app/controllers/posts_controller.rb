@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
 
     if params[:page].nil? || (params[:page].to_i == 1)
-      @posts = Post.where(status: "approved").last(10).reverse
+      @posts = Post.where(status: "approved").last(9).reverse
     else
       page = params[:page].to_i
       @posts = Post.where(status: "approved").order(:created_at).reverse_order.limit(10).offset(page * 10)
@@ -20,12 +20,18 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
   	@post = Post.find(params[:id])
   end
 
   def show
     @post = Post.find(params[:id])
+    users = []
+    User.all.each do |user|
+      users << user if user.posts.count > 0
+    end
+    @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+
   end
 
   def reject
@@ -69,7 +75,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.user_id == current_user.id 
+    if @post.user_id == current_user.id
 	    if @post.save
 	      redirect_to post_path(@post), notice: 'Post Created!'
 	    else

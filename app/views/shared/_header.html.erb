@@ -7,8 +7,7 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
-  <% if user_signed_in? %>
-
+    <% if user_signed_in? %>
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
@@ -25,6 +24,13 @@
 			  <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
 			</ul>
 <!--       <li class=""><%= link_to "Create Post" , new_post_path %></li>
+        <ul class="menu">
+          <li class="menuitem"><%= link_to "Team Index" , teams_path %></li>
+			    <li class="menuitem"><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
+			    <li class="menuitem"><%= link_to current_user.username , user_path(current_user) %></li>
+			    <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
+        </ul>
+      <li class=""><%= link_to "Create Post" , new_post_path %></li>
       <li class="has-dropdown">
         <a><%= link_to current_user.email , current_user %></a>
         <ul class="dropdown">
@@ -32,7 +38,7 @@
           <li><%= link_to "Settings" , edit_user_registration_path %> </li>
           <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
         </ul>
-      </li> -->
+      </li>
     </ul>
     </section>
 
@@ -41,11 +47,10 @@
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class=""><%= link_to "Sign In" , new_user_session_path %></li>
-      <li class=""><%= link_to "Create Account" , new_user_registration_path %></li>
+      <li class="menuitem"><%= link_to "Sign In" , new_user_session_path %></li>
+      <li class="menuitem"><%= link_to "Create Account" , new_user_registration_path %></li>
     </ul>
     </section>
   <% end %>
-
-  </nav>
+</nav>
 </div>

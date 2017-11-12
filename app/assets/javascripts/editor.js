@@ -302,7 +302,6 @@ window.addEventListener('load', function() {
     editor.init('*[data-editable]', 'data-name');
     ContentTools.IMAGE_UPLOADER = cloudinaryImageUploader;
 
-
     editor.addEventListener('saved', function (ev) {
         var regions
 
@@ -311,7 +310,6 @@ window.addEventListener('load', function() {
         if (Object.keys(regions).length == 0) {
             return;
         }
-
         // Set the editor as busy while we save our changes
         this.busy(true);
 
@@ -342,8 +340,6 @@ window.addEventListener('load', function() {
         }
 
     });
-
-
 });
 
 function openUploader() {
@@ -352,3 +348,4 @@ function openUploader() {
     dialog.mount();
     dialog.show();
 }
+

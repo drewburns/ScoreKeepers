@@ -3,7 +3,7 @@
 		<div class="userauthorfooter">
 			<img src='https://upload.wikimedia.org/wikipedia/commons/c/cb/Barack_Obama_Circle.png' width='135px'>
 			<h3 class="userauthorscore">#<%= @user.this_weeks_rank %> this week | <%= @user.this_weeks_score%></h3>
-			<h3 class="userauthorname"><b><%= @user.username%></b></h3>
+			<h3 class="userauthorname"><b><%= @user.name%></b></h3>
 			<h6 class="userauthorbio">Barack Obama is the 44th president of the United States. He writers for the Huffington Post and enjoys playing basketball in his free time</h6>
 		</div><hr>
 
@@ -31,7 +31,7 @@
 		<h3 class="itemheader1">Today's Leaderboard</h3>
 		<ul class="lboardul">
 			<% @users.each do |user| %>
-			<li class="lboard"><%= link_to user.username, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
+			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
 			<% end %>
 		</ul>
 	</div>

@@ -7,6 +7,13 @@ git_source(:github) do |repo_name|
 end
 
 #gem 'contenttools-rails'
+gem 'cloudinary'
+# gem 'rabl'
+gem 'zeroclipboard-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog'
+
 gem 'faker'
 gem 'activerecord-reputation-system'
 gem 'devise'
@@ -35,6 +42,7 @@ gem 'jbuilder', '~> 2.5'
 group :production do
   gem 'pg'
 end
+gem 'toastr-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -6,9 +6,12 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :email, presence: true
-  validates :username, presence: true
+  validates :name, presence: true
 
+  validates :bio, presence: true
 
+  mount_uploader :picture, PictureUploader
+  validate  :picture_size
   
 	has_many :userTeams
 	has_many :teams, through: :userTeams
@@ -26,6 +29,20 @@ class User < ApplicationRecord
 		  return scores
     end
 	end
+
+  def full_size
+    return self.picture
+  end
+
+  def thumbnail
+    return self.picture.thumbnail
+  end
+
+  def picture_size
+    if picture.size > 25.megabytes
+      redirect_to new_user_registration , :alert => "File to big"
+    end
+  end
 
   def drafts
     puts "____________"

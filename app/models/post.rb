@@ -7,11 +7,11 @@ class Post < ApplicationRecord
 
 
 	def score
-		return self.reputation_for(:votes)
+		return self.reputation_for(:votes).to_int
 	end
 
 	def writer
-		return self.user.username
+		return self.user.name
 	end
 
 	def writer_id

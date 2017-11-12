@@ -26,17 +26,9 @@
 <% end %>
 
 </br>
-<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-	<p style="display:inline;"><%= link_to comment.user.username , comment.user %></p> | 
-	<p style="display:inline;">Score: <%= comment.score %></p> |
-	<% if user_signed_in? %>
-		<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post%></p> | 
-		<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post%></p>
-	<% end %>
-	<p><%= comment.text %></p>
-<% end %>
+
 		<div class="postauthor">
-			<p>By <%= link_to @post.user.username, user_path(@post.user) %></p>
+			<p>By <%= link_to @post.user.name, user_path(@post.user) %></p>
 			</div>
 		<div class="postdate">
 			<p><i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
@@ -44,21 +36,22 @@
 		<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
 		<hr>
 		<div class="postcontent">
-		  <h5><%== @post.content %></h5>
+
+		  <h5><%= @post.content %></h5>
 	  </div>
+
 		<br>
 		<hr>
 		<div class="authorfooter">
 			<img src='https://upload.wikimedia.org/wikipedia/commons/c/cb/Barack_Obama_Circle.png' width='135px'>
-			<h3 class="authorname"><%= link_to @post.user.username, user_path(@post.user) %></h3>
+			<h3 class="authorname"><%= link_to @post.user.name, user_path(@post.user) %></h3>
 			<h6 class="authorbio">Barack Obama is the 44th president of the United States. He writers for the Huffington Post and enjoys playing basketball in his free time</h6>
 		</div>
 
 		<div class="votepost">
 		Vote on this post: <%= @post.score %> |
 		<% if user_signed_in? %>
-			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post%></p>
-			<p style="display:inline;"><%=link_to "Down", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id), method: :post%></p>
+			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true%></p>
 		<% end %>
 		</div>
 
@@ -77,11 +70,11 @@
 		<% end %>
 		</br>
 		<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-			<p style="display:inline;"><%= link_to comment.user.username , comment.user %></p> |
+			<p style="display:inline;"><%= link_to comment.user.name , comment.user %></p> |
 			<p style="display:inline;">Score: <%= comment.score %></p> |
 			<% if user_signed_in? %>
-				<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post%></p> |
-				<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post%></p>
+				<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true%></p> |
+				<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true%></p>
 			<% end %>
 			<p><%= comment.text %></p>
 		<% end %>
@@ -96,9 +89,23 @@
 		<h3 class="itemheader1">Today's Leaderboard</h3>
 		<ul class="lboardul">
 			<% @users.each do |user| %>
-			<li class="lboard"><%= link_to user.username, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
+			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
 			<% end %>
 		</ul>
 	</div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

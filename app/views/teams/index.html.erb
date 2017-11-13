@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="large-8 columns">
 <h3> Team List</h3>
 <% @teams.each do |team| %>
     <p style="display:inline;"><%= link_to team.name, team_path(team) %> </p>
@@ -10,7 +12,9 @@
         <% end %>
 
 
+        <% end %>
+        </br>
+        </br>
     <% end %>
-    </br>
-    </br>
-<% end %>
+  </div>
+</div>

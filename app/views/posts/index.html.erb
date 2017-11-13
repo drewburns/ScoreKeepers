@@ -1,26 +1,28 @@
 <div class="row">
-	<div class="large-5 columns">
-		<h3 class="lineups">The Lineup</h3>
-		<div class="lineup">
-			<% @posts.each do |post| %>
-			<li><%= link_to post.title, post_path(post) %></li>
-			<% end %>
-		</div>
-	</div>
+
 	<div class="large-7 columns">
 		<img class="mainpost" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
 		<div class="mainpostbox">
 			<h1>Tom Brady beats Falcons in Super Bowl</h1>
 		</div>
 	</div>
+	<div class="large-5 columns">
+		<h3 class="itemheader">The Lineup</h3>
+
+		<div class="lineup">
+			<% @posts.each do |post| %>
+			<h1><%= link_to (@posts.index(post)+1).to_s %></h1>
+			<h5><%= link_to post.title , post_path(post) %></h5>
+			<% end %>
+		</div>
+	</div>
 </div>
 <br>
 
-
 <div class="row">
  <div class="large-8 columns">
-	<h3 class="itemheader1">Featured</h3>
-		<% @posts.each do |post| %>
+	<h3 class="yellow">Featured</h3>
+		<% @posts.first(5).each do |post| %>
 			<div class='post'>
 				<img width="250px" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
 				<div class=pcontent>
@@ -32,9 +34,9 @@
 			<% end %>
 	</div>
 	<div class="large-4 columns">
-		<h3 class="itemheader1">Today's Leaderboard</h3>
+		<h3 class="blue">Today's Leaderboard</h3>
 		<ul class="lboardul">
-			<% @users.each do |user| %>
+			<% @users.first(10).each do |user| %>
 			<li class="lboard"><%= link_to user.username, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
 			<% end %>
 		</ul>

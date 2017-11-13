@@ -1,6 +1,6 @@
 <div class="row">
 
-	<div class="large-12 columns">
+	<div class="large-8 columns">
 		<h1 class="posttitle"><%= @post.title%></h1>
 
 		<% if @post.user == current_user %>
@@ -61,7 +61,7 @@
 
 			Now it’s his job to go find the next guy again. Brady put them in this position, and it’s not exactly a bad spot to be in.
 			</p>
-		<h5><%= raw @post.content %></h5>
+		<p><%= raw @post.content %></p>
 	</div>
 		<br>
 		<hr>
@@ -70,7 +70,7 @@
 			<h3 class="authorname"><%= link_to @post.user.username, user_path(@post.user) %></h3>
 			<h6 class="authorbio">Barack Obama is the 44th president of the United States. He writers for the Huffington Post and enjoys playing basketball in his free time</h6>
 		</div>
-
+		<hr>
 		<div class="votepost">
 		Vote on this post: <%= @post.score %> |
 		<% if user_signed_in? %>
@@ -103,19 +103,23 @@
 			<p><%= comment.text %></p>
 		<% end %>
 	</div>
-	
-	<div class="large-4 columns">
-			<h2 class="lineups">Top Posts</h2>
-			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
-			<p><%= post.title %></p>
-		<% end %>
 
-		<h3 class="itemheader1">Today's Leaderboard</h3>
+	<div class="large-4 columns">
+
+		<h3 class="yellow">Today's Leaderboard</h3>
 		<ul class="lboardul">
 			<% @users.each do |user| %>
 			<li class="lboard"><%= link_to user.username, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
 			<% end %>
 		</ul>
+		<br>
+		<h3 class="yellow">Top Posts</h3>
+		<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
+		<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
+		<p class="sidebarposttitle"><%= post.title %></p>
+		<hr>
+		<% end %>
+
 	</div>
 
 </div>

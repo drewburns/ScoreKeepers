@@ -6,7 +6,6 @@ var CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/notocloud/image/upl
 
 // Define the image uploader
 function cloudinaryImageUploader(dialog) {
-
     var image, xhr, xhrComplete, xhrProgress;
 
     // Set up the event handlers
@@ -302,6 +301,7 @@ window.addEventListener('load', function() {
     editor.init('*[data-editable]', 'data-name');
     ContentTools.IMAGE_UPLOADER = cloudinaryImageUploader;
 
+
     editor.addEventListener('saved', function (ev) {
         var regions
 
@@ -310,6 +310,7 @@ window.addEventListener('load', function() {
         if (Object.keys(regions).length == 0) {
             return;
         }
+
         // Set the editor as busy while we save our changes
         this.busy(true);
 
@@ -340,12 +341,9 @@ window.addEventListener('load', function() {
         }
 
     });
+
+
 });
 
-function openUploader() {
-    dialog = new ContentTools.ImageDialog();
-    dialog.attach(document.getElementById('uploader'));
-    dialog.mount();
-    dialog.show();
-}
+
 

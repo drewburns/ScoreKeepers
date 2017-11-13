@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user! 
 	def create
 		@comment = Comment.new(comment_params)
 		p "______________"
@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
 	end
 
 	def vote
+		if params[:user_id]
 			value = params[:type] == "up" ? 1 : -1
 			@comment = Comment.find(params[:id])
 			@user = User.find(params[:user_id])
@@ -25,6 +26,9 @@ class CommentsController < ApplicationController
 			else
 				render :file => "shared/error.js.erb"
 			end
+		else
+			render :file => "shared/error.js.erb"
+		end
 	end
 
   private

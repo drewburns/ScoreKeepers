@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
 	<li>
 		<%= link_to post.title, post %> by
-		<%= link_to post.user.username, post.user %>
+		<%= link_to post.user.name, post.user %>
 		<% if post.status == "pending"%>
 	  	<%= form_for [post], :html => {:id => 'postsubmit1'} do |f| %>
 		    <%= f.hidden_field :user_id, :value => post.user.id %>

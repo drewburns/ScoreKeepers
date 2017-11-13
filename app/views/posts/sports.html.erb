@@ -4,7 +4,7 @@
 
 <% @posts.each do |post| %>
 	<p style="display:inline;"><%= link_to post.title, post_path(post) %> | Score: <%= post.score %></p> |
-	<p style="display:inline;">By: <%= link_to post.user.username, post.user %></p> |
+	<p style="display:inline;">By: <%= link_to post.user.name, post.user %></p> |
 	<% if user_signed_in? %>
 	<p style="display:inline;"><%=link_to "Up", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
 	<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>

@@ -1,45 +1,45 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="large-12 columns">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <h2>Sign up</h2>
 
-  <div class="field">
-    <%= f.hidden_field(:picture_cache) %>
-    <label for="imgInp" class="custom-file-upload" style='border:none;'>
-      <img id="blah" src="https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png" alt="" style="height:250px;width:250px;border-radius: 50%;" /> 
-    </label>
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.hidden_field(:picture_cache) %>
+        <label for="imgInp" class="custom-file-upload" style='border:none;'>
+          <img id="blah" src="https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png" alt="" style="height:250px;width:250px;border-radius: 50%;" /> 
+        </label>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
+      </div>
 
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
+      <div class="field">
+        <%= f.label :bio %><br />
+        <%= f.text_field :bio %>
+      </div>
 
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_field :bio %>
-  </div>
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
@@ -72,3 +72,4 @@ $("#imgInp").change(function() {
   readURL(this);
 });
 </script>
+

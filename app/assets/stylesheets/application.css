@@ -17,15 +17,60 @@
  *= require ContentTools/build/content-tools.min
 *= require toastr
  */
+
+/* Header CSS */
+
+
+
+
+
 /* Homepage CSS*/
+.lineup li{
+  height: 45px;
+  list-style-type: none;
+  font-size: 20px;
+  line-height: 1;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;}
+
+.lineup li a{
+  color: #383838;
+  font-weight: 500;
+  top: 50%;}
+
+.lineups{
+  background-color: #fed766;
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 7px;
+}
+
+.mainpostbox{
+  background-color: black;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.mainpostbox h1{
+  color: white;
+  font-size: 40px;
+  padding-top: 0px;
+  margin-left: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+/* General CSS */
 
  @font-face {
    font-family: 'Open Sans', sans-serif;
    src: url('https://fonts.googleapis.com/css?family=Open+Sans')}
 
-
 body {
-  background-color: #f9f9f9;}
+  background-color: #f2f2f2;}
 
 input[type="file"] {
     display: none;
@@ -43,31 +88,104 @@ ul {
     cursor: pointer;
 }
 .row {
-  background-color: #fff;}
+  background-color: #fff;
+  max-width: 1200px;
+  padding: 15px;
+  padding-bottom: 0px;
+}
 
 .itemheader{
   background-color: #000000;
   color: #ffffff;}
 
-.postimage {
-  width: 100px;}
-
-.posttitle a{
+.itemheader1{
+  background-color: #fed766;
   color: black;
+  font-weight: bold;
+  padding-top: 7px;}
+
+.itemheader2{
+  color: black;
+  font-weight: bold;
+  padding-top: 7px;}
+
+
+.post{
+  height: 170px;
+}
+.ptitle{
+  font-size: 28px;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  line-height: 1;
+  padding-top: 15px;
+  }
+
+.pcontent{
+  margin-left: 270px;
 }
 
-.postscore {
-  float: right;}
+.ptitle a{
+  color: #000;
+}
 
-.vote {
-  float: right;}
+.pscore {
+  float: right;
+  font-size: 18px;
+bottom: 5px;}
 
+.pauthor{
+  float: left;
+  font-size: 20px;
+}
+
+.pvote {
+  float: left;}
+
+.post img {
+  width: 225px;
+  float: left}
+
+
+.sidebartitle{
+  background-color: #8AA29E ;
+  color: white;
+  border-bottom: 5px double #686963;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 28px;}
+
+.lboard:nth-child(odd) {
+  background-color: #fff;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.lboard:nth-child(even) {
+  background-color: #FAFAFA;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.lboardul{
+  padding: 0px;
+  margin: 0px;
+}
+
+.lbscore{
+  float: right;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  font-size: 20px;
+  padding-right: 15px;
+}
 
 /*Post CSS*/
 
 .posttitle {
-  font-size: 50px;
-  font-family: 'Open Sans', sans-serif;}
+  font-size: 44px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.1; }
 
 .postcontent h5{
   font-size: 1rem;
@@ -90,7 +208,6 @@ ul {
   float: left;
   width: 80%;
   margin-left: 30px;
-  a
 }
 
 .authorfooter img{
@@ -98,10 +215,68 @@ ul {
 }
 
 .authorfooter{
-  height: 200px;
+  height: 165px;
   margin-left: 30px;
   margin-top: 20px;
 }
 
 
+<<<<<<< HEAD
 
+=======
+/*User CSS*/
+
+.userauthorname {
+  font-size: 40px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 30px;}
+
+.userauthorbio {
+  float: left;
+  width: 75%;
+  margin-left: 30px;}
+
+.userauthorfooter img{
+  float: left;}
+
+.userauthorfooter{
+  height: 155px;
+  margin-left: 20px;
+  margin-top: 20px;}
+
+.userauthorscore{
+  float: right;
+  padding-top: 25px;
+  font-size: 22px;}
+
+.userauthorteams{
+  font-size: 20px;
+  float: left;
+  display: inline-block;}
+
+.userauthorpost{
+  width: 100%;}
+
+.uaptitle a{
+  font-size: 40px;
+  color: black;
+  line-height: 1;
+  color: #586ba4;}
+
+.uaptitle{
+padding-top: 10px;}
+
+.uapscore{
+  font-size: 20px;}
+
+
+/* Foundation CSS */
+.large-5{
+padding: 0px;
+}
+
+.large-7{
+padding-right: 0px;
+}
+>>>>>>> d0e5f29548432c4ae2484a9dcdf091e23f168e72

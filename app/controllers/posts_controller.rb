@@ -9,25 +9,30 @@ class PostsController < ApplicationController
     User.all.each do |user|
       users << user if user.posts.count > 0
     end
-    @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+    @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
 
     if params[:page].nil? || (params[:page].to_i == 1)
-      @posts = Post.where(status: "approved").last(10).reverse
+      @posts = Post.where(status: "approved").last(9).reverse
     else
       page = params[:page].to_i
       @posts = Post.where(status: "approved").order(:created_at).reverse_order.limit(10).offset(page * 10)
     end
   end
 
-  def sandbox
-  end
 
-  def edit 
+
+  def edit
   	@post = Post.find(params[:id])
   end
 
   def show
     @post = Post.find(params[:id])
+    users = []
+    User.all.each do |user|
+      users << user if user.posts.count > 0
+    end
+    @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+
   end
 
   def reject
@@ -69,7 +74,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.user_id == current_user.id 
+    if @post.user_id == current_user.id
 	    if @post.save
 	      redirect_to post_path(@post), notice: 'Post Created!'
 	    else
@@ -124,17 +129,13 @@ class PostsController < ApplicationController
       render :file => "shared/vote.js.erb"
       # redirect_back fallback_location: root_path, notice: 'Vote counted'
     else
-      render :file => "shared/vote.js.erb"
+      render :file => "shared/error.js.erb"
       # redirect_back fallback_location: root_path, alert: 'Error'
     end
   end
 
   def new
     @post = Post.new
-  end
-
-  def edit
-    @post = Post.all
   end
 
   private

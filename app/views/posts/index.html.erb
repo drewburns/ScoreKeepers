@@ -1,31 +1,67 @@
 <div class="row">
 
-	<div class="large-9 columns">
-	<h3 class="itemheader"> Recent Posts </h3>
-		<div class='post'>
-			<ul>
+	<div class="large-5 columns">
+		<h3 class="lineups">The Lineup</h3>
+		<div class="lineup">
 			<% @posts.each do |post| %>
-			<li>
-			<h6 class="postscore">Score: <%= post.score %></h6>
-			<h3 class="posttitle"><%= link_to post.title, post_path(post) %></h3>
-			<div class="vote">
-				<% if user_signed_in? %>
-				<p style="display:inline;"><%=link_to "Ups", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post, :remote => true%></p>
-				<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post, :remote => true%></p>
-				<% end %>
-			</div>
-			<p class="postauthor">By: <%= link_to post.user.username, post.user %></p>
-			<hr>
-			</li>
-		<% end %>
-		</ul>
+			<li><%= link_to post.title, post_path(post) %></li>
+			<% end %>
 		</div>
 	</div>
+	<div class="large-7 columns">
+		<img class="mainpost" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
+		<div class="mainpostbox">
+			<h1>Tom Brady beats Falcons in Super Bowl</h1>
+		</div>
+	</div>
+</div>
+<br>
 
-	<div class="large-3 columns">
-		<h3 class="itemheader">Leaderboard</h3>
+
+<div class="row">
+ <div class="large-8 columns">
+	<h3 class="itemheader1">Featured</h3>
+		<% @posts.each do |post| %>
+			<div class='post'>
+				<img width="250px" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
+				<div class=pcontent>
+					<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
+					<h6 class="pscore">Score: <%= post.score %></h6>
+					<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
+				</div>
+			</div>
+			<% end %>
+	</div>
+	<div class="large-4 columns">
+		<h3 class="itemheader1">Today's Leaderboard</h3>
+		<ul class="lboardul">
+			<% @users.each do |user| %>
+			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
+			<% end %>
+		</ul>
+
+		<h3 class="itemheader1">Leaderboard</h3>
 		<% @users.each do |user| %>
-		<p><%= link_to user.username, user_path(user) %> | <%= user.this_weeks_score %></p>
+		<p><%= link_to user.name, user_path(user) %> | <%= user.this_weeks_score %></p>
 		<% end %>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="large-4 columns">
+		<h2>Favorite Teams</h2>
+	</div>
+
+	<div class="large-4 columns">
+		<% @posts.each do |post| %>
+		<h4><%= link_to post.title, post_path(post) %></h4>
+		<% end %>
+	</div>
+
+	<div class="large-4 columns">
+			<h1>Poll 1</h1>
+			<h1>Poll 2</h1>
+			<h1>Poll 3</h1>
 	</div>
 </div>

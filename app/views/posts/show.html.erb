@@ -1,54 +1,34 @@
 <div class="row">
+
 	<div class="large-12 columns">
 		<h1 class="posttitle"><%= @post.title%></h1>
 
 
 <% if @post.user == current_user %>
-<h3><%= @post.status %></h3>
+<h3 >Post Status: <%= @post.status %></h3>
 	<% if @post.status == "rejected" %>
 		<p>Admin Message: <%= @post.admin_message %></p>
 	<% end %>
 	<% if @post.status == "draft" or @post.status == "rejected"%>
 			<%=link_to "Edit", edit_post_path(@post) %> 
 		  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
-	    <%= f.hidden_field :user_id, :value => current_user.id %>
-	    <%= f.hidden_field :title, :value => @post.title %>
-	    <%= f.hidden_field :content, :value => @post.content %>
-	    <%= f.hidden_field :status, :value => "pending" %>
-	    <%= f.submit 'Submit Post' %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :title, :value => @post.title %>
+        <%= f.hidden_field :content, :value => @post.content %>
+        <%= f.hidden_field :status, :value => "pending" %>
+        <%= f.submit 'Submit Post' %>
 	  <% end %>
 	<% end %>
 <% end %>
-
-<% if @post.status == "draft" %>
-	<h3>Message From Admin:</h3>
-	<p><%= @post.admin_message %></p>
-<% end %>
-
-
 
 <% if @post.sport != nil %>
 <p> Sport: <%= link_to @post.sport, sports_posts_path(:sport => @post.sport) %></p>
 <% end %>
 
 </br>
-<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-	<p style="display:inline;"><%= link_to comment.user.username , comment.user %></p> | 
-	<p style="display:inline;">Score: <%= comment.score %></p> |
-	<% if user_signed_in? %>
-		<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post%></p> | 
-		<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post%></p>
-	<% end %>
-	<p><%= comment.text %></p>
-<% end %>
-
-		<% if @post.status == "draft" %>
-			<h3>Message From Admin:</h3>
-			<p><%= @post.admin_message %></p>
-		<% end %>
 
 		<div class="postauthor">
-			<p>By <%= link_to @post.user.username, user_path(@post.user) %></p>
+			<p>By <%= link_to @post.user.name, user_path(@post.user) %></p>
 			</div>
 		<div class="postdate">
 			<p><i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
@@ -56,49 +36,22 @@
 		<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
 		<hr>
 		<div class="postcontent">
-					<p>So now that the dust has finally settled and Jimmy Garoppolo is a 49er, I’m still not exactly sure how I feel about the deal. The factors that went into it, the tangents it set off for the future of the Patriots is like some sort of Ernie Adams-dreamed Venn diagram.
 
-			It’s enough to give you a popsicle headache.</p>
+		  <h5><%= @post.content %></h5>
+	  </div>
 
-			<p>Let’s stick with the big picture. It doesn’t really matter how much Bill Belichick loved Jimmy Garoppolo and thought he was the next guy, or even whether or not the Krafts pulled ranked and said Tom Brady is staying for a couple more years.
-
-			The bottom line is this: if you stripped away all the sentimental stuff that doesn’t matter to Belichick and the thought of trading the future Hall of Famer, Brady earned the right by his play to continue on as the Patriots’ quarterback. Didn’t think I’d be saying that, but that’s the truth. Sure, he’s 40 and even Belichick admitted Brady has long ago been placed in the year-by-year category, but he continues to play like he’s 30, and not 40.</p>
-
-			<p>The question the Patriots had to ask themselves was: Does Brady or Garoppolo give us the best chance to win next year? Brady does. Two years from now, does Brady or Garoppolo give us the best chance to win? Probably Brady. Beyond that, it’s an impossible call.
-
-			And if Garoppolo wasn’t going to wait through some sort of bridge deal (he wasn’t), then the Patriots had no choice but to trade Garoppolo now.
-
-		</p><p>Do I think they mismanaged the asset and the rest of the quarterback room? Yes. They were not open for business on Garoppolo last offseason — they didn’t entertain offers — and that was a mistake. They should have opened the bidding during a weak quarterback draft, traded Garoppolo and then forged ahead with Jacoby Brissett as the backup. That would have been in the best interest of the franchise’s future, and will be second-guessed for years to come.
-
-			But they made their choice and the decision to trade Garoppolo just came down to bad timing because Brady is doing the impossible. Brady, through his own freak determination and Belichick’s decision to draft Garoppolo when he did, has pushed back the timetable on the succession plan.
-
-		</p><p>And now, Belichick and Josh McDaniels have to start the succession plan over. So what? That’s what they get paid to do. It’s their job to go find the next quarterback, draft him, and develop him for two years. Even if Garoppolo becomes a franchise quarterback, that doesn’t change the fact that the Patriots need to find another one. Just because they might have had one doesn’t mean that was their only shot.
-
-			The only risk is if Brady falls off a cliff in the next year. Belichick always plays the odds. Are the odds good that Brady will soon be washed up? No. So they had to stick with Brady. They could have traded him like so many other franchise icons, but the difference here is that in the player valuation model, all of those guys — Lawyer Milloy, Adam Vinatieri, Richard Seymour, Logan Mankins, Chandler Jones, Jamie Collins — were not going to be worth the money or you couldn’t count on them playing to their contract.
-
-			Brady will, and we’ve been saying this forever: Brady’s contract has always been the biggest x-factor in all of this. Brady’s cap number the past two years has been around $14 million (his average cash is also right in the middle of the pack). It’s set to jump to $22 million next season, but that almost certainly will be taken care of. The Patriots know Brady will play ball on his contract — Robert Kraft put it to Brady in the past, and he agreed to do it — and, unlike his former teammates, he will outplay that contract.
-
-		</p><p>They don’t know that about Garoppolo, who is in the last year of his rookie deal. If the team traded Brady, Garoppolo would be well within his rights to ask for a market contract that probably would have cost more than Brady. Garoppolo is not a fixed asset. Brady is, or as close to one as you’re going to get. When you put together the odds of a) Garoppolo playing well and, b) outplaying his contract, Brady looks even more like the sure thing for the next two years.
-
-			Yeah, it stinks that the Patriots had to deal Garoppolo, and Belichick would agree with you on that. He obviously thinks he had the next guy, but that’s just the way things worked out.
-
-			Now it’s his job to go find the next guy again. Brady put them in this position, and it’s not exactly a bad spot to be in.
-			</p>
-		<h5><%=  @post.content %></h5>
-	</div>
 		<br>
 		<hr>
 		<div class="authorfooter">
 			<img src='https://upload.wikimedia.org/wikipedia/commons/c/cb/Barack_Obama_Circle.png' width='135px'>
-			<h3 class="authorname"><%= link_to @post.user.username, user_path(@post.user) %></h3>
+			<h3 class="authorname"><%= link_to @post.user.name, user_path(@post.user) %></h3>
 			<h6 class="authorbio">Barack Obama is the 44th president of the United States. He writers for the Huffington Post and enjoys playing basketball in his free time</h6>
 		</div>
 
 		<div class="votepost">
 		Vote on this post: <%= @post.score %> |
 		<% if user_signed_in? %>
-			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post%></p>
-			<p style="display:inline;"><%=link_to "Down", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id), method: :post%></p>
+			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true%></p>
 		<% end %>
 		</div>
 
@@ -117,16 +70,29 @@
 		<% end %>
 		</br>
 		<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-			<p style="display:inline;"><%= link_to comment.user.username , comment.user %></p> |
+			<p style="display:inline;"><%= link_to comment.user.name , comment.user %></p> |
 			<p style="display:inline;">Score: <%= comment.score %></p> |
 			<% if user_signed_in? %>
-				<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post%></p> |
-				<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post%></p>
+				<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true%></p> |
+				<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true%></p>
 			<% end %>
 			<p><%= comment.text %></p>
 		<% end %>
 	</div>
+	
+	<div class="large-4 columns">
+			<h2 class="lineups">Top Posts</h2>
+			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
+			<p><%= post.title %></p>
+		<% end %>
 
+		<h3 class="itemheader1">Today's Leaderboard</h3>
+		<ul class="lboardul">
+			<% @users.each do |user| %>
+			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
+			<% end %>
+		</ul>
+	</div>
 
 </div>
 

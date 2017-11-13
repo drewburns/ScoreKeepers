@@ -21,9 +21,9 @@ class CommentsController < ApplicationController
 			@user = User.find(params[:user_id])
 			if @user && @comment
 				@comment.add_or_update_evaluation(:votes, value, @user)
-		  	redirect_back fallback_location: root_path , :notice => "Vote counted"
+				render :file => "shared/vote.js.erb"
 			else
-		 	 	redirect_back fallback_location: root_path, :alert => "Error"
+				render :file => "shared/error.js.erb"
 			end
 	end
 

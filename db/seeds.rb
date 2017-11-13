@@ -21,7 +21,7 @@ File.readlines('teams/baseball.txt').each do |line|
 	
 end
 10.times do
-	user = User.create(username: Faker::Twitter.screen_name, email: Faker::Internet.email, password: "test12345", bio: Faker::MostInterestingManInTheWorld.quote)
+	user = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: "test12345", bio: Faker::MostInterestingManInTheWorld.quote)
 	team_int = Random.rand(6)
 	team_int.times do
 		UserTeam.create(user_id: user.id, team_id: Team.offset(rand(Team.count)).first.id)

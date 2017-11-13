@@ -1,4 +1,40 @@
-<h3>
-This page will have the form for editing a post
+<head>
+  <title>My page</title>
+  <%= stylesheet_link_tag 'ContentTools/build/content-tools.min' %>
 
-</h3>
+  <style>
+    .author {
+      font-style: italic;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div data-name="main-content" align="center">
+    <h2>
+      Create your post in the section below.
+    </h2>
+    <br>
+    <br>
+  </div>
+
+
+  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :title, :value => nil %>
+    <%= f.hidden_field :content, :value => nil %>
+    <%= f.submit 'Edit Post' %>
+  <% end %>
+
+  <div align="center" data-editable data-name="title">
+    <h2 id="post-title-block"><%= @post.title %></h2>
+  </div>
+  <div align="center" data-editable data-name="main-content">
+      <%== @post.content %>
+  </div>
+
+
+  <%= javascript_include_tag 'ContentTools/build/content-tools' %>
+  <%= javascript_include_tag 'editor' %>
+</body>

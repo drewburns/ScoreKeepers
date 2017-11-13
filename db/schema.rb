@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101211159) do
+ActiveRecord::Schema.define(version: 20171113203239) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -35,11 +35,15 @@ ActiveRecord::Schema.define(version: 20171101211159) do
     t.integer "user_id"
     t.string "title"
     t.text "content"
-    t.string "image_url"
+    t.string "thumbnail_url"
     t.string "sport"
-    t.boolean "approved"
+    t.datetime "time_approved"
+    t.string "status"
+    t.string "admin_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "time_submitted"
+    t.string "picture"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -94,6 +98,7 @@ ActiveRecord::Schema.define(version: 20171101211159) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sport_string"
   end
 
   create_table "user_teams", force: :cascade do |t|
@@ -106,7 +111,7 @@ ActiveRecord::Schema.define(version: 20171101211159) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -119,6 +124,10 @@ ActiveRecord::Schema.define(version: 20171101211159) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.string "bio"
+    t.string "profile_image_url"
+    t.string "picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

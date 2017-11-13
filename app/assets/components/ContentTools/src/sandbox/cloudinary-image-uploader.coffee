@@ -2,7 +2,7 @@ class CloudinaryImageUploader
     # An image uploader for the cloudinary image service (http://cloudinary.com)
 
     # The name of the cloud to upload images to
-    @CLOUD_NAME: ''
+    @CLOUD_NAME: 'andrewburns'
 
     # The dimensions of the image as a draft used for editing before insertion
     @DRAFT_DIMENSIONS: [600, 600]
@@ -14,7 +14,7 @@ class CloudinaryImageUploader
     @RETRIEVE_URL: 'http://res.cloudinary.com/#CLOUD_NAME#/image/upload'
 
     # The preset code to uploaded to (required to support unsigned uploads)
-    @UPLOAD_PRESET: ''
+    @UPLOAD_PRESET: 'ctpreset'
 
     # The URL used to upload images to the service
     @UPLOAD_URL: 'https://api.cloudinary.com/v1_1/#CLOUD_NAME#/image/upload'

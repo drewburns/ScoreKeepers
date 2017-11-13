@@ -1,43 +1,96 @@
 <head>
   <title>My page</title>
   <%= stylesheet_link_tag 'ContentTools/build/content-tools.min' %>
+  <%= stylesheet_link_tag 'editor.css' %>
 
-  <style>
-    .author {
-      font-style: italic;
-      font-weight: bold;
-    }
-  </style>
+  <script type="text/javascript">
+      $('#micropost_picture').bind('change', function() {
+          var size_in_megabytes = this.files[0].size/1024/1024;
+          if (size_in_megabytes > 5) {
+              alert('Maximum file size is 5MB. Please choose a smaller file.');
+          }
+      });
+      function readURL(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function(e) {
+                  $('#blah').attr('src', e.target.result);
+              }
+
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+      $("#imgInp").change(function() {
+          readURL(this);
+      });
+  </script>
+
 </head>
-<body>
-  <div data-name="main-content" align="center">
-    <h2>
-      Create your post in the section below.
-    </h2>
-    </br>
-    </br>
-  </div>
+<body style="background-color:#E4E4E4;">
 
 
+
+<div class="editor">
   <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
-
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :title, :value => nil %>
-    <%= f.hidden_field :content, :value => nil %>
-    <%= f.submit 'Create Post' %>
+  <div class="editor-tags"></div>
+  <div class="editor-title">
+    <div align="center" data-editable data-name="title">
+      <h2 id="post-title-block">Title Me</h2>
+    </div>
+  </div>
+  <div class="editor-headerimage">
+    <div class="field">
+      <%= f.hidden_field(:picture_cache) %>
+      <label for="imgInp" class="custom-file-upload" style='border:none;'>
+        <img id="blah" src="https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png" alt="" style="height:250px;width:250px;border-radius: 50%;" />
+      </label>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
+    </div>
+  </div>
+  <div class="editor-content"></div>
   <% end %>
+</div>
 
-  <div align="center" data-editable data-name="title">
-    <h2 id="post-title-block">Title Me</h2>
-  </div>
-  <div align="center" data-editable data-name="main-content">
-    <blockquote>
-      You should be able to edit this.
-    </blockquote>
-    <p>John F. Woods</p>
-  </div>
-  <div data-name="main-content" align="center">
-    <p>Author Signature Information</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='large-10 medium-10 small-12 columns large-centered' style='background-color:white;height:100%;'>
+    <div data-name="main-content" align="center">
+      <h2>
+        Create your post in the section below.
+      </h2>
+      </br>
+      </br>
+    </div>
+
+
+    <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :title, :value => nil %>
+      <%= f.hidden_field :content, :value => nil %>
+      <%= f.hidden_field :status, :value => "draft" %>
+    <% end %>
+
+    <div align="center" data-editable data-name="title">
+      <h2 id="post-title-block">Title Me</h2>
+    </div>
+    <div align="center" data-editable data-name="header-photo">
+      <p>DONT PUT ANYTHING HERE RNs</p>
+    </div>
+    <div align="center" data-editable data-name="main-content">
+        <p>You should be able to edit this</p>
+    </div>
   </div>
 
   <%= javascript_include_tag 'ContentTools/build/content-tools' %>

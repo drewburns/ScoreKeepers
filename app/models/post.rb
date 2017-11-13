@@ -4,6 +4,11 @@ class Post < ApplicationRecord
 	has_reputation :votes, source: :user, aggregated_by: :sum
 	belongs_to :user
 	has_many :comments
+  validates :title, presence: true
+  validates :content, presence: true
+
+	mount_uploader :picture, PictureUploader
+  validates :picture, presence: true
 
 
 	def score

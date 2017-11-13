@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="549f37e0-51e5-4642-8db9-5a0e6a71333e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/editor.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/rails-site.iml" afterPath="$PROJECT_DIR$/.idea/rails-site.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/post.rb" afterPath="$PROJECT_DIR$/app/models/post.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/new.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -46,12 +40,22 @@
       <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/posts/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="36" column="2" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+            <state relative-caret-position="162">
+              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="195" column="20" lean-forward="false" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,18 +103,18 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="65" column="24" lean-forward="false" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+            <state relative-caret-position="1242">
+              <caret line="69" column="24" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editor.sass" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editor.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/editor.sass">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -163,15 +167,15 @@
         <option value="$PROJECT_DIR$/app/views/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/editor.js" />
         <option value="$PROJECT_DIR$/app/views/posts/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/posts/edit.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/editor.css" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/post.rb" />
-        <option value="$PROJECT_DIR$/app/views/posts/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/editor.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/editor.sass" />
+        <option value="$PROJECT_DIR$/app/views/posts/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
       </list>
     </option>
   </component>
@@ -418,7 +422,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="new&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/devise/registrations/new.html.erb&#10;new.ht&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/devise/registrations/new.html.erb&#10;assets&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/initializers/assets.rb&#10;index&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/index.html.erb&#10;edit&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/edit.html.erb&#10;applic&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/stylesheets/application.css&#10;show.html&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/show.html.erb&#10;new.html&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/new.html.erb&#10;editor&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/javascripts/editor.js&#10;seed&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/db/seeds.rb&#10;edit.html&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/edit.html.erb&#10;show&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/show.html.erb&#10;routes&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/routes.rb&#10;editor.js&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/javascripts/editor.js&#10;application&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/application.rb&#10;development.rb&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/environments/development.rb&#10;production.rb&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/environments/production.rb&#10;posts_con&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/controllers/posts_controller.rb&#10;post_con&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/controllers/posts_controller.rb&#10;htlm&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/shared/_header.html.erb&#10;content&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/stylesheets/content-tools.css&#10;post contr&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/controllers/posts_controller.rb&#10;conten&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/stylesheets/content-tools.css&#10;HEADER&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/shared/_header.html.erb&#10;header&#9;null&#9;null&#10;teams&#9;null&#9;null&#10;settings&#9;FILE&#9;file:///usr/lib/ruby/gems/2.4.0/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/_settings.scss&#10;settings.&#9;FILE&#9;file:///usr/lib/ruby/gems/2.4.0/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/_settings.scss&#10;foundation/functions&#9;FILE&#9;file:///usr/lib/ruby/gems/2.4.0/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/_functions.scss" />
+    <property name="SearchEverywhereHistoryKey" value="appli&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/stylesheets/application.css&#10;new&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/devise/registrations/new.html.erb&#10;new.ht&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/devise/registrations/new.html.erb&#10;assets&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/initializers/assets.rb&#10;index&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/index.html.erb&#10;edit&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/edit.html.erb&#10;applic&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/stylesheets/application.css&#10;show.html&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/show.html.erb&#10;new.html&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/new.html.erb&#10;editor&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/javascripts/editor.js&#10;seed&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/db/seeds.rb&#10;edit.html&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/edit.html.erb&#10;show&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/posts/show.html.erb&#10;routes&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/routes.rb&#10;editor.js&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/javascripts/editor.js&#10;application&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/application.rb&#10;development.rb&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/environments/development.rb&#10;production.rb&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/config/environments/production.rb&#10;posts_con&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/controllers/posts_controller.rb&#10;post_con&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/controllers/posts_controller.rb&#10;htlm&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/shared/_header.html.erb&#10;content&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/stylesheets/content-tools.css&#10;post contr&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/controllers/posts_controller.rb&#10;conten&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/assets/stylesheets/content-tools.css&#10;HEADER&#9;FILE&#9;file:///home/tj/Programming/SA/rails-site/app/views/shared/_header.html.erb&#10;header&#9;null&#9;null&#10;teams&#9;null&#9;null&#10;settings&#9;FILE&#9;file:///usr/lib/ruby/gems/2.4.0/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/_settings.scss&#10;settings.&#9;FILE&#9;file:///usr/lib/ruby/gems/2.4.0/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/_settings.scss&#10;foundation/functions&#9;FILE&#9;file:///usr/lib/ruby/gems/2.4.0/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/_functions.scss" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -669,7 +673,7 @@
       <workItem from="1510264069651" duration="2532000" />
       <workItem from="1510497151693" duration="3658000" />
       <workItem from="1510602518452" duration="294000" />
-      <workItem from="1510602841059" duration="6152000" />
+      <workItem from="1510602841059" duration="6468000" />
     </task>
     <task id="LOCAL-00001" summary="Add team index page as well as team index page button in toobar.  &quot;Add to team&quot; button broken.">
       <created>1509959342701</created>
@@ -682,13 +686,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62504000" />
+    <option name="totallyTimeSpent" value="62820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1061" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48568282" sideWeight="0.4959514" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48568282" sideWeight="0.4959514" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.50214136" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1089,18 +1093,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="65" column="24" lean-forward="false" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+        <state relative-caret-position="1242">
+          <caret line="69" column="24" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1129,10 +1125,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/editor.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="2" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        <state relative-caret-position="162">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
@@ -1140,10 +1144,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/editor.sass">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="137">
+          <caret line="195" column="20" lean-forward="false" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
           <folding />
         </state>
       </provider>

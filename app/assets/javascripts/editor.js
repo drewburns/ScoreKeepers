@@ -303,7 +303,7 @@ window.addEventListener('load', function() {
 
 
     editor.addEventListener('saved', function (ev) {
-        var regions
+        var regions;
 
         // Check that something changed
         regions = ev.detail().regions;
@@ -314,10 +314,10 @@ window.addEventListener('load', function() {
         // Set the editor as busy while we save our changes
         this.busy(true);
 
-        var title = document.getElementById('title');
-        title.value = document.getElementById('post-title-block').textContent
+        var title = document.getElementById('post_title');
+        title.value = document.getElementById('post-title-block').textContent;
 
-        var content= document.getElementById('post_content');
+        var content = document.getElementById('post_content');
         content.value = regions['main-content'];
 
         var status = document.getElementById('status');

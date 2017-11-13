@@ -3,18 +3,22 @@
 	<div class="large-9 columns">
 	<h3 class="itemheader"> Recent Posts </h3>
 		<div class='post'>
+			<ul>
 			<% @posts.each do |post| %>
+			<li>
 			<h6 class="postscore">Score: <%= post.score %></h6>
 			<h3 class="posttitle"><%= link_to post.title, post_path(post) %></h3>
 			<div class="vote">
 				<% if user_signed_in? %>
-				<p style="display:inline;"><%=link_to "Ups", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
-				<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>
+				<p style="display:inline;"><%=link_to "Ups", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post, :remote => true%></p>
+				<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post, :remote => true%></p>
 				<% end %>
 			</div>
 			<p class="postauthor">By: <%= link_to post.user.username, post.user %></p>
 			<hr>
+			</li>
 		<% end %>
+		</ul>
 		</div>
 	</div>
 

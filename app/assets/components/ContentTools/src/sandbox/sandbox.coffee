@@ -1,12 +1,11 @@
 window.onload = () ->
-
     ContentTools.IMAGE_UPLOADER = ImageUploader.createImageUploader
 
     # Uncomment the following lines to use the cloudinary image uploader
-    #CloudinaryImageUploader.CLOUD_NAME = ''
-    #CloudinaryImageUploader.UPLOAD_PRESET = ''
-    #ContentTools.IMAGE_UPLOADER = (dialog) ->
-    #    return CloudinaryImageUploader.createImageUploader(dialog)
+    CloudinaryImageUploader.CLOUD_NAME = 'andrewburns'
+    CloudinaryImageUploader.UPLOAD_PRESET = 'https://api.cloudinary.com/v1_1/andrewburns'
+    ContentTools.IMAGE_UPLOADER = (dialog) ->
+        return CloudinaryImageUploader.createImageUploader(dialog)
 
     # Build a palette of styles
     ContentTools.StylePalette.add([

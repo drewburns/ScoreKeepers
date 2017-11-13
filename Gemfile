@@ -42,6 +42,7 @@ gem 'jbuilder', '~> 2.5'
 group :production do
   gem 'pg'
 end
+gem 'toastr-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

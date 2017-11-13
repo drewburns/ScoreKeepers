@@ -6,7 +6,6 @@ window.addEventListener('load', function() {
     editor = ContentTools.EditorApp.get();
     editor.init('*[data-editable]', 'data-name');
 
-
     editor.addEventListener('saved', function (ev) {
         var regions
 
@@ -15,7 +14,6 @@ window.addEventListener('load', function() {
         if (Object.keys(regions).length == 0) {
             return;
         }
-
         // Set the editor as busy while we save our changes
         this.busy(true);
 
@@ -44,5 +42,5 @@ window.addEventListener('load', function() {
 
     });
 
-
 });
+

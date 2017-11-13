@@ -343,8 +343,7 @@ window.addEventListener('load', function() {
 
 });
 
-<<<<<<< HEAD
-=======
+
 });
 
 function openUploader() {
@@ -353,4 +352,4 @@ function openUploader() {
     dialog.mount();
     dialog.show();
 }
->>>>>>> d0e5f29548432c4ae2484a9dcdf091e23f168e72
+

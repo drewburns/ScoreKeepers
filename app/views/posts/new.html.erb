@@ -9,32 +9,34 @@
     }
   </style>
 </head>
-<body>
-  <div data-name="main-content" align="center">
-    <h2>
-      Create your post in the section below.
-    </h2>
-    </br>
-    </br>
-  </div>
+<body style="background-color:#E4E4E4;">
+  <div class='large-10 medium-10 small-12 columns large-centered' style='background-color:white;height:100%;'>
+    <div data-name="main-content" align="center">
+      <h2>
+        Create your post in the section below.
+      </h2>
+      </br>
+      </br>
+    </div>
 
 
-  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+    <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
 
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :title, :value => nil %>
-    <%= f.hidden_field :content, :value => nil %>
-    <%= f.hidden_field :status, :value => "draft" %>
-  <% end %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :title, :value => nil %>
+      <%= f.hidden_field :content, :value => nil %>
+      <%= f.hidden_field :status, :value => "draft" %>
+    <% end %>
 
-  <div align="center" data-editable data-name="title">
-    <h2 id="post-title-block">Title Me</h2>
-  </div>
-  <div align="center" data-editable data-name="header-photo">
-    <p>DONT PUT ANYTHING HERE RNs</p>
-  </div>
-  <div align="center" data-editable data-name="main-content">
-      <p>You should be able to edit this</p>
+    <div align="center" data-editable data-name="title">
+      <h2 id="post-title-block">Title Me</h2>
+    </div>
+    <div align="center" data-editable data-name="header-photo">
+      <p>DONT PUT ANYTHING HERE RNs</p>
+    </div>
+    <div align="center" data-editable data-name="main-content">
+        <p>You should be able to edit this</p>
+    </div>
   </div>
 
   <%= javascript_include_tag 'ContentTools/build/content-tools' %>

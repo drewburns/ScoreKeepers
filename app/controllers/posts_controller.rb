@@ -121,16 +121,20 @@ class PostsController < ApplicationController
   end
 
   def vote
-    @value = params[:type] == 'up' ? 1 : -1
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
-    if @user && @post
-      @post.add_or_update_evaluation(:votes, @value, @user)
-      render :file => "shared/vote.js.erb"
-      # redirect_back fallback_location: root_path, notice: 'Vote counted'
+    if params[:user_id] 
+      @value = params[:type] == 'up' ? 1 : -1
+      @post = Post.find(params[:id])
+      @user = User.find(params[:user_id])
+      if @user && @post
+        @post.add_or_update_evaluation(:votes, @value, @user)
+        render :file => "shared/vote.js.erb"
+        # redirect_back fallback_location: root_path, notice: 'Vote counted'
+      else
+        render :file => "shared/error.js.erb"
+        # redirect_back fallback_location: root_path, alert: 'Error'
+      end
     else
       render :file => "shared/error.js.erb"
-      # redirect_back fallback_location: root_path, alert: 'Error'
     end
   end
 

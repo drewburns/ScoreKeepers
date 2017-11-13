@@ -9,16 +9,17 @@ class PostsController < ApplicationController
     User.all.each do |user|
       users << user if user.posts.count > 0
     end
-    @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+    @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
 
     if params[:page].nil? || (params[:page].to_i == 1)
       @posts = Post.where(status: "approved").last(9).reverse
     else
       page = params[:page].to_i
       @posts = Post.where(status: "approved").order(:created_at).reverse_order.limit(10).offset(page * 10)
-
     end
   end
+
+
 
   def edit
   	@post = Post.find(params[:id])
@@ -30,11 +31,22 @@ class PostsController < ApplicationController
     User.all.each do |user|
       users << user if user.posts.count > 0
     end
-    @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+    @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
 
   end
 
-  def status
+  def reject
+  	@post = Post.find(params[:id])
+  	new_params = post_params
+  	new_params[:time_approved] = DateTime.now if post_params[:status] == "approved"
+  	new_params[:time_submitted] = DateTime.now if post_params[:status] == "submitted"
+
+
+  	if @post.update_attributes(post_params)
+      redirect_to @post , notice: 'Post Saved!'
+    else
+      redirect_to 'users/creator', alert: 'Please retry'
+     end
   end
 
   def search
@@ -47,6 +59,10 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
   	new_params = post_params
   	new_params[:time_approved] = DateTime.now if post_params[:status] == "approved"
+  	new_params[:time_submitted] = DateTime.now if post_params[:status] == "submitted"
+  	p "---------------------------"
+  	p post_params
+
 
   	if @post.update_attributes(post_params)
       redirect_to @post , notice: 'Post Saved!'
@@ -105,23 +121,25 @@ class PostsController < ApplicationController
   end
 
   def vote
-    value = params[:type] == 'up' ? 1 : -1
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
-    if @user && @post
-      @post.add_or_update_evaluation(:votes, value, @user)
-      redirect_back fallback_location: root_path, notice: 'Vote counted'
+    if params[:user_id] 
+      @value = params[:type] == 'up' ? 1 : -1
+      @post = Post.find(params[:id])
+      @user = User.find(params[:user_id])
+      if @user && @post
+        @post.add_or_update_evaluation(:votes, @value, @user)
+        render :file => "shared/vote.js.erb"
+        # redirect_back fallback_location: root_path, notice: 'Vote counted'
+      else
+        render :file => "shared/error.js.erb"
+        # redirect_back fallback_location: root_path, alert: 'Error'
+      end
     else
-      redirect_back fallback_location: root_path, alert: 'Error'
+      render :file => "shared/error.js.erb"
     end
   end
 
   def new
     @post = Post.new
-  end
-
-  def edit
-    @post = Post.all
   end
 
   private

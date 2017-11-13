@@ -28,7 +28,7 @@
 				<div class=pcontent>
 					<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
 					<h6 class="pscore">Score: <%= post.score %></h6>
-					<p class="pauthor">By: <%= link_to post.user.username, post.user %></p><hr>
+					<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
 				</div>
 			</div>
 			<% end %>
@@ -43,7 +43,7 @@
 
 		<h3 class="itemheader1">Leaderboard</h3>
 		<% @users.each do |user| %>
-		<p><%= link_to user.username, user_path(user) %> | <%= user.this_weeks_score %></p>
+		<p><%= link_to user.name, user_path(user) %> | <%= user.this_weeks_score %></p>
 		<% end %>
 	</div>
 </div>

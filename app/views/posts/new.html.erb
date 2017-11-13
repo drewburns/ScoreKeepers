@@ -25,20 +25,16 @@
     <%= f.hidden_field :title, :value => nil %>
     <%= f.hidden_field :content, :value => nil %>
     <%= f.hidden_field :status, :value => "draft" %>
-    <%= f.submit 'Create Post' %>
   <% end %>
 
   <div align="center" data-editable data-name="title">
     <h2 id="post-title-block">Title Me</h2>
   </div>
-  <div align="center" data-editable data-name="main-content">
-    <blockquote>
-      You should be able to edit this.
-    </blockquote>
-    <p>John F. Woods</p>
+  <div align="center" data-editable data-name="header-photo">
+    <p>DONT PUT ANYTHING HERE RNs</p>
   </div>
-  <div data-name="main-content" align="center">
-    <p>Author Signature Information</p>
+  <div align="center" data-editable data-name="main-content">
+      <p>You should be able to edit this</p>
   </div>
 
   <%= javascript_include_tag 'ContentTools/build/content-tools' %>

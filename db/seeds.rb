@@ -7,11 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 sports = ["basketball","football","soccer","hockey","baseball"]
-20.times do
-	Team.create(name: Faker::Team.name)
+File.readlines('teams/basketball.txt').each do |line|
+	Team.create(name:line.chomp, sport_string: "basketball")
+end
+File.readlines('teams/hockey.txt').each do |line|
+	Team.create(name:line.chomp, sport_string: "hockey")
+end
+File.readlines('teams/football.txt').each do |line|
+	Team.create(name:line.chomp, sport_string: "football")
+end
+File.readlines('teams/baseball.txt').each do |line|
+	Team.create(name:line.chomp, sport_string: "baseball")
+	
 end
 10.times do
-	user = User.create(username: Faker::Twitter.screen_name, email: Faker::Internet.email, password: "test12345")
+	user = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: "test12345", bio: Faker::MostInterestingManInTheWorld.quote)
 	team_int = Random.rand(6)
 	team_int.times do
 		UserTeam.create(user_id: user.id, team_id: Team.offset(rand(Team.count)).first.id)
@@ -53,5 +63,7 @@ Comment.all.each do |comment|
 		comment.add_or_update_evaluation(:votes, value2, user)
 	end
 end
+
+
 
 

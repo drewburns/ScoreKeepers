@@ -15,7 +15,7 @@
  *= require foundation_and_overrides
  *= require content-tools
  *= require ContentTools/build/content-tools.min
-
+ *= require toastr
  */
 
 /* Header CSS */
@@ -81,6 +81,7 @@
    font-family: 'Open Sans', sans-serif;
    src: url('https://fonts.googleapis.com/css?family=Open+Sans')}
 
+
 body {
   background-color: white;}
 
@@ -105,12 +106,7 @@ body {
   font-weight: bold;
   }
 
-.post{
-  height: 170px;
-}
-.ptitle{
-  font-size: 28px;
-  font-family: 'Open Sans', sans-serif;
+.posttitle a{
   color: black;
   line-height: 1;
   padding-top: 15px;}
@@ -135,12 +131,11 @@ body {
   font-weight: bold;
 }
 
-.pvote {
-  float: left;}
+.postscore {
+  float: right;}
 
-.post img {
-  width: 225px;
-  float: left}
+.vote {
+  float: right;}
 
 .sidebarposttitle{
   font-size: 20px;
@@ -179,9 +174,8 @@ body {
   padding-right: 15px;
 }
 .posttitle {
-  font-size: 44px;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.1; }
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;}
 
 .postauthor p{
   font-family: 'Open Sans', sans-serif;
@@ -208,7 +202,7 @@ body {
 }
 
 .authorfooter{
-  height: 165px;
+  height: 200px;
   margin-left: 30px;
   margin-top: 20px;
 }

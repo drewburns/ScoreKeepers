@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   validates :content, presence: true
 
   # validates :picture, presence: true
+	mount_uploader :picture, PictureUploader
+
 
 
 	def score

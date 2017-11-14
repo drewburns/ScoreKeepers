@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
-  validates :picture, presence: true
+  # validates :picture, presence: true
 
 
 	def score

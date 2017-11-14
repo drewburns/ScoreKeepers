@@ -1,0 +1,2 @@
+$(".votepost").replaceWith("<%= escape_javascript(render partial: 'score', locals: {post: @post, new_score: @new_score}) %>");
+toastr.success("Vote counted")

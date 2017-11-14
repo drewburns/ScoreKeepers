@@ -47,12 +47,10 @@
 			<h3 class="authorname"><%= link_to @post.user.name, user_path(@post.user) %></h3>
 			<h6 class="authorbio">Barack Obama is the 44th president of the United States. He writers for the Huffington Post and enjoys playing basketball in his free time</h6>
 		</div>
+		<div id="vote_post_container">
+			<%= render partial: 'score', locals: {post: @post}%>
+		</div>
 
-		<div class="votepost">
-		Vote on this post: <span id="post-score"><%= @post.score %></span> |
-		<% if user_signed_in? %>
-			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true, :id =>"voteonpost"%></p>
-		<% end %>
 		</div>
 
 		<h3>Comments:</h3>
@@ -100,11 +98,10 @@
 
 </div>
 <script type="text/javascript">
-	$( "#voteonpost" ).click(function() {
-	  alert( "" );
-	});
+	// $( "voteonpost" ).click(function() {
+	// });
 	$( ".voteoncomment" ).click(function(event) {
-		var something = $(this).parent().parent().find(".comment-score")
+		var something = $(this).parent().parent().find(".comment-score");
 		var text = something.text();
 		var newScore = Number(text) + 1;
 		console.log(newScore);

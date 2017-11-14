@@ -1,0 +1,41 @@
+<div class="votepost">
+	<% @new_value %>
+<% if @new_value != nil %>
+	Vote on this post: <span id="post-score"><%= @new_value %></span> |
+	<% if user_signed_in? %>
+		<% user_score = @post.score_for(current_user) %>
+		<% if user_score == nil %>
+			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true, :class => "voteonpost" %></p>
+		<% elsif user_score.to_int == 1 %>
+			<p style="display:inline;" id="voted_up"><%=link_to "Remove Up", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true, :class => "voteonpost"%></p>
+		<% elsif user_score.to_int == 0 or user_score.to_int == -1 %>
+			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true , :class => "voteonpost"%></p>
+		<% end %>
+	<% end %>
+<% else %>
+	Vote on this post: <span id="post-score"><%= @post.score %></span> |
+		<% if user_signed_in? %>
+		<% user_score = @post.score_for(current_user) %>
+		<% if user_score == nil %>
+			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true, :class => "voteonpost" %></p>
+		<% elsif user_score.to_int == 1 %>
+			<p style="display:inline;" id="voted_up"><%=link_to "Remove Up", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true, :class => "voteonpost"%></p>
+		<% elsif user_score.to_int == 0 or user_score.to_int == -1 %>
+			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true , :class => "voteonpost"%></p>
+		<% end %>
+	<% end %>
+<% end %>
+
+
+	
+
+<script type="text/javascript">
+	$( ".voteonpost" ).click(function() {
+		var something = $(this).parent();
+		// var newScore = Number(text) + 1;
+		console.log(something);
+	  // $(something).text(newScore);
+	});
+
+
+</script>

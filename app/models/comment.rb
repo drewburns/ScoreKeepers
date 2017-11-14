@@ -4,6 +4,6 @@ class Comment < ApplicationRecord
 	has_reputation :votes, source: :user, aggregated_by: :sum
 
 	def score
-		return self.reputation_for(:votes)
+		return self.reputation_for(:votes).to_i
 	end
 end

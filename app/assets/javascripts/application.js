@@ -15,5 +15,6 @@
 //= require_tree .
 //= require ContentTools/build/content-tools
 //= require toastr
+//= require foundation
 
-$(function(){ $(document).foundation(); });
+$(document).foundation();

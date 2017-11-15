@@ -22,7 +22,7 @@
 <% end %>
 
 <% if @post.sport != nil %>
-<p> Sport: <%= link_to @post.sport, sports_posts_path(:sport => @post.sport) %></p>
+<p> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></p>
 <% end %>
 
 </br>
@@ -67,17 +67,9 @@
 			<% end %>
 		<% end %>
 		</br>
-		<ul>
+		<ul id="comments-list">
 		<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-			<li class="comment-li" id="comment_<%=comment.id.to_s%>">
-				<p style="display:inline;"><%= link_to comment.user.name , comment.user %></p> |
-				<p style="display:inline;">Score:  <span class='comment-score'><%= comment.score %></span></p> |
-				<% if user_signed_in? %>
-					<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p> |
-					<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p>
-				<% end %>
-				<p><%= comment.text %></p>
-			</li>
+			<%= render partial: 'comments/comment', locals: {comment: comment}%>
 		<% end %>
 		</ul>
 	</div>

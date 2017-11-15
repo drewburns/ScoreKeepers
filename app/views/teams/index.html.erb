@@ -32,52 +32,97 @@
     <!--<p>Suspendisse dictum feugiat nisl ut dapibus. Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>-->
   <!--</div>-->
 <!--</div>-->
+<style type="text/css">
+  #teamlist {
+    clear:both;
+  }
 
 
-<h3> Team List</h3>
-<div class="row collapse">
-  <div class="medium-3 columns">
-    <ul class="vertical tabs" data-tabs id="example-tabs">
-      <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">Tab 1</a></li>
-      <li class="tabs-title"><a href="#panel2v">Tab 2</a></li>
-      <li class="tabs-title"><a href="#panel3v">Tab 3</a></li>
-      <li class="tabs-title"><a href="#panel4v">Tab 4</a></li>
-      <li class="tabs-title"><a href="#panel5v">Tab 5</a></li>
-      <li class="tabs-title"><a href="#panel6v">Tab 6</a></li>
-    </ul>
-  </div>
-  <div class="medium-9 columns">
-    <div class="tabs-content" data-tabs-content="example-tabs">
-      <div class="tabs-panel is-active" id="panel1v">
-        <p>One</p>
-        <p>Check me out! I'm a super cool Tab panel with text content!</p>
-      </div>
-      <div class="tabs-panel" id="panel2v">
-        <p>Two</p>
-        <img class="thumbnail" src="assets/img/generic/rectangle-7.jpg">
-      </div>
-      <div class="tabs-panel" id="panel3v">
-        <p>Three</p>
-        <p>Check me out! I'm a super cool Tab panel with text content!</p>
-      </div>
-      <div class="tabs-panel" id="panel4v">
-        <p>Four</p>
-        <img class="thumbnail" src="assets/img/generic/rectangle-2.jpg">
-      </div>
-      <div class="tabs-panel" id="panel5v">
-        <p>Five</p>
-        <p>Check me out! I'm a super cool Tab panel with text content!</p>
-      </div>
-      <div class="tabs-panel" id="panel6v">
-        <p>Six</p>
-        <img class="thumbnail" src="assets/img/generic/rectangle-8.jpg">
-      </div>
-    </div>
-  </div>
-</div>
-<ul>
-<% @teams.each do |team| %>
+  #sport-tabs {
+    /*border-radius: 5px;*/
+  }
+  .sport-tab:hover {
+    background-color: blue;
+  }
+  .sport-tab {
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    height:50px;
+    background-color: #D3D3D3;
+  }
+  .showing {
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+</style>
+<ul id="sport-tabs" class='large-10 columns medium-12 small-12 large-centered small-centered medium-centered'>
+  <li>
+    <div class="large-3 medium-3 small-6 columns sport-tab" id='basketball-tab'>Basketball</div>
+  </li>
+  <li>
+    <div class="large-3 medium-3 small-6 columns sport-tab" id='hockey-tab'>Hockey</div>
+  </li>
+  <li>
+    <div class="large-3 medium-3  small-6 columns sport-tab" id='football-tab'>Football</div>
+  </li>
+  <li>
+    <div class="large-3 medium-3 small-6 columns sport-tab" id='baseball-tab'>Baseball</div>
+  </li>
+</ul>
+
+
+<h3 id='teamlist'> Team List</h3>
+<ul id="basketball-teams" class=''>
+<% @teams.first(30).each do |team| %>
   <%= render team %>
 <% end %>
 </ul>
+<ul id="hockey-teams" class='hidden'>
+<% @teams[30..60].each do |team| %>
+  <%= render team %>
+<% end %>
+</ul>
+<ul id="football-teams" class='hidden'>
+<% @teams[61..92].each do |team| %>
+  <%= render team %>
+<% end %>
+</ul>
+<ul id="baseball-teams" class='hidden'>
+<% @teams[93..123].each do |team| %>
+  <%= render team %>
+<% end %>
+</ul>
+<script type="text/javascript">
+  $( ".sport-tab" ).click(function(event) {
+    var sport = $(this).attr('id');
+
+    if ( sport == "basketball-tab"){
+      $("#basketball-teams").removeClass( "hidden" ).removeClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+
+    } else if (sport == "hockey-tab") {
+      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+    } else if (sport == "football-tab") {
+      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+    } else if (sport == "baseball-tab") {
+      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" );
+    }
+  });
+
+</script>
 

@@ -1,6 +1,7 @@
 {
   "name": "sports_site",
   "dependencies": {
-    "ContentTools": "^1.5.6"
+    "ContentTools": "^1.5.6",
+    "selectize": "^0.12.4"
   }
 }

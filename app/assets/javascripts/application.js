@@ -16,5 +16,6 @@
 //= require ContentTools/build/content-tools
 //= require toastr
 //= require foundation
+//= require selectize
 
 $(document).foundation();

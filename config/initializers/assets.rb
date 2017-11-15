@@ -23,5 +23,8 @@ Rails.application.config.assets.precompile += %w( foundation.js )
 Rails.application.config.assets.precompile += %w( vendor/modernizr.js )
 Rails.application.config.assets.precompile += %w( foundation_and_overrides.css )
 Rails.application.config.assets.precompile += %w( foundation.css )
+Rails.application.config.assets.precompile += %w( selectize/dist/css/selectize.css )
+Rails.application.config.assets.precompile += %w( selectize/dist/css/selectize.default.css )
+Rails.application.config.assets.precompile += %w( selectize/dist/js/standalone/selectize.min.js)
 
 

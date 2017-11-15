@@ -18,21 +18,21 @@
 	</div>
 
 	<div class="large-4 columns">
+		<h3 class="itemheader">Today's Leaderboard</h3>
+			<ul class="lboardul">
+				<% @users.each do |user| %>
+					<img src="http://jaclynphillips.com/wp-content/uploads/2015/10/Headshot-Circle.png" width="75px">
+						<div class="lcell">
+							<li class="lboard"><%= link_to user.name, user_path(user) %>
+							<p class="lbscore"><%= user.this_weeks_score %></p></li><hr>
+						</div>
+						<% end %>
+			</ul>
 
-		<img src="https://www.bluecorona.com/wp-content/uploads/2015/09/Paid-Social-Platforms-Banner.jpg"><hr>
-
-		<h3 class="itemheader1">Top Posts</h3>
+		<h3 class="itemheader">Top Posts</h3>
 			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
-			<h3><%= post.title %></h3>
-			<hr>
-
+				<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
+				<p><%= post.title %></p>
 			<% end %>
-
-		<h3 class="itemheader1">Today's Leaderboard</h3>
-		<ul class="lboardul">
-			<% @users.each do |user| %>
-			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
-			<% end %>
-		</ul>
 	</div>
 </div>

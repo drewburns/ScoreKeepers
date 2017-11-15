@@ -25,26 +25,37 @@
 
 
 /* Homepage CSS*/
-.lineup li{
-  height: 45px;
-  list-style-type: none;
-  font-size: 20px;
+.lineupx{
+  width: 550px;
+  float:left;
+  height: 48px;
   line-height: 1;
-  background-color: #f2f2f2;
-  margin-bottom: 10px;}
+  margin-left: 10px;
+  margin-top: 5px;
+  border-bottom: 1px solid #d1d1d1;}
 
-.lineup li a{
-  color: #383838;
-  font-weight: 500;
-  top: 50%;}
+.lineupx a{color: black; font-size: 21px;}
+
+.lineupy {
+  width: 50px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+  height: 50px;
+  background-color: #77abff;
+  text-align: center;
+  padding-top: 4px;}
+
+.lineupy a{color: white; text-align: center; font-weight: bold;}
 
 .lineups{
   background-color: #fed766;
   color: white;
-  margin-top: 5px;
   text-align: center;
   font-weight: bold;
   padding-top: 7px;
+  padding-bottom: 5px;
 }
 
 .mainpostbox{
@@ -70,7 +81,7 @@
    src: url('https://fonts.googleapis.com/css?family=Open+Sans')}
 
 body {
-  background-color: #f2f2f2;}
+  }
 
 /*input[type="file"] {*/
     /*display: none;*/
@@ -89,63 +100,45 @@ ul {
 }
 .row {
   background-color: #fff;
-  max-width: 1200px;
+  max-width: 1500px;
   padding: 15px;
   padding-bottom: 0px;
 }
 
 .itemheader{
-  background-color: #000000;
-  color: #ffffff;}
-
-.itemheader1{
-  background-color: #fed766;
   color: black;
-  font-weight: bold;
-  padding-top: 7px;}
-
-.itemheader2{
-  color: black;
-  font-weight: bold;
-  padding-top: 7px;}
-
+  padding-top: 5px;
+  border-top: 5px solid #fed766;
+  margin-top: 10px;}
 
 .post{
-  height: 170px;
-}
+  height: 170px;}
+
 .ptitle{
   font-size: 28px;
   font-family: 'Open Sans', sans-serif;
   color: black;
   line-height: 1;
-  padding-top: 15px;
-  }
+  padding-top: 10px;}
 
 .pcontent{
-  margin-left: 270px;
-}
+  margin-left: 242px;}
 
 .ptitle a{
-  color: #000;
-}
+  color: #000;}
 
 .pscore {
   float: right;
   font-size: 18px;
-bottom: 5px;}
+  bottom: 5px;}
 
-.pauthor{
-  float: left;
-  font-size: 20px;
-}
+.pauthor{ float: left; font-size: 18px;}
 
-.pvote {
-  float: left;}
+.pauthor a{ color: #4faeff;}
 
-.post img {
-  width: 225px;
-  float: left}
+.pvote{ float: left;}
 
+.post img { width: 225px; float: left}
 
 .sidebartitle{
   background-color: #8AA29E ;
@@ -155,10 +148,13 @@ bottom: 5px;}
   padding-top: 5px;
   font-size: 28px;}
 
+
 .lboard:nth-child(odd) {
   background-color: #fff;
   list-style-type: none;
   font-size: 20px;
+  float: left;
+  display: inline-block;
 }
 
 .lboard:nth-child(even) {
@@ -169,8 +165,21 @@ bottom: 5px;}
 
 .lboardul{
   padding: 0px;
-  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
+
+.lcell{
+  width: 300px;
+  display: inline-flex;
+  margin-left: 20px;
+  background-color: #f7f7f7;
+
+}
+.lboardul img{
+  display: inline-block;
+  margin-bottom: 15px;}
+
 
 .lbscore{
   float: right;
@@ -277,3 +286,13 @@ padding: 0px;
 padding-right: 0px;
 }
 
+.large-4{
+  padding-left: 15px;
+  background-color: #f7f7f7;
+  padding-right: 15px;
+  width: 450px;
+  margin-right: 20px;}
+
+.large-8{
+
+}

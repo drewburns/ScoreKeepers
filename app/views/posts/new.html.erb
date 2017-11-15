@@ -3,28 +3,6 @@
   <%= stylesheet_link_tag 'ContentTools/build/content-tools.min' %>
   <%= stylesheet_link_tag 'editor.css' %>
 
-  <script type="text/javascript">
-      $('#micropost_picture').bind('change', function() {
-          var size_in_megabytes = this.files[0].size/1024/1024;
-          if (size_in_megabytes > 5) {
-              alert('Maximum file size is 5MB. Please choose a smaller file.');
-          }
-      });
-      function readURL(input) {
-          if (input.files && input.files[0]) {
-              var reader = new FileReader();
-
-              reader.onload = function(e) {
-                  $('#blah').attr('src', e.target.result);
-              }
-
-              reader.readAsDataURL(input.files[0]);
-          }
-      }
-      $("#imgInp").change(function() {
-          readURL(this);
-      });
-  </script>
 
 </head>
 <body style="background-color:#E4E4E4;">
@@ -34,6 +12,8 @@
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <div class="editor-tags">
         <h2>Taags</h2>
+          <%= f.text_field :name %>
+           <%= f.select :temperature, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
       </div>
       <div class="editor-title">
         <div align="center" data-editable data-name="title">
@@ -89,3 +69,28 @@
   <%= javascript_include_tag 'ContentTools/build/content-tools' %>
   <%= javascript_include_tag 'editor' %>
 </body>
+<script type="text/javascript">
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+  function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#blah').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+
+$("#imgInp").change(function() {
+  readURL(this);
+});
+</script>

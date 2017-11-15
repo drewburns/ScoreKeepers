@@ -16,12 +16,11 @@
  *= require content-tools
  *= require ContentTools/build/content-tools.min
 *= require toastr
+ *= require selectize/dist/css/selectize
+ *= require selectize/dist/css/selectize.default
  */
 
 /* Header CSS */
-
-
-
 
 
 /* Homepage CSS*/

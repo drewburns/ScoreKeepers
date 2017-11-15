@@ -21,6 +21,9 @@
 	<% end %>
 <% end %>
 
+<% if @post.sport != nil %>
+<p> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></p>
+<% end %>
 
 </br>
 
@@ -44,7 +47,11 @@
 			<h3 class="authorname"><%= link_to @post.user.name, user_path(@post.user) %></h3>
 			<h6 class="authorbio">[Writer's name here] is a writer for the [enter publication here]. In his/her spare time they like reading and hiking</h6>
 		</div>
+		<div id="vote_post_container">
+			<%= render partial: 'score', locals: {post: @post}%>
+		</div>
 
+<<<<<<< HEAD
 		<% if @post.sport != nil %>
 		<p> Sport: <%= link_to @post.sport, sports_posts_path(:sport => @post.sport) %></p>
 		<% end %>
@@ -54,6 +61,8 @@
 		<% if user_signed_in? %>
 			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true, :id =>"voteonpost"%></p>
 		<% end %>
+=======
+>>>>>>> b255a726b9e4f3228044c5cac3dcb847f24cfb1a
 		</div>
 
 		<h3>Comments:</h3>
@@ -70,17 +79,9 @@
 			<% end %>
 		<% end %>
 		</br>
-		<ul>
+		<ul id="comments-list">
 		<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-			<li class="comment-li" id="comment_<%=comment.id.to_s%>">
-				<p style="display:inline;"><%= link_to comment.user.name , comment.user %></p> |
-				<p style="display:inline;">Score:  <span class='comment-score'><%= comment.score %></span></p> |
-				<% if user_signed_in? %>
-					<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p> |
-					<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p>
-				<% end %>
-				<p><%= comment.text %></p>
-			</li>
+			<%= render partial: 'comments/comment', locals: {comment: comment}%>
 		<% end %>
 		</ul>
 	</div>
@@ -106,11 +107,10 @@
 
 </div>
 <script type="text/javascript">
-	$( "#voteonpost" ).click(function() {
-	  alert( "" );
-	});
+	// $( "voteonpost" ).click(function() {
+	// });
 	$( ".voteoncomment" ).click(function(event) {
-		var something = $(this).parent().parent().find(".comment-score")
+		var something = $(this).parent().parent().find(".comment-score");
 		var text = something.text();
 		var newScore = Number(text) + 1;
 		console.log(newScore);

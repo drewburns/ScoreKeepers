@@ -2,20 +2,30 @@ class UserTeamsController < ApplicationController
 	before_action :authenticate_user!
 
 	def create
+		5.times do 
+			puts "ADDED"
+		end
 		@userTeam = UserTeam.new(user_team_params)
 		if @userTeam.save 
-			redirect_back fallback_location: root_path, :notice => "Team added"
+			@team = @userTeam.team
+			render :file => "teams/change.js.erb"
+			# redirect_back fallback_location: root_path, :notice => "Team added"
 		else
-			redirect_back fallback_location: root_path, :alert => "Error"
+			render :file => "shared/error.js.erb"
+			# redirect_back fallback_location: root_path, :alert => "Error"
 		end
 	end
 
 	def destroy
+		5.times do 
+			puts "DESTROY"
+		end
 		@userTeam = UserTeam.find(params[:id])
+		@team = @userTeam.team
 		if @userTeam.destroy
-			redirect_back fallback_location: root_path, :notice => "Team Removed"
+			render :file => "teams/change.js.erb"
 		else
-			redirect_back fallback_location: root_path, :alert => "Error"
+			render :file => "shared/error.js.erb"
 		end
 	end
 

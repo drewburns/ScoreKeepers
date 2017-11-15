@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root      'posts#index'
   resources :users, only: [:index, :show, :edit, :update]
 
-  get '/sports/posts' => "posts#sports"
+  get '/sports' => "posts#sports"
   get '/teams/posts' => "posts#teams"
   get '/userposts'  => "posts#user"
 

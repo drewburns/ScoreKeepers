@@ -9,6 +9,10 @@ class Comment < ApplicationRecord
 
 	def score_for(user)
 		votes = self.evaluations.where(source_id: user.id)
+		5.times do
+			puts "-" * 10
+		end
+		p votes
 		if votes.count == 0 
 			return nil
 		else

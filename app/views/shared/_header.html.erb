@@ -1,8 +1,8 @@
 <%= javascript_include_tag "foundation" %>
 
-<div class="contain-to-grid sticky">
+<div class="contain-to-grid sticky" >
   <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <ul class="title-area">
+    <ul class="title-area" >
       <li class="name">
       <h1><%= link_to "Sports Site" , root_path %></h1>
       </li>
@@ -10,7 +10,7 @@
     </ul>
 
     <% if user_signed_in? %>
-    <section class="top-bar-section">
+    <section class="top-bar-section" style="width: 200px;">
     <!-- Right Nav Section -->
     <ul class="right">
 
@@ -47,22 +47,30 @@
   <% end %>
 </nav>
 </div>
-<div class="icon-bar four-up" style='background-color:grey;'>
+<div class="icon-bar four-up">
   <a class="item" href="/sports?sport=basketball">
-    <img src="http://cdn.onlinewebfonts.com/svg/img_192451.png" >
     <label>Basketball</label>
   </a>
   <a class="item" href="/sports?sport=football">
-    <img src="https://i1.wp.com/www.swantonschools.org/wp-content/uploads/2016/07/American-Football-Ball-icon.png?resize=256%2C256" >
     <label>Football</label>
   </a>
   <a class="item" href="/sports?sport=hockey">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_531805.png" >
     <label>Hockey</label>
   </a>
   <a class="item" href="/sports?sport=baseball">
-    <img src="https://images.vexels.com/media/users/3/135320/isolated/preview/79a491be18da0b7de8f0b23d251613c8-baseball-bat-ball-by-vexels.png" >
     <label>Baseball</label>
+  </a>
+  <a class="item" href="">
+    <label>Debate</label>
+  </a>
+  <a class="item" href="">
+    <label>Rankings</label>
+  </a>
+  <a class="item" href="">
+    <label>Fantasy</label>
+  </a>
+  <a class="item" href="">
+    <label>History</label>
   </a>
 </div>
 

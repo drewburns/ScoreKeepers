@@ -2,107 +2,103 @@
 
 	<div class="large-8 columns">
 		<h1 class="posttitle"><%= @post.title%></h1>
-
-
-<% if @post.user == current_user %>
-<h3 >Post Status: <%= @post.status %></h3>
-	<% if @post.status == "rejected" %>
-		<p>Admin Message: <%= @post.admin_message %></p>
-	<% end %>
-	<% if @post.status == "draft" or @post.status == "rejected"%>
-			<%=link_to "Edit", edit_post_path(@post) %>
-		  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.hidden_field :title, :value => @post.title %>
-        <%= f.hidden_field :content, :value => @post.content %>
-        <%= f.hidden_field :status, :value => "pending" %>
-        <%= f.submit 'Submit Post' %>
-	  <% end %>
-	<% end %>
-<% end %>
-
-<% if @post.sport != nil %>
-<p> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></p>
-<% end %>
-
-</br>
-
-		<div class="postauthor">
-			<p>By <%= link_to @post.user.name, user_path(@post.user) %></p>
-			</div>
-		<div class="postdate">
-			<p><i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
-			</div>
-		<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
-		<hr>
-		<div class="postcontent">
-
-		  <h5><%== @post.content %></h5>
-	  </div>
-
-		<br>
-		<hr>
-		<div class="authorfooter">
-			<img src='http://jaclynphillips.com/wp-content/uploads/2015/10/Headshot-Circle.png' width='135px'>
-			<h3 class="authorname"><%= link_to @post.user.name, user_path(@post.user) %></h3>
-			<h6 class="authorbio">[Writer's name here] is a writer for the [enter publication here]. In his/her spare time they like reading and hiking</h6>
-		</div>
-		<div id="vote_post_container">
-			<%= render partial: 'score', locals: {post: @post}%>
-		</div>
-
-<<<<<<< HEAD
-		<% if @post.sport != nil %>
-		<p> Sport: <%= link_to @post.sport, sports_posts_path(:sport => @post.sport) %></p>
-		<% end %>
-
-		<div class="votepost">
-		Vote on this post: <span id="post-score"><%= @post.score %></span> |
-		<% if user_signed_in? %>
-			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true, :id =>"voteonpost"%></p>
-		<% end %>
-=======
->>>>>>> b255a726b9e4f3228044c5cac3dcb847f24cfb1a
-		</div>
-
-		<h3>Comments:</h3>
-		<% if user_signed_in? %>
-			<% comment = Comment.new %>
-			<%= form_for(comment) do |f| %>
-				<%= f.label :text %>
-			  <%= f.text_field :text %><br />
-
-			  <%= f.hidden_field :post_id, :value => @post.id %>
-			  <%= f.hidden_field :user_id, :value => current_user.id%>
-
-			  <%= f.submit %>
+			<% if @post.user == current_user %>
+			<h3 >Post Status: <%= @post.status %></h3>
+				<% if @post.status == "rejected" %>
+					<p>Admin Message: <%= @post.admin_message %></p>
+				<% end %>
+				<% if @post.status == "draft" or @post.status == "rejected"%>
+						<%=link_to "Edit", edit_post_path(@post) %>
+					  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+			        <%= f.hidden_field :user_id, :value => current_user.id %>
+			        <%= f.hidden_field :title, :value => @post.title %>
+			        <%= f.hidden_field :content, :value => @post.content %>
+			        <%= f.hidden_field :status, :value => "pending" %>
+			        <%= f.submit 'Submit Post' %>
+				  <% end %>
+				<% end %>
 			<% end %>
-		<% end %>
-		</br>
-		<ul id="comments-list">
-		<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-			<%= render partial: 'comments/comment', locals: {comment: comment}%>
-		<% end %>
-		</ul>
+
+			<% if @post.sport != nil %>
+			<p> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></p>
+			<% end %>
+
+			</br>
+
+				<div class="postauthor">
+					<p>By <%= link_to @post.user.name, user_path(@post.user) %></p>
+					</div>
+				<div class="postdate">
+					<p><i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
+					</div>
+				<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
+				<hr>
+				<div class="postcontent">
+
+				  <h5><%== @post.content %></h5>
+			  </div>
+
+				<br>
+				<hr>
+				<div class="authorfooter">
+					<img src='http://jaclynphillips.com/wp-content/uploads/2015/10/Headshot-Circle.png' width='135px'>
+					<h3 class="authorname"><%= link_to @post.user.name, user_path(@post.user) %></h3>
+					<h6 class="authorbio">[Writer's name here] is a writer for the [enter publication here]. In his/her spare time they like reading and hiking</h6>
+				</div>
+					<div id="vote_post_container">
+						<%= render partial: 'score', locals: {post: @post}%>
+					</div>
+
+
+
+				<div class="votepost">
+				Vote on this post: <span id="post-score"><%= @post.score %></span> |
+				<% if user_signed_in? %>
+					<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true, :id =>"voteonpost"%></p>
+				<% end %>
+
+				</div>
+
+				<h3>Comments:</h3>
+				<% if user_signed_in? %>
+					<% comment = Comment.new %>
+					<%= form_for(comment) do |f| %>
+						<%= f.label :text %>
+					  <%= f.text_field :text %><br />
+
+					  <%= f.hidden_field :post_id, :value => @post.id %>
+					  <%= f.hidden_field :user_id, :value => current_user.id%>
+
+					  <%= f.submit %>
+					<% end %>
+				<% end %>
+				</br>
+				<ul id="comments-list">
+				<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
+					<%= render partial: 'comments/comment', locals: {comment: comment}%>
+				<% end %>
+				</ul>
+		</div>
 	</div>
 
 	<div class="large-4 columns">
+		<div class="sidebar">
 		<h3 class="itemheader">Today's Leaderboard</h3>
-			<ul class="lboardul">
+			<ol class="lboardul">
 				<% @users.each do |user| %>
-					<img src="http://jaclynphillips.com/wp-content/uploads/2015/10/Headshot-Circle.png" width="75px">
-						<div class="lcell">
-							<li class="lboard"><%= link_to user.name, user_path(user) %>
-							<p class="lbscore"><%= user.this_weeks_score %></p></li><hr>
-						</div>
+
+							<li class="lboard"><%= link_to user.name, user_path(user) %></li>
+							<p class="lbscore"><%= user.this_weeks_score %><hr></p>
+
 						<% end %>
-			</ul>
+			</ol>
 
 		<h3 class="itemheader">Top Posts</h3>
 			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
 				<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
 				<p><%= post.title %></p>
 			<% end %>
+		</div>
 	</div>
 
 </div>

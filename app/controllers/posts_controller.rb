@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     User.all.each do |user|
       users << user if user.posts.count > 0
     end
-    @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+    @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(10)
 
   end
 
@@ -121,7 +121,7 @@ class PostsController < ApplicationController
   end
 
   def vote
-    if params[:user_id] 
+    if params[:user_id]
       @value = params[:type] == 'up' ? 1 : 0
       add_value = @value == 1 ? 1 : -1
       puts "ADD VALUE " + add_value.to_s

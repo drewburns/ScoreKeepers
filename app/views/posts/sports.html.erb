@@ -1,14 +1,36 @@
-<h3><%= @posts.first.sport.capitalize %> Page</h3>
+<div class="row">
+	<div class="large-2 columns">
+			<ul>
+					<% for i in Team.where(sport_string: params[:sport]) %>
+							<li><%= link_to i.name, team_path(i.id)%></li>
+					<%end%>
+			</ul>
 
-<h3>Recent <%= @posts.first.sport.capitalize %> Posts </h3>
+	</div>
 
-<% @posts.each do |post| %>
-	<p style="display:inline;"><%= link_to post.title, post_path(post) %> | Score: <%= post.score %></p> |
-	<p style="display:inline;">By: <%= link_to post.user.name, post.user %></p> |
-	<% if user_signed_in? %>
-	<p style="display:inline;"><%=link_to "Up", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
-	<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>
-<% end %>
-</br>
-</br>
-<% end %>
+	<div class="large-7 columns">
+		<h3 class="itemheader">Recent <%= @posts.first.sport.capitalize %> Posts </h3>
+		<% @posts.each do |post| %>
+			<div class='post'>
+					<img width="250px" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
+					<div class="pcontent">
+						<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
+						<h6 class="pscore">Score: <%= post.score %></h6>
+						<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
+						<p class="date"></p>
+					</div>
+			</div>
+			<% end %>
+	</div>
+
+	<div class="large-3 columns" style="background-color: #f9f9f9;">
+		<h3 class="itemheader">Today's Leaderboard</h3>
+			insert leaderbaord here
+
+		<h3 class="itemheader">Top Posts</h3>
+			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
+				<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
+				<p><%= post.title %></p>
+			<% end %>
+	</div>
+</div>

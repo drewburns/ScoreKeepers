@@ -24,8 +24,9 @@
               <%= f.select :sport, [['Baseball','baseball'],['Football','football'],['Hockey','hockey'],['Basketball','basketball']], :html => {:id => 'sport'} %>
             </div>
             <div class="formrow">
-              <label for="tags">Tags:</label>
+              <label for="tags">Teams:</label>
               <input type="text" id="tags" value= "<%= Team.all.map{|team| team.name}.join(",") %>" >
+              <%= f.hidden_field :teams, :value => nil %>
             </div>
         </div>
       </div>
@@ -34,10 +35,10 @@
           <%= f.hidden_field :title, :value => nil %>
           <h2 id="post-title-block">Title Me</h2>
         </div>
-        <h2 id="title-2">Title Here Now</h2>
+        <!--<h2 id="title-2">Title Here Now</h2>-->
         <script>
-            var element = document.getElementById('title-2');
-            var region = new ContentEdit.Region(element);
+//            var element = document.getElementById('title-2');
+//            var region = new ContentEdit.Region(element);
         </script>
       </div>
       <div class="editor-headerimage">
@@ -49,7 +50,7 @@
           <!--</div>-->
           <%#= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
         <div class="header">
-          <img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1" onclick="imageUpload();">
+          <img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1" onclick="alert('broke for now- TJN');">
         </div>
       </div>
       <div class="editor-content">

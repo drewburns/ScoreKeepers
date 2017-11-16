@@ -326,6 +326,12 @@ window.addEventListener('load', function() {
         var picture = document.getElementById('post_picture');
         console.log(picture);
 
+        var teams = document.getElementById('post_teams');
+        teams.value = document.getElementById('tags').value;
+        console.log(teams);
+
+
+
         $('#postsubmit').submit();
 
         // Send the update content to the server to be saved

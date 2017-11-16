@@ -73,6 +73,10 @@ class PostsController < ApplicationController
 
 
   def create
+    5.times do
+      puts "_" * 8
+    end
+    p params
     @post = Post.new(post_params)
     if @post.user_id == current_user.id
 	    if @post.save

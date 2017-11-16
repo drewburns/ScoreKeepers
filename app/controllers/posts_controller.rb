@@ -29,12 +29,7 @@ class PostsController < ApplicationController
     User.all.each do |user|
       users << user if user.posts.count > 0
     end
-<<<<<<< HEAD
-    @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(10)
-
-=======
     @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
->>>>>>> 7d55f15a7a733421350033920e7d256aa1044101
   end
 
   def reject

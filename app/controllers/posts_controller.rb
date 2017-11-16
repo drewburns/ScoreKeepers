@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  # wrap_parameters :post, include: [:user_id, :title, :content , :image_url, :sport ]
   # before_action :require_login , only: [:create]
   before_action :authenticate_user!, only: %i[create new]
   # before_action :correct_user!, only: [:create,:edit,:update,:destroy]
@@ -34,11 +33,11 @@ class PostsController < ApplicationController
 
   def reject
     @post = Post.find(params[:id])
-    new_params = post_params
-    new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'
-    new_params[:time_submitted] = DateTime.now if post_params[:status] == 'submitted'
+    new_params = real_post_params
+    new_params[:time_approved] = DateTime.now if real_post_params[:status] == 'approved'
+    new_params[:time_submitted] = DateTime.now if real_post_params[:status] == 'submitted'
 
-    if @post.update_attributes(post_params)
+    if @post.update_attributes(new_params)
       redirect_to @post, notice: 'Post Saved!'
     else
       redirect_to 'users/creator', alert: 'Please retry'
@@ -53,13 +52,13 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    new_params = post_params
+    new_params = real_post_params
     new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'
     new_params[:time_submitted] = DateTime.now if post_params[:status] == 'submitted'
     p '---------------------------'
     p post_params
 
-    if @post.update_attributes(post_params)
+    if @post.update_attributes(new_params)
       redirect_to @post, notice: 'Post Saved!'
     else
       redirect_to 'users/creator', alert: 'Please retry'
@@ -67,13 +66,21 @@ class PostsController < ApplicationController
   end
 
   def create
-    5.times do
-      puts "_" * 8
-    end
+    @post = Post.new(real_post_params)
+    p post_params
     p params
-    @post = Post.new(post_params)
     if @post.user_id == current_user.id
       if @post.save
+        if post_params[:teams] != ""
+          teams_list = post_params[:teams].split(",")
+          teams_list.each do |team_string|
+            team = Team.where(name:team_string)
+            if team.first != nil 
+              PostTeam.create(post_id: @post.id, team_id: team.first.id)
+            end
+          end
+
+        end
         redirect_to post_path(@post), notice: 'Post Created!'
       else
         redirect_to 'posts/new', alert: 'Please retry'
@@ -151,8 +158,14 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :title, :content, :thumbnail_url, :sport, :status, :time_approved, :admin_message)
+    params.require(:post).permit(:user_id, :title, :content, :thumbnail_url, :sport, :status, :time_approved, :admin_message, :teams)
   end
+
+  def real_post_params 
+    return {user_id: post_params[:user_id], title: post_params[:title],content: post_params[:content],thumbnail_url: post_params[:thumbnail_url], sport: post_params[:sport],
+      status: post_params[:status], time_approved: post_params[:time_approved], admin_message: post_params[:admin_message]}
+  end
+
 
   def correct_user!
     post = Post.find(params[:id])

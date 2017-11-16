@@ -6,6 +6,7 @@ class Post < ApplicationRecord
 	has_many :comments
   validates :title, presence: true
   validates :content, presence: true
+  attr_accessor :teams_string
 
   # validates :picture, presence: true
 	mount_uploader :picture, PictureUploader

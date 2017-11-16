@@ -8,16 +8,20 @@
 require 'faker'
 sports = ["basketball","football","soccer","hockey","baseball"]
 File.readlines('teams/basketball.txt').each do |line|
-	Team.create(name:line.chomp, sport_string: "basketball")
+	line = line.split(",")
+	Team.create(name: line[0], coach: line[1], frontoffice: line[2], stadium: line[3], sport_string: "basketball")
 end
 File.readlines('teams/hockey.txt').each do |line|
-	Team.create(name:line.chomp, sport_string: "hockey")
+	line = line.split(",")
+	Team.create(name: line[0], coach: line[1], frontoffice: line[2], stadium: line[3], sport_string: "hockey")
 end
 File.readlines('teams/football.txt').each do |line|
-	Team.create(name:line.chomp, sport_string: "football")
+	line = line.split(",")
+	Team.create(name: line[0], coach: line[1], frontoffice: line[2], stadium: line[3], sport_string: "football")
 end
 File.readlines('teams/baseball.txt').each do |line|
-	Team.create(name:line.chomp, sport_string: "baseball")
+	line = line.split(",")
+	Team.create(name: line[0], coach: line[1], frontoffice: line[2], stadium: line[3], sport_string: "baseball")
 	
 end
 10.times do

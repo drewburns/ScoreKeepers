@@ -323,6 +323,9 @@ window.addEventListener('load', function() {
         var status = document.getElementById('status');
         console.log(status);
 
+        var picture = document.getElementById('post_picture');
+        console.log(picture);
+
         $('#postsubmit').submit();
 
         // Send the update content to the server to be saved
@@ -341,8 +344,6 @@ window.addEventListener('load', function() {
         }
 
     });
-
-
 });
 
 

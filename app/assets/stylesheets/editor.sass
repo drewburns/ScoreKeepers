@@ -5,7 +5,7 @@
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * You're free to add appli.large-10, .medium-10, .small-12, .columns, .large-centeredcation-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
@@ -24,19 +24,20 @@
   background-color: white
 
 .editor
+  @extend .large-10, .medium-10, .small-12, .columns, .large-centered
   padding-bottom: 20px
 
 .editor-title
   @extend .editor
   @extend .large-10, .medium-10, .small-12, .columns, .large-centered
-  margin-bottom: 40px
+  padding-bottom: 40px
   background-color: white
 
 
 .editor-tags
   @extend .editor
 
-  padding-bottom: 40px
+  padding-bottom: 20px
   background-color: white
 
 .editor-imageheader
@@ -47,4 +48,19 @@
 .editor-content
   @extend .editor
   padding-bottom: 20px
-  backgoround-color: white
+  background-color: white
+
+.header
+  @extend .large-10, .medium-10, .small-12, .columns, .large-centered
+  background-color: cornflowerblue
+  height: 200px
+  img
+    object-fit: cover
+    width: 100%
+    height: 100%
+
+
+.header-upload
+  @extend .editor
+  background-color: white
+  text-align: center

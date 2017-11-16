@@ -16,6 +16,8 @@
  *= require content-tools
  *= require ContentTools/build/content-tools.min
 *= require toastr
+ *= require selectize/dist/css/selectize
+ *= require selectize/dist/css/selectize.default
  */
 
 /* Header CSS */
@@ -30,11 +32,14 @@
 .icon-bar.four-up .item{width: 100px; padding: 10px; margin: 0px;}
 .icon-bar.four-up .item:hover{background-color: white;}
 
+<<<<<<< HEAD
 .contain-to-top .top-bar{ max-width: 2000px; width: 1800px;}
 
 .notice{ padding: 0px; margin: 0px; height: 0px;}
 .alert{margin-bottom: 0px;}
 
+=======
+>>>>>>> 7d55f15a7a733421350033920e7d256aa1044101
 /* Homepage CSS*/
 .lineupx{
   width: 85%;

@@ -27,6 +27,8 @@
   </script>
 
   <%= javascript_include_tag 'ContentTools/build/content-tools' %>
+  <%= javascript_include_tag 'ContentEdit/build/content-edit' %>
+  <%= stylesheet_link_tag 'ContentEdit/build/content-edit.min' %>
   <%= javascript_include_tag 'editor' %>
   <%= javascript_include_tag 'selectize/dist/js/standalone/selectize.min' %>
   <%= stylesheet_link_tag 'selectize/dist/css/selectize' %>
@@ -54,16 +56,23 @@
           <%= f.hidden_field :title, :value => nil %>
           <h2 id="post-title-block">Title Me</h2>
         </div>
+        <h2 id="title-2">Title Here Now</h2>
+        <script>
+            var element = document.getElementById('title-2');
+            var region = new ContentEdit.Region(element);
+        </script>
       </div>
       <div class="editor-headerimage">
-          <%= f.hidden_field(:picture_cache) %>
-          <div class="header-div">
-            <label for="imgInp" class="header-upload" style='border:none;'>
-              <img id="blah" src="https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png" alt="" style="height:250px;width:250px;" />
-            </label>
-          </div>
-
-          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
+          <%#= f.hidden_field(:picture_cache) %>
+          <!--<div class="header-div">-->
+            <!--<label for="imgInp" class="header-upload" style='border:none;'>-->
+              <!--<img id="blah" src="https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png" alt="" style="height:250px;width:250px;" />-->
+            <!--</label>-->
+          <!--</div>-->
+          <%#= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
+        <div class="header">
+          <img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1" onclick="imageUpload();">
+        </div>
       </div>
       <div class="editor-content">
 
@@ -99,6 +108,5 @@
       });
 
   </script>
-
 
 </body>

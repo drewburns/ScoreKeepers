@@ -17,6 +17,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( ContentTools/build/content-tools.min.css )
 Rails.application.config.assets.precompile += %w( ContentTools/build/content-tools.css )
 Rails.application.config.assets.precompile += %w( ContentTools/build/content-tools.js )
+Rails.application.config.assets.precompile += %w( ContentEdit/build/content-edit.js )
 Rails.application.config.assets.precompile += %w( editor.js )
 Rails.application.config.assets.precompile += %w( editor.css )
 Rails.application.config.assets.precompile += %w( foundation.js )
@@ -28,3 +29,5 @@ Rails.application.config.assets.precompile += %w( selectize/dist/css/selectize.d
 Rails.application.config.assets.precompile += %w( selectize/dist/js/standalone/selectize.min.js)
 
 
+
+Rails.application.config.assets.precompile += %w( ContentEdit/build/content-edit.min.css )

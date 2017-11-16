@@ -24,6 +24,10 @@ class Post < ApplicationRecord
 		return self.user.id
 	end
 
+	def header_image
+		return self.picture
+	end
+
 	def score_for(user)
 		votes = self.evaluations.where(source_id: user.id)
 		if votes.count == 0 

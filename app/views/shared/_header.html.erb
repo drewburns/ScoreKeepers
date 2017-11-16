@@ -10,14 +10,12 @@
     </ul>
 
     <% if user_signed_in? %>
-    <section class="top-bar-section" style="width: 200px;">
+    <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
 
-
-
 			 <ul class="menu">
-        <% if current_user.admin == true %>
+        <% if current_user.admin %>
           <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>
         <% end %>
          <li class=""><%= link_to "Team Index" , teams_path %></li>

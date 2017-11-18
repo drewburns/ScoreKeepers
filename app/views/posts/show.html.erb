@@ -8,7 +8,6 @@
 					<p>Admin Message: <%= @post.admin_message %></p>
 				<% end %>
 				<% if @post.status == "draft" or @post.status == "rejected"%>
-						<%=link_to "Edit", edit_post_path(@post) %>
             <%=link_to "Edit", new_post_path(post: @post, edit:true) %>
 					  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
 			        <%= f.hidden_field :user_id, :value => current_user.id %>

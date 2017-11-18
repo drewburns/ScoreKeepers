@@ -80,7 +80,9 @@ class PostsController < ApplicationController
         redirect_to 'users/creator', alert: 'Please retry'
       end
     end
-
+    puts 'PICUTRE'
+    puts params[:picture]
+    puts 'PICTURE'
     @post = Post.new(real_post_params)
     p post_params
     p params

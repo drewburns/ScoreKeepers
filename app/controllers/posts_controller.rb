@@ -51,6 +51,8 @@ class PostsController < ApplicationController
   end
 
   def update
+    # finish making this create the teams right
+    puts "UPDATE " * 10
     @post = Post.find(params[:id])
     new_params = real_post_params
     new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'

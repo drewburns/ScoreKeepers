@@ -44,7 +44,7 @@
           <% if params[:edit] == 'true' %>
               <h2 id = 'post-title-block'><%== p.title %></h2>
           <% else %>
-              <h2 id='post-title-block'>Title Here Now</h2>
+              <h2 id='post-title-block'>Title Here</h2>
           <% end %>
         </div>
 
@@ -54,16 +54,12 @@
         </script>
       </div>
       <div class="editor-headerimage">
-          <%#= f.hidden_field(:picture_cache) %>
-          <!--<div class="header-div">-->
-            <!--<label for="imgInp" class="header-upload" style='border:none;'>-->
-              <!--<img id="blah" src="https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png" alt="" style="height:250px;width:250px;" />-->
-            <!--</label>-->
-          <!--</div>-->
-          <%#= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
-        <div class="header">
-          <img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1" onclick="alert('broke for now- TJN');">
-        </div>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
+        <%= f.hidden_field(:picture_cache) %>
+        <label for='imgInp'>
+          <img id="image_preivew" src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1" onclick="openImageSelector();">
+        </label>
+        <p>Your image will be centered/stretched to fit a x by y box, please ensure your image fits these dimesions for optimal results.  If your image looks like trash when reviewed, it will be rejected.</p>
       </div>
       <div class="editor-content">
 
@@ -84,8 +80,8 @@
   <script>
         $('#micropost_picture').bind('change', function() {
           var size_in_megabytes = this.files[0].size/1024/1024;
-          if (size_in_megabytes > 5) {
-              alert('Maximum file size is 5MB. Please choose a smaller file.');
+          if (size_in_megabytes > 50) {
+              alert('Maximum file size is 50MB. Please choose a smaller file.');
           }
       });
       function readURL(input) {
@@ -93,7 +89,7 @@
               var reader = new FileReader();
 
               reader.onload = function(e) {
-                  $('#blah').attr('src', e.target.result);
+                  $('#image_preivew').attr('src', e.target.result);
               }
 
               reader.readAsDataURL(input.files[0]);
@@ -107,10 +103,7 @@
               e.preventDefault();
           });
 
-          var sub = $('#subject').selectize({create: true});
-          var sub_control = sub.selectize;
-
-
+          $('#subject').selectize({create: true});
           var teams = $('#tags').selectize({
               delimiter: ',',
               persist: true,
@@ -125,7 +118,7 @@
           var control = teams[0].selectize;
           control.clear();
 
-          <% if params[:edit] %>
+          <% if params[:edit] == 'true' %>
             <% p = Post.find(params[:post]) %>
             $("#post_sport").val('<%= p.sport %>').change();
             <% if p.teams != nil %>
@@ -135,6 +128,12 @@
             <% end %>
           <%end%>
       });
+
+      function openImageSelector() {
+          dia = new ContentTools.ImageDialog();
+          console.log(dia.mount());
+
+      }
 
   </script>
 

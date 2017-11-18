@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
   # wrap_parameters :user, include: [:user_id, :name, :email , :password , :password_digest, :token, :author]
 
-
-
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
     users = []
     User.all.each do |user|
       users << user if user.posts.count > 0
@@ -23,7 +21,7 @@ class UsersController < ApplicationController
 
   def admin
     @user = User.find(params[:id])
-    @posts = Post.where(status: "pending").sort_by{|p| p.time_submitted}
+    @posts = Post.where(status: 'pending').sort_by(&:time_submitted)
   end
 
   # def leaderboard
@@ -32,10 +30,9 @@ class UsersController < ApplicationController
 
   # end
 
-
   private
 
-    def user_params
-      params.require(:user).permit(:user_id, :name, :email , :password , :password_digest, :token, :author)
-    end
+  def user_params
+    params.require(:user).permit(:user_id, :name, :email, :password, :password_digest, :token, :author)
+  end
 end

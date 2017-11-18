@@ -68,14 +68,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    if post_params[:exists]
+    if post_params[:exists] == 'true'
       @post = Post.find(params[:id])
       new_params = real_post_params
       new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'
       new_params[:time_submitted] = DateTime.now if post_params[:status] == 'submitted'
 
       if @post.update_attributes(new_params)
-        redirect_to @post, notice: 'Post Saved!'
+        redirect_to @post, notice: 'Post Updated!'
       else
         redirect_to 'users/creator', alert: 'Please retry'
       end

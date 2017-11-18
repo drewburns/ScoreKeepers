@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116184752) do
+ActiveRecord::Schema.define(version: 20171117150928) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20171116184752) do
     t.string "frontoffice"
     t.string "stdium"
     t.string "stadium"
+    t.string "picture_url"
   end
 
   create_table "user_teams", force: :cascade do |t|

@@ -2,7 +2,7 @@
 	<div class="large-8 columns">
 		<h3>Creator Center</h3>
 
-		<%= link_to "Create new", new_post_path , :class => 'button'%>
+		<%= link_to "Create new", new_post_path(edit: false) , :class => 'button'%>
 		<h3>Pending Posts</h3>
 		<ul>
 		<% @user.pending.each do |post| %>
@@ -17,7 +17,7 @@
 		<% @user.drafts.each do |post| %>
 			<li>
 			<%= link_to post.title, post %> |
-			<%=link_to "Edit", edit_post_path(post) %> |
+        <%=link_to "Edit", new_post_path(post: @post, edit:true) %> |
 				<% if post.status == "draft" or post.status == "rejected"%>
 				  <%= form_for [post], :html => {:id => 'postsubmit'} do |f| %>
 			    <%= f.hidden_field :user_id, :value => current_user.id %>

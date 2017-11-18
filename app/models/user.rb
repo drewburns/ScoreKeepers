@@ -40,7 +40,7 @@ class User < ApplicationRecord
 
   def picture_size
     if picture.size > 25.megabytes
-      redirect_to new_user_registration , :alert => "File to big"
+      redirect_to new_user_registration , :alert => "File too big"
     end
   end
 

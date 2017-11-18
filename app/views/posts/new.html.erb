@@ -17,6 +17,14 @@
 <div class="editor">
   <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
+      <% if params[:edit] == 'true' %>
+        <% p = Post.find(params[:post]) %>
+        <%= f.hidden_field :exists, :value => true %>
+        <%= f.hidden_field :post_id, :value => p.id %>
+      <% else %>
+        <%= f.hidden_field :exists, :value => false %>
+      <%end%>
+
       <div class="editor-tags">
         <div>
             <div class="formrow">
@@ -33,9 +41,13 @@
       <div class="editor-title">
         <div align="center" data-editable data-name="title">
           <%= f.hidden_field :title, :value => nil %>
-          <h2 id="post-title-block">Title Me</h2>
+          <% if params[:edit] == 'true' %>
+              <h2 id = 'post-title-block'><%== p.title %></h2>
+          <% else %>
+              <h2 id='post-title-block'>Title Here Now</h2>
+          <% end %>
         </div>
-        <!--<h2 id="title-2">Title Here Now</h2>-->
+
         <script>
 //            var element = document.getElementById('title-2');
 //            var region = new ContentEdit.Region(element);
@@ -56,8 +68,12 @@
       <div class="editor-content">
 
         <%= f.hidden_field :content, :value => nil %>
-        <div align="center" data-editable data-name="main-content">
-          <p>You should be able to edit this</p>
+        <div align="center" data-editable data-name="main-content" id="post-edit-block">
+          <% if params[:edit] == 'true' %>
+              <h2><%== p.content %></h2>
+          <% else %>
+              <p>You should be able to edit this</p>
+        <% end %>
         </div>
         <!-- TODO: Fix this so that people can't self approve their own posts -->
         <%= f.hidden_field :status, :value => "draft" %>
@@ -91,7 +107,10 @@
               e.preventDefault();
           });
 
-          $('#subject').selectize({create: true});
+          var sub = $('#subject').selectize({create: true});
+          var sub_control = sub.selectize;
+
+
           var teams = $('#tags').selectize({
               delimiter: ',',
               persist: true,
@@ -102,8 +121,19 @@
                   }
               }
           });
+
           var control = teams[0].selectize;
           control.clear();
+
+          <% if params[:edit] %>
+            <% p = Post.find(params[:post]) %>
+            $("#post_sport").val('<%= p.sport %>').change();
+            <% if p.teams != nil %>
+              <% for i in p.teams %>
+                  control.addItem('<%= i.name %>');
+              <% end %>
+            <% end %>
+          <%end%>
       });
 
   </script>

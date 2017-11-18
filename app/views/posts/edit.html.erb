@@ -15,7 +15,7 @@
 <body style="background-color:#E4E4E4;">
 
 <div class="editor">
-  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+  <%= form_for [p], :html => {:id => 'postsubmit'} do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <div class="editor-tags">
         <div>
@@ -104,6 +104,7 @@
           });
           var control = teams[0].selectize;
           control.clear();
+
       });
 
   </script>

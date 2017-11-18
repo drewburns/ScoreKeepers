@@ -2,7 +2,7 @@
 	<div class="large-8 columns">
 		<h3>Creator Center</h3>
 
-		<%= link_to "Create new", new_post_path , :class => 'button'%>
+		<%= link_to "Create new", new_post_path(edit: false) , :class => 'button'%>
 		<h3>Pending Posts</h3>
 		<ul>
 		<% @user.pending.each do |post| %>

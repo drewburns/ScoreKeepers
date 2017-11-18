@@ -39,7 +39,8 @@
 				<div class="postdate">
 					<p><i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
 					</div>
-				<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
+					<img id="blah" src=<%= @post.full_size %> alt="" /> 
+				<!-- <img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1"> -->
 				<hr>
 				<div class="postcontent">
 

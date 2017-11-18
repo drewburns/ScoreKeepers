@@ -69,7 +69,9 @@ class PostsController < ApplicationController
 
   def create
     if post_params[:exists] == 'true'
-      @post = Post.find(params[:id])
+      p params
+      p post_params
+      @post = Post.find(post_params[:post_id])
       new_params = real_post_params
       new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'
       new_params[:time_submitted] = DateTime.now if post_params[:status] == 'submitted'
@@ -79,31 +81,32 @@ class PostsController < ApplicationController
       else
         redirect_to 'users/creator', alert: 'Please retry'
       end
-    end
-    puts 'PICUTRE'
-    puts params[:picture]
-    puts 'PICTURE'
-    @post = Post.new(real_post_params)
-    p post_params
-    p params
-    if @post.user_id == current_user.id
-      if @post.save
-        if post_params[:teams] != ""
-          teams_list = post_params[:teams].split(",")
-          teams_list.each do |team_string|
-            team = Team.where(name:team_string)
-            if team.first != nil
-              PostTeam.create(post_id: @post.id, team_id: team.first.id)
+    else 
+      puts 'PICUTRE'
+      puts params[:picture]
+      puts 'PICTURE'
+      @post = Post.new(real_post_params)
+      p post_params
+      p params
+      if @post.user_id == current_user.id
+        if @post.save
+          if post_params[:teams] != ""
+            teams_list = post_params[:teams].split(",")
+            teams_list.each do |team_string|
+              team = Team.where(name:team_string)
+              if team.first != nil
+                PostTeam.create(post_id: @post.id, team_id: team.first.id)
+              end
             end
-          end
 
+          end
+          redirect_to post_path(@post), notice: 'Post Created!'
+        else
+          redirect_to 'posts/new', alert: 'Please retry'
         end
-        redirect_to post_path(@post), notice: 'Post Created!'
       else
-        redirect_to 'posts/new', alert: 'Please retry'
+        redirect_to root_path, alert: 'Please login'
       end
-    else
-      redirect_to root_path, alert: 'Please login'
     end
   end
 
@@ -175,12 +178,12 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :title, :content, :thumbnail_url, :sport, :status, :time_approved, :admin_message, :teams)
+    params.require(:post).permit(:user_id, :title, :content, :thumbnail_url, :sport, :status, :time_approved, :admin_message, :teams, :exists, :picture, :post_id)
   end
 
   def real_post_params 
     return {user_id: post_params[:user_id], title: post_params[:title],content: post_params[:content],thumbnail_url: post_params[:thumbnail_url], sport: post_params[:sport],
-      status: post_params[:status], time_approved: post_params[:time_approved], admin_message: post_params[:admin_message]}
+      status: post_params[:status], time_approved: post_params[:time_approved], admin_message: post_params[:admin_message], picture: post_params[:picture]}
   end
 
 

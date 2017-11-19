@@ -1,3 +1,4 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <div class="row">
 
 	<div class="large-3 columns" style="margin-left: 100px;">
@@ -19,5 +20,14 @@
 		</div>
 		<% end %>
 	</div>
-
 </div>
+
+<div class="graph-area" style="height:auto;width:auto;">
+<%= render partial: 'teams/graphs', locals: {team: @team}%>
+</div>
+
+
+
+
+
+

@@ -17,7 +17,8 @@
 //= require toastr
 //= require foundation
 //= require selectize
-
+//= require Chart.bundle
+//= require chartkick
 $(document).foundation();
 
 $(window).bind("load", function () {

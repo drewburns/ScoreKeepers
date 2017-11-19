@@ -75,13 +75,25 @@ class PostsController < ApplicationController
       new_params = real_post_params
       new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'
       new_params[:time_submitted] = DateTime.now if post_params[:status] == 'submitted'
+      PostTeam.where(post_id: @post.id).delete_all
+
+      if post_params[:teams] != ""
+        teams_list = post_params[:teams].split(",")
+        teams_list.each do |team_string|
+          team = Team.where(name:team_string)
+          if team.first != nil
+            PostTeam.create(post_id: @post.id, team_id: team.first.id)
+          end
+        end
+      end
+
 
       if @post.update_attributes(new_params)
         redirect_to @post, notice: 'Post Updated!'
       else
         redirect_to 'users/creator', alert: 'Please retry'
       end
-    else 
+    else
       puts 'PICUTRE'
       puts params[:picture]
       puts 'PICTURE'

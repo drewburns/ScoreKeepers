@@ -12,7 +12,7 @@
 		<h3 class="itemheader">Recent <%= @posts.first.sport.capitalize %> Posts </h3>
 		<% @posts.each do |post| %>
 			<div class='post'>
-					<img width="250px" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
+					<img width="250px" src=<%= post.full_size %>>
 					<div class="pcontent">
 						<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
 						<h6 class="pscore">Score: <%= post.score %></h6>
@@ -21,15 +21,24 @@
 					</div>
 			</div>
 			<% end %>
+			<%= will_paginate @posts %>
 	</div>
 
 	<div class="large-3 columns" style="background-color: #f9f9f9;">
-		<h3 class="itemheader">Today's Leaderboard</h3>
-			insert leaderbaord here
+		<h3 class="itemheader">Today's <%= @posts.first.sport.capitalize %> Leaderboard</h3>
+			<ul class="lboardul">
+				<% @users.each do |user| %>
+					<img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;">
+						<div class="lcell">
+							<li class="lboard"><%= link_to user.name, user_path(user) %>
+							<p class="lbscore"><%= user.this_weeks_score %></p></li><hr>
+						</div>
+						<% end %>
+			</ul>
 
 		<h3 class="itemheader">Top Posts</h3>
 			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
-				<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
+				<img src=<%= post.full_size %>>
 				<p><%= post.title %></p>
 			<% end %>
 	</div>

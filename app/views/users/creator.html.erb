@@ -16,15 +16,16 @@
 		<ul>
 		<% @user.drafts.reverse.each do |post| %>
 			<li>
-			<%= link_to post.title, post %> |
-        <%=link_to "Edit", new_post_path(post: post, edit:true) %> |
+			<%= link_to post.title, post %> 
+   
 				<% if post.status == "draft" or post.status == "rejected"%>
 				  <%= form_for [post], :html => {:id => 'postsubmit'} do |f| %>
 			    <%= f.hidden_field :user_id, :value => current_user.id %>
 			    <%= f.hidden_field :title, :value => post.title %>
 			    <%= f.hidden_field :content, :value => post.content %>
 			    <%= f.hidden_field :status, :value => "pending" %>
-			    <%= f.submit 'Submit Post' %>
+			    <%=link_to "Edit", new_post_path(post: post, edit:true) , :class => 'button tiny '%>
+			    <%= f.submit 'Submit Post' , :class => 'button tiny success'%>
 			  <% end %>
 			<% end %>
 			</li>
@@ -44,15 +45,15 @@
 		<ul>
 		<% @user.rejected.reverse.each do |post| %>
 		<li>
-			<%= link_to post.title, post %> |
-			<%=link_to "Edit", new_post_path(post: post, edit:true) %> |
+			<%= link_to post.title, post %> 
 			<% if post.status == "draft" or post.status == "rejected"%>
 			  <%= form_for [post], :html => {:id => 'postsubmit'} do |f| %>
+			  <%=link_to "Edit", new_post_path(post: post, edit:true), :class => 'button tiny' %> 
 			    <%= f.hidden_field :user_id, :value => current_user.id %>
 			    <%= f.hidden_field :title, :value => post.title %>
 			    <%= f.hidden_field :content, :value => post.content %>
 			    <%= f.hidden_field :status, :value => "pending" %>
-			    <%= f.submit 'Submit Post' %>
+			    <%= f.submit 'Submit Post' , :class => 'button tiny success' %>
 		  	<% end %>
 			<% end %>
 		</li>
@@ -60,13 +61,6 @@
 		</ul>
 
 
-		<h3>Upload Profile Photo</h3>
-		<ul>
-		  <div id = 'uploader'></div>
-		  <button type="button" class="upload button" onclick="openUploader();">Upload Profile Photo</button>
-		  <%= javascript_include_tag 'ContentTools/build/content-tools' %>
-		  <%= javascript_include_tag 'editor' %>
-
-		</ul>
+	
 	</div>
 </div>

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     users = []
+    @posts = @user.posts.where(status: 'approved').paginate(:page => params[:page], :per_page => 8)
     User.all.each do |user|
       users << user if user.posts.count > 0
     end

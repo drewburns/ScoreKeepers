@@ -8,7 +8,16 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @users = []
+    @posts = @team.posts.where(status: 'approved').paginate(:page => params[:page])
     if @team.posts.count != 0
+      if @team.posts.where('created_at >= ?', 1.week.ago).count > 1
+        @users = User.first(5)
+      else
+        # sorted = @team.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+        # @users = sorted.map { |post| post.user  }
+      users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      end
       # sorted = @team.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }
       # users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
     end

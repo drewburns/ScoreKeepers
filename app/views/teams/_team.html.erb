@@ -3,9 +3,9 @@
     <% if user_signed_in? %>
         <% if current_user.teams.include?(team) %>
         <% userTeam = current_user.userTeams.where(team_id:team.id).first.id%>
-            <%= link_to "Remove" , user_team_path(id: userTeam), :remote => true, method: :delete%>
+            <%= link_to "" , user_team_path(id: userTeam), :remote => true, method: :delete, :class => 'fi-heart' , :style => "font-size:25px; color:red;"%>
         <% else %>
-            <%= link_to "Add to favorites" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post,  :remote => true%>
+            <%= link_to "" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post,  :remote => true, :class => 'fi-heart' , :style => "font-size:25px; color:grey;"%>
         <% end %>
 
     <% end %>

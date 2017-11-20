@@ -1,27 +1,28 @@
 <div class="row">
 	<div class="large-8 columns">
 		<div class="userauthorfooter">
-			<img src='https://upload.wikimedia.org/wikipedia/commons/c/cb/Barack_Obama_Circle.png' width='135px'>
+			<img src=<%= @user.full_size %>  style="width:150px; height:150px; border-radius:50%;">
 			<h3 class="userauthorscore">#<%= @user.this_weeks_rank %> this week | <%= @user.this_weeks_score%></h3>
 			<h3 class="userauthorname"><b><%= @user.name%></b></h3>
-			<h6 class="userauthorbio">Barack Obama is the 44th president of the United States. He writers for the Huffington Post and enjoys playing basketball in his free time</h6>
+			<h6 class="userauthorbio"><%= @user.bio %></h6>
 		</div><hr>
 
 		<div class='userauthorpost'>
-			<% @user.posts.each do |post| %>
-			<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
+			<% @posts.each do |post| %>
+			<img src=<%= post.full_size%> >
 			<h3 class="uaptitle"><%= link_to post.title, post_path(post) %></h3>
 			<h6 class="uapscore">Score: <%= post.score %></h6>
 			<hr>
 			<% end %>
 		</div>
+		<%= will_paginate @posts %>
 	</div>
 
 	<div class="large-4 columns">
 		<h3 class="itemheader">Today's Leaderboard</h3>
 			<ul class="lboardul">
 				<% @users.each do |user| %>
-					<img src="http://jaclynphillips.com/wp-content/uploads/2015/10/Headshot-Circle.png" width="75px">
+					<img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;">
 						<div class="lcell">
 							<li class="lboard"><%= link_to user.name, user_path(user) %>
 							<p class="lbscore"><%= user.this_weeks_score %></p></li><hr>
@@ -31,7 +32,7 @@
 
 		<h3 class="itemheader">Top Posts</h3>
 			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
-				<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
+				<img src=<% post.full_size %>>
 				<p><%= post.title %></p>
 			<% end %>
 	</div>

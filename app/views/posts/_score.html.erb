@@ -1,26 +1,26 @@
 <div class="votepost">
 <% if @new_value != nil %>
-	Vote on this post: <span id="post-score"><%= @new_value %></span> |
+	<h4 style='display:inline;'>Score: <span id="post-score"><%= @new_value %></span> </h4>
 	<% if user_signed_in? %>
 		<% user_score = @post.score_for(current_user) %>
 		<% if user_score == nil %>
-			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true, :class => "voteonpost" %></p>
+			Vote:  <p style="display:inline;" id="no_score_yet"><%=link_to "", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true, :class => "voteonpost fi-star" , :style => 'color:gray;font-size:35px;'%></p>
 		<% elsif user_score.to_int == 1 %>
-			<p style="display:inline;" id="voted_up"><%=link_to "Remove Up", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true, :class => "voteonpost"%></p>
+			Vote:<p style="display:inline;" id="voted_up"><%=link_to "", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true, :class => "voteonpost fi-star" , :style => 'color:green;font-size:35px;'%></p>
 		<% elsif user_score.to_int == 0 or user_score.to_int == -1 %>
-			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true , :class => "voteonpost"%></p>
+			Vote:  <p style="display:inline;" id="no_score_yet"><%=link_to "", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @new_value), method: :post , :remote => true , :class => "voteonpost fi-star" , :style => 'color:gray; font-size:35px;'%></p>
 		<% end %>
 	<% end %>
 <% else %>
-	Vote on this post: <span id="post-score"><%= @post.score %></span> |
+	<h4>Score: <span id="post-score"><%= @post.score %></span> </h4>
 		<% if user_signed_in? %>
 		<% user_score = @post.score_for(current_user) %>
 		<% if user_score == nil %>
-			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true, :class => "voteonpost" %></p>
+			Vote:  <p style="display:inline;" id="no_score_yet"><%=link_to "", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true, :class => "voteonpost fi-star", :style => 'color:gray;font-size:35px;' %></p>
 		<% elsif user_score.to_int == 1 %>
-			<p style="display:inline;" id="voted_up"><%=link_to "Remove Up", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true, :class => "voteonpost"%></p>
+			Vote:  <p style="display:inline;" id="voted_up"><%=link_to "", vote_post_path(@post, type: 'down', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true, :class => "voteonpost fi-star" , :style => 'color:green;font-size:35px;' %></p>
 		<% elsif user_score.to_int == 0 or user_score.to_int == -1 %>
-			<p style="display:inline;" id="no_score_yet"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true , :class => "voteonpost"%></p>
+			Vote:  <p style="display:inline;" id="no_score_yet"><%=link_to "", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id, old_score: @post.score), method: :post , :remote => true , :class => "voteonpost fi-star", :style => 'color:gray;font-size:35px;' %></p>
 		<% end %>
 	<% end %>
 <% end %>
@@ -32,7 +32,7 @@
 	$( ".voteonpost" ).click(function() {
 		var something = $(this).parent();
 		// var newScore = Number(text) + 1;
-		console.log(something);
+		// console.log(something);
 	  // $(something).text(newScore);
 	});
 

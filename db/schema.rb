@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 20171117150928) do
     t.string "sport_string"
     t.string "coach"
     t.string "frontoffice"
-    t.string "stdium"
     t.string "stadium"
     t.string "picture_url"
   end

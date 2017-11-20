@@ -4,17 +4,14 @@
 
 	<% if user_signed_in? %>
 		<% if comment.score_for(current_user).to_i == 0 or comment.score_for(current_user).to_i == nil %>
-			<h3>user_score is zero</h3>
-			<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p> |
-			<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment"%></p>
+			<p style="display:inline;font-size:30px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => 'color:grey'%></p> |
+			<p style="display:inline;font-size:30px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => 'color:grey'%></p>
 		<% elsif comment.score_for(current_user).to_i == 1 %>
-			<h3>user_score is 1</h3>
-					<p style="display:inline;color:green;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment", :style => "color:green;"%></p> |
-					<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment"%></p>
+					<p style="display:inline;color:green;font-size:30px;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => "color:green;font-size:30px;"%></p> |
+					<p style="display:inline;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => "color:gray;font-size:30px;"%></p>
 		<% elsif comment.score_for(current_user).to_i == -1 %>
-					<h3>user_score is -1</h3>
-			<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p> |
-			<p style="display:inline;color:red;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment", :style => "color:red;"%></p>
+			<p style="display:inline;font-size:30px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => 'color:grey;'%></p> |
+			<p style="display:inline;color:red;font-size:30px;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => "color:red;"%></p>
 		<% end %>
 
 	<% end %>

@@ -22,7 +22,7 @@
 	<% end %>
 </div>
 <div class="large-3 medium-6 small-12 columns ">
-	<h3>Coach Rating</h3>
+	<h3><%= @team.coach %> Rating</h3>
 	<%= pie_chart @team.chart_data("coach_score"), :class => 'pie-chart' %>
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
@@ -68,7 +68,7 @@
 	<% end %>
 </div>
 <div class="large-3 medium-6 small-12 columns ">
-	<h3>Stadium Rating</h3>
+	<h3><%= @team.stadium %> Rating</h3>
 	<%= pie_chart @team.chart_data("stadium_score"), :class => 'pie-chart' %>
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>

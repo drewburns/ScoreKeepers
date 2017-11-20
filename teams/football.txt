@@ -1,32 +1,32 @@
-Arizona Cardinals
-Atlanta Falcons
-Baltimore Ravens
-Buffalo Bills
-Carolina Panthers
-Chicago Bears
-Cincinnati Bengals
-Cleveland Browns
-Dallas Cowboys
-Denver Broncos
-Detroit Lions
-Green Bay Packers
-Houston Texans
-Indianapolis Colts
-Jacksonville Jaguars
-Kansas City Chiefs
-Los Angeles Rams
-Los Angeles Chargers
-Miami Dolphins
-Minnesota Vikings
-New England Patriots
-New Orleans Saints
-New York Giants
-New York Jets
-Oakland Raiders
-Philadelphia Eagles
-Pittsburgh Steelers
-San Francisco 49ers
-Seattle Seahawks
-Tampa Bay Buccaneers
-Tennessee Titans
-Washington Redskins 
+Arizona Cardinals, Bruce Arians, front office, University of Phoenix Stadium, http://content.sportslogos.net/logos/7/177/full/kwth8f1cfa2sch5xhjjfaof90.png
+Atlanta Falcons, Dan Quinn, front office, Mercedes-Benz Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/atlanta_falcons.png
+Baltimore Ravens, John Harbaugh, front office, M&T Bank Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/baltimore_ravens.png
+Buffalo Bills, Sean McDermott, front office, New Era Field, http://cdn.bleacherreport.net/images/team_logos/328x328/buffalo_bills.png
+Carolina Panthers, Ron Rivera, front office, Bank of America Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/carolina_panthers.png
+Chicago Bears, John Fox, front office, Soldier Field, http://cdn.bleacherreport.net/images/team_logos/328x328/chicago_bears.png
+Cincinnati Bengals, Marvin Lewis, front office, Paul Brown Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/cincinnati_bengals.png
+Cleveland Browns, Hue Jackson, front office, FirstEnergy Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/cleveland_browns.png
+Dallas Cowboys, Jason Garrett, front office, AT&T Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/dallas_cowboys.png
+Denver Broncos, Vance Joseph, front office, Sports Authority Field, http://cdn.bleacherreport.net/images/team_logos/328x328/denver_broncos.png
+Detroit Lions, Jim Caldwell, front office, Ford Field, http://cdn.bleacherreport.net/images/team_logos/328x328/detroit_lions.png
+Green Bay Packers, Mike McCarthy, front office, Lambeau Field, http://cdn.bleacherreport.net/images/team_logos/328x328/green_bay_packers.png
+Houston Texans, Bill O'Brien, front office, NRG Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/houston_texans.png
+Indianapolis Colts, Chuck Pagano, front office, Lucas Oil Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/indianapolis_colts.png
+Jacksonville Jaguars, Doug Marrone, front office, EverBank Field, http://cdn.bleacherreport.net/images/team_logos/328x328/jacksonville_jaguars.png
+Kansas City Chiefs, Andy Reid, front office, Arrowhead Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/kansas_city_chiefs.png
+Los Angeles Rams, Sean McVay, front office, Los Angeles Memorial Coliseum, http://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_rams.png
+Los Angeles Chargers, Anthony Lynn, front office, StubHub Center, http://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_chargers.png
+Miami Dolphins, Adam Gase, front office, Hard Rock Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/miami_dolphins.png
+Minnesota Vikings, Mike Zimmer, front office, U.S. Bank Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/minnesota_vikings.png
+New England Patriots, Bill Belichick, front office, Gillette Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/new_england_patriots.png
+New Orleans Saints, Sean Payton, front office, Mercedez-Benz Superdome, http://cdn.bleacherreport.net/images/team_logos/328x328/new_orleans_saints.png
+New York Giants, Ben McAdoo, front office, MetLife Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/new_york_giants.png
+New York Jets, Todd Bowles, front office, MetLife Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/new_york_jets.png
+Oakland Raiders, Jack Del Rio, front office, Oakland-Alameda County Coliseum, http://cdn.bleacherreport.net/images/team_logos/328x328/oakland_raiders.png
+Philadelphia Eagles, Doug Pederson, front office, Lincoln Financial Field, http://cdn.bleacherreport.net/images/team_logos/328x328/philadelphia_eagles.png
+Pittsburgh Steelers, Mike Tomlin, front office, Heinz Field, http://cdn.bleacherreport.net/images/team_logos/328x328/pittsburgh_steelers.png
+San Francisco 49ers, Kyle Shanahan, front office, Levi's Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/san_francisco_49ers.png
+Seattle Seahawks, Pete Carroll, front office, CenturyLink Field, http://cdn.bleacherreport.net/images/team_logos/328x328/seattle_seahawks.png
+Tampa Bay Buccaneers, Dirk Koetter, front office, Raymond James Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/tampa_bay_buccaneers.png
+Tennessee Titans, Mike Mularkey, front office, Nissan Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/tennessee_titans.png
+Washington Redskins, Jay Gruden, front office, FedEx Field, http://cdn.bleacherreport.net/images/team_logos/328x328/washington_redskins.png

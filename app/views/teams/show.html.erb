@@ -1,11 +1,10 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <div class="row">
-
 	<div class="large-3 columns" style="margin-left: 100px;">
 		<h3><%= @team.name %></h3>
 		<h3><%= @team.users.count %> people like this team</h3>
 	</div>
-
+	<img src=<%= @team.picture_url %>>
 	<div class="large-7 columns" style="margin-right: 100px;">
 		<h3> Recent <%= @team.name %> Posts </h3>
 		<% @posts.each do |post| %>

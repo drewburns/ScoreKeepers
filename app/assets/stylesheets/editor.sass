@@ -18,49 +18,32 @@
 
 @import 'foundation'
 
-@mixin editor-component
-  @extend .large-10, .medium-10, .small-12, .columns, .large-centered
-  padding-bottom: 20px
-  background-color: white
-
 .editor
-  @extend .large-10, .medium-10, .small-12, .columns, .large-centered
-  padding-bottom: 20px
+  @extend .large-8, .medium-10, .small-12, .columns, .large-centered, .medium-centered, .small-centered
+  //padding-bottom: 20px
+  background-color: white
+  //div
+  //  float: bottom
+
+
+.editor-divider
+  @extend .editor
+  height: 200px
 
 .editor-title
   @extend .editor
-  @extend .large-10, .medium-10, .small-12, .columns, .large-centered
-  padding-bottom: 40px
-  background-color: white
-
+  text-align: left
 
 .editor-tags
   @extend .editor
 
-  padding-bottom: 20px
-  background-color: white
-
-.editor-imageheader
-  @extend .editor
-  padding-bottom: 20px
-  background-color: white
-
 .editor-content
   @extend .editor
-  padding-bottom: 20px
-  background-color: white
+  background-color: lightcoral
 
-.header
-  @extend .large-10, .medium-10, .small-12, .columns, .large-centered
-  background-color: cornflowerblue
-  height: 200px
-  label
-    object-fit: cover
-    width: 100%
-    height: 100%
-
-
-.header-upload
+.editor-headerimage
   @extend .editor
-  background-color: white
-  text-align: center
+  //background-color: cornflowerblue
+  img
+    width: 800px
+    height: 200px

@@ -313,9 +313,6 @@ window.addEventListener('load', function() {
         // Set the editor as busy while we save our changes
         this.busy(true);
 
-        var title = document.getElementById('post_title');
-        title.value = document.getElementById('post-title-block').textContent;
-
         var content = document.getElementById('post_content');
         content.value = regions['main-content'];
 

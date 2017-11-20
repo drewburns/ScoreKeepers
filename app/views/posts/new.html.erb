@@ -1,4 +1,4 @@
-<head>
+<head xmlns:text-align="http://www.w3.org/1999/xhtml">
   <title>My page</title>
   <%= stylesheet_link_tag 'ContentTools/build/content-tools.min' %>
   <%= stylesheet_link_tag 'editor.css' %>
@@ -25,48 +25,56 @@
         <%= f.hidden_field :exists, :value => false %>
       <%end%>
 
-      <div class="editor-tags">
-        <div>
-            <div class="formrow">
-              <label for="subject">Sport:</label>
-              <%= f.select :sport, [['Baseball','baseball'],['Football','football'],['Hockey','hockey'],['Basketball','basketball']], :html => {:id => 'sport'} %>
-            </div>
-            <div class="formrow">
-              <label for="tags">Teams:</label>
-              <input type="text" id="tags" value= "<%= Team.all.map{|team| team.name}.join(",") %>" >
-              <%= f.hidden_field :teams, :value => nil %>
-            </div>
-        </div>
-      </div>
       <div class="editor-title">
-        <div align="center" data-editable data-name="title">
-          <%= f.hidden_field :title, :value => nil %>
-          <% if params[:edit] == 'true' %>
-              <h2 id = 'post-title-block'><%== p.title %></h2>
-          <% else %>
-              <h2 id='post-title-block'>Title Here</h2>
-          <% end %>
-        </div>
-
-        <script>
-//            var element = document.getElementById('title-2');
-//            var region = new ContentEdit.Region(element);
-        </script>
+        <label for="post_title">Title:</label>
+        <%= f.hidden_field :title, :value => nil %>
+        <% if params[:edit] == 'true' %>
+            <%= f.text_field :title, :value => p.title %>
+        <% else %>
+            <%= f.text_field :title, :value => nil %>
+        <% end %>
       </div>
+
+      <div class="editor-tags">
+        <div class="formrow">
+          <label for="subject">Sport:</label>
+          <%= f.select :sport, [['Baseball','baseball'],['Football','football'],['Hockey','hockey'],['Basketball','basketball']], :html => {:id => 'sport'} %>
+        </div>
+        <div class="formrow">
+          <label for="tags">Teams:</label>
+          <input type="text" id="tags" value= "<%= Team.all.map{|team| team.name}.join(",") %>" >
+          <%= f.hidden_field :teams, :value => nil %>
+        </div>
+      </div>
+
       <div class="editor-headerimage">
+        <label>Header Image:</label>
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
         <%= f.hidden_field(:picture_cache) %>
         <label for='imgInp'>
-          <img id="image_preivew" src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1" onclick="openImageSelector();">
+          <p>Note: Your image will be centered/stretched to fit a x by y box, please ensure your image fits these dimesions for optimal results.  If your image looks like trash when reviewed, it will be rejected.  If you are editing this post and your current image appears below, uploading a new image will replace this one whereas doing nothing will keep it.</p>
+          <% if params[:edit] == 'true' %>
+              <img id="image_preivew" src=<%= p.full_size %>>
+          <% else %>
+              <img id="image_preivew" src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
+          <% end %>
         </label>
-        <p>Your image will be centered/stretched to fit a x by y box, please ensure your image fits these dimesions for optimal results.  If your image looks like trash when reviewed, it will be rejected.</p>
+
       </div>
+
+      <div class="editor-divider">
+        <br padding="50px">
+        <p>Any content highlighted in red below will form the body of your post.  Hit the edit button above and hit the check when you are done.  Note: Saving a post here does NOT submit it for submission.  You must submit it in the Creator Center for it to be reviewed and posted.</p>
+      </div>
+
+
+
       <div class="editor-content">
 
         <%= f.hidden_field :content, :value => nil %>
         <div align="center" data-editable data-name="main-content" id="post-edit-block">
           <% if params[:edit] == 'true' %>
-              <h2><%== p.content %></h2>
+              <%== p.content %>
           <% else %>
               <p>You should be able to edit this</p>
         <% end %>
@@ -128,12 +136,6 @@
             <% end %>
           <%end%>
       });
-
-      function openImageSelector() {
-          dia = new ContentTools.ImageDialog();
-          console.log(dia.mount());
-
-      }
 
   </script>
 

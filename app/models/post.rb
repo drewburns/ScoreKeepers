@@ -47,12 +47,12 @@ class Post < ApplicationRecord
       redirect_to new_user_registration, alert: 'File too big'
     end
   end
-  
-    def full_size
-    return self.picture
+
+  def full_size
+    picture
   end
 
   def thumbnail
-    return self.picture.thumbnail
+    picture.thumbnail
   end
 end

@@ -18,6 +18,30 @@ class User < ApplicationRecord
 	has_many :posts
   has_many :comments
 
+  def has_favorite_team(team)
+    contains = false
+    if self.teams.include?(team)
+      contains = true
+    else
+      contains = false
+    end
+    return contains
+  end
+
+  def vote_status_on(team,rating_name)
+    record = team.evaluations.where(reputation_name: rating_name, source_id: self.id)
+    status = nil
+    if record.count == 0 or record.first.value == 0.0
+      status = nil
+    elsif record.first.value == 1.0
+      status = "approve"
+    elsif record.first.value == -1.0
+      status = "disapprove"
+    end
+    return status
+  end
+
+
 	def this_weeks_score
 		posts = self.posts.where('created_at >= ?', 1.week.ago)
 		scores = posts.map{|post| post.score}.inject{|sum, post| sum + post}

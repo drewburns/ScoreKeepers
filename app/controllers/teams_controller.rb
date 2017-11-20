@@ -14,6 +14,25 @@ class TeamsController < ApplicationController
     end
   end
 
+  def vote
+    if params[:user_id]
+      @value = params[:type] == 'approve' ? 1 : -1
+      @team = Team.find(params[:id])
+      @user = User.find(params[:user_id])
+
+      if @user && @team
+        @team.add_or_update_evaluation(params[:vote_name].to_sym, @value, @user)
+        render file: 'teams/vote.js.erb'
+        # redirect_back fallback_location: root_path, notice: 'Vote counted'
+      else
+        render file: 'shared/error.js.erb'
+        # redirect_back fallback_location: root_path, alert: 'Error'
+      end
+    else
+      render file: 'shared/error.js.erb'
+    end
+  end
+
   def index
     @teams = Team.all
   end

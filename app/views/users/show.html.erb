@@ -6,7 +6,12 @@
 			<h3 class="userauthorname"><b><%= @user.name%></b></h3>
 			<h6 class="userauthorbio"><%= @user.bio %></h6>
 		</div><hr>
-
+		<h3>User's Favorite Teams</h3>
+		<ul>
+			<% @user.teams.each do |team| %>
+				<%= render :partial => 'teams/team', locals: {team: team} %>
+			<% end %>
+		</ul>
 		<div class='userauthorpost'>
 			<% @posts.each do |post| %>
 			<img src=<%= post.full_size%> >
@@ -17,6 +22,7 @@
 		</div>
 		<%= will_paginate @posts %>
 	</div>
+
 
 	<div class="large-4 columns">
 		<h3 class="itemheader">Today's Leaderboard</h3>

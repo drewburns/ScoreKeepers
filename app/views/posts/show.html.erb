@@ -1,6 +1,6 @@
 <div class="row">
 
-	<div class="large-8 columns">
+	<div class="large-8 columns" style="margin-left: 200px;">
 		<h1 class="posttitle"><%= @post.title%></h1>
 			<% if @post.user == current_user %>
 			<h3 >Post Status: <%= @post.status %></h3>
@@ -19,17 +19,11 @@
 				<% end %>
 			<% end %>
 
-			<% if @post.sport != nil %>
-			<p> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></p>
-			<% end %>
-
-			</br>
-
 				<div class="postauthor">
-					<p>By <%= link_to @post.user.name, user_path(@post.user) %></p>
+					<p>by <%= link_to @post.user.name, user_path(@post.user) %></p>
 					</div>
 				<div class="postdate">
-					<p><i>Created <%= time_ago_in_words(@post.created_at)%></i> </p>
+					<p><i><%= time_ago_in_words(@post.created_at)%> ago</i> </p>
 					</div>
 				<img src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
 				<hr>
@@ -45,20 +39,7 @@
 					<h3 class="authorname"><%= link_to @post.user.name, user_path(@post.user) %></h3>
 					<h6 class="authorbio">[Writer's name here] is a writer for the [enter publication here]. In his/her spare time they like reading and hiking</h6>
 				</div>
-					<div id="vote_post_container">
-						<%= render partial: 'score', locals: {post: @post}%>
-					</div>
-
-
-
-				<div class="votepost">
-				Vote on this post: <span id="post-score"><%= @post.score %></span> |
-				<% if user_signed_in? %>
-					<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true, :id =>"voteonpost"%></p>
-				<% end %>
-
-				</div>
-
+				<hr>
 				<h3>Comments:</h3>
 				<% if user_signed_in? %>
 					<% comment = Comment.new %>
@@ -79,29 +60,22 @@
 				<% end %>
 				</ul>
 		</div>
+
+
+	<div class="large-2 columns">
+		<% if @post.sport != nil %>
+		<p> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></p>
+		<% end %>
+
+
+		Vote on this post: <span id="post-score"><%= @post.score %></span> |
+		<% if user_signed_in? %>
+			<p style="display:inline;"><%=link_to "Up", vote_post_path(@post, type: 'up', user_id: current_user.id, id: @post.id), method: :post , :remote => true, :id =>"voteonpost"%></p>
+		<% end %>
+
 	</div>
-
-	<div class="large-4 columns">
-		<div class="sidebar">
-		<h3 class="itemheader">Today's Leaderboard</h3>
-			<ol class="lboardul">
-				<% @users.each do |user| %>
-
-							<li class="lboard"><%= link_to user.name, user_path(user) %></li>
-							<p class="lbscore"><%= user.this_weeks_score %><hr></p>
-
-						<% end %>
-			</ol>
-
-		<h3 class="itemheader">Top Posts</h3>
-			<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
-				<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
-				<p><%= post.title %></p>
-			<% end %>
-		</div>
-	</div>
-
 </div>
+
 <script type="text/javascript">
 	// $( "voteonpost" ).click(function() {
 	// });
@@ -114,4 +88,3 @@
 	});
 
 </script>
-

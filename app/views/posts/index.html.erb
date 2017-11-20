@@ -2,7 +2,7 @@
 
 <div class="row">
 
-	<div class="large-2 columns" style="border-right: 1px solid grey;">
+	<div class="large-2 columns" style="border-right: 1px solid grey; background-color: #f5f5f5; padding-top: 10px;">
 		<h3 class="itemheader">Welcome</h3>
 		<h6 style="margin:0px; font-weight: bold;">About</h6>
 		<p>Platform for all fans to talk about their teams</p>
@@ -29,15 +29,17 @@
 			<p class="lineupy"><%= link_to (@posts.index(post)+1) %></p><h4 class="lineupx"><%= link_to post.title, post_path(post) %></h4>
 			<% end %>
 	</div>
-
 </div>
 <br>
 
-<div class="row" style="background-color: #f5f5f5;">
- <div class="large-4 columns" style="border-right: 1px solid grey; background-color: white;">
+
+<div class="row">
+
+ <div class="large-3 columns" style="border-right: 1px solid grey;">
 	 <h3 class="itemheader">Welcome</h3>
  </div>
- <div class="large-4 columns">
+
+ <div class="large-6 columns" style="background-color: white;">
 	<h3 class="itemheader">Featured</h3>
 		<% @posts.first(3).each do |post| %>
 			<div class='post'>
@@ -50,17 +52,20 @@
 				</div>
 			</div>
 			<% end %>
-	</div>
-	<div class="large-4 columns">
+</div>
+
+<div class="large-3 columns" style="background-color: white;">
 		<h3 class="itemheader">Today's Leaderboard</h3>
 			<ul class="lboardul">
 				<% @users.each do |user| %>
 					<img src="http://jaclynphillips.com/wp-content/uploads/2015/10/Headshot-Circle.png" width="75px">
 						<div class="lcell">
 							<li class="lboard"><%= link_to user.name, user_path(user) %>
-							<p class="lbscore"><%= user.this_weeks_score %></p></li><hr>
+							<p class="lbscore"><%= user.this_weeks_score %></p></li>
 						</div>
+						<hr style="margin: 12px;">
 						<% end %>
+
 			</ul>
 	</div>
 </div>

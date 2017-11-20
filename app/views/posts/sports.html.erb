@@ -1,5 +1,6 @@
 <div class="row">
 	<div class="large-2 columns">
+		<h3>Team Links</h3>
 			<ul>
 					<% for i in Team.where(sport_string: params[:sport]) %>
 							<li><%= link_to i.name, team_path(i.id)%></li>
@@ -8,7 +9,7 @@
 
 	</div>
 
-	<div class="large-7 columns">
+	<div class="large-7 columns" style="padding-right: 15px;">
 		<h3 class="itemheader">Recent <%= @posts.first.sport.capitalize %> Posts </h3>
 		<% @posts.each do |post| %>
 			<div class='post'>
@@ -23,7 +24,7 @@
 			<% end %>
 	</div>
 
-	<div class="large-3 columns" style="background-color: #f9f9f9;">
+	<div class="large-3 columns" style="background-color: #f7f7f7;">
 		<h3 class="itemheader">Today's Leaderboard</h3>
 			insert leaderbaord here
 

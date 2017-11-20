@@ -1,30 +1,30 @@
-Atlanta Braves, coach, front office, stadium
-Miami Marlins
-New York Mets
-Philadelphia Phillies
-Washington Nationals
-Chicago Cubs
-Cincinnati Reds
-Milwaukee Brewers
-Pittsburgh Pirates
-St. Louis Cardinals
-Arizona Diamondbacks
-Colorado Rockies
-Los Angeles Dodgers
-San Diego Padres
-San Francisco Giants
-Baltimore Orioles
-Boston Red Sox
-New York Yankees
-Tampa Bay Rays
-Toronto Blue Jays
-Chicago White Sox
-Cleveland Indians
-Detroit Tigers
-Kansas City Royals
-Minnesota Twins
-Houston Astros
-Los Angeles Angels
-Oakland Athletics
-Seattle Mariners
-Texas Rangers
+Atlanta Braves, Brian Snitker, front office, SunTrust Park, http://cdn.bleacherreport.net/images/team_logos/328x328/atlanta_braves.png
+Miami Marlins, Don Mattingly, front office, Marlins Park, http://cdn.bleacherreport.net/images/team_logos/328x328/miami_marlins.png
+New York Mets, Mickey Callaway front office, Citi Field, http://cdn.bleacherreport.net/images/team_logos/328x328/new_york_mets.png
+Philadelphia Phillies, Gabe Kapler, front office, Citizens Bank Park, http://cdn.bleacherreport.net/images/team_logos/328x328/philadelphia_phillies.png
+Washington Nationals, Dave Martinez, front office, Nationals Park, http://cdn.bleacherreport.net/images/team_logos/328x328/washington_nationals.png
+Chicago Cubs, Joe Maddon, front office, Wrigley Field, http://cdn.bleacherreport.net/images/team_logos/328x328/chicago_cubs.png
+Cincinnati Reds, Bryan Price, front office, Great American Ball Park, http://cdn.bleacherreport.net/images/team_logos/328x328/cincinnati_reds.png
+Milwaukee Brewers, Craig Counsell, front office, Miller Park, http://cdn.bleacherreport.net/images/team_logos/328x328/milwaukee_brewers.png
+Pittsburgh Pirates, Clint Hurdle, front office, PNC Park, http://cdn.bleacherreport.net/images/team_logos/328x328/pittsburgh_pirates.png
+St. Louis Cardinals, Mike Matheny, front office, Busch Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/st_louis_cardinals.png
+Arizona Diamondbacks, Torey Lovullo, front office, Chase Field, http://cdn.bleacherreport.net/images/team_logos/328x328/arizona_diamondbacks.png
+Colorado Rockies, Bud Black, front office, Coors Field, http://cdn.bleacherreport.net/images/team_logos/328x328/colorado_rockies.png
+Los Angeles Dodgers, Dave Roberts, front office, Dodger Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_dodgers.png
+San Diego Padres, Andy Green, front office, Petco Park, http://cdn.bleacherreport.net/images/team_logos/328x328/san_diego_padres.png
+San Francisco Giants, Bruce Bochy, front office, AT&T Park, http://cdn.bleacherreport.net/images/team_logos/328x328/san_francisco_giants.png
+Baltimore Orioles, Buck Showalter front office, Camden Yards, http://cdn.bleacherreport.net/images/team_logos/328x328/baltimore_orioles.png
+Boston Red Sox, Alex Cora, front office, Fenway Park, http://cdn.bleacherreport.net/images/team_logos/328x328/boston_red_sox.png
+New York Yankees, N/A, front office, Yankee Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/new_york_yankees.png
+Tampa Bay Rays, Kevin Cash, front office, Tropicana Field, http://cdn.bleacherreport.net/images/team_logos/328x328/tampa_bay_rays.png
+Toronto Blue Jays, John Gibbons, front office, Rogers Centre, http://cdn.bleacherreport.net/images/team_logos/328x328/toronto_blue_jays.png
+Chicago White Sox, Rick Renteria, front office, Guaranteed Rate Field, http://cdn.bleacherreport.net/images/team_logos/328x328/chicago_white_sox.png
+Cleveland Indians, Terry Francona front office, Progressive Field, http://cdn.bleacherreport.net/images/team_logos/328x328/cleveland_indians.png
+Detroit Tigers, Ron Gardenhire, front office, Comerica Park, http://cdn.bleacherreport.net/images/team_logos/328x328/detroit_tigers.png
+Kansas City Royals, Ned Yost, front office, Kauffman Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/kansas_city_royals.png
+Minnesota Twins, Paul Molitor, front office, Target Field, http://cdn.bleacherreport.net/images/team_logos/328x328/minnesota_twins.png
+Houston Astros, A.J. Hinch, front office, Minuted Maid Park, http://cdn.bleacherreport.net/images/team_logos/328x328/houston_astros.png
+Los Angeles Angels, Mike Scioscia, front office, Angel Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_angels.png
+Oakland Athletics, Bob Melvin, front office, Oakland Coliseum, http://cdn.bleacherreport.net/images/team_logos/328x328/oakland_athletics.png
+Seattle Mariners, Scott Servais, front office, Safeco Field, http://cdn.bleacherreport.net/images/team_logos/328x328/seattle_mariners.png
+Texas Rangers, Jeff Banister, front office, Global Life Park, http://cdn.bleacherreport.net/images/team_logos/328x328/texas_rangers.png

@@ -22,19 +22,24 @@
 
 /* Header CSS */
 .icon-bar{
-  background-color: #f7f7f7;
-  padding-left: 12%;
-  border-bottom: 1px solid #bcbcbc;
+  background-color: white;
+  padding-left: 23%;
+  border-bottom: 1px solid #cccccc;
 }
 
-.icon-bar > * label{color: black; font-size: 18px; display: block;}
+.icon-bar > * label{color: black; font-size: 16px; display: block;}
+
 .icon-bar > * label:hover{background-color: white; font-weight: bold;}
-.icon-bar.four-up .item{width: 100px; padding: 10px; margin: 0px;}
+
+.icon-bar.four-up .item{width: 100px; padding: 10px; margin: 5px 10px;}
+
 .icon-bar.four-up .item:hover{background-color: white;}
 
-.contain-to-top .top-bar{ max-width: 2000px; width: 1800px;}
+.contain-to-top .top-bar{ max-width: 2000px;}
+
 .notice{ padding: 0px; margin: 0px; height: 0px;}
 .alert{margin-bottom: 0px;}
+
 /* Homepage CSS*/
 .lineupx{
   width: 85%;
@@ -44,22 +49,22 @@
   line-height: 1;
   margin-left: 10px;
   margin-top: 3px;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   border-bottom: 1px solid #d1d1d1;}
 
 .lineupx a{color: black; font-size: 19px; line-height: 1;}
 
 .lineupy {
-  width: 40px;
+  width: 45px;
   float: left;
   margin: 0px;
   padding: 0px;
-  height: 40px;
-  background-color: #77abff;
+  height: 45px;
+  background-color: #cecece;
   text-align: center;
   padding-top: 4px;}
 
-.lineupy a{color: white; text-align: center; font-weight: bold; font-size: 24px;}
+.lineupy a{color: white; text-align: center; font-weight: bold; font-size: 28px;}
 
 .lineups{
   background-color: #fed766;
@@ -67,16 +72,18 @@
   text-align: center;
   font-weight: bold;
   padding-bottom: 5px;
+  padding-top: 6px;
   margin-top: 0px;
 }
 
 .mainpostbox{
-  padding-top: 15px;
-  padding-bottom: 5px;
+  padding-top: 13px;
+  padding-bottom: 3px;
+  background-color: black;
 }
 .mainpostbox h1{
-  color: black;
-  font-size: 40px;
+  color: white;
+  font-size: 38px;
   padding-top: 0px;
   margin-left: 15px;
   margin-top: 0px;
@@ -164,24 +171,24 @@ ol{
 }
 
 .lboard{
-  font-size: 20px;
+  font-size: 18px;
   float: left;
-  width: 80%;}
+  width: 100%;
+}
 
 .lboard a{ color: #60a5ff; font-weight: bold;}
 
 .lcell{
-  width: 300px;
+  width: 70%;
   display: inline-flex;
-  margin-left: 20px;
-  background-color: #f7f7f7;}
+  margin-left: 8px;}
 
 .lbscore{
   float: right;
   padding-bottom: 0px;
   margin-bottom: 0px;
-  font-size: 20px;
-  padding-right: 15px;}
+  font-size: 22px;
+  padding-right: 5px;}
 
 /*Post CSS*/
 

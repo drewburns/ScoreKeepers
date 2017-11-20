@@ -19,24 +19,33 @@
     background-color: #D3D3D3;
   }
   .showing {
-    display: block;
+    text-align: center;
   }
   .hidden {
     display: none;
   }
 </style>
-<ul id="sport-tabs" class='large-10 columns medium-12 small-12 large-centered small-centered medium-centered'>
+
+
+<div class="row">
+  <div class="large-4 columns">
+    <h2>Add your favorite teams by clicking the button next to the team name</h2>
+    <h5>Added teams will appear on your user profile</h5>
+  </div>
+
+  <div class="large-8 columns">
+  <ul id="sport-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
   <li>
-    <div class="large-3 medium-3 small-6 columns sport-tab" id='basketball-tab'>Basketball</div>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='basketball-tab'>Basketball</div>
   </li>
   <li>
-    <div class="large-3 medium-3 small-6 columns sport-tab" id='hockey-tab'>Hockey</div>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='hockey-tab'>Hockey</div>
   </li>
   <li>
-    <div class="large-3 medium-3  small-6 columns sport-tab" id='football-tab'>Football</div>
+    <div class="large-3 medium-3  small-4 columns sport-tab" id='football-tab'>Football</div>
   </li>
   <li>
-    <div class="large-3 medium-3 small-6 columns sport-tab" id='baseball-tab'>Baseball</div>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='baseball-tab'>Baseball</div>
   </li>
 </ul>
 
@@ -62,6 +71,8 @@
   <%= render team %>
 <% end %>
 </ul>
+
+</div></div>
 <script type="text/javascript">
   $( ".sport-tab" ).click(function(event) {
     var sport = $(this).attr('id');
@@ -91,4 +102,3 @@
   });
 
 </script>
-

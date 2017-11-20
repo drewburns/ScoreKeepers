@@ -9,7 +9,9 @@
 	</div>
 
 	<div class="large-7 columns">
-		<h3 class="itemheader">Recent <%= @posts.first.sport.capitalize %> Posts </h3>
+		<% if @posts.count != 0 %>
+			<h3 class="itemheader">Recent <%= @posts.first.sport.capitalize %> Posts </h3>
+		<% end %>
 		<% @posts.each do |post| %>
 			<div class='post'>
 					<img width="250px" src=<%= post.full_size %>>
@@ -25,7 +27,9 @@
 	</div>
 
 	<div class="large-3 columns" style="background-color: #f9f9f9;">
+		<% if @posts.count != 0 %>
 		<h3 class="itemheader">Today's <%= @posts.first.sport.capitalize %> Leaderboard</h3>
+		<% end %>
 			<ul class="lboardul">
 				<% @users.each do |user| %>
 					<img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;">

@@ -18,7 +18,7 @@
         <% if current_user.admin %>
           <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>
         <% end %>
-         <li class=""><%= link_to "Team Index" , teams_path %></li>
+         
 
 			</ul>
       <li class="has-dropdown">
@@ -38,6 +38,7 @@
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+      <li class=""><%= link_to "Team Index" , teams_path %></li>
       <li class="menuitem"><%= link_to "Sign In" , new_user_session_path %></li>
       <li class="menuitem"><%= link_to "Create Account" , new_user_registration_path %></li>
     </ul>

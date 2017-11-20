@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 sports = ["basketball","football","soccer","hockey","baseball"]
+Team.destroy_all
 File.readlines('teams/basketball.txt').each do |line|
 	line_split = line.split(",")
 	Team.create(name: line_split[0].strip, coach: line_split[1].strip, frontoffice: line_split[2].strip, stadium: line_split[3].strip, picture_url: line_split[4].strip, sport_string: "basketball")

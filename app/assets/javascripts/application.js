@@ -19,6 +19,7 @@
 //= require selectize
 //= require Chart.bundle
 //= require chartkick
+//= require_self
 $(document).foundation();
 
 $(window).bind("load", function () {

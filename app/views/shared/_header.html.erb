@@ -21,6 +21,8 @@
          
 
 			</ul>
+          <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
+      
       <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
       <li class="has-dropdown">
         <a><%= link_to current_user.email , current_user %></a>
@@ -74,5 +76,11 @@
 </div>
 
 <script type="text/javascript">
+  $(document).foundation();
 
+$('.title-bar').on('sticky.zf.stuckto:top', function(){
+  $(this).addClass('shrink');
+}).on('sticky.zf.unstuckfrom:top', function(){
+  $(this).removeClass('shrink');
+})
 </script>

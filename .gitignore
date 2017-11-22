@@ -22,5 +22,5 @@
 vendor
 .byebug_history
 app/assets/components/
-.idea
+.idea/*
 vendor.old

@@ -1,3 +1,32 @@
+
+<!-- <div class="row">
+  <div class="large-8 columns">
+<h3> Team List</h3>
+<div class="tabs-content" data-tabs-content="example-tabs">
+  <div class="tabs-panel is-active" id="panel1">
+    <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+  </div>
+  <div class="tabs-panel" id="panel2">
+    <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+  </div>
+</div>
+<% @teams.each do |team| %>
+    <p style="display:inline;"><%= link_to team.name, team_path(team) %> </p>
+    <% if user_signed_in? %>
+        <% if current_user.teams.include?(team) %>
+        <% userTeam = current_user.userTeams.where(team_id:team.id).first.id%>
+            <%= link_to "Remove" , user_team_path(id: userTeam), method: :delete%>
+        <% else %>
+            <%= link_to "Add to favorites" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post%>
+        <% end %>
+
+
+        <% end %>
+        </br>
+        </br>
+    <% end %>
+  </div>
+</div> -->
 <style type="text/css">
   #teamlist {
     clear:both;
@@ -19,24 +48,33 @@
     background-color: #D3D3D3;
   }
   .showing {
-    display: block;
+    text-align: center;
   }
   .hidden {
     display: none;
   }
 </style>
-<ul id="sport-tabs" class='large-10 columns medium-12 small-12 large-centered small-centered medium-centered'>
+
+
+<div class="row">
+  <div class="large-4 columns">
+    <h2>Add your favorite teams by clicking the button next to the team name</h2>
+    <h5>Added teams will appear on your user profile</h5>
+  </div>
+
+  <div class="large-8 columns">
+  <ul id="sport-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
   <li>
-    <div class="large-3 medium-3 small-6 columns sport-tab" id='basketball-tab'>Basketball</div>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='basketball-tab'>Basketball</div>
   </li>
   <li>
-    <div class="large-3 medium-3 small-6 columns sport-tab" id='hockey-tab'>Hockey</div>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='hockey-tab'>Hockey</div>
   </li>
   <li>
-    <div class="large-3 medium-3  small-6 columns sport-tab" id='football-tab'>Football</div>
+    <div class="large-3 medium-3  small-4 columns sport-tab" id='football-tab'>Football</div>
   </li>
   <li>
-    <div class="large-3 medium-3 small-6 columns sport-tab" id='baseball-tab'>Baseball</div>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='baseball-tab'>Baseball</div>
   </li>
 </ul>
 
@@ -68,6 +106,8 @@
   <%= render team %>
 <% end %>
 </ul>
+
+</div></div>
 <script type="text/javascript">
   $( ".sport-tab" ).click(function(event) {
     var sport = $(this).attr('id');

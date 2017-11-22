@@ -6,7 +6,7 @@
   <div class="field">
     <%= f.hidden_field(:picture_cache) %>
     <label for="imgInp" class="custom-file-upload" style='border:none;'>
-      <img id="blah" src=<%= current_user.full_size %> alt="" style="height:250px;width:250px;border-radius: 50%;" /> 
+      <img id="blah" src=<%= current_user.full_size %> alt="" style="height:250px;width:250px;border-radius: 50%;" />
     </label>
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
   </div>

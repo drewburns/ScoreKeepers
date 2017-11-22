@@ -1,10 +1,15 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<div class="graph-area large-3 medium-3 small-12 columns" style="float:left;">
+			<h3><%= @team.name %></h3>
+				<img src=<%= @team.picture_url %> style="height:200px;width:200px;">
+		<h3><%= @team.users.count %> people like this team</h3>
+	<%= render partial: 'teams/graphs', locals: {team: @team}%>
+</div>
 <div class="row">
 	<div class="large-3 columns" style="margin-left: 100px;">
-		<h3><%= @team.name %></h3>
-		<h3><%= @team.users.count %> people like this team</h3>
+
 	</div>
-	<img src=<%= @team.picture_url %>>
+
 	<div class="large-7 columns" style="margin-right: 100px;">
 		<h3> Recent <%= @team.name %> Posts </h3>
 		<% @posts.each do |post| %>
@@ -22,9 +27,7 @@
 	</div>
 </div>
 
-<div class="graph-area" style="height:auto;width:auto;">
-<%= render partial: 'teams/graphs', locals: {team: @team}%>
-</div>
+
 
 
 

@@ -1,18 +1,18 @@
-<div class="large-3 medium-6 small-12 columns ">
+<div class=" ">
 	<h3>Team Rating</h3>
 	<%= pie_chart @team.chart_data("team_score"), :class => 'pie-chart' %>
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "team_score") %>
 			<% if user_vote == nil %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to "Approve" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-up'%>
+				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-down'%>
 			<% elsif user_vote == "approve" %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;" %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to "Approve" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;" , :class => 'fi-arrow-up'%>
+				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-down'%>
 			<% else %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;"%>
+				<%= link_to "Approve" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-up'%>
+				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;" , :class => 'fi-arrow-down'%>
 			<% end %>
 		<% else %>
 			<p>Add to favorite teams to vote</p>
@@ -21,21 +21,21 @@
 		<p>Log in to vote</p>
 	<% end %>
 </div>
-<div class="large-3 medium-6 small-12 columns ">
+<div class="">
 	<h3><%= @team.coach %> Rating</h3>
 	<%= pie_chart @team.chart_data("coach_score"), :class => 'pie-chart' %>
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "coach_score") %>
 			<% if user_vote == nil %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-arrow-up' %>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-down'%>
 			<% elsif user_vote == "approve" %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;" %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;", :class => 'fi-arrow-up' %>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-arrow-down' %>
 			<% else %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;"%>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-arrow-up' %>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;", :class => 'fi-arrow-down'%>
 			<% end %>
 		<% else %>
 			<p>Add to favorite teams to vote</p>
@@ -44,21 +44,21 @@
 		<p>Log in to vote</p>
 	<% end %>
 </div>
-<div class="large-3 medium-6 small-12 columns ">
+<div class="">
 	<h3>Front Office Rating</h3>
 	<%= pie_chart @team.chart_data("frontoffice_score"), :class => 'pie-chart' %>
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "frontoffice_score") %>
 			<% if user_vote == nil %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-up'%>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-down'%>
 			<% elsif user_vote == "approve" %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;" %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;", :class => 'fi-arrow-up' %>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-down'%>
 			<% else %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;"%>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-arrow-up' %>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;", :class => 'fi-arrow-down'%>
 			<% end %>
 		<% else %>
 			<p>Add to favorite teams to vote</p>
@@ -67,21 +67,21 @@
 		<p>Log in to vote</p>
 	<% end %>
 </div>
-<div class="large-3 medium-6 small-12 columns ">
+<div class="">
 	<h3><%= @team.stadium %> Rating</h3>
 	<%= pie_chart @team.chart_data("stadium_score"), :class => 'pie-chart' %>
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "stadium_score") %>
 			<% if user_vote == nil %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-arrow-up' %>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-down'%>
 			<% elsif user_vote == "approve" %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;" %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;", :class => 'fi-arrow-up' %>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-down'%>
 			<% else %>
-				<%= link_to "Approve" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true %>
-				<%= link_to "Disapprove" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;"%>
+				<%= link_to " Approve" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-arrow-up'%>
+				<%= link_to " Disapprove" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;", :class => 'fi-arrow-down'%>
 			<% end %>
 		<% else %>
 			<p>Add to favorite teams to vote</p>

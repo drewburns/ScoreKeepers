@@ -21,17 +21,18 @@
          
 
 			</ul>
-          <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
-      
+          <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
+
       <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
-      <li class="has-dropdown">
-        <a><%= link_to current_user.email , current_user %></a>
-        <ul class="dropdown">
-          <li><%= link_to "Profile" , current_user %></li>
+      <li class="" style='display:inline;'><%= link_to image_tag(current_user.thumbnail.url, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'display:inline;' %><%= link_to current_user.name , current_user , :style => 'display:inline;'%></li>
+      <!-- <li><%= link_to "Profile" , current_user %></li> -->
           <li><%= link_to "Settings" , edit_user_registration_path %> </li>
           <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
-        </ul>
-      </li>
+
+      <!-- <li class="has-dropdown"> -->
+        <!-- <ul class="dropdown"> -->
+        <!-- </ul> -->
+      <!-- </li> -->
     </ul>
     </section>
 

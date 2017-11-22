@@ -1,8 +1,9 @@
 <div class="row">
 	<div class="large-2 columns">
 			<ul>
-					<% for i in Team.where(sport_string: params[:sport]) %>
-							<li><%= link_to i.name, team_path(i.id)%></li>
+					<% Team.where(sport_string: params[:sport]).each do |team| %>
+						<img src=<%= team.picture_url %> style="width:50px;height:50px;">
+							<li><%= link_to team.name, team_path(team.id)%></li>
 					<%end%>
 			</ul>
 

@@ -13,7 +13,7 @@
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-
+      <li class=""><%= link_to "Team Index" , teams_path %></li>
 			 <ul class="menu">
         <% if current_user.admin %>
           <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>
@@ -21,15 +21,18 @@
          
 
 			</ul>
-      <li class="has-dropdown">
-        <a><%= link_to current_user.email , current_user %></a>
-        <ul class="dropdown">
-          <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
-          <li><%= link_to "Profile" , current_user %></li>
+          <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
+
+      <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
+      <li class="" style='display:inline;'><%= link_to image_tag(current_user.thumbnail.url, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'display:inline;' %><%= link_to current_user.name , current_user , :style => 'display:inline;'%></li>
+      <!-- <li><%= link_to "Profile" , current_user %></li> -->
           <li><%= link_to "Settings" , edit_user_registration_path %> </li>
           <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
-        </ul>
-      </li>
+
+      <!-- <li class="has-dropdown"> -->
+        <!-- <ul class="dropdown"> -->
+        <!-- </ul> -->
+      <!-- </li> -->
     </ul>
     </section>
 
@@ -74,7 +77,7 @@
 </div>
 
 <script type="text/javascript">
-$(document).foundation();
+  $(document).foundation();
 
 $('.title-bar').on('sticky.zf.stuckto:top', function(){
   $(this).addClass('shrink');

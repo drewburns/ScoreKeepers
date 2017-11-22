@@ -1,12 +1,7 @@
 <div class="row">
-<<<<<<< HEAD
-  <div class="large-12 columns">
 
-    <h2 style="text-align: center">Sign up</h2>
-=======
   <div class="large-4 columns" style="background-color: white;"><h3 class="itemheader">Sign up</h3></div>
   <div class="large-4 columns" style="background-color: white;"><h3 class="itemheader">Optional</h3>
->>>>>>> remotes/origin/maxchanges
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -34,19 +29,10 @@
       </div>
       <br>
       <div class="field">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <%= f.label :username %>
         <%= f.text_field :username %>
-=======
         <%= f.label :bio %><br />
         <%= f.text_field :bio %>
->>>>>>> bc40a2813b2cd218e7030f43bcc22320c272676e
-      </div>
-      <br>
-      <div class="field">
-=======
->>>>>>> remotes/origin/maxchanges
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -58,7 +44,6 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
-<<<<<<< HEAD
       <br>
       <div class="actions">
         <%= f.submit "Sign up" %>
@@ -66,11 +51,6 @@
     <% end %>
     <br>
     Already have an account? <%= render "devise/shared/links" %>
-=======
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
->>>>>>> bc40a2813b2cd218e7030f43bcc22320c272676e
   </div>
 <% end %>
 

@@ -1,13 +1,23 @@
-<h3><%= @team.name %></h3>
-<h3><%= @team.users.count %> people like this team</h3>
-<h3> Recent <%= @team.name %> Posts </h3>
-<% @team.posts.each do |post| %>
+<div class="row">
 
-<p style="display:inline;"><%= link_to post.title, post_path(post) %> | Score: <%= post.score %></p> | 
-<% if user_signed_in? %>
-	<p style="display:inline;"><%=link_to "Up", vote_post_path(post, type: 'up', user_id: current_user.id, id: post.id), method: :post%></p>
-	<p style="display:inline;"><%=link_to "Down", vote_post_path(post, type: 'down', user_id: current_user.id, id: post.id), method: :post%></p>
-<% end %>
-</br>
-</br>
-<% end %>
+	<div class="large-3 columns" style="margin-left: 100px;">
+		<h3><%= @team.name %></h3>
+		<h3><%= @team.users.count %> people like this team</h3>
+	</div>
+
+	<div class="large-7 columns" style="margin-right: 100px;">
+		<h3> Recent <%= @team.name %> Posts </h3>
+		<% @team.posts.each do |post| %>
+		<div class='post'>
+			<img width="250px" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
+			<div class="pcontent">
+				<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
+				<h6 class="pscore">Score: <%= post.score %></h6>
+				<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
+				<p class="date"></p>
+			</div>
+		</div>
+		<% end %>
+	</div>
+
+</div>

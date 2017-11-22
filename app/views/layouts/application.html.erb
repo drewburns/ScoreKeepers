@@ -7,9 +7,11 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"type="text/javascript"></script>
+<!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script> -->
+
 
     <%= csrf_meta_tags %>
   </head>
@@ -20,6 +22,6 @@
   <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag "application" %>
-
+    <%= render 'shared/footer' %>
   </body>
 </html>

@@ -1,0 +1,47 @@
+<li class="comment-li" id="comment_<%=comment.id.to_s%>">
+	<p style="display:inline;"><%= link_to comment.user.name , comment.user %></p> |
+	<p style="display:inline;">Score:  <span class='comment-score'><%= comment.score %></span></p> |
+
+	<% if user_signed_in? %>
+		<% if comment.score_for(current_user).to_i == 0 or comment.score_for(current_user).to_i == nil %>
+			<h3>user_score is zero</h3>
+			<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p> |
+			<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment"%></p>
+		<% elsif comment.score_for(current_user).to_i == 1 %>
+			<h3>user_score is 1</h3>
+					<p style="display:inline;color:green;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment", :style => "color:green;"%></p> |
+					<p style="display:inline;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment"%></p>
+		<% elsif comment.score_for(current_user).to_i == -1 %>
+					<h3>user_score is -1</h3>
+			<p style="display:inline;"><%=link_to "Up", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment"%></p> |
+			<p style="display:inline;color:red;"><%=link_to "Down", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment", :style => "color:red;"%></p>
+		<% end %>
+
+	<% end %>
+
+
+
+	<p><%= comment.text %></p>
+</li>
+
+<script type="text/javascript">
+	// $( "voteonpost" ).click(function() {
+	// });
+	$( ".voteoncomment" ).click(function(event) {
+		var something = $(this).parent().parent().find(".comment-score").first();
+
+		// var text = something.text();
+		// var newScore = Number(text) - 1;
+		// console.log("old", Number(text));
+		// console.log("newscore", newScore);
+	 //  $(something).text(newScore);
+	});
+		$( ".downvoteoncomment" ).click(function(event) {
+		// var something = $(this).parent().parent().find(".comment-score");
+		// var text = something.text();
+		// var newScore = Number(text) + 1;
+		// console.log(newScore);
+	 //  $(something).text(newScore);
+	});
+
+</script>

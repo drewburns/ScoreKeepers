@@ -15,12 +15,27 @@
  *= require foundation_and_overrides
  *= require content-tools
  *= require ContentTools/build/content-tools.min
+<<<<<<< HEAD
  *= require toastr
+=======
+*= require toastr
+ *= require selectize/dist/css/selectize
+ *= require selectize/dist/css/selectize.default
+>>>>>>> remotes/origin/maxchanges
  */
 
 /* Header CSS */
+.icon-bar{
+  background-color: white;
+  padding-left: 23%;
+  border-bottom: 1px solid #cccccc;
+}
 
+.icon-bar > * label{color: black; font-size: 16px; display: block;}
 
+.icon-bar > * label:hover{background-color: white; font-weight: bold;}
+
+<<<<<<< HEAD
 /* Homepage CSS*/
 .lineup h1 a{
   color: white;
@@ -56,16 +71,61 @@
   font-size: 30px;
   border-bottom: 3px solid #89c0ff;
   margin-bottom: 15px;
+=======
+.icon-bar.four-up .item{width: 100px; padding: 10px; margin: 5px 10px;}
+
+.icon-bar.four-up .item:hover{background-color: white;}
+
+.contain-to-top .top-bar{ max-width: 2000px;}
+
+.notice{ padding: 0px; margin: 0px; height: 0px;}
+.alert{margin-bottom: 0px;}
+
+/* Homepage CSS*/
+.lineupx{
+  width: 85%;
+  float:left;
+  height: 50px;
+  padding-bottom: 0px;
+  line-height: 1;
+  margin-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid #d1d1d1;}
+
+.lineupx a{color: black; font-size: 19px; line-height: 1;}
+
+.lineupy {
+  width: 45px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  height: 45px;
+  background-color: #cecece;
+  text-align: center;
+  padding-top: 4px;}
+
+.lineupy a{color: white; text-align: center; font-weight: bold; font-size: 28px;}
+
+.lineups{
+  background-color: #fed766;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 5px;
+  padding-top: 6px;
+  margin-top: 0px;
+>>>>>>> remotes/origin/maxchanges
 }
 
 .mainpostbox{
+  padding-top: 13px;
+  padding-bottom: 3px;
   background-color: black;
-  padding-top: 15px;
-  padding-bottom: 5px;
 }
 .mainpostbox h1{
   color: white;
-  font-size: 40px;
+  font-size: 38px;
   padding-top: 0px;
   margin-left: 15px;
   margin-right: 15px;
@@ -81,6 +141,19 @@
    font-family: 'Open Sans', sans-serif;
    src: url('https://fonts.googleapis.com/css?family=Open+Sans')}
 
+<<<<<<< HEAD
+=======
+body {
+  }
+
+/*input[type="file"] {*/
+    /*display: none;*/
+/*}*/
+ul {
+  list-style-type: none;
+}
+
+>>>>>>> remotes/origin/maxchanges
 
 body {
   background-color: white;}
@@ -93,6 +166,7 @@ body {
 }
 
 .itemheader{
+<<<<<<< HEAD
   background-color: #fed766;
   color: white;
   font-weight: bold;
@@ -113,6 +187,25 @@ body {
 
 .pcontent{
   margin-left: 238px;}
+=======
+  color: black;
+  padding-top: 5px;
+  margin-top: 0px;
+  border-top: 5px solid #fed766;}
+
+.post{
+  height: 170px;}
+
+.ptitle{
+  font-size: 28px;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  line-height: 1;
+  padding-top: 10px;}
+
+.pcontent{
+  margin-left: 242px;}
+>>>>>>> remotes/origin/maxchanges
 
 .ptitle a{
   color: #000;}
@@ -122,6 +215,7 @@ body {
   font-size: 18px;
   bottom: 5px;}
 
+<<<<<<< HEAD
 .pauthor{
   float: left;
   font-size: 20px;}
@@ -136,6 +230,15 @@ body {
 
 .vote {
   float: right;}
+=======
+.pauthor{ float: left; font-size: 18px;}
+
+.pauthor a{ color: #4faeff;}
+
+.pvote{ float: left;}
+
+.post img { width: 225px; float: left}
+>>>>>>> remotes/origin/maxchanges
 
 .sidebarposttitle{
   font-size: 20px;
@@ -143,30 +246,29 @@ body {
   margin-top: 10px;
 }
 
-.lboard:nth-child(odd) {
-  background-color: #fff;
-  list-style-type: none;
-  font-size: 20px;
+ol{
+  padding: 10px;
 }
 
-.lboard:nth-child(even) {
-  background-color: #FAFAFA;
-  list-style-type: none;
-  font-size: 20px;
+.lboard{
+  font-size: 18px;
+  float: left;
+  width: 100%;
 }
 
-.lboardul{
-  padding: 0px;
-  margin: 0px;
-}
+.lboard a{ color: #60a5ff; font-weight: bold;}
+
+.lcell{
+  width: 70%;
+  display: inline-flex;
+  margin-left: 8px;}
 
 .lbscore{
   float: right;
   padding-bottom: 0px;
   margin-bottom: 0px;
-  font-size: 20px;
-  padding-right: 15px;
-}
+  font-size: 22px;
+  padding-right: 5px;}
 
 /*Post CSS*/
 .postcontent p{
@@ -256,14 +358,32 @@ padding-top: 10px;}
 
 /* Foundation CSS */
 .large-5{
+<<<<<<< HEAD
 padding-left: 20px;
+=======
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+>>>>>>> remotes/origin/maxchanges
 }
 
 .large-7{
-padding-right: 0px;
+padding-right: 10px;
 }
 
+<<<<<<< HEAD
 .large-4{
   background-color: #f9f9f9;
+=======
+.sidebar{
+  padding-left: 15px;
+  background-color: #fcfcfc;
+  padding-right: 15px;
+  width: 450px;
+  margin-right: 20px;
+  border-left: .5px solid #cecece;}
+
+.large-8{
+>>>>>>> remotes/origin/maxchanges
 
 }

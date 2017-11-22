@@ -15,21 +15,28 @@ class CommentsController < ApplicationController
 	def destroy
 	end
 
-	def vote
-		if params[:user_id]
-			value = params[:type] == "up" ? 1 : -1
-			@comment = Comment.find(params[:id])
-			@user = User.find(params[:user_id])
-			if @user && @comment
-				@comment.add_or_update_evaluation(:votes, value, @user)
-				render :file => "shared/vote.js.erb"
-			else
-				render :file => "shared/error.js.erb"
-			end
-		else
-			render :file => "shared/error.js.erb"
-		end
-	end
+  def vote
+    p "ijaodjiwjdioawdowajdiawjdoiawjdiojawoid"
+    if params[:user_id] 
+      @value = params[:type] == 'up' ? 1 : -1
+      add_value = @value == 1 ? 1 : -1
+      puts "ADD VALUE " + add_value.to_s
+      @comment = Comment.find(params[:id])
+      @user = User.find(params[:user_id])
+      @new_score = params[:old_score].to_i + add_value
+
+      if @user && @comment
+        @comment.add_or_update_evaluation(:votes, @value, @user)
+        render :file => "comments/vote.js.erb"
+        # redirect_back fallback_location: root_path, notice: 'Vote counted'
+      else
+        render :file => "shared/error.js.erb"
+        # redirect_back fallback_location: root_path, alert: 'Error'
+      end
+    else
+      render :file => "shared/error.js.erb"
+    end
+  end
 
   private
 

@@ -1,30 +1,30 @@
-Atlanta Hawks
-Boston Celtics
-Brooklyn Nets
-Charlotte Bobcats
-Chicago Bulls
-Cleveland Cavaliers
-Dallas Mavericks
-Denver Nuggets
-Detroit Pistons
-Golden State Warriors
-Houston Rockets
-Indiana Pacers
-LA Clippers
-LA Lakers
-Memphis Grizzlies
-Miami Heat
-Milwaukee Bucks
-Minnesota Timberwolves
-New Orleans Hornets
-New York Knicks
-Oklahoma City Thunder
-Orlando Magic
-Philadelphia Sixers
-Phoenix Suns
-Portland Trail Blazers
-Sacramento Kings
-San Antonio Spurs
-Toronto Raptors
-Utah Jazz
-Washington Wizards
+Atlanta Hawks, Mike Budenholzer, front office, Philips Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/atlanta_hawks.png
+Boston Celtics, Brad Stevens, front office, TD Garden, http://cdn.bleacherreport.net/images/team_logos/328x328/boston_celtics.png
+Brooklyn Nets, Kenny Atkinson, front office, Barclays Center, http://cdn.bleacherreport.net/images/team_logos/328x328/brooklyn_nets.png
+Charlotte Hornets, Steve Clifford, front office, Spectrum Center, http://cdn.bleacherreport.net/images/team_logos/328x328/charlotte_hornets.png
+Chicago Bulls, Fred Hoiberg, front office, United Center, http://cdn.bleacherreport.net/images/team_logos/328x328/chicago_bulls.png
+Cleveland Cavaliers, Tyronn Lue, front office, Quicken Loans Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/cleveland_cavaliers.png
+Dallas Mavericks, Rick Carlisle, front office, American Airlines Center, http://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_500x500/dal.png
+Denver Nuggets, Michael Malone, front office, Pepsi Center, http://cdn.bleacherreport.net/images/team_logos/328x328/denver_nuggets.png
+Detroit Pistons, Stan Van Gundy, front office, Little Caesars Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/detroit_pistons.png
+Golden State Warriors, Steve Kerr, front office, Oracle Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/golden_state_warriors.png
+Houston Rockets, Mike D'Antoni, front office, Toyota Center, http://cdn.bleacherreport.net/images/team_logos/328x328/houston_rockets.png
+Indiana Pacers, Nate McMillan, front office, Banker's Life Fieldhouse, http://cdn.bleacherreport.net/images/team_logos/328x328/indiana_pacers.png
+Los Angeles Clippers, Doc Rivers, front office, Staples Center, http://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_clippers.png
+Los Angeles Lakers, Luke Walton, front office, Staples Center, http://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_lakers.png
+Memphis Grizzlies, David Fizdale, front office, FedEx Forum, http://cdn.bleacherreport.net/images/team_logos/328x328/memphis_grizzlies.png
+Miami Heat, Erik Spoelstra, front office, AmericanAirlines Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/miami_heat.png
+Milwaukee Bucks, Jason Kidd, front office, BMO Harris Bradley Center, http://cdn.bleacherreport.net/images/team_logos/328x328/milwaukee_bucks.png
+Minnesota Timberwolves, Tom Thibodeau, front office, Target Center, http://cdn.bleacherreport.net/images/team_logos/328x328/minnesota_timberwolves.png
+New Orleans Pelicans, Alvin Gentry, fron office, Smoothie King Center, http://cdn.bleacherreport.net/images/team_logos/328x328/new_orleans_pelicans.png
+New York Knicks, Jeff Hornacek, front office, Madison Square Garden, http://cdn.bleacherreport.net/images/team_logos/328x328/new_york_knicks.png
+Oklahoma City Thunder, Billy Donovan, front office, Chesapeake Energy Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/oklahoma_city_thunder.png
+Orlando Magic, Frank Vogel, front office, Amway Center, http://cdn.bleacherreport.net/images/team_logos/328x328/orlando_magic.png
+Philadelphia 76ers, Brett Brown, front office, Wells Fargo Center, http://cdn.bleacherreport.net/images/team_logos/328x328/philadelphia_76ers.png
+Phoenix Suns, Jay Triano, front office, Talking Stick Resort Arena, http://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_500x500/phx.png
+Portland Trail Blazers, Terry Stotts, front office, Moda Center, http://cdn.bleacherreport.net/images/team_logos/328x328/portland_trail_blazers.png
+Sacramento Kings, Dave Joerger, front office, Golden 1 Center, http://cdn.bleacherreport.net/images/team_logos/328x328/sacramento_kings.png
+San Antonio Spurs, Gregg Popovich, front office, AT&T Center, http://cdn.bleacherreport.net/images/team_logos/328x328/san_antonio_spurs.png
+Toronto Raptors, Dwane Casey, front office, Air Canada Centre, http://cdn.bleacherreport.net/images/team_logos/328x328/toronto_raptors.png
+Utah Jazz, Quin Snyder, front office, Vivint Smart Home Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/utah_jazz.png
+Washington Wizards, Scott Brooks, front office, Captial One Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/washington_wizards.png

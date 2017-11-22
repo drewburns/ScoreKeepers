@@ -1,31 +1,31 @@
-Boston Bruins
-Buffalo Sabres
-Detroit Red Wings
-Florida Panthers
-Montreal Canadiens
-Ottawa Senators
-Tampa Bay Lightning
-Toronto Maple Leafs
-Carolina Hurricanes
-Columbus Blue Jackets
-New Jersey Devils
-New York Islanders
-New York Rangers
-Philadelphia Flyers
-Pittsburgh Penguins
-Washington Capitals
-Chicago Blackhawks
-Colorado Avalanche
-Dallas Stars
-Minnesota Wild
-Nashville Predators
-St. Louis Blues
-Winnipeg Jets
-Anaheim Ducks
-Arizona Coyotes
-Calgary Flames
-Edmonton Oilers
-Los Angeles Kings
-San Jose Sharks
-Vancouver Canucks
-Vegas Golden Knights
+Boston Bruins, Bruce Cassidy, front office, TD Garden, http://cdn.bleacherreport.net/images/team_logos/328x328/boston_bruins.png
+Buffalo Sabres, Phil Housley, front office, KeyBank Center, http://cdn.bleacherreport.net/images/team_logos/328x328/buffalo_sabres.png
+Detroit Red Wings, Jeff Blashill, front office, little Caesars Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/detroit_red_wings.png
+Florida Panthers, Bob Boughner, front office, BB&T Center, http://cdn.bleacherreport.net/images/team_logos/328x328/florida_panthers.png
+Montreal Canadiens, Claude Julien, front office, Bell Centre, http://cdn.bleacherreport.net/images/team_logos/328x328/montreal_canadiens.png
+Ottawa Senators, Guy Boucherm, front office, Canadian Tire Centre, http://cdn.bleacherreport.net/images/team_logos/328x328/ottawa_senators.png
+Tampa Bay Lightning, Jon Cooper, front office, Amalie Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/tampa_bay_lightning.png
+Toronto Maple Leafs, Mike Babcock, front office, Air Canada Centre, http://cdn.bleacherreport.net/images/team_logos/328x328/toronto_maple_leafs.png
+Carolina Hurricanes, Bill Peters, front office, PNC Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/carolina_hurricanes.png
+Columbus Blue Jackets, John Tortorella, front office, Nationwide Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/columbus_blue_jackets.png
+New Jersey Devils, John Hynes, front office, Prudential Center, http://cdn.bleacherreport.net/images/team_logos/328x328/new_jersey_devils.png
+New York Islanders, Doug Weight, front office, Barclays Center, http://cdn.bleacherreport.net/images/team_logos/328x328/new_york_islanders.png
+New York Rangers, Alain Vigneault, front office, Madison Square Garden, http://cdn.bleacherreport.net/images/team_logos/328x328/new_york_rangers.png
+Philadelphia Flyers, Dave Hakstol, front office, Wells Fargo Center, http://cdn.bleacherreport.net/images/team_logos/328x328/philadelphia_flyers.png
+Pittsburgh Penguins, Mike Sullivan, front office, PPG Paints Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/pittsburgh_penguins.png
+Washington Capitals, Barry Trotz, front office, Capital One Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/washington_capitals.png
+Chicago Blackhawks, Joel Quenneville, front office, United Center, http://cdn.bleacherreport.net/images/team_logos/328x328/chicago_blackhawks.png
+Colorado Avalanche, Jared Bednar, front office, Pepsi Center, http://cdn.bleacherreport.net/images/team_logos/328x328/colorado_avalanche.png
+Dallas Stars, Ken Hitchcock, front office, American Airlines Center, http://cdn.bleacherreport.net/images/team_logos/328x328/dallas_stars.png
+Minnesota Wild, Bruce Boudreau, front office, Xcel Energy Center, http://cdn.bleacherreport.net/images/team_logos/328x328/minnesota_wild.png
+Nashville Predators, Peter Laviolette, front office, Bridgestone Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/nashville_predators.png
+St. Louis Blues, Mike Yeo, front office, Scottrade Center, http://cdn.bleacherreport.net/images/team_logos/328x328/st_louis_blues.png
+Winnipeg Jets, Paul Maurice, front office, Bell MTS Place, http://cdn.bleacherreport.net/images/team_logos/328x328/winnipeg_jets.png
+Anaheim Ducks, Randy Carlyle, front office, Honda Center, http://cdn.bleacherreport.net/images/team_logos/328x328/anaheim_ducks.png
+Arizona Coyotes, Rick Tocchet, front office, Gila River Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/arizona_coyotes.png
+Calgary Flames, Glen Gulutzan, front office, Scotiabank Saddledome, http://cdn.bleacherreport.net/images/team_logos/328x328/calgary_flames.png
+Edmonton Oilers, Todd McLellan, front office, Rogers Place, http://cdn.bleacherreport.net/images/team_logos/328x328/edmonton_oilers.png
+Los Angeles Kings, John Stevens, front office, Staples Center, http://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_kings.png
+San Jose Sharks, Peter DeBoer, front office, SAP Center, http://cdn.bleacherreport.net/images/team_logos/328x328/san_jose_sharks.png
+Vancouver Canucks, Travis Green, front office, Rogers Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/vancouver_canucks.png
+Vegas Golden Knights, Gerard Gallant, front office, T-Mobile Arena, http://cdn.bleacherreport.net/images/team_logos/328x328/vegas_golden_knights.png

@@ -1,0 +1,2 @@
+$("#team_<%= @team.id %>").replaceWith("<%= escape_javascript(render(@team)) %>");
+toastr.success('Team changed!', {timeOut: 2000});

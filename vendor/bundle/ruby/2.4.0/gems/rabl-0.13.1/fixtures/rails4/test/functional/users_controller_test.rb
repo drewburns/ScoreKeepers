@@ -1,1 +1,0 @@
-fixtures/rails4/test/functional/../../../../test/integration/rails4/users_controller_test.rb

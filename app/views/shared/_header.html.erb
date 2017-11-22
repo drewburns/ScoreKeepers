@@ -1,6 +1,8 @@
-<div class="contain-to-grid sticky">
-  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <ul class="title-area">
+<%= javascript_include_tag "foundation" %>
+
+<div class="contain-to-grid sticky large-12 columns" >
+  <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large">
+    <ul class="title-area" >
       <li class="name">
       <h1><%= link_to "Sports Site" , root_path %></h1>
       </li>
@@ -12,21 +14,17 @@
     <!-- Right Nav Section -->
     <ul class="right">
 
-
-
 			 <ul class="menu">
-        <% if current_user.admin == true %>
+        <% if current_user.admin %>
           <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>
         <% end %>
          <li class=""><%= link_to "Team Index" , teams_path %></li>
-			  <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
-			  <li class=""><%= link_to current_user.name , user_path(current_user) %></li>
-			  <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
+
 			</ul>
-      <li class=""><%= link_to "Create Post" , new_post_path %></li>
       <li class="has-dropdown">
         <a><%= link_to current_user.email , current_user %></a>
         <ul class="dropdown">
+          <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
           <li><%= link_to "Profile" , current_user %></li>
           <li><%= link_to "Settings" , edit_user_registration_path %> </li>
           <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
@@ -47,3 +45,39 @@
   <% end %>
 </nav>
 </div>
+<div class="icon-bar four-up">
+  <a class="item" href="/sports?sport=basketball">
+    <label>Basketball</label>
+  </a>
+  <a class="item" href="/sports?sport=football">
+    <label>Football</label>
+  </a>
+  <a class="item" href="/sports?sport=hockey">
+    <label>Hockey</label>
+  </a>
+  <a class="item" href="/sports?sport=baseball">
+    <label>Baseball</label>
+  </a>
+  <a class="item" href="">
+    <label>Debate</label>
+  </a>
+  <a class="item" href="">
+    <label>Rankings</label>
+  </a>
+  <a class="item" href="">
+    <label>Fantasy</label>
+  </a>
+  <a class="item" href="">
+    <label>History</label>
+  </a>
+</div>
+
+<script type="text/javascript">
+$(document).foundation();
+
+$('.title-bar').on('sticky.zf.stuckto:top', function(){
+  $(this).addClass('shrink');
+}).on('sticky.zf.unstuckfrom:top', function(){
+  $(this).removeClass('shrink');
+})
+</script>

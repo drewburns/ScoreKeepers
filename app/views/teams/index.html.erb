@@ -42,14 +42,20 @@
 
 
 <h3 id='teamlist'> Team List</h3>
+<div class="row">
 <ul id="basketball-teams" class=''>
 <% @teams.first(30).each do |team| %>
-  <%= render team %>
+<div class="large-2 columns">
+<li><%= render team %></li>
+</div>
 <% end %>
 </ul>
 <ul id="hockey-teams" class='hidden'>
-<% @teams[30..60].each do |team| %>
-  <%= render team %>
+
+  <% @teams[30..60].each do |team| %>
+  <div class="large-2 columns">
+  <li><%= render team %></li>
+  </div>
 <% end %>
 </ul>
 <ul id="football-teams" class='hidden'>
@@ -91,4 +97,3 @@
   });
 
 </script>
-

@@ -29,7 +29,7 @@
 }
 
 .icon-bar > * label{color: black; font-size: 18px; display: block;}
-.icon-bar > * label:hover{background-color: white; font-weight: bold;}
+.icon-bar > * label:hover{background-color: white;}
 .icon-bar.four-up .item{width: 100px; padding: 10px; margin: 0px;}
 .icon-bar.four-up .item:hover{background-color: white;}
 
@@ -204,7 +204,8 @@ ol{
 .posttitle {
   font-size: 44px;
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.1; }
+  line-height: 1.1;
+  font-weight: bold;}
 
 .postcontent h5{
   font-size: 1rem;
@@ -213,14 +214,16 @@ ol{
 .postauthor p{
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  margin-bottom: 0px;
-}
+  margin-bottom: 0px;}
+
+a{ color: #4286f4;}
 
 .authorname {
   font-size: 24px;
   float: left;
   margin-top: 25px;
   margin-left: 30px;
+  color: #4286f4;
 }
 
 .authorbio {
@@ -296,16 +299,4 @@ padding-bottom: 10px;
 
 .large-7{
 padding-right: 10px;
-}
-
-.sidebar{
-  padding-left: 15px;
-  background-color: #fcfcfc;
-  padding-right: 15px;
-  width: 450px;
-  margin-right: 20px;
-  border-left: .5px solid #cecece;}
-
-.large-8{
-
 }

@@ -5,21 +5,10 @@
 		<h3><%= @team.users.count %> people like this team</h3>
 	<%= render partial: 'teams/graphs', locals: {team: @team}%>
 </div>
-<div class="row">
-	<div class="large-4 columns">
-		<h3><%= @team.name %></h3>
-		<img src=<%= @team.picture_url %>>
-		<h3><%= @team.users.count %> people like this team</h3>
-	</div>
-	<div class="large-8 columns">
-		<div class="graph-area" style="height:auto;width:auto;">
-		<%= render partial: 'teams/graphs', locals: {team: @team}%>
-		</div>
-	</div>
-</div>
+
 <hr>
 <div class="row">
-	<div class="large-8 columns">
+	<div class="large-9 columns">
 		<h3> Recent <%= @team.name %> Posts </h3>
 		<% @posts.each do |post| %>
 		<div class='post'>

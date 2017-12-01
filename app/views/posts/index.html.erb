@@ -26,7 +26,7 @@
 		<h3 class="itemheader">The Lineup</h3>
 
 		<div class="lineup">
-			<% @posts.each do |post| %>
+			<% @posts.first(9).each do |post| %>
 			<h1><%= link_to (@posts.index(post)+1).to_s %></h1>
 			<h5><%= link_to post.title , post_path(post) %></h5>
 			<% end %>
@@ -42,6 +42,9 @@
 <br>
 
 <div class="row">
+ <!-- <div class="large-8 columns">
+	<h3 class="yellow">Featured</h3>
+		<#% @posts.first(5).each do |post| %> -->
 
 
  <div class="large-2 columns" style="border-right: 1px solid grey;">
@@ -52,7 +55,8 @@
 	<h3 class="itemheader">Featured</h3>
 		<% @posts.first(3).each do |post| %>
 			<div class='post'>
-				<img width="150px" src=<%= post.full_size %>>
+				<!-- <img width="150px" src=<%= post.full_size %>> -->
+				<img style="width:200px;" src ="https://img.buzzfeed.com/buzzfeed-static/static/2014-04/campaign_images/webdr08/9/22/21-soccer-stadiums-you-should-watch-a-game-in-bef-2-3662-1397095514-17_dblbig.jpg">
 				<div class="pcontent">
 					<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
 					<h6 class="pscore">Score: <%= post.score %></h6>
@@ -63,11 +67,11 @@
 			<% end %>
 			<%= will_paginate @posts %>
 	</div>
-	<div class="large-4 columns">
+<!-- 	<div class="large-4 columns">
 		<h3 class="blue">Today's Leaderboard</h3>
 		<ul class="lboardul">
 			<% @users.first(10).each do |user| %>
-			<li class="lboard"><%= link_to user.username, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
+			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
 			<% end %>
 		</ul>
 
@@ -76,14 +80,15 @@
 		<p><%= link_to user.name, user_path(user) %> | <%= user.this_weeks_score %></p>
 		<% end %>
 	</div>
-</div>
+</div> -->
 
 <div class="row">
 <div class="large-3 columns" style="background-color: white;">
 		<h3 class="itemheader">Today's Leaderboard</h3>
 			<ul class="lboardul">
 				<% @users.each do |user| %>
-					<img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;">
+					<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
+					<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
 						<div class="lcell">
 							<li class="lboard"><%= link_to user.name, user_path(user) %>
 							<p class="lbscore"><%= user.this_weeks_score %></p></li>
@@ -93,5 +98,4 @@
 						<% end %>
 
 			</ul>
-	</div>
 </div>

@@ -16,7 +16,8 @@
 		<% end %>
 		<% @posts.each do |post| %>
 			<div class='post'>
-					<img width="250px" src=<%= post.full_size %>>
+					<!-- <img width="250px" src=<%= post.full_size %>> -->
+									<img style="width:250px;" src ="https://img.buzzfeed.com/buzzfeed-static/static/2014-04/campaign_images/webdr08/9/22/21-soccer-stadiums-you-should-watch-a-game-in-bef-2-3662-1397095514-17_dblbig.jpg">
 					<div class="pcontent">
 						<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
 						<h6 class="pscore">Score: <%= post.score %></h6>

@@ -1,4 +1,27 @@
-<%= javascript_include_tag "foundation" %><br><br>
+<%= javascript_include_tag "foundation" %><br>
+<div class="row">
+	<br><br>
+	<div class="large-4 columns">
+		<img style='width: 50px;' src='https://offthemonstersports.com/wp-content/uploads/2016/11/Tom-Brady-ten-years-10-21-15.jpg'>
+		<img src='https://offthemonstersports.com/wp-content/uploads/2016/11/Tom-Brady-ten-years-10-21-15.jpg'>
+	</div>
+
+	<div class="large-4 columns">
+		<img src='https://offthemonstersports.com/wp-content/uploads/2016/11/Tom-Brady-ten-years-10-21-15.jpg'>
+		<img src='https://offthemonstersports.com/wp-content/uploads/2016/11/Tom-Brady-ten-years-10-21-15.jpg'>
+	</div>
+
+	<div class="large-4 columns">
+		<h3 class="itemheader">The Lineup</h3>
+		<div class="lineup">
+			<% @posts.first(9).each do |post| %>
+			<h1><%= link_to (@posts.index(post)+1).to_s %></h1>
+			<h5><%= link_to post.title , post_path(post) %></h5>
+			<% end %>
+		</div>
+	</div>
+</div>
+
 <div class="row">
 	<br><br>
 	<div class="large-7 columns">

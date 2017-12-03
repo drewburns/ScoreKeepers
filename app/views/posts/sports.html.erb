@@ -4,7 +4,7 @@
 			<ul>
 					<% Team.where(sport_string: params[:sport]).each do |team| %>
 						<img src=<%= team.picture_url %> style="width:50px;height:50px;">
-							<li><%= link_to team.name, team_path(team.id)%></li>
+							<li><%= link_to team.name, team_path(team)%></li>
 					<%end%>
 			</ul>
 
@@ -12,7 +12,7 @@
 
 	<div class="large-7 columns">
 		<% if @posts.count != 0 %>
-			<h3 class="itemheader">Recent <%= @posts.first.sport.capitalize %> Posts </h3>
+			<h3 class="itemheader">Recent <%= @sport.capitalize %> Posts </h3>
 		<% end %>
 		<% @posts.each do |post| %>
 			<div class='post'>
@@ -26,7 +26,7 @@
 					</div>
 			</div>
 			<% end %>
-			<%= will_paginate @posts %>
+			<%= will_paginate @posts, :class => 'flickr_pagination' %>
 	</div>
 
 	<div class="large-3 columns" style="background-color: #f9f9f9;">
@@ -38,7 +38,7 @@
 					<img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;">
 						<div class="lcell">
 							<li class="lboard"><%= link_to user.name, user_path(user) %>
-							<p class="lbscore"><%= user.this_weeks_score %></p></li><hr>
+							<p class="lbscore"><%= user.this_weeks_score_sport(@sport) %></p></li><hr>
 						</div>
 						<% end %>
 			</ul>

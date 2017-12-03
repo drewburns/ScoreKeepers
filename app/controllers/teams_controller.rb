@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.find(params[:id])
+    @team = Team.friendly.find(params[:id])
     @users = []
     @posts = @team.posts.paginate(:page => params[:page])
     if @team.posts.count != 0

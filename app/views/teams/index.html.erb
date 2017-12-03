@@ -79,33 +79,36 @@
 
 
 <div class="row">
-  <ul id="basketball-teams" class=''>
-      <% @teams.first(30).each do |team| %>
-      <div class="large-2 columns">
-          <li><%= render team %></li>
-      </div>
-    <% end %>
-  </ul>
 
-  <ul id="hockey-teams" class='hidden'>
-      <% @teams[30..60].each do |team| %>
-      <div class="large-2 columns">
-          <li><%= render team %></li>
-      </div>
-      <% end %>
-  </ul>
+<ul id="basketball-teams" class=''>
+<% @teams.first(30).each do |team| %>
+<div class="large-2 columns">
+<li><%= render team %></li>
+</div>
+<% end %>
+</ul>
+<ul id="hockey-teams" class='hidden'>
+  <% @teams[30..60].each do |team| %>
+  <div class="large-2 columns">
+  <li><%= render team %></li>
+  </div>
+<% end %>
+</ul>
+<ul id="football-teams" class='hidden'>
+<% @teams[61..92].each do |team| %>
+<div class="large-2 columns">
+  <%= render team %>
+</div>
+<% end %>
+</ul>
+<ul id="baseball-teams" class='hidden'>
+<% @teams[93..123].each do |team| %>
+<div class="large-2 columns">
+  <%= render team %>
+</div>
+<% end %>
+</ul>
 
-  <ul id="football-teams" class='hidden'>
-    <% @teams[61..92].each do |team| %>
-      <%= render team %>
-    <% end %>
-  </ul>
-
-  <ul id="baseball-teams" class='hidden'>
-    <% @teams[93..123].each do |team| %>
-    <%= render team %>
-    <% end %>
-  </ul>
 
 </div></div>
 

@@ -24,7 +24,7 @@ File.readlines('teams/baseball.txt').each do |line|
 	Team.create(name: line_split[0].strip, coach: line_split[1].strip, frontoffice: line_split[2].strip, stadium: line_split[3].strip, picture_url: line_split[4].strip, sport_string: "baseball")
 	
 end
-10.times do
+20.times do
 	user = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: "test12345", bio: Faker::MostInterestingManInTheWorld.quote)
 	team_int = Random.rand(6)
 	team_int.times do
@@ -35,9 +35,10 @@ end
 	rand_int.times do
 		new_rand_int = Random.rand(5)
 		post = Post.create(user_id: user.id, title: Faker::Lorem.sentence(3), content: Faker::Lorem.paragraph(7), thumbnail_url: nil, sport: sports[new_rand_int], status: "approved")
-		post_rant_int = Random.rand(2)
+		post_rant_int = Random.rand(3)
 		post_rant_int.times do
 			team = Team.offset(rand(Team.count)).first
+			p team
 			PostTeam.create(post_id: post.id, team_id: team.id)
 		end
 	end

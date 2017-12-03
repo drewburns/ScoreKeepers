@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     users = []
     User.all.each do |user|
       users << user if user.posts.count > 0
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   def update
     # finish making this create the teams right
     puts "UPDATE " * 10
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     new_params = real_post_params
     new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'
     new_params[:time_submitted] = DateTime.now if post_params[:status] == 'submitted'
@@ -131,13 +131,18 @@ class PostsController < ApplicationController
   def sports
     # @post = Post.find(params[:id])
     users = []
+    @sport = params[:sport]
     User.all.each do |user|
-      users << user if user.posts.count > 0
+      users << user if user.posts.where(sport: @sport).count > 0
     end
-    if Post.where('created_at >= ?', 1.week.ago).where(sport: params[:sport]).count > 1
+    count = Post.where('created_at >= ?', 1.week.ago).where(sport: params[:sport]).count
+    p "___________COUNT_______________"
+    p count
+    if count < 1
       @users = User.first(5)
+      puts "NOT ENOGUh"
     else
-      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).where(sport:params[:sport] ).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).where(sport:params[:sport]).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
     end
     @posts = Post.where(sport: params[:sport]).where(status: 'approved').paginate(:page => params[:page], :per_page => 10)
   end

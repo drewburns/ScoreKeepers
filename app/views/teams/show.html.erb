@@ -6,9 +6,9 @@
 	<%= render partial: 'teams/graphs', locals: {team: @team}%>
 </div>
 
-<hr>
+<!-- <hr> -->
 <div class="row">
-	<div class="large-9 columns">
+	<div class="large-9 columns" style='float:right;'>
 		<h3> Recent <%= @team.name %> Posts </h3>
 		<% @posts.each do |post| %>
 		<div class='post'>
@@ -21,6 +21,6 @@
 			</div>
 		</div>
 		<% end %>
-		<%= will_paginate @posts %>
+		<%= will_paginate @posts, :class => 'flickr_pagination' %>
 	</div>
 </div>

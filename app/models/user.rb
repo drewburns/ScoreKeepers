@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -53,6 +55,18 @@ class User < ApplicationRecord
 		  return scores
     end
 	end
+
+  def this_weeks_score_sport(sport)
+    posts = self.posts.where('created_at >= ?', 1.week.ago).where(sport: sport)
+    scores = posts.map{|post| post.score}.inject{|sum, post| sum + post}
+    puts "__________"
+    puts scores
+    if scores == nil
+      return 0
+    else
+      return scores
+    end
+  end
 
   def full_size
     return self.picture

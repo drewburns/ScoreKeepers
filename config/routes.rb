@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   resources :comments
   # update these two later
 
+  get '/about' => "statics#about"
+
   post '/vote/team' => "teams#vote"
 
   post '/comment/vote' => "comments#vote"

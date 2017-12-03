@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # wrap_parameters :user, include: [:user_id, :name, :email , :password , :password_digest, :token, :author]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     users = []
     @posts = @user.posts.where(status: 'approved').paginate(:page => params[:page], :per_page => 8)
     User.all.each do |user|

@@ -1,36 +1,40 @@
-<%= javascript_include_tag "foundation" %>
-
+<%= javascript_include_tag "foundation" %><br><br>
 <div class="row">
-
-	<div class="large-2 columns" style="border-right: 1px solid grey; background-color: #f5f5f5; padding-top: 10px;">
-		<h3 class="itemheader">Welcome</h3>
-		<h6 style="margin:0px; font-weight: bold;">About</h6>
-		<p>Platform for all fans to talk about their teams</p>
-		<h6 style="margin:0px; font-weight: bold;">Contact</h6>
-		<p>Click here to contact us with any questions and feedback</p>
-		<h6 style="margin:0px; font-weight: bold;">Features</h6>
-		<p>Fan articles, coaches and front office approval ratings, polls, leaderboards, power rankings, team history, stadium reviews, and more</p>
-		<h6 style="margin:0px; font-weight: bold;">Sign Up</h6>
-		<p>Visit our login page</p>
-		<h6 style="margin:0px; font-weight: bold;">Write</h6>
-		<p>Post an article today</p>
-	</div>
-
-	<div class="large-6 columns">
+	<br><br>
+	<div class="large-7 columns">
 		<img class="mainpost" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
 		<div class="mainpostbox">
 			<h1>Tom Brady beats Falcons in Super Bowl</h1>
 		</div>
 	</div>
-	<div class="large-4 columns">
-		<h3 class="itemheader">The Lineup</h3>
 
+	<div class="large-5 columns">
+		<h3 class="itemheader">The Lineup</h3>
 		<div class="lineup">
 			<% @posts.first(9).each do |post| %>
 			<h1><%= link_to (@posts.index(post)+1).to_s %></h1>
 			<h5><%= link_to post.title , post_path(post) %></h5>
 			<% end %>
 		</div>
+	</div>
+</div>
+
+<div style="background-image: url(https://images6.alphacoders.com/404/404696.jpg); height:700px; padding-top: 150px;"></div>
+<div class="row" style="height:500px; width:100%;"><br>
+	<div class="large-4 columns">
+		<h1 style="text-align: center;">Rate</h1>
+		<a href="http://tinypic.com?ref=2vw6a95" target="_blank"><img src="http://i67.tinypic.com/2vw6a95.png" border="0" alt="Image and video hosting by TinyPic"></a>
+		<p>Rate your favorite team's coaches, ownership, and stadium</p>
+	</div>
+	<div class="large-4 columns">
+		<h1 style="text-align: center;">Rank</h1>
+	</div>
+	<div class="large-4 columns">
+		<h1 style="text-align: center;">Write</h1>
+	</div>
+</div>
+
+
 <!--
 	<div class="large-4 columns">
 		<h4 class="lineups">The Lineup</h4>
@@ -94,7 +98,7 @@
 							<p class="lbscore"><%= user.this_weeks_score %></p></li>
 						</div>
 						<hr style="margin: 12px;">
-						<% end %>
+
 						<% end %>
 
 			</ul>

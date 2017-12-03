@@ -21,17 +21,6 @@
  */
 
 /* Header CSS */
-@import 'foundation-icons';
-.icon-bar{
-  background-color: white;
-  padding-left: 23%;
-  border-bottom: 1px solid #cccccc;
-}
-
-.icon-bar > * label{color: black; font-size: 18px; display: block;}
-.icon-bar > * label:hover{background-color: white;}
-.icon-bar.four-up .item{width: 100px; padding: 10px; margin: 0px;}
-.icon-bar.four-up .item:hover{background-color: white;}
 
 /* Homepage CSS*/
 .lineup h1 a{
@@ -131,10 +120,10 @@
 .mainpostbox{
   padding-top: 13px;
   padding-bottom: 3px;
-  background-color: black;
+  background-color: white;
 }
 .mainpostbox h1{
-  color: white;
+  color: black;
   font-size: 38px;
   padding-top: 0px;
   margin-left: 15px;

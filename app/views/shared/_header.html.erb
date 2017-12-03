@@ -1,10 +1,10 @@
 <%= javascript_include_tag "foundation" %>
 
-<div class="contain-to-grid sticky large-12 columns" >
-  <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style="max-width:100rem;">
+<div class="contain-to-grid sticky large-12 columns" style="background-color: white; border-bottom: 2px solid #e5e5e5; height:70px;">
+  <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style="max-width:100rem; background-color: white;">
     <ul class="title-area">
       <li class="name">
-      <h1 style="font-size:30px;"><%= link_to "Sports Site" , root_path %></h1>
+      <h1 style="font-size: 30px; color: black; background-color: #e5e5e5;"><%= link_to "Sports Site" , root_path %></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
@@ -15,20 +15,21 @@
     <ul class="right">
       <li class=""><%= link_to "Team Index" , teams_path %></li>
 			 <ul class="menu">
+         <li class="menuitem" style="background-color: yellow;"><a href="/sports?sport=basketball">Basketball</a></li>
+         <li class="menuitem"><a class="item" href="/sports?sport=football">Football</li>
+           <li class="menuitem"><a class="item" href="/sports?sport=basketball">Baseball</a></li>
+           <li class="menuitem"><a class="item" href="/sports?sport=basketball">Hockey</a></li>
+           <li class="menuitem"><a class="item" href="/sports?sport=basketball">Basketball</a></li>
         <% if current_user.admin %>
           <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>
         <% end %>
-
-
-			</ul>
-          <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
-
+      </ul>
+      <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
       <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
       <li class="" style='display:inline;'><%= link_to image_tag(current_user.thumbnail.url, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'display:inline;' %><%= link_to current_user.name , current_user , :style => 'display:inline;'%></li>
       <!-- <li><%= link_to "Profile" , current_user %></li> -->
-          <li><%= link_to "Settings" , edit_user_registration_path %> </li>
-          <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
-
+      <li><%= link_to "Settings" , edit_user_registration_path %> </li>
+      <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
       <!-- <li class="has-dropdown"> -->
         <!-- <ul class="dropdown"> -->
         <!-- </ul> -->
@@ -36,44 +37,25 @@
     </ul>
     </section>
 
-  <% else %>
+    <% else %>
 
     <section class="top-bar-section">
     <!-- Right Nav Section -->
+    <ul class="left">
+      <li class="menuitem"><a href="/sports?sport=baseball" style="background-color: white; padding-top: 10px; height: 70px; color: black; font-size: 24px; border-bottom: 2px solid #e5e5e5; border-right:">Baseball</a></li>
+      <li class="menuitem"><a href="/sports?sport=basketball" style="background-color: white; padding-top: 10px; height: 70px; color: black; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Basketball</a></li>
+      <li class="menuitem"><a href="/sports?sport=football" style="background-color: white; padding-top: 10px; height: 70px; color: black; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Football</a></li>
+      <li class="menuitem"><a href="/sports?sport=hockey" style="background-color: white; padding-top: 10px; height: 70px; color: black; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Hockey</a></li>
+      <li class="menuitem"><a href="/sports?sport=soccer" style="background-color: white; padding-top: 10px; height: 70px; color: black; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Soccer</a></li>
+    </ul>
     <ul class="right">
-      <li class=""><%= link_to "Team Index" , teams_path %></li>
-      <li class="menuitem"><%= link_to "Sign In" , new_user_session_path %></li>
+      <li style="background-color: white; padding-top: 10px; height: 70px; color: black; font-size: 24px; border-bottom: 2px solid #e5e5e5; border-right:"><%= link_to "Team Index" , teams_path %></li>
+      <li class="menuitem"><%= link_to "Sign In" , new_user_session_path, :style => 'style: background-color: white; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5; border-right:' %></li>
       <li class="menuitem"><%= link_to "Create Account" , new_user_registration_path %></li>
     </ul>
     </section>
   <% end %>
 </nav>
-</div>
-<div class="icon-bar four-up">
-  <a class="item" href="/sports?sport=basketball">
-    <label>Basketball</label>
-  </a>
-  <a class="item" href="/sports?sport=football">
-    <label>Football</label>
-  </a>
-  <a class="item" href="/sports?sport=hockey">
-    <label>Hockey</label>
-  </a>
-  <a class="item" href="/sports?sport=baseball">
-    <label>Baseball</label>
-  </a>
-  <a class="item" href="">
-    <label>Debate</label>
-  </a>
-  <a class="item" href="">
-    <label>Rankings</label>
-  </a>
-  <a class="item" href="">
-    <label>Fantasy</label>
-  </a>
-  <a class="item" href="">
-    <label>History</label>
-  </a>
 </div>
 
 <script type="text/javascript">

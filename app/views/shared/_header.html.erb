@@ -4,7 +4,7 @@
   <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style="max-width:100rem; background-color: #212121;">
     <ul class="title-area">
       <li class="name">
-      <h1 style="font-size: 30px; color: black; padding-top: 10px; background-color: #212121;"><%= link_to "Sports Site" , root_path %></h1>
+      <h1 style="font-size: 30px; color: white; padding-top: 10px; background-color: #212121;"><%= link_to "Sports Site" , root_path %></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
@@ -12,13 +12,13 @@
     <% if user_signed_in? %>
     <section class="top-bar-section">
     <ul class="left">
-      <li class="menuitem"><a href="/sports?sport=baseball" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5; border-right:">Baseball</a></li>
-      <li class="menuitem"><a href="/sports?sport=basketball" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Basketball</a></li>
-      <li class="menuitem"><a href="/sports?sport=football" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Football</a></li>
-      <li class="menuitem"><a href="/sports?sport=hockey" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Hockey</a></li>
-      <li class="menuitem"><a href="/sports?sport=soccer" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Soccer</a></li>
+      <li class="menutiem"><a href="/sports?sport=baseball" style="background-color: #212121; text-align: center; padding-top: 25px; height: 70px; color: white; font-size: 24px;">Baseball</a></li>
+      <li class="menuitem"><a href="/sports?sport=basketball" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Basketball</a></li>
+      <li class="menuitem"><a href="/sports?sport=football" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Football</a></li>
+      <li class="menuitem"><a href="/sports?sport=hockey" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Hockey</a></li>
+      <li class="menuitem"><a href="/sports?sport=soccer" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Soccer</a></li>
     </ul>
-    <ul class="right" style="padding-top: 10px;">
+    <ul class="right" style="padding-top: 23px; background-color: #212121; margin-left: 275px;">
       <li class="menuitem"><a href="/teams">Team Index</a></li>
         <% if current_user.admin %>
           <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>

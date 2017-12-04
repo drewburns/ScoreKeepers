@@ -37,7 +37,8 @@
     /*border-radius: 5px;*/
   }
   .sport-tab:hover {
-    background-color: blue;
+    background-color: white;
+    color: black;
   }
   .sport-tab {
     border-style: solid;
@@ -45,7 +46,10 @@
     cursor: pointer;
     text-align: center;
     height:50px;
-    background-color: #D3D3D3;
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    font-size: 28px;
   }
   .showing {
     text-align: center;
@@ -54,13 +58,15 @@
     display: none;
   }
 </style>
-
-    <h2>Add your favorite teams by clicking the button next to the team name</h2>
-    <h5>Added teams will appear on your user profile</h5>
+<div class="row" style="padding-left: 50px; padding-top: 25px;">
+  <br><br><br>
+    <h4>Add your favorite teams by clicking the button next to the team name</h4>
+    <h6>Added teams will appear on your user profile</h6>
+</div>
 
 <div class="row">
   <div class="large-12 columns">
-  <ul id="sport-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
+  <ul style="list-style: none;" id="sport-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
   <li>
     <div class="large-3 medium-3 small-4 columns sport-tab" id='basketball-tab'>Basketball</div>
   </li>
@@ -80,30 +86,30 @@
 
 <div class="row">
 
-<ul id="basketball-teams" class=''>
+<ul style="list-style: none;" id="basketball-teams" class=''>
 <% @teams.first(30).each do |team| %>
-<div class="large-2 columns">
-<li><%= render team %></li>
+<div class="large-3 columns">
+<li style="list-style: none;"><%= render team %></li>
 </div>
 <% end %>
 </ul>
-<ul id="hockey-teams" class='hidden'>
+<ul style="list-style: none;" id="hockey-teams" class='hidden'>
   <% @teams[30..60].each do |team| %>
-  <div class="large-2 columns">
+  <div class="large-3 columns">
   <li><%= render team %></li>
   </div>
 <% end %>
 </ul>
-<ul id="football-teams" class='hidden'>
+<ul style="list-style: none;"id="football-teams" class='hidden'>
 <% @teams[61..92].each do |team| %>
-<div class="large-2 columns">
+<div class="large-3 columns">
   <%= render team %>
 </div>
 <% end %>
 </ul>
-<ul id="baseball-teams" class='hidden'>
+<ul style="list-style: none;" id="baseball-teams" class='hidden'>
 <% @teams[93..123].each do |team| %>
-<div class="large-2 columns">
+<div class="large-3 columns">
   <%= render team %>
 </div>
 <% end %>

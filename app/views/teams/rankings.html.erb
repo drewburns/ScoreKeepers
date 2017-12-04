@@ -21,21 +21,21 @@
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
 		  	<div class="tabs-panel is-active" id="baseball1">
-			    <% @baseball.sort_by{|team| team.team_score}.each do |team| %>
+			    <% @baseball.sort_by{|team| team.team_score}.reverse.each do |team| %>
 			    <%= render team %>
 			    	<p><%= team.name %> - <%= team.team_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="baseball2">
-			    <% @baseball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @baseball.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 			    	<%= render team %>
-			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    	<p><%= team.name %> - <%= team.stadium_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="baseball3">
-			    <% @baseball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @baseball.sort_by{|team| team.coach_score}.each do |team| %>
 			    <%= render team %>
 			    	<p><%= team.name %> - <%= team.coach_score %> </p>
 			    <% end %>
@@ -54,23 +54,23 @@
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
 		  	<div class="tabs-panel is-active" id="basketball1">
-			    <% @basketball.sort_by{|team| team.team_score}.each do |team| %>
+			    <% @basketball.sort_by{|team| team.team_score}.reverse.each do |team| %>
 			    <%= render team %>
 			    	<p><%= team.name %> - <%= team.team_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="basketball2">
-			    <% @basketball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @basketball.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 			    	<%= render team %>
-			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    	<p><%= team.stadium %> - <%= team.stadium_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="basketball3">
-			    <% @basketball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @basketball.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 			    <%= render team %>
-			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    	<p><%= team.coach %> - <%= team.coach_score %> </p>
 			    <% end %>
 			  </div>
 
@@ -88,23 +88,23 @@
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
 		  	<div class="tabs-panel is-active" id="football1">
-			    <% @football.sort_by{|team| team.team_score}.each do |team| %>
+			    <% @football.sort_by{|team| team.team_score}.reverse.each do |team| %>
 			    <%= render team %>
 			    	<p><%= team.name %> - <%= team.team_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="football2">
-			    <% @football.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @football.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 			    	<%= render team %>
-			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    	<p><%= team.stadium %> - <%= team.stadium_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="football3">
-			    <% @football.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @football.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 			    <%= render team %>
-			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    	<p><%= team.coach %> - <%= team.coach_score %> </p>
 			    <% end %>
 			  </div>
 
@@ -122,23 +122,23 @@
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
 		  	<div class="tabs-panel is-active" id="hockey1">
-			    <% @hockey.sort_by{|team| team.team_score}.each do |team| %>
+			    <% @hockey.sort_by{|team| team.team_score}.reverse.each do |team| %>
 			    <%= render team %>
 			    	<p><%= team.name %> - <%= team.team_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="hockey2">
-			    <% @hockey.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @hockey.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 			    	<%= render team %>
-			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    	<p><%= team.stadium %> - <%= team.stadium_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="hockey3">
-			    <% @hockey.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @hockey.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 			    <%= render team %>
-			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    	<p><%= team.coach %> - <%= team.coach_score %> </p>
 			    <% end %>
 			  </div>
 
@@ -156,23 +156,23 @@
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
 		  	<div class="tabs-panel is-active" id="soccer1">
-			    <% @soccer.sort_by{|team| team.team_score}.each do |team| %>
+			    <% @soccer.sort_by{|team| team.team_score}.reverse.each do |team| %>
 			    <%= render team %>
 			    	<p><%= team.name %> - <%= team.team_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="soccer2">
-			    <% @soccer.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @soccer.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 			    	<%= render team %>
-			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    	<p><%= team.stadium %> - <%= team.stadium_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="soccer3">
-			    <% @soccer.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <% @soccer.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 			    <%= render team %>
-			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    	<p><%= team.coach %> - <%= team.coach_score %> </p>
 			    <% end %>
 			  </div>
 

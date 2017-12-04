@@ -7,25 +7,28 @@
 			<h6 class="userauthorbio"><%= @user.bio %></h6>
 		</div>
 		<hr style="height: 25px; background-color: #f5f5f5;">
-		<h3>User's Favorite Teams</h3>
-		<ul>
-			<% @user.teams.each do |team| %>
-				<%= render :partial => 'teams/team', locals: {team: team} %>
-			<% end %>
-		</ul>
-		<div class='userauthorpost'>
-			<% @posts.each do |post| %>
-			<img src=<%= post.full_size%> >
-			<h3 class="uaptitle"><%= link_to post.title, post_path(post) %></h3>
-			<h6 class="uapscore">Score: <%= post.score %></h6>
-			<hr>
-			<% end %>
+
+		<div style="padding: 20px;">
+			<h3>User's Favorite Teams</h3>
+			<ul>
+				<% @user.teams.each do |team| %>
+					<%= render :partial => 'teams/team', locals: {team: team} %>
+				<% end %>
+			</ul>
+			<div class='userauthorpost'>
+				<% @posts.each do |post| %>
+				<img src=<%= post.full_size%> >
+				<h3 class="uaptitle"><%= link_to post.title, post_path(post) %></h3>
+				<h6 style="uapscore">Score: <%= post.score %></h6>
+				<hr>
+				<% end %>
+			</div>
+			<%= will_paginate @posts %>
 		</div>
-		<%= will_paginate @posts %>
 	</div>
 
 
-	<div class="large-4 columns">
+	<div class="large-4 columns" style="background-color: white; margin-left: 10px; width: 450px;">
 
 		<h3 class="yellow">Today's Leaderboard</h3>
 		<ul class="lboardul">

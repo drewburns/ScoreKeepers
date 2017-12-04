@@ -68,7 +68,6 @@
 			<h5>Teams: <% for i in @post.teams %><%= link_to i.name, team_path(:id => i.id)%></h5><% end %>
 			<% end %>
 			<hr>
-				<img src="https://i.pinimg.com/736x/5a/a5/d6/5aa5d6321cf7e5c16bef7f4ae6644980--super-funny-so-funny.jpg" style="width: 30%;">
 				<img src= <%= @post.user.full_size %>  style="border-radius:50%; height:130px; width:130px;">
 				<h3><%= link_to @post.user.name, user_path(@post.user) %></h3>
 				<h5 style="width: 100%; padding-top: 10px;">Bio:  <%= @post.user.bio %></h5>

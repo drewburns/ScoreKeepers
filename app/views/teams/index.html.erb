@@ -4,7 +4,7 @@ ul {
 }
 </style>
 
-<div class='large-10 medium-10 small-12 large-centered medium-centered columns'> 
+<div class='large-10 medium-10 small-12 large-centered medium-centered columns'>
       <h2>Add your favorite teams by clicking the button next to the team name</h2>
     <h5>Added teams will appear on your user profile</h5>
   <ul class="tabs" data-tabs id="example-tabs">
@@ -45,7 +45,6 @@ ul {
       <% end %>
     </ul>
   </div>
-<<<<<<< HEAD
 </div> -->
 <style type="text/css">
   #teamlist {
@@ -103,8 +102,6 @@ ul {
 </div>
 </div>
 
-=======
->>>>>>> b851257b535c4eb4e3fcee3bcab32ac3280f3b16
 
   <div class="tabs-panel" id="panel4">
     <ul id="basketball-teams" class=''>
@@ -116,7 +113,6 @@ ul {
     </ul>
   </div>
 
-<<<<<<< HEAD
 <ul style="list-style: none;" id="basketball-teams" class=''>
 <% @teams.first(30).each do |team| %>
 <div class="large-3 columns">
@@ -145,27 +141,14 @@ ul {
 </div>
 <% end %>
 </ul>
-=======
-  <div class="tabs-panel" id="panel5">
-    <ul id="basketball-teams" class=''>
-      <% @teams.where(sport_string: "soccer").each do |team| %>
-        <div class="large-4 columns">
-          <li><%= render team %></li>
-        </div>
-      <% end %>
-    </ul>
-  </div>
->>>>>>> b851257b535c4eb4e3fcee3bcab32ac3280f3b16
 
 </div>
 
 
 
-</div> 
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js"></script>
 <script>
   $(document).foundation();
 </script>
-
-

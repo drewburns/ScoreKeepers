@@ -7,8 +7,15 @@ class TeamsController < ApplicationController
   end
 
   def show
+    users = []
     @team = Team.friendly.find(params[:id])
-    @users = []
+    User.all.each do |user|
+      p "_________STUFF__________"
+      p user
+      p @team.id
+      p user.team_posts(@team.id)
+      users << user if user.team_posts(@team.id).count > 0
+    end
     @posts = @team.posts.paginate(:page => params[:page])
     if @team.posts.count != 0
       # if @team.posts.where('created_at >= ?', 1.week.ago).count > 1
@@ -16,10 +23,13 @@ class TeamsController < ApplicationController
       # else
         # sorted = @team.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
         # @users = sorted.map { |post| post.user  }
-      @users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      @users = users.sort_by { |author| author.team_posts(@team.id).where('posts.created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
       # end
       # sorted = @team.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }
+      
       # users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+    else
+      @users = User.first(5)
     end
   end
 
@@ -45,4 +55,16 @@ class TeamsController < ApplicationController
   def index
     @teams = Team.all
   end
+
+  def rankings
+    @teams = Team.all
+    @baseball = @teams.where(sport_string: "baseball")
+    @soccer = @teams.where(sport_string: "soccer")
+    @basketball = @teams.where(sport_string: "basketball")
+    @hockey = @teams.where(sport_string: "hockey")
+    @football = @teams.where(sport_string: "football")
+
+
+  end
+
 end

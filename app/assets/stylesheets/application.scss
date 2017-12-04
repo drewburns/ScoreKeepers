@@ -29,6 +29,8 @@
 }
 
 
+
+
 .icon-bar > * label{color: black; font-size: 18px; display: block;}
 .icon-bar > * label:hover{background-color: white;}
 .icon-bar.four-up .item{width: 100px; padding: 10px; margin: 0px;}
@@ -54,6 +56,26 @@
   font-size: 30px;
   border-bottom: 3px solid #fed766;
   margin-bottom: 15px;
+}
+
+.fi-x {
+  color:grey;
+  font-size:85px;
+  margin-left:30px;
+}
+
+.fi-check {
+  color:grey;
+  font-size:85px;
+  margin-right:30px;
+}
+
+.fi-check:hover {
+  color:green;
+}
+
+.fi-x:hover {
+  color:red;
 }
 
 .blue{

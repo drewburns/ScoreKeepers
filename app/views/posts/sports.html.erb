@@ -32,7 +32,8 @@
 			<ul>
 					<% Team.where(sport_string: params[:sport]).each do |team| %>
 					<div class="large-1 columns">
-						<img src=<%= team.picture_url %> style="width: 100%">
+						<!-- <img src=<%= team.picture_url %> style="width: 100%"> -->
+						<%= link_to(image_tag(team.picture_url), team) %>
 					</div>
 					<%end%>
 			</ul>

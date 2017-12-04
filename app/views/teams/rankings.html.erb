@@ -30,14 +30,14 @@
 			  <div class="tabs-panel" id="baseball2">
 			    <% @baseball.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 			    	<%= render team %>
-			    	<p><%= team.name %> - <%= team.stadium_score %> </p>
+			    	<p><%= team.stadium %> - <%= team.stadium_score %> </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="baseball3">
 			    <% @baseball.sort_by{|team| team.coach_score}.each do |team| %>
 			    <%= render team %>
-			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    	<p><%= team.coach %> - <%= team.coach_score %> </p>
 			    <% end %>
 			  </div>
 

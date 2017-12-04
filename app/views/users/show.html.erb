@@ -10,7 +10,7 @@
 		<h3>User's Favorite Teams</h3>
 		<ul>
 			<% @user.teams.each do |team| %>
-				<div class="large-2 columns"><%= render :partial => 'teams/team', locals: {team: team} %></div>
+				<%= render :partial => 'teams/team', locals: {team: team} %>
 			<% end %>
 		</ul>
 		<div class='userauthorpost'>

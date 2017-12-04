@@ -27,56 +27,52 @@
 
 <div class="row">
 	<div class="large-3 columns" style="background-color: white;">
-			<h3 class="itemheaderx">Today's Leaderboard</h3>
+			<h3 class="itemheader">Baseball</h3>
 				<ul class="lboardul">
-					<% @users.each do |user| %>
-						<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
-						<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
+					<% @top_baseball.each do |team| %>
+						<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 							<div class="lcell">
-								<li class="lboard"><%= link_to user.name, user_path(user) %>
-								<p class="lbscore"><%= user.this_weeks_score %></p></li>
+								<img src=<%= team.picture_url %> style="width:75px; height:75px; border-radius:50%;">
+								<li class="lboard"><%= link_to team.name, team %>
 							</div>
 							<hr style="margin: 12px;">
 					<% end %>
 			</ul>
 	</div>
 	<div class="large-3 columns" style="background-color: white;">
-			<h3 class="itemheaderx">Today's Leaderboard</h3>
+			<h3 class="itemheader">Basketball</h3>
 				<ul class="lboardul">
-					<% @users.each do |user| %>
-						<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
-						<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
+					<% @top_basketball.each do |team| %>
+						<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 							<div class="lcell">
-								<li class="lboard"><%= link_to user.name, user_path(user) %>
-								<p class="lbscore"><%= user.this_weeks_score %></p></li>
+								<img src=<%= team.picture_url %> style="width:75px; height:75px; border-radius:50%;">
+								<li class="lboard"><%= link_to team.name, team %>
 							</div>
 							<hr style="margin: 12px;">
 					<% end %>
 			</ul>
 	</div>
 	<div class="large-3 columns" style="background-color: white;">
-			<h3 class="itemheaderx">Today's Leaderboard</h3>
+			<h3 class="itemheader">Football</h3>
 				<ul class="lboardul">
-					<% @users.each do |user| %>
-						<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
-						<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
+					<% @top_football.each do |team| %>
+						<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 							<div class="lcell">
-								<li class="lboard"><%= link_to user.name, user_path(user) %>
-								<p class="lbscore"><%= user.this_weeks_score %></p></li>
+								<img src=<%= team.picture_url %> style="width:75px; height:75px; border-radius:50%;">
+								<li class="lboard"><%= link_to team.name, team %>
 							</div>
 							<hr style="margin: 12px;">
 					<% end %>
 			</ul>
 	</div>
 	<div class="large-3 columns" style="background-color: white;">
-			<h3 class="itemheaderx">Today's Leaderboard</h3>
-				<ul class="lboardul">
-					<% @users.each do |user| %>
-						<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
-						<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
+			<h3 class="itemheader">Hockey</h3>
+				<ul class="lboardul" >
+					<% @top_hockey.each do |team| %>
+						<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 							<div class="lcell">
-								<li class="lboard"><%= link_to user.name, user_path(user) %>
-								<p class="lbscore"><%= user.this_weeks_score %></p></li>
+								<img src=<%= team.picture_url %> style="width:75px; height:75px; border-radius:50%;">
+								<li class="lboard" style='display:inline;'><%= link_to team.name, team %>
 							</div>
 							<hr style="margin: 12px;">
 					<% end %>

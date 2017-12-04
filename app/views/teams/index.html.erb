@@ -45,6 +45,66 @@ ul {
       <% end %>
     </ul>
   </div>
+<<<<<<< HEAD
+</div> -->
+<style type="text/css">
+  #teamlist {
+    clear:both;
+  }
+
+
+  #sport-tabs {
+    /*border-radius: 5px;*/
+  }
+  .sport-tab:hover {
+    background-color: white;
+    color: black;
+  }
+  .sport-tab {
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    height:50px;
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+  }
+  .showing {
+    text-align: center;
+  }
+  .hidden {
+    display: none;
+  }
+</style>
+<div class="row" style="padding-left: 50px; padding-top: 25px;">
+  <br><br><br>
+    <h4>Add your favorite teams by clicking the button next to the team name</h4>
+    <h6>Added teams will appear on your user profile</h6>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+  <ul style="list-style: none;" id="sport-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
+  <li>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='basketball-tab'>Basketball</div>
+  </li>
+  <li>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='hockey-tab'>Hockey</div>
+  </li>
+  <li>
+    <div class="large-3 medium-3  small-4 columns sport-tab" id='football-tab'>Football</div>
+  </li>
+  <li>
+    <div class="large-3 medium-3 small-4 columns sport-tab" id='baseball-tab'>Baseball</div>
+  </li>
+</ul>
+</div>
+</div>
+
+=======
+>>>>>>> b851257b535c4eb4e3fcee3bcab32ac3280f3b16
 
   <div class="tabs-panel" id="panel4">
     <ul id="basketball-teams" class=''>
@@ -56,6 +116,36 @@ ul {
     </ul>
   </div>
 
+<<<<<<< HEAD
+<ul style="list-style: none;" id="basketball-teams" class=''>
+<% @teams.first(30).each do |team| %>
+<div class="large-3 columns">
+<li style="list-style: none;"><%= render team %></li>
+</div>
+<% end %>
+</ul>
+<ul style="list-style: none;" id="hockey-teams" class='hidden'>
+  <% @teams[30..60].each do |team| %>
+  <div class="large-3 columns">
+  <li><%= render team %></li>
+  </div>
+<% end %>
+</ul>
+<ul style="list-style: none;"id="football-teams" class='hidden'>
+<% @teams[61..92].each do |team| %>
+<div class="large-3 columns">
+  <%= render team %>
+</div>
+<% end %>
+</ul>
+<ul style="list-style: none;" id="baseball-teams" class='hidden'>
+<% @teams[93..123].each do |team| %>
+<div class="large-3 columns">
+  <%= render team %>
+</div>
+<% end %>
+</ul>
+=======
   <div class="tabs-panel" id="panel5">
     <ul id="basketball-teams" class=''>
       <% @teams.where(sport_string: "soccer").each do |team| %>
@@ -65,6 +155,7 @@ ul {
       <% end %>
     </ul>
   </div>
+>>>>>>> b851257b535c4eb4e3fcee3bcab32ac3280f3b16
 
 </div>
 

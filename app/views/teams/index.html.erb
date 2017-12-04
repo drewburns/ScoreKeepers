@@ -1,31 +1,51 @@
+<style type="text/css">
+ul {
+  list-style-type: none;
+}
+</style>
 
-<!-- <div class="row">
-  <div class="large-8 columns">
-<h3> Team List</h3>
+<div class='large-10 medium-10 small-12 large-centered medium-centered columns'> 
+      <h2>Add your favorite teams by clicking the button next to the team name</h2>
+    <h5>Added teams will appear on your user profile</h5>
+  <ul class="tabs" data-tabs id="example-tabs">
+    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Baseball</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Basketball</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">Football</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">Hockey</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel5" href="#panel5">Soccer</a></li>
+<hr>
+
 <div class="tabs-content" data-tabs-content="example-tabs">
   <div class="tabs-panel is-active" id="panel1">
-    <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+    <ul id="basketball-teams" class=''>
+      <% @teams.where(sport_string: "baseball").each do |team| %>
+        <div class="large-4 columns">
+          <li><%= render team %></li>
+        </div>
+      <% end %>
+    </ul>
   </div>
+
   <div class="tabs-panel" id="panel2">
-    <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+    <ul id="basketball-teams" class=''>
+      <% @teams.where(sport_string: "basketball").each do |team| %>
+        <div class="large-4 columns">
+          <li><%= render team %></li>
+        </div>
+      <% end %>
+    </ul>
   </div>
-</div>
-<% @teams.each do |team| %>
-    <p style="display:inline;"><%= link_to team.name, team_path(team) %> </p>
-    <% if user_signed_in? %>
-        <% if current_user.teams.include?(team) %>
-        <% userTeam = current_user.userTeams.where(team_id:team.id).first.id%>
-            <%= link_to "Remove" , user_team_path(id: userTeam), method: :delete%>
-        <% else %>
-            <%= link_to "Add to favorites" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post%>
-        <% end %>
 
-
-        <% end %>
-        </br>
-        </br>
-    <% end %>
+  <div class="tabs-panel" id="panel3">
+    <ul id="basketball-teams" class=''>
+      <% @teams.where(sport_string: "football").each do |team| %>
+        <div class="large-4 columns">
+          <li><%= render team %></li>
+        </div>
+      <% end %>
+    </ul>
   </div>
+<<<<<<< HEAD
 </div> -->
 <style type="text/css">
   #teamlist {
@@ -83,9 +103,20 @@
 </div>
 </div>
 
+=======
+>>>>>>> b851257b535c4eb4e3fcee3bcab32ac3280f3b16
 
-<div class="row">
+  <div class="tabs-panel" id="panel4">
+    <ul id="basketball-teams" class=''>
+      <% @teams.where(sport_string: "hockey").each do |team| %>
+        <div class="large-4 columns">
+          <li><%= render team %></li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
 
+<<<<<<< HEAD
 <ul style="list-style: none;" id="basketball-teams" class=''>
 <% @teams.first(30).each do |team| %>
 <div class="large-3 columns">
@@ -114,36 +145,27 @@
 </div>
 <% end %>
 </ul>
+=======
+  <div class="tabs-panel" id="panel5">
+    <ul id="basketball-teams" class=''>
+      <% @teams.where(sport_string: "soccer").each do |team| %>
+        <div class="large-4 columns">
+          <li><%= render team %></li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+>>>>>>> b851257b535c4eb4e3fcee3bcab32ac3280f3b16
+
+</div>
 
 
-</div></div>
 
-<script type="text/javascript">
-  $( ".sport-tab" ).click(function(event) {
-    var sport = $(this).attr('id');
-
-    if ( sport == "basketball-tab"){
-      $("#basketball-teams").removeClass( "hidden" ).removeClass( "hidden" );
-      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
-
-    } else if (sport == "hockey-tab") {
-      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#hockey-teams").removeClass( "hidden" );
-      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
-    } else if (sport == "football-tab") {
-      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#football-teams").removeClass( "hidden" );
-      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
-    } else if (sport == "baseball-tab") {
-      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
-      $("#baseball-teams").removeClass( "hidden" );
-    }
-  });
-
+</div> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js"></script>
+<script>
+  $(document).foundation();
 </script>
+
+

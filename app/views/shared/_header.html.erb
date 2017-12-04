@@ -25,7 +25,7 @@
         <% end %>
       <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
       <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
-      <li class="" style='display:inline;'><%= link_to image_tag(current_user.thumbnail.url, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'display:inline;' %><%= link_to current_user.name , current_user , :style => 'display:inline;'%></li>
+      <li class="" style='display:inline;'><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'display:inline;' %><%= link_to current_user.name , current_user , :style => 'display:inline;'%></li>
       <!-- <li><%= link_to "Profile" , current_user %></li> -->
       <li><%= link_to "Settings" , edit_user_registration_path %> </li>
       <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>

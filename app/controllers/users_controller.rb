@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   # wrap_parameters :user, include: [:user_id, :name, :email , :password , :password_digest, :token, :author]
+  before_action :authenticate_user!, only: [:admin,:creator]
+  before_action :correct_user!, only: [:admin,:creator]
 
   def show
     @user = User.friendly.find(params[:id])
@@ -32,6 +34,12 @@ class UsersController < ApplicationController
   # end
 
   private
+
+  def correct_user!
+    puts "TRYING TO SEE IF CORRECT USER"
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user == @user
+  end
 
   def user_params
     params.require(:user).permit(:user_id, :name, :email, :password, :password_digest, :token, :author)

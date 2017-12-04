@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # before_action :require_login , only: [:create]
   before_action :authenticate_user!, only: %i[create new]
-  # before_action :correct_user!, only: [:create,:edit,:update,:destroy]
+  before_action :correct_user!, only: [:create,:edit,:update,:destroy]
 
   def index
     users = []
@@ -213,6 +213,7 @@ class PostsController < ApplicationController
 
 
   def correct_user!
+    puts "TRYING TO SEE IF CORRECT USER"
     post = Post.find(params[:id])
     @user = User.find(post.user.id)
     redirect_to(root_url) unless current_user == @user

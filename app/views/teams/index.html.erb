@@ -102,7 +102,7 @@ ul {
 </div>
 </div>
 
-
+<!-- 
   <div class="tabs-panel" id="panel4">
     <ul id="basketball-teams" class=''>
       <% @teams.where(sport_string: "hockey").each do |team| %>
@@ -121,28 +121,28 @@ ul {
 <% end %>
 </ul>
 <ul style="list-style: none;" id="hockey-teams" class='hidden'>
-  <% @teams[30..60].each do |team| %>
+  <%# @teams[30..60].each do |team| %>
   <div class="large-3 columns">
-  <li><%= render team %></li>
+  <li><%#= render team %></li>
   </div>
-<% end %>
+<%# end %>
 </ul>
 <ul style="list-style: none;"id="football-teams" class='hidden'>
-<% @teams[61..92].each do |team| %>
+<%# @teams[61..92].each do |team| %>
 <div class="large-3 columns">
-  <%= render team %>
+  <%#= render team %>
 </div>
-<% end %>
+<%# end %>
 </ul>
 <ul style="list-style: none;" id="baseball-teams" class='hidden'>
-<% @teams[93..123].each do |team| %>
+<%# @teams[93..123].each do |team| %>
 <div class="large-3 columns">
-  <%= render team %>
+  <%#= render team %>
 </div>
-<% end %>
+<%# end %>
 </ul>
 
-</div>
+</div> -->
 
 
 

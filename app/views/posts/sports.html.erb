@@ -1,15 +1,46 @@
-<div class="row">
-	<div class="large-2 columns">
-		<h3>Team Links</h3>
-			<ul>
-					<% Team.where(sport_string: params[:sport]).each do |team| %>
-						<img src=<%= team.picture_url %> style="width:50px;height:50px;">
-							<li><%= link_to team.name, team_path(team)%></li>
-					<%end%>
-			</ul>
-
+<div class="row"><br>
+	<div class="large-6 columns">
+		<br>
+		<img src ="https://pbs.twimg.com/media/C385y28UcAAG5l1.jpg">
+		<h1>Enter Post title here</h1>
+		<h3>Enter post author here</h3>
 	</div>
 
+	<div class="large-3 columns"><br>
+		<img width="100%" src="https://usatpatriotswire.files.wordpress.com/2016/12/gettyimages-627687580.jpg?w=1000&h=600&crop=1">
+		<h5>Enter title here</h5>
+		<img width="100%" src="https://usatpatriotswire.files.wordpress.com/2016/12/gettyimages-627687580.jpg?w=1000&h=600&crop=1">
+		<h5>Enter title here</h5>
+	</div>
+
+  <div class="large-3 columns"><br>
+		<img width="100%" src="https://usatpatriotswire.files.wordpress.com/2016/12/gettyimages-627687580.jpg?w=1000&h=600&crop=1">
+		<h5>Enter title here</h5>
+		<img width="100%" src="https://usatpatriotswire.files.wordpress.com/2016/12/gettyimages-627687580.jpg?w=1000&h=600&crop=1">
+		<h5>Enter title here</h5>
+	</div>
+</div>
+
+<hr style="width: 50px; background-color: #f5f5f5;">
+
+<div class="row">
+	<div class="large-2 columns">
+		<h2>Team Pages</h2>
+		<h4>Click on the logo to view each team's page</h4>
+		<h4>Rate your favorite team's coach, owner, and stadium</h4>
+	</div>
+			<ul>
+					<% Team.where(sport_string: params[:sport]).each do |team| %>
+					<div class="large-1 columns">
+						<img src=<%= team.picture_url %> style="width: 100%">
+					</div>
+					<%end%>
+			</ul>
+</div>
+
+<hr style="width: 50px; background-color: #f5f5f5;">
+
+<div class="row">
 	<div class="large-7 columns">
 		<% if @posts.count != 0 %>
 			<h3 class="itemheader">Recent <%= @sport.capitalize %> Posts </h3>

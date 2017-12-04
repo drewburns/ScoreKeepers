@@ -24,3 +24,20 @@
 		<%= will_paginate @posts, :class => 'flickr_pagination' %>
 	</div>
 </div>
+
+<div class="large-3 columns" style="background-color: white;">
+		<h3 class="itemheader"><%= @team.name %> Leaderboard</h3>
+			<ul class="lboardul">
+				<% @users.each do |user| %>
+					<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
+					<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
+						<div class="lcell">
+							<li class="lboard"><%= link_to user.name, user_path(user) %>
+							<p class="lbscore"><%= user.this_weeks_score_team(@team.id) %></p></li>
+						</div>
+						<hr style="margin: 12px;">
+
+						<% end %>
+
+			</ul>
+</div>

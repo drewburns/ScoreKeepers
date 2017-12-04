@@ -1,0 +1,192 @@
+<h1>Rankings</h1>
+
+
+<div class='large-10 medium-10 small-12 large-centered medium-centered columns'> 
+	<ul class="tabs" data-tabs id="example-tabs">
+	  <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Baseball</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Basketball</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">Football</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">Hockey</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel5" href="#panel5">Soccer</a></li>
+
+
+	</ul>
+	<div class="tabs-content" data-tabs-content="example-tabs">
+	  <div class="tabs-panel is-active" id="panel1">
+	  		<ul class="tabs" data-tabs id="example-tabs">
+		  <li class="tabs-title is-active"><a href="#baseball1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="baseball2" href="#baseball2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="baseball3" href="#baseball3">Coach Rating</a></li>
+		  <hr>
+		  <div class="tabs-content" data-tabs-content="example-tabs">
+
+		  	<div class="tabs-panel is-active" id="baseball1">
+			    <% @baseball.sort_by{|team| team.team_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="baseball2">
+			    <% @baseball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    	<%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="baseball3">
+			    <% @baseball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    <% end %>
+			  </div>
+
+			</div>
+	  </div>
+
+	  <div class="tabs-panel" id="panel2">
+	  	<div class="tabs-panel is-active" id="panel1">
+	  		<ul class="tabs" data-tabs id="example-tabs">
+		  <li class="tabs-title is-active"><a href="#basketball1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="basketball2" href="#basketball2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="basketball3" href="#basketball3">Coach Rating</a></li>
+		  <hr>
+		  <div class="tabs-content" data-tabs-content="example-tabs">
+
+		  	<div class="tabs-panel is-active" id="basketball1">
+			    <% @basketball.sort_by{|team| team.team_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="basketball2">
+			    <% @basketball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    	<%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="basketball3">
+			    <% @basketball.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    <% end %>
+			  </div>
+
+				</div>
+	  	</div>
+	  </div>
+
+	  <div class="tabs-panel" id="panel3">
+	  	<div class="tabs-panel is-active" id="panel1">
+	  		<ul class="tabs" data-tabs id="example-tabs">
+		  <li class="tabs-title is-active"><a href="#football1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="football2" href="#football2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="football3" href="#football3">Coach Rating</a></li>
+		  <hr>
+		  <div class="tabs-content" data-tabs-content="example-tabs">
+
+		  	<div class="tabs-panel is-active" id="football1">
+			    <% @football.sort_by{|team| team.team_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="football2">
+			    <% @football.sort_by{|team| team.stadium_score}.each do |team| %>
+			    	<%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="football3">
+			    <% @football.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    <% end %>
+			  </div>
+
+				</div>
+	  	</div>
+	  </div>
+
+	  <div class="tabs-panel" id="panel4">
+	  	<div class="tabs-panel is-active" id="panel1">
+	  		<ul class="tabs" data-tabs id="example-tabs">
+		  <li class="tabs-title is-active"><a href="#hockey1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="hockey2" href="#hockey2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="hockey3" href="#hockey3">Coach Rating</a></li>
+		  <hr>
+		  <div class="tabs-content" data-tabs-content="example-tabs">
+
+		  	<div class="tabs-panel is-active" id="hockey1">
+			    <% @hockey.sort_by{|team| team.team_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="hockey2">
+			    <% @hockey.sort_by{|team| team.stadium_score}.each do |team| %>
+			    	<%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="hockey3">
+			    <% @hockey.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    <% end %>
+			  </div>
+
+				</div>
+	  	</div>
+	  </div>
+
+	  <div class="tabs-panel" id="panel5">
+	  	<div class="tabs-panel is-active" id="panel1">
+	  		<ul class="tabs" data-tabs id="example-tabs">
+		  <li class="tabs-title is-active"><a href="#soccer1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="basketball2" href="#soccer2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="soccer3" href="#soccer3">Coach Rating</a></li>
+		  <hr>
+		  <div class="tabs-content" data-tabs-content="example-tabs">
+
+		  	<div class="tabs-panel is-active" id="soccer1">
+			    <% @soccer.sort_by{|team| team.team_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="soccer2">
+			    <% @soccer.sort_by{|team| team.stadium_score}.each do |team| %>
+			    	<%= render team %>
+			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    <% end %>
+			  </div>
+
+			  <div class="tabs-panel" id="soccer3">
+			    <% @soccer.sort_by{|team| team.stadium_score}.each do |team| %>
+			    <%= render team %>
+			    	<p><%= team.name %> - <%= team.coach_score %> </p>
+			    <% end %>
+			  </div>
+
+				</div>
+	  	</div>
+	  </div>
+
+
+	</div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>

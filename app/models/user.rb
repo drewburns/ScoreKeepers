@@ -82,11 +82,19 @@ class User < ApplicationRecord
   end
 
   def full_size
-    return self.picture
+    if self.picture.url == nil
+      return 'https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png'
+    else
+      return self.picture.url
+    end
   end
 
   def thumbnail
-    return self.picture.thumbnail
+    if self.picture.url == nil 
+      return 'https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png'
+    else
+      return self.picture.thumbnail.url
+    end
   end
 
   def picture_size

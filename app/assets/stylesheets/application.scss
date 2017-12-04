@@ -53,7 +53,6 @@
 
 
 
-
 .yellow{
   font-size: 30px;
   border-bottom: 3px solid #fed766;
@@ -140,6 +139,9 @@
   line-height: 1.1;
   font-weight: bold;
 }
+.lboardul {
+  list-style-type:none;
+}
 
 /* General CSS */
 
@@ -156,7 +158,8 @@ ul {
 
 
 body {
-  background-color: #f5f5f5;}
+  background-color: #f5f5f5;
+}
 
 .row {
   background-color: #fff;

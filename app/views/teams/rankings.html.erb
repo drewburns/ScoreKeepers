@@ -43,7 +43,7 @@
 			  </div>
 
 			  <div class="tabs-panel" id="baseball3">
-			    <% @baseball.sort_by{|team| team.coach_score}.each do |team| %>
+			    <% @baseball.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>

@@ -64,6 +64,8 @@ class TeamsController < ApplicationController
     @hockey = @teams.where(sport_string: "hockey")
     @football = @teams.where(sport_string: "football")
 
+    
+
 
   end
 

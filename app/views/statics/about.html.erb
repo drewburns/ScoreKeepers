@@ -1,1 +1,84 @@
 <h1>About us:</h1>
+<div class="row" style="height:500px; width:100%;"><br>
+	<div class="large-4 columns">
+		<h1 style="text-align: center;">Rate</h1>
+		<a href="http://tinypic.com?ref=2vw6a95" target="_blank"><img src="http://i67.tinypic.com/2vw6a95.png" border="0" alt="Image and video hosting by TinyPic"></a>
+		<p>Rate your favorite team's coaches, ownership, and stadium</p>
+	</div>
+	<div class="large-4 columns">
+		<h1 style="text-align: center;">Rank</h1>
+	</div>
+	<div class="large-4 columns">
+		<h1 style="text-align: center;">Write</h1>
+	</div>
+</div>
+
+
+<!--
+	<div class="large-4 columns">
+		<h4 class="lineups">The Lineup</h4>
+			<% @posts.each do |post| %>
+			<p class="lineupy"><%= link_to (@posts.index(post)+1) %></p><h4 class="lineupx"><%= link_to post.title, post_path(post) %></h4>
+			<% end %> -->
+	</div>
+</div>
+<br>
+
+<div class="row">
+ <!-- <div class="large-8 columns">
+	<h3 class="yellow">Featured</h3>
+		<#% @posts.first(5).each do |post| %> -->
+
+
+ <div class="large-2 columns" style="border-right: 1px solid grey;">
+	 <h3 class="itemheader">Welcome</h3>
+ </div>
+
+ <div class="large-6 columns" style="background-color: white;">
+	<h3 class="itemheader">Featured</h3>
+		<% @posts.first(3).each do |post| %>
+			<div class='post'>
+				<!-- <img width="150px" src=<%= post.full_size %>> -->
+				<img style="width:200px;" src ="https://img.buzzfeed.com/buzzfeed-static/static/2014-04/campaign_images/webdr08/9/22/21-soccer-stadiums-you-should-watch-a-game-in-bef-2-3662-1397095514-17_dblbig.jpg">
+				<div class="pcontent">
+					<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
+					<h6 class="pscore">Score: <%= post.score %></h6>
+					<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
+					<p class="date"></p>
+				</div>
+			</div>
+			<% end %>
+			<%= will_paginate @posts, :class => 'flickr_pagination' %>
+	</div>
+<!-- 	<div class="large-4 columns">
+		<h3 class="blue">Today's Leaderboard</h3>
+		<ul class="lboardul">
+			<% @users.first(10).each do |user| %>
+			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
+			<% end %>
+		</ul>
+
+		<h3 class="itemheader1">Leaderboard</h3>
+		<% @users.each do |user| %>
+		<p><%= link_to user.name, user_path(user) %> | <%= user.this_weeks_score %></p>
+		<% end %>
+	</div>
+</div> -->
+
+<div class="row">
+<div class="large-3 columns" style="background-color: white;">
+		<h3 class="itemheader">Today's Leaderboard</h3>
+			<ul class="lboardul">
+				<% @users.each do |user| %>
+					<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
+					<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
+						<div class="lcell">
+							<li class="lboard"><%= link_to user.name, user_path(user) %>
+							<p class="lbscore"><%= user.this_weeks_score %></p></li>
+						</div>
+						<hr style="margin: 12px;">
+
+						<% end %>
+
+			</ul>
+</div>

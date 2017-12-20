@@ -1,16 +1,17 @@
 <%= javascript_include_tag "foundation" %>
 
-<div class="contain-to-grid sticky large-12 columns" style="background-color: #212121; border-bottom: 2px solid #e5e5e5; height:70px;">
-  <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style="max-width:100rem; background-color: #212121;">
-    <ul class="title-area">
+<div class="contain-to-grid sticky large-12 columns" >
+  <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style="max-width:100rem;background-color:#333333;">
+    <ul class="title-area" style="background-color:#333333;">
       <li class="name">
-      <h1 style="font-size: 30px; color: white; padding-top: 10px; background-color: #212121;"><%= link_to "Sports Site" , root_path %></h1>
+      <h1 style="font-size:30px;"><%= link_to "Scorekeepers" , root_path %></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
     <% if user_signed_in? %>
     <section class="top-bar-section">
+<<<<<<< HEAD
     <ul class="left">
       <ul class="menu">
       <li class="menutiem"><a href="/sports?sport=baseball" style="background-color: #212121; text-align: center; padding-top: 25px; height: 70px; color: white; font-size: 24px;">Baseball</a></li>
@@ -22,15 +23,26 @@
   </ul>
     <ul class="right" style="padding-top: 23px; background-color: #212121; margin-left: 275px;">
       <li class="menuitem"><a href="/teams">Team Index</a></li>
+=======
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class=""><%= link_to "Team Index" , teams_path %></li>
+       <ul class="menu">
+>>>>>>> b1ef5d058b5063614105d8235f63f31cb677d260
         <% if current_user.admin %>
           <li><%= link_to "Admin Panel", admin_path(id: current_user.id) %></li>
         <% end %>
-      <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
+
+
+      </ul>
+          <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
+
       <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id) %></li>
       <li class="" style='display:inline;'><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'display:inline;' %><%= link_to current_user.name , current_user , :style => 'display:inline;'%></li>
       <!-- <li><%= link_to "Profile" , current_user %></li> -->
-      <li><%= link_to "Settings" , edit_user_registration_path %> </li>
-      <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
+          <li><%= link_to "Settings" , edit_user_registration_path %> </li>
+          <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li>
+
       <!-- <li class="has-dropdown"> -->
         <!-- <ul class="dropdown"> -->
         <!-- </ul> -->
@@ -38,10 +50,11 @@
     </ul>
     </section>
 
-    <% else %>
+  <% else %>
 
     <section class="top-bar-section">
     <!-- Right Nav Section -->
+<<<<<<< HEAD
     <ul class="left">
 
       <li class="menuitem"><a href="/sports?sport=baseball" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5; border-right:">Baseball</a></li>
@@ -52,11 +65,44 @@
       <li class="menuitem"><a href="/teams" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 18px; border-bottom: 2px solid #e5e5e5;">Team Index</a></li>
       <li class="menuitem"><a href="/users/sign_in" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 18px; border-bottom: 2px solid #e5e5e5;">Log In</a></li>
       <li class="menuitem"><a href="/users/sign_up" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 18px; border-bottom: 2px solid #e5e5e5;">Create Account</a></li>
+=======
+    <ul class="right">
+      <li class=""><%= link_to "Team Index" , teams_path %></li>
+      <li class="menuitem"><%= link_to "Sign In" , new_user_session_path %></li>
+      <li class="menuitem"><%= link_to "Create Account" , new_user_registration_path %></li>
+>>>>>>> b1ef5d058b5063614105d8235f63f31cb677d260
     </ul>
     </section>
   <% end %>
 </nav>
 </div>
+<div class="icon-bar four-up">
+  <a class="item" href="/sports?sport=basketball">
+    <label>Basketball</label>
+  </a>
+  <a class="item" href="/sports?sport=football">
+    <label>Football</label>
+  </a>
+  <a class="item" href="/sports?sport=hockey">
+    <label>Hockey</label>
+  </a>
+  <a class="item" href="/sports?sport=baseball">
+    <label>Baseball</label>
+  </a>
+  <a class="item" href="#">
+    <label>Debate</label>
+  </a>
+  <a class="item" href="/rankings">
+    <label>Rankings</label>
+  </a>
+  <a class="item" href="">
+    <label>Fantasy</label>
+  </a>
+  <a class="item" href="">
+    <label>History</label>
+  </a>
+</div>
+
 
 
 

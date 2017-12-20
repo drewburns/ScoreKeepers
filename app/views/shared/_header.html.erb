@@ -12,12 +12,14 @@
     <% if user_signed_in? %>
     <section class="top-bar-section">
     <ul class="left">
+      <ul class="menu">
       <li class="menutiem"><a href="/sports?sport=baseball" style="background-color: #212121; text-align: center; padding-top: 25px; height: 70px; color: white; font-size: 24px;">Baseball</a></li>
       <li class="menuitem"><a href="/sports?sport=basketball" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Basketball</a></li>
       <li class="menuitem"><a href="/sports?sport=football" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Football</a></li>
       <li class="menuitem"><a href="/sports?sport=hockey" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Hockey</a></li>
       <li class="menuitem"><a href="/sports?sport=soccer" style="background-color: #212121; padding-top: 25px; height: 70px; color: white; font-size: 24px; ">Soccer</a></li>
     </ul>
+  </ul>
     <ul class="right" style="padding-top: 23px; background-color: #212121; margin-left: 275px;">
       <li class="menuitem"><a href="/teams">Team Index</a></li>
         <% if current_user.admin %>
@@ -41,13 +43,12 @@
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="left">
+
       <li class="menuitem"><a href="/sports?sport=baseball" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5; border-right:">Baseball</a></li>
       <li class="menuitem"><a href="/sports?sport=basketball" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Basketball</a></li>
       <li class="menuitem"><a href="/sports?sport=football" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Football</a></li>
       <li class="menuitem"><a href="/sports?sport=hockey" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Hockey</a></li>
       <li class="menuitem"><a href="/sports?sport=soccer" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 24px; border-bottom: 2px solid #e5e5e5;">Soccer</a></li>
-    </ul>
-    <ul class="right">
       <li class="menuitem"><a href="/teams" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 18px; border-bottom: 2px solid #e5e5e5;">Team Index</a></li>
       <li class="menuitem"><a href="/users/sign_in" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 18px; border-bottom: 2px solid #e5e5e5;">Log In</a></li>
       <li class="menuitem"><a href="/users/sign_up" style="background-color: #212121; padding-top: 10px; height: 70px; color: white; font-size: 18px; border-bottom: 2px solid #e5e5e5;">Create Account</a></li>

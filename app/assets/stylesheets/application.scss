@@ -21,46 +21,44 @@
  */
 
 /* Header CSS */
-@media screen and (max-width: 39.9375em) {
-  .no-js .top-bar {
-    display: none;
-  }
-}
-
-@media print, screen and (min-width: 40em) {
-  .no-js .title-bar {
-    display: none;
-  }
-}
-
-[data-sticky] {
-  width: 100%;
-}
-
-.sticky-container {
-  z-index: 5;
-}
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+@import url('https://fonts.googleapis.com/css?family=Quantico');
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400');
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
 
 @import 'foundation-icons';
 .icon-bar{
   background-color: white;
-  padding-left: 8%;
-  border-bottom: 1px solid #cccccc;
+  padding-left: 8%;}
+
+.contain-to-grid{
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid #000;}
+
+.top-bar{
+  height: 50px;
+  background-color: white;
+  }
+
+.menuitem a{
+  background-color: #2f5799; color: black; font-size: 30px;
 }
 
 
-
-
-.icon-bar > * label{color: black; font-size: 18px; display: block;}
-.icon-bar > * label:hover{background-color: #D3D3D3;}
-.icon-bar.four-up .item{width: 100px; padding: 10px; margin: 0px;}
-.icon-bar.four-up .item:hover{background-color: #D3D3D3;}
-
-
 /* Homepage CSS*/
+.lineupstories{
+  padding-top: 15px;
+  padding-bottom: 15px;}
+
 .lineuptitle{
   width: 100%;
+  font-family: 'Catamaran', sans-serif;
   float: left;
+  color: black;
+  font-size: 18px;
   padding-bottom: 5px;
   border-bottom: 2px solid #f5f5f5;
 }
@@ -68,7 +66,7 @@
 .lineuptitle a{
   width: 100%;
   color: #212121;
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1.1;
 }
 
@@ -120,12 +118,6 @@
   color: black;
 }
 
-.alert {
-  text-align: center;
-  color: white;
-  width: 100%;
-  background-color:#FF3C25
-}
 
 .lineupx{
   width: 85%;
@@ -192,28 +184,25 @@
     /*display: none;*/
 /*}*/
 ul {
-  list-style-type: none;
-}
-
+  list-style-type: none;}
 
 body {
-  background-color: #f5f5f5;
-}
+  background-color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;}
+
 
 .row {
   background-color: #fff;
-  max-width: 1500px;
-  padding: 15px;
-  padding-bottom: 0px;
+  max-width: 100%;
 }
 
 .itemheader{
-  background-color: #212121;
-  color: white;
+  background-color: white;
+  color: black;
   font-weight: bold;
-  text-align: center;
   padding-top: 6px;
-  margin-top: 0px;}
+  margin-top: 0px;
+  border-bottom: 3px solid blue;}
 
 .itemheader1{
   background-color: #fed766;

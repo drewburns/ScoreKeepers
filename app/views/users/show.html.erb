@@ -1,51 +1,48 @@
 <% provide(:title , @user.name) %>
-<div class="row" style="background-color: white;>
-	<div class="large-8 columns" style="background-color: white; padding: 0px;">
+<div class="row" style="background-color: white; width: 80%; padding-top: 4%;">
+	<div class="large-7 columns" style="background-color: white; padding: 0px;">
 		<div class="userauthorfooter">
 			<img src=<%= @user.full_size %>  style="width:150px; height:150px; border-radius:50%;">
 			<h3 class="userauthorscore">#<%= @user.this_weeks_rank %> this week | <%= @user.this_weeks_score%></h3>
 			<h3 class="userauthorname"><b><%= @user.name%></b></h3>
 			<h6 class="userauthorbio"><%= @user.bio %></h6>
-		</div>
-		<hr style="height: 25px; background-color: #f5f5f5;">
 
-		<div style="padding: 20px;">
-			<h3>User's Favorite Teams</h3>
-			<ul>
-				<% @user.teams.each do |team| %>
-					<%= render :partial => 'teams/team', locals: {team: team} %>
-				<% end %>
-			</ul>
-			<div class='userauthorpost'>
-				<% @posts.each do |post| %>
-				<img src=<%= post.full_size%> >
-				<h3 class="uaptitle"><%= link_to post.title, post_path(post) %></h3>
-				<h6 style="uapscore">Score: <%= post.score %></h6>
-				<hr>
-				<% end %>
+			<% @user.teams.each do |team| %>
+			<div class="large-2 columns">
+				<%= render :partial => 'teams/team', locals: {team: team} %>
 			</div>
-			<%= will_paginate @posts %>
+			<% end %>
+		</div><hr>
+
+		<div class='userauthorpost'>
+			<% @posts.each do |post| %>
+				<img style="width: 30%; float: left;" src=<%= post.full_size%> >
+				<div class="userauthormeta" style="width: 65%; float: left; padding-left: 15px;">
+					<h3 class="uaptitle"><%= link_to post.title, post_path(post) %></h3>
+					<h6 style="uapscore">Score: <%= post.score %></h6>
+				</div>
+			<hr>
+			<% end %>
 		</div>
+		<%= will_paginate @posts %>
 	</div>
 
-
-	<div class="large-4 columns" style="background-color: white; margin-left: 10px; width: 450px;">
-
+	<div class="large-3 columns" style="background-color: #f7f7f7; margin-left: 20px; width: 400px;">
 		<h3 class="yellow">Today's Leaderboard</h3>
 		<ul class="lboardul">
 			<% @users.each do |user| %>
 			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
 			<% end %>
 		</ul>
-
-		<br>
-		<h3 class="yellow">Top Posts</h3>
+		<br><hr>
+		<h5 class="yellow">Top Posts</h5>
 		<% Post.all.sort_by{|p| p.score}.reverse.first(5).each do |post| %>
-		<img src="http://m.mlb.com/assets/images/8/7/2/118673872/cuts/Fenway_1280_khmw7zay_3y3sxkqt.jpg">
+		<img src=<%= post.full_size%> >
 		<p class="sidebarposttitle"><%= post.title %></p>
 		<hr>
 		<% end %>
 	</div>
+	<div class="large-2 columns"><p></p></div>
 </div>
 
 		<!-- <h3 class="itemheader">Today's Leaderboard</h3>

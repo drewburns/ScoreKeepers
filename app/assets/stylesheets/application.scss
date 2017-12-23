@@ -33,22 +33,44 @@
   background-color: white;
   padding-left: 8%;}
 
-.contain-to-grid{
-  background-color: white;
-  color: black;
-  border-bottom: 1px solid #000;}
+.contain-to-grid{}
 
 .top-bar{
   height: 50px;
-  background-color: white;
-  }
+  background-color: black;}
 
 .menuitem a{
-  background-color: #2f5799; color: black; font-size: 30px;
-}
-
+  background-color: #2f5799; color: black; font-size: 30px;}
 
 /* Homepage CSS*/
+ul {
+  list-style-type: none;}
+
+body {
+  background-color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;}
+
+.row {
+  background-color: #fff;
+  max-width: 100%;}
+
+.itemheader{
+  background-color: #f7f7f7;
+  color: black;
+  font-weight: bold;
+  margin-top: 0px;
+  border-bottom: 3px solid blue;}
+
+.itemheader1{
+  background-color: #fed766;
+  color: white;
+  font-weight: bold;}
+
+.flashtitle{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 32px;
+  padding-top: 5px;}
+
 .lineupstories{
   padding-top: 15px;
   padding-bottom: 15px;}
@@ -60,105 +82,41 @@
   color: black;
   font-size: 18px;
   padding-bottom: 5px;
-  border-bottom: 2px solid #f5f5f5;
-}
+  border-bottom: 2px solid #f5f5f5;}
 
 .lineuptitle a{
   width: 100%;
   color: #212121;
   font-size: 20px;
-  line-height: 1.1;
-}
+  line-height: 1.1;}
 
 .yellow{
-  font-size: 30px;
+  font-size: 24px;
   border-bottom: 3px solid #fed766;
   margin-bottom: 15px;
-}
+  padding-top: 5px;}
 
 .fi-x {
   color:grey;
   font-size:85px;
-  margin-left:30px;
-}
+  margin-left:30px;}
 
 .fi-check {
   color:grey;
   font-size:85px;
-  margin-right:30px;
-}
+  margin-right:30px;}
 
 .fi-check:hover {
-  color:green;
-}
+  color:green;}
 
 .fi-x:hover {
-  color:red;
-}
-
-.blue{
-  font-size: 30px;
-  border-bottom: 3px solid #89c0ff;
-  margin-bottom: 15px; }
-
-.icon-bar.four-up .item{width: 100px; padding: 10px; margin: 5px 10px;}
-
-.icon-bar.four-up .item:hover{background-color: #D3D3D3;border-radius:5px;}
-
-.contain-to-top .top-bar{ max-width: 2000px;}
-
-.notice{ padding: 0px; margin: 0px; height: 0px;}
-.alert{margin-bottom: 0px;}
-
-/* Homepage CSS*/
-.notice {
-  width: 100%;
-  background-color: #68E516;
-  text-align: center;
-  color: black;
-}
-
-
-.lineupx{
-  width: 85%;
-  float:left;
-  height: 50px;
-  padding-bottom: 0px;
-  line-height: 1;
-  margin-left: 10px;
-  margin-top: 3px;
-  margin-bottom: 2px;
-  border-bottom: 1px solid #d1d1d1;}
-
-.lineupx a{color: black; font-size: 19px; line-height: 1;}
-
-.lineupy {
-  width: 45px;
-  float: left;
-  margin: 0px;
-  padding: 0px;
-  height: 45px;
-  background-color: #cecece;
-  text-align: center;
-  padding-top: 4px;}
-
-.lineupy a{color: white; text-align: center; font-weight: bold; font-size: 28px;}
-
-.lineups{
-  background-color: #fed766;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  padding-bottom: 5px;
-  padding-top: 6px;
-  margin-top: 0px;
-}
+  color:red;}
 
 .mainpostbox{
   padding-top: 13px;
   padding-bottom: 3px;
-  background-color: white;
-}
+  background-color: white;}
+
 .mainpostbox h1{
   color: black;
   font-size: 38px;
@@ -168,51 +126,24 @@
   margin-top: 0px;
   margin-bottom: 5px;
   line-height: 1.1;
-  font-weight: bold;
-}
+  font-weight: bold;}
+
 .lboardul {
-  list-style-type:none;
+  list-style-type:none;}
+
+.lboardul a{
+  font-size: 24px;
+  padding: 0px;
 }
 
 /* General CSS */
 
- @font-face {
-   font-family: 'Open Sans', sans-serif;
-   src: url('https://fonts.googleapis.com/css?family=Open+Sans')}
+
 
 /*input[type="file"] {*/
     /*display: none;*/
 /*}*/
-ul {
-  list-style-type: none;}
 
-body {
-  background-color: white;
-  font-family: 'Yanone Kaffeesatz', sans-serif;}
-
-
-.row {
-  background-color: #fff;
-  max-width: 100%;
-}
-
-.itemheader{
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  padding-top: 6px;
-  margin-top: 0px;
-  border-bottom: 3px solid blue;}
-
-.itemheader1{
-  background-color: #fed766;
-  color: white;
-  font-weight: bold;
-  }
-
-.itemheaderx{
-
-}
 
 
 
@@ -367,11 +298,16 @@ a{ color: #4286f4;}
 .userauthorpost{
   width: 100%;}
 
+.userauthorpost img{
+  width: 30%;}
+
+.userauthormeta{
+  width: 70%;}
+
 .uaptitle a{
-  font-size: 40px;
+  font-size: 28px;
   color: black;
-  line-height: 1;
-  color: #586ba4;}
+  line-height: 1;}
 
 .uaptitle{
 padding-top: 10px;}

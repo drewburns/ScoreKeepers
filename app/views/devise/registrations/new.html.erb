@@ -1,6 +1,6 @@
 <div style="background-image: url(https://wallpapercave.com/wp/uzY1YoN.jpg); height: 1200px; padding-top: 100px;">
   <div class="row" style="width:500px;">
-
+    <div class="large-12 columns" style="padding: 10px; border: 1px solid black;">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <h3 style="text-align: center;">Create Account</h3>
@@ -48,7 +48,7 @@
     Already have an account? <%= render "devise/shared/links" %>
   </div>
 </div>
-
+</div>
 
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {

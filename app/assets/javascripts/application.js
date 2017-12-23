@@ -20,7 +20,7 @@
 //= require Chart.bundle
 //= require chartkick
 //= require_self
-$(document).ready(function(){});
+$(document).foundation();
 
 $(window).bind("load", function () {
     var footer = $("#footer");

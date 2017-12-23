@@ -1,55 +1,10 @@
 <% provide(:title , "Team Index") %>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
+
 <style type="text/css">
 ul {
   list-style-type: none;
 }
-</style>
-
-
-<div class='large-10 medium-10 small-12 large-centered medium-centered columns'>
-      <h2>Add your favorite teams by clicking the button next to the team name</h2>
-    <h5>Added teams will appear on your user profile</h5>
-  <ul class="tabs" data-tabs id="example-tabs">
-    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Baseball</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Basketball</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">Football</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">Hockey</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel5" href="#panel5">Soccer</a></li>
-<hr>
-
-<div class="tabs-content" data-tabs-content="example-tabs">
-  <div class="tabs-panel is-active" id="panel1">
-    <ul id="basketball-teams" class=''>
-      <% @teams.where(sport_string: "baseball").each do |team| %>
-        <div class="large-4 columns">
-          <li><%= render team %></li>
-        </div>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="tabs-panel" id="panel2">
-    <ul id="basketball-teams" class=''>
-      <% @teams.where(sport_string: "basketball").each do |team| %>
-        <div class="large-4 columns">
-          <li><%= render team %></li>
-        </div>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="tabs-panel" id="panel3">
-    <ul id="basketball-teams" class=''>
-      <% @teams.where(sport_string: "football").each do |team| %>
-        <div class="large-4 columns">
-          <li><%= render team %></li>
-        </div>
-      <% end %>
-    </ul>
-  </div>
-</div> -->
-<style type="text/css">
   #teamlist {
     clear:both;
   }
@@ -80,77 +35,76 @@ ul {
     display: none;
   }
 </style>
-<div class="row" style="padding-left: 50px; padding-top: 25px;">
-  <br><br><br>
-    <h4>Add your favorite teams by clicking the button next to the team name</h4>
-    <h6>Added teams will appear on your user profile</h6>
-</div>
 
-<div class="row">
-  <div class="large-12 columns">
-  <ul style="list-style: none;" id="sport-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
-  <li>
-    <div class="large-3 medium-3 small-4 columns sport-tab" id='basketball-tab'>Basketball</div>
-  </li>
-  <li>
-    <div class="large-3 medium-3 small-4 columns sport-tab" id='hockey-tab'>Hockey</div>
-  </li>
-  <li>
-    <div class="large-3 medium-3  small-4 columns sport-tab" id='football-tab'>Football</div>
-  </li>
-  <li>
-    <div class="large-3 medium-3 small-4 columns sport-tab" id='baseball-tab'>Baseball</div>
-  </li>
-</ul>
-</div>
-</div>
 
-<!-- 
-  <div class="tabs-panel" id="panel4">
-    <ul id="basketball-teams" class=''>
-      <% @teams.where(sport_string: "hockey").each do |team| %>
-        <div class="large-4 columns">
-          <li><%= render team %></li>
-        </div>
-      <% end %>
-    </ul>
+<div class='large-10 medium-10 small-12 large-centered medium-centered columns'>
+      <h2>Add your favorite teams by clicking the button next to the team name</h2>
+    <h5>Added teams will appear on your user profile</h5>
+  <ul class="tabs" data-tabs id="example-tabs">
+    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Baseball</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Basketball</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">Football</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">Hockey</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel5" href="#panel5">Soccer</a></li>
+<hr>
+
+  <div class="tabs-content" data-tabs-content="example-tabs">
+    <div class="tabs-panel is-active" id="panel1">
+      <ul id="basketball-teams" class=''>
+        <% @teams.where(sport_string: "baseball").each do |team| %>
+          <div class="large-4 columns">
+            <li><%= render team %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tabs-panel" id="panel2">
+      <ul id="basketball-teams" class=''>
+        <% @teams.where(sport_string: "basketball").each do |team| %>
+          <div class="large-4 columns">
+            <li><%= render team %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tabs-panel" id="panel3">
+      <ul id="basketball-teams" class=''>
+        <% @teams.where(sport_string: "football").each do |team| %>
+          <div class="large-4 columns">
+            <li><%= render team %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tabs-panel" id="panel4">
+      <ul id="basketball-teams" class=''>
+        <% @teams.where(sport_string: "hockey").each do |team| %>
+          <div class="large-4 columns">
+            <li><%= render team %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+
+        <div class="tabs-panel" id="panel4">
+      <ul id="basketball-teams" class=''>
+        <% @teams.where(sport_string: "soccer").each do |team| %>
+          <div class="large-4 columns">
+            <li><%= render team %></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+
   </div>
-
-<ul style="list-style: none;" id="basketball-teams" class=''>
-<% @teams.first(30).each do |team| %>
-<div class="large-3 columns">
-<li style="list-style: none;"><%= render team %></li>
-</div>
-<% end %>
-</ul>
-<ul style="list-style: none;" id="hockey-teams" class='hidden'>
-  <%# @teams[30..60].each do |team| %>
-  <div class="large-3 columns">
-  <li><%#= render team %></li>
-  </div>
-<%# end %>
-</ul>
-<ul style="list-style: none;"id="football-teams" class='hidden'>
-<%# @teams[61..92].each do |team| %>
-<div class="large-3 columns">
-  <%#= render team %>
-</div>
-<%# end %>
-</ul>
-<ul style="list-style: none;" id="baseball-teams" class='hidden'>
-<%# @teams[93..123].each do |team| %>
-<div class="large-3 columns">
-  <%#= render team %>
-</div>
-<%# end %>
-</ul>
-
-</div> -->
-
-
-
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js"></script>
 <script>
-  $(document).ready(function(){});
+  $(document).foundation();
 </script>

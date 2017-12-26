@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     @top_basketball = Team.where(sport_string: 'basketball').sort_by{|team| team.team_score}.reverse.first(5)
     @top_football = Team.where(sport_string: 'football').sort_by{|team| team.team_score}.reverse.first(5)
     @top_hockey = Team.where(sport_string: 'hockey').sort_by{|team| team.team_score}.reverse.first(5)
+    @debates = Debate.where(about: nil).first(5)
 
   end
 

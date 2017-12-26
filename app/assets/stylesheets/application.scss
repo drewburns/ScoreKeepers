@@ -28,8 +28,6 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400');
 @import url('https://fonts.googleapis.com/css?family=Catamaran');
 
-
-
 @import 'foundation-icons';
 .icon-bar{
   background-color: white;
@@ -135,9 +133,31 @@ body {
 
 .lboardul a{
   font-size: 24px;
+  padding: 0px;}
+
+.tabs-title{
+  width: 20%;
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-size: 32px;
   padding: 0px;
+  border-right: 1px solid #c6c6c6;}
+
+.ranking{
+  font-size: 20px;
+  padding-left: 15px;
+  color: black;
+  padding-top: 8px;
+  width: 75%;
+  float:left;
 }
 
+.number{
+  float: left;
+  font-size: 18px;
+  width: 10%;
+}
 /* General CSS */
 
 
@@ -171,8 +191,7 @@ body {
 
 .pauthor a{
   color: #89c0ff;
-  font-weight: bold;
-}
+  font-weight: bold;}
 
 .postscore {
   float: right;}
@@ -359,5 +378,3 @@ padding-right: 10px;
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
-
-

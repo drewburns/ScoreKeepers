@@ -1,0 +1,30 @@
+<h1><%= @debate.title %></h1>
+<h3><%= @debate.description %></h3>
+
+<h6><%= link_to @debate.team.name, @debate.team%></h6>
+
+<% if @debate.picture != nil %>
+	<img id="blah" src=<%= @debate.full_size %> />
+<% end %>
+
+<div class="large-10 columns large-centered medium-centered">
+<h3>Comments:</h3>
+<% if user_signed_in? %>
+	<% comment = Comment.new %>
+	<%= form_for(comment) do |f| %>
+		<%= f.label :text %>
+	  <%= f.text_field :text %><br />
+
+	  <%= f.hidden_field :target_type, :value => "Debate" %>
+	  <%= f.hidden_field :target_id, :value => @debate.id %>
+	  <%= f.hidden_field :user_id, :value => current_user.id%>
+
+	  <%= f.submit  :class => 'button tiny success' %>
+	<% end %>
+<% end %>
+</br>
+<ul id="comments-list">
+<% @debate.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
+	<%= render partial: 'comments/comment', locals: {comment: comment}%>
+<% end %>
+</div>

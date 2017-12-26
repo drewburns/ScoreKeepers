@@ -42,7 +42,8 @@
 						<%= f.label :text %>
 					  <%= f.text_field :text %><br />
 
-					  <%= f.hidden_field :post_id, :value => @post.id %>
+					  <%= f.hidden_field :target_type, :value => "Post" %>
+					  <%= f.hidden_field :target_id, :value => @post.id %>
 					  <%= f.hidden_field :user_id, :value => current_user.id%>
 
 					  <%= f.submit  :class => 'button tiny success' %>

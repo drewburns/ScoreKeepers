@@ -35,7 +35,7 @@ class TeamsController < ApplicationController
 
   def vote
     if params[:user_id]
-      @value = params[:type] == 'approve' ? 1 : -1
+      @value = params[:type] == 'approve' ? 1.0 : -1.0
       @team = Team.find(params[:id])
       @user = User.find(params[:user_id])
 

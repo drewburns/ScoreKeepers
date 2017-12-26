@@ -6,6 +6,7 @@ class Team < ApplicationRecord
 	has_many :posts, through: :postTeams
 	has_many :userTeams
 	has_many :users, through: :userTeams
+  has_many :debates
 
 	has_reputation :team_score, source: :user, aggregated_by: :sum
 	has_reputation :frontoffice_score, source: :user, aggregated_by: :sum
@@ -20,12 +21,30 @@ class Team < ApplicationRecord
 	def team_score
     reputation_for(:team_score).to_int
   end
-    def frontoffice_score
+
+  def coach_debate
+    self.debates.where(about: "coach").first
+  end
+
+  def fo_debate
+    self.debates.where(about: "fo").first
+  end
+
+  def team_debate
+    self.debates.where(about: "team").first
+  end
+
+  def stadium_debate
+    self.debates.where(about: "stadium").first
+  end
+
+  
+  def frontoffice_score
     reputation_for(:frontoffice_score).to_int
   end
 
   def coach_score
-    reputation_for(:coach_score).to_int
+    reputation_for(:coach_score).to_int 
   end
 
   def stadium_score

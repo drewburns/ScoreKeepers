@@ -10,16 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203051038) do
+ActiveRecord::Schema.define(version: 20171225043349) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "post_id"
+    t.integer "target_id"
+    t.string "target_type"
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "debates", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "about"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "picture"
+    t.index ["team_id"], name: "index_debates_on_team_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -117,6 +129,7 @@ ActiveRecord::Schema.define(version: 20171203051038) do
     t.string "stadium"
     t.string "picture_url"
     t.string "slug"
+    t.string "thumbnail_url"
   end
 
   create_table "user_teams", force: :cascade do |t|

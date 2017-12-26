@@ -27,6 +27,10 @@ class Post < ApplicationRecord
     user.id
   end
 
+  def comments
+    Comment.where(target_type: "Post", target_id: self.id)
+  end
+
   def header_image
     picture
   end

@@ -16,7 +16,6 @@ class CommentsController < ApplicationController
 	end
 
   def vote
-    p "ijaodjiwjdioawdowajdiawjdoiawjdiojawoid"
     if params[:user_id] 
       @value = params[:type] == 'up' ? 1 : -1
       add_value = @value == 1 ? 1 : -1
@@ -41,7 +40,7 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:user_id, :post_id, :text )
+      params.require(:comment).permit(:user_id, :target_type, :text, :target_id )
     end
 
 end

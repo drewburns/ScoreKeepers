@@ -11,7 +11,21 @@
 		</h4><% end %>
 	</div>
 	<div class="large-4 columns" style="margin:0px; padding: 0px;"><br>
-			<div class="large-5 columns">
+		<h1>Debate:</h1>
+		<% if @debates.count != 0 %>
+			<ul>
+			<% @debates.each do |debate| %>
+				<li>
+					<a href=<%="/debates/" + debate.slug %>><img src=<%= debate.thumbnail %> style="height:100px;width:100px;"></a>
+					<%= link_to debate.title, debate %>
+				</li>
+				<hr>
+			<% end %>
+		</ul>
+		<% else %>
+			<h1>No debates</h1>
+		<% end %>
+<!-- 			<div class="large-5 columns">
 				<img style="margin-bottom: 20px; width: 100%;" src='https://thenypost.files.wordpress.com/2016/02/papi.jpg?quality=90&strip=all'>
 				<img style="margin-bottom: 20px; height: 135px; width: 100%;" src='https://cdn.vox-cdn.com/thumbor/0xKmezaOILLd4zvh_0UY0xIUNp4=/0x0:3000x2000/1200x800/filters:focal(1172x263:1652x743)/cdn.vox-cdn.com/uploads/chorus_image/image/54394665/167610422.0.jpg'>
 				<img style="height: 135px; width: 100%;" src="https://nhl.bamcontent.com/images/photos/286402666/1024x576/cut.jpg">
@@ -23,7 +37,7 @@
 				<h3>Will David Ortiz Make the Baseball Hall of Fame?</h3><br>
 				<h3 style="width: 60%"><b>Debate</b></h3>
 				<h3>Will David Ortiz Make the Baseball Hall of Fame?</h3>
-			</div>
+			</div> -->
 	</div>
 </div><br>
 

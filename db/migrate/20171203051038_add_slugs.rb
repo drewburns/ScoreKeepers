@@ -3,5 +3,6 @@ class AddSlugs < ActiveRecord::Migration[5.1]
     add_column :users, :slug, :string, unique: true
     add_column :teams, :slug, :string, unique: true
     add_column :posts, :slug, :string, unique: true
+    add_column :debates, :slug, :string, unique: true
   end
 end

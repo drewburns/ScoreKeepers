@@ -24,8 +24,13 @@
 			    <% @baseball.sort_by{|team| team.team_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
+<<<<<<< HEAD
 				    <%= link_to(image_tag(team.picture_url, :style => 'width:45px;height:45px; float:left;'), team) %>
 				    <p style='display:inline;'><%=link_to team.name, team, :class=> "ranking" %> <h6 class="number"><%= team.team_score %></h6></p>
+=======
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
+				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
+>>>>>>> 0b51bef5fbd400c0ee94515848d2b95c2874b77d
 
 				    </div>
 			    <% end %>
@@ -35,7 +40,7 @@
 			    <% @baseball.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
 
 				    </div>
@@ -46,7 +51,7 @@
 			    <% @baseball.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
 
 				    </div>
@@ -69,7 +74,7 @@
 			    <% @basketball.sort_by{|team| team.team_score}.reverse.each do |team| %>
 			    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 			    <!-- <%= render team %> -->
-			    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+			    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 			    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
 
 			    </div>
@@ -80,7 +85,7 @@
 			    <% @basketball.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
 
 				    </div>
@@ -91,7 +96,7 @@
 			    <% @basketball.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
 
 				    </div>
@@ -115,7 +120,7 @@
 			    <% @football.sort_by{|team| team.team_score}.reverse.each do |team| %>
 					    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 					    <!-- <%= render team %> -->
-					    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+					    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 					    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
 
 					    </div>
@@ -126,7 +131,7 @@
 			    <% @football.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
 
 				    </div>
@@ -137,7 +142,7 @@
 			    <% @football.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
 
 				    </div>
@@ -161,7 +166,7 @@
 			    <% @hockey.sort_by{|team| team.team_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
 
 				    </div>
@@ -172,7 +177,7 @@
 			    <% @hockey.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
 
 				    </div>
@@ -183,7 +188,7 @@
 			    <% @hockey.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:65px;height:65px;'), team) %>
+				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
 
 				    </div>

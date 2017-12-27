@@ -17,7 +17,11 @@ class Debate < ApplicationRecord
   end
 
   def full_size
-    picture
+    if self.picture.url == nil 
+      return 'http://drpattydental.com/wp-content/uploads/2017/05/placeholder.png'
+    else
+      return self.picture.url
+    end
   end
 
   def thumbnail

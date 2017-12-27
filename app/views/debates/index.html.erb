@@ -1,0 +1,13 @@
+<h1>Debates:</h1>
+
+<ul>
+	<% @debates.each do |debate| %>
+		<li>
+			<img id="blah" style='height:100px;width:100px;' src=<%= debate.full_size %> />
+			<%= link_to debate.title , debate%>
+			<hr>
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate @debates, :class => 'flickr_pagination' %>

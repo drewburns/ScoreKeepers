@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :user_teams
   resources :comments
 
-  resources :debates , only: [:show,:new,:create,:destroy]
+  resources :debates , only: [:show,:new,:create,:destroy, :index]
   # update these two later
 
   get '/rankings' => "teams#rankings"

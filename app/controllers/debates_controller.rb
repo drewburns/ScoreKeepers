@@ -29,6 +29,10 @@ class DebatesController < ApplicationController
 
 	end
 
+	def index
+		@debates = Debate.where(about: nil).order('created_at DESC').paginate(:page => params[:page])
+	end
+
 	def new
 		@debate = Debate.new
 	end

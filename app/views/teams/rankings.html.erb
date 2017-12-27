@@ -1,31 +1,36 @@
 <% provide(:title , "Team Rankings") %>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
 <br><hr>
-<div class='large-10 medium-10 small-12 large-centered medium-centered columns'>
+<div class='large-9 medium-10 small-12 large-centered medium-centered columns'>
 	<ul class="tabs" data-tabs id="example-tabs">
-	  <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Baseball</a></li>
-	  <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Basketball</a></li>
-	  <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">Football</a></li>
-	  <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">Hockey</a></li>
-	  <li class="tabs-title"><a data-tabs-target="panel5" href="#panel5">Soccer</a></li>
+	  <li class="tabs-title is-active"><a href="#panel1" aria-selected="true" style="font-size: 50%; color: black;">Baseball</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2" style="font-size: 50%; color: black;">Basketball</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3" style="font-size: 50%; color: black;">Football</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4" style="font-size: 50%; color: black;">Hockey</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel5" href="#panel5" style="font-size: 50%; color: black;">Soccer</a></li>
 
 
 	</ul>
 	<div class="tabs-content" data-tabs-content="example-tabs">
 	  <div class="tabs-panel is-active" id="panel1">
 	  		<ul class="tabs" data-tabs id="example-tabs">
-		  <li class="tabs-title is-active"><a href="#baseball1" aria-selected="true">Team Rating</a></li>
-		  <li class="tabs-title"><a data-tabs-target="baseball2" href="#baseball2">Stadium Rating</a></li>
-		  <li class="tabs-title"><a data-tabs-target="baseball3" href="#baseball3">Coach Rating</a></li>
-		  <hr>
+		  <li class="tabs-title is-active" style="width: 10%"><a href="#baseball1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title" style="width: 10%"><a data-tabs-target="baseball2" href="#baseball2">Stadium Rating</a></li>
+		  <li class="tabs-title" style="width: 10%"><a data-tabs-target="baseball3" href="#baseball3">Coach Rating</a></li>
+		 <hr>
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
 		  	<div class="tabs-panel is-active" id="baseball1">
 			    <% @baseball.sort_by{|team| team.team_score}.reverse.each do |team| %>
-				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
+				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
+<<<<<<< HEAD
+				    <%= link_to(image_tag(team.picture_url, :style => 'width:45px;height:45px; float:left;'), team) %>
+				    <p style='display:inline;'><%=link_to team.name, team, :class=> "ranking" %> <h6 class="number"><%= team.team_score %></h6></p>
+=======
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
 				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
+>>>>>>> 0b51bef5fbd400c0ee94515848d2b95c2874b77d
 
 				    </div>
 			    <% end %>

@@ -1,7 +1,7 @@
 class UpdateComments < ActiveRecord::Migration[5.1]
   def change
   	unless column_exists? :comments, :target_id
-		  add_column :comments, :target_id, :id
+		  add_column :comments, :target_id, :integer
 		end
   	unless column_exists? :comments, :target_type
 		  add_column :comments, :target_type, :string

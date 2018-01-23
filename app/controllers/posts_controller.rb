@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.friendly.find(params[:id])
-    # if (@post.status == "draft" or @post.status == "rejected") and @post.user == current_user
+    # if (@post.status == "draft"u or @post.status == "rejected") and @post.user == current_user
       users = []
       User.all.each do |user|
         users << user if user.posts.where('created_at >= ?', 1.week.ago).count > 0

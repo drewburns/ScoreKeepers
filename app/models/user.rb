@@ -45,7 +45,7 @@ class User < ApplicationRecord
 
   def team_posts(team_id)
     team = Team.find(team_id)
-    return team.posts.where(user_id: self.id)
+    return team.posts.where(user_id: self.id).where(status: "approved")
   end
 
   def this_weeks_score_team(team_id) 

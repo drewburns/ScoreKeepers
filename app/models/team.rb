@@ -7,6 +7,7 @@ class Team < ApplicationRecord
 	has_many :userTeams
 	has_many :users, through: :userTeams
   has_many :debates
+  mount_uploader :picture, PictureUploader
 
 	has_reputation :team_score, source: :user, aggregated_by: :sum
 	has_reputation :frontoffice_score, source: :user, aggregated_by: :sum
@@ -18,9 +19,11 @@ class Team < ApplicationRecord
  		where("name LIKE ?", "%#{search}%")
 	end
 	
-	def team_score
-    reputation_for(:team_score).to_int
-  end
+  # Logic for percentage score
+
+  # get all the reputations for a item
+  # find amount of those that are pos 
+
 
   def coach_debate
     self.debates.where(about: "coach").first
@@ -38,6 +41,34 @@ class Team < ApplicationRecord
     self.debates.where(about: "stadium").first
   end
 
+  def team_score
+    reputation_for(:team_score).to_int
+  end
+
+  def score_percentage(type)
+    type2 = type + "_score"
+    total_reps = self.reputations.where(reputation_name: type2)
+    yes_reps = total_reps.where(value: 1.0)
+    no_reps = total_reps.where(value: -1.0)
+
+    if yes_reps.count != 0 || no_reps.count != 0
+      reps = yes_reps.count.to_f / (yes_reps.count.to_f + no_reps.count.to_f)
+      return (reps*100).round
+    else 
+      return 0
+    end
+
+
+  end
+
+  def frontoffice_percent
+  end
+
+  def coach_percent
+  end
+
+  def stadium_percent
+  end
   
   def frontoffice_score
     reputation_for(:frontoffice_score).to_int
@@ -55,9 +86,10 @@ class Team < ApplicationRecord
   def chart_data(type)
   	total_reps = self.reputations.where(reputation_name: type)
   	yes_reps = total_reps.where(value: 1.0)
+    no_reps = total_reps.where(value: -1.0)
 
   	y_count = yes_reps.count
-  	n_count =  total_reps.count - y_count
+  	n_count =  no_reps.count
   	hash = {}
   	p total_reps.count
   	unless total_reps.count == 0

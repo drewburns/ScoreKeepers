@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
   # before_action :require_login , only: [:create]
   before_action :authenticate_user!, only: %i[create new]
-  before_action :correct_user!, only: [:create,:edit,:update,:destroy]
+  before_action :correct_user!, only: [:edit,:update,:destroy, :create]
+
 
   def index
     users = []
     User.all.each do |user|
-      users << user if user.posts.count > 0
+      users << user if user.posts.where('created_at >= ?', 1.week.ago).count > 0
     end
     @posts = Post.where(status: 'approved').paginate(:page => params[:page])
     if Post.where('created_at >= ?', 1.week.ago).count == 0
@@ -28,15 +29,20 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.friendly.find(params[:id])
-    users = []
-    User.all.each do |user|
-      users << user if user.posts.count > 0
-    end
-    if Post.where('created_at >= ?', 1.week.ago).count == 0
-      @users = User.first(5)
+    if (@post.status == "draft" or @post.status == "rejected") and @post.user == current_user
+      users = []
+      User.all.each do |user|
+        users << user if user.posts.where('created_at >= ?', 1.week.ago).count > 0
+      end
+      if Post.where('created_at >= ?', 1.week.ago).count == 0
+        @users = User.first(5)
+      else
+        @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      end
     else
-      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      redirect_to root_path
     end
+
   end
 
   def reject
@@ -217,8 +223,15 @@ class PostsController < ApplicationController
 
   def correct_user!
     puts "TRYING TO SEE IF CORRECT USER"
-    post = Post.find(params[:id])
-    @user = User.find(post.user.id)
-    redirect_to(root_url) unless current_user == @user
+    if post_params[:post_id]
+      post = Post.find(post_params[:post_id])
+      @user = User.find(post.user.id)
+      redirect_to(root_url) unless current_user == @user
+    else
+      @user = User.find(post_params[:user_id])
+      redirect_to(root_url) unless current_user == @user
+    end
   end
+
+
 end

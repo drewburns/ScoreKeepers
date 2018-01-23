@@ -1,4 +1,5 @@
 class DebatesController < ApplicationController
+	before_action :admin_only!, only: [:new,:create]
 
 	def show
 		@debate = Debate.friendly.find(params[:id])
@@ -41,6 +42,14 @@ class DebatesController < ApplicationController
 	end
 
 	private
+
+	def admin_only!
+		if current_user
+    	redirect_to(root_url) unless current_user.admin == true
+    else
+    	redirect_to(root_url)
+    end
+	end
 
   def debate_params
     params.require(:debate).permit(:title, :description, :picture, :picture_cache, :teams)

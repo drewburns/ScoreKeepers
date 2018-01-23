@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171225043349) do
+ActiveRecord::Schema.define(version: 20180116194555) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20171225043349) do
     t.string "picture_url"
     t.string "slug"
     t.string "thumbnail_url"
+    t.string "picture"
   end
 
   create_table "user_teams", force: :cascade do |t|

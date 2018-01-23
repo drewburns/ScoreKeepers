@@ -24,13 +24,8 @@
 			    <% @baseball.sort_by{|team| team.team_score}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
-<<<<<<< HEAD
-				    <%= link_to(image_tag(team.picture_url, :style => 'width:45px;height:45px; float:left;'), team) %>
-				    <p style='display:inline;'><%=link_to team.name, team, :class=> "ranking" %> <h6 class="number"><%= team.team_score %></h6></p>
-=======
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
->>>>>>> 0b51bef5fbd400c0ee94515848d2b95c2874b77d
+				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("team") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -41,7 +36,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
+				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.score_percentage("stadium") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -52,7 +47,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
+				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.score_percentage("coach") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -75,7 +70,7 @@
 			    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 			    <!-- <%= render team %> -->
 			    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-			    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
+			    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("team") %>% </p>
 
 			    </div>
 			    <% end %>
@@ -86,7 +81,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
+				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.score_percentage("stadium") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -97,7 +92,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
+				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.score_percentage("coach") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -121,7 +116,7 @@
 					    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 					    <!-- <%= render team %> -->
 					    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-					    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
+					    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("team") %>% </p>
 
 					    </div>
 			    <% end %>
@@ -132,7 +127,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
+				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.score_percentage("stadium") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -143,7 +138,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
+				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.score_percentage("coach") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -167,7 +162,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.team_score %> </p>
+				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("team") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -178,7 +173,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.stadium_score %> </p>
+				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.score_percentage("stadium") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -189,7 +184,7 @@
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(image_tag(team.thumbnail_url, :style => 'width:65px;height:65px;'), team) %>
-				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.coach_score %> </p>
+				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.score_percentage("coach") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -211,21 +206,21 @@
 		  	<div class="tabs-panel is-active" id="soccer1">
 			    <% @soccer.sort_by{|team| team.team_score}.reverse.each do |team| %>
 			    <%= render team %>
-			    	<p><%= team.name %> - <%= team.team_score %> </p>
+			    	<p><%= team.name %> - <%= team.score_percentage("team") %>% </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="soccer2">
 			    <% @soccer.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
 			    	<%= render team %>
-			    	<p><%= team.stadium %> - <%= team.stadium_score %> </p>
+			    	<p><%= team.stadium %> - <%= team.score_percentage("stadium") %>% </p>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="soccer3">
 			    <% @soccer.sort_by{|team| team.coach_score}.reverse.each do |team| %>
 			    <%= render team %>
-			    	<p><%= team.coach %> - <%= team.coach_score %> </p>
+			    	<p><%= team.coach %> - <%= team.score_percentage("coach") %>% </p>
 			    <% end %>
 			  </div>
 

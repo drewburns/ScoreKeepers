@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     User.all.each do |user|
       users << user if user.posts.count > 0
     end
-    @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse
+    @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse.paginate(:page => params[:page], :per_page => 25)
 
   end
 

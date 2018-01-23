@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.friendly.find(params[:id])
-    if (@post.status == "draft" or @post.status == "rejected") and @post.user == current_user
+    # if (@post.status == "draft" or @post.status == "rejected") and @post.user == current_user
       users = []
       User.all.each do |user|
         users << user if user.posts.where('created_at >= ?', 1.week.ago).count > 0
@@ -39,9 +39,9 @@ class PostsController < ApplicationController
       else
         @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
       end
-    else
-      redirect_to root_path
-    end
+    # else
+    #   redirect_to root_path
+    # end
 
   end
 

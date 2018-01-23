@@ -1,8 +1,8 @@
 <% provide(:title , @post.title) %>
-<div class="row" style="background-color: #f5f5f5; width: 100%; margin-top: 25px;">
+<div class="row" style="width: 100%; margin-top: 25px;">
 	<div class="large-2 columns"><p></p></div>
 
-	<div class="large-6 columns" style="background-color: white;"><br>
+	<div class="large-7 columns"><br>
 		<h1 class="posttitle"><%= @post.title%></h1>
 			<% if @post.user == current_user %>
 			<h3 >Post Status: <%= @post.status %></h3>
@@ -27,15 +27,25 @@
 <!-- 				<img src="https://d2lzcnyuvtotl1.cloudfront.net/uploads/2017/11/USATSI_10395210_168384367_lowres.jpg"/> -->
 			<hr>
 
-		<div class="postcontent" style="font-size: 24px;">
+		<div class="postcontent" style="font-size: 24px; font-family: 'Catamaran', sans-serif;">
 		  <%== @post.content %>
 	  </div>
 
 		<br><hr>
+		<img src= <%= @post.user.full_size %> style="border-radius:50%; width: 20%; float: left; padding-right: 20px;">
+		<h3><%= link_to @post.user.name, user_path(@post.user), :style => "width: 45%; font-size: 32px; float: left; padding-top: 25px;" %></h3>
+		<h5 style="width: 70%; float: left; padding-top: 10px; font-size: 24px;"><%= @post.user.bio %></h5><br>
+		<h5 style="width:33%; float: left;"><%= render partial: 'score', locals: {post: @post}%></h5>
+		<% if @post.sport != nil %>
+		<h5 style="width:33%; float: left;"> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></h5>
+		<% end %>
+		<% if @post.teams != nil %>
+		<h5 style="width:33%; float: left;">Teams: <% for i in @post.teams %><%= link_to i.name, team_path(:id => i.id)%></h5><% end %>
+		<% end %>
+		<hr>
 
-
-
-				<h3>Comments:</h3>
+		<h3>Comments:</h3>
+		<div style="font-size: 24px;">
 				<% if user_signed_in? %>
 					<% comment = Comment.new %>
 					<%= form_for(comment) do |f| %>
@@ -51,27 +61,14 @@
 				<% end %>
 				</br>
 				<ul id="comments-list">
-				<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
+				<% @post.comments.sort_by{|comment| comment.score}.reverse.each do |comment|%>
 					<%= render partial: 'comments/comment', locals: {comment: comment}%>
 				<% end %>
 			</ul>
-	</div>
-	<div class="large-2 columns" style="padding-top: 5%;"><br>
-			<img src= <%= @post.user.full_size %> style="border-radius:50%; width: 50%; float: left; padding-right: 10px;">
-			<h3><%= link_to @post.user.name, user_path(@post.user), :style => "width: 45%; font-size: 23px; float: left; padding-top: 25px;" %></h3>
-			<h5 style="width: 100%; float: left; padding-top: 10px;"><%= @post.user.bio %></h5>
-			<hr>
-			<h5><%= render partial: 'score', locals: {post: @post}%></h5>
-			<% if @post.sport != nil %>
-			<h5> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></h5>
-			<% end %>
-			<% if @post.teams != nil %>
-			<h5>Teams: <% for i in @post.teams %><%= link_to i.name, team_path(:id => i.id)%></h5><% end %>
-			<% end %>
-			<hr>
+		</div>
 	</div>
 
-	<div class="large-2 columns"><p></p></div>
+	<div class="large-3 columns"><p></p></div>
 </div>
 
 <script type="text/javascript">

@@ -1,16 +1,33 @@
 <%= javascript_include_tag "foundation" %>
-<div class="row" style="width: 90%; padding-top: 10px;">
-	<div class="large-4 columns"><br>
-		<img src='https://dalefisherphoto.com/wp-content/uploads/2016/04/umvspennstateatdusk.jpg'>
-		<h1 style="line-height: 1.1; padding-top: 5px;"><b>Rank College Football's Best Stadiums</b></h1>
+<div class="row" style="width: 90%; padding: 7px;">
+	<div class="large-4 columns" style="background-color: white;"><br>
+			<img src='https://dalefisherphoto.com/wp-content/uploads/2016/04/umvspennstateatdusk.jpg'>
+			<h1 style="line-height: 1.1; padding-top: 5px;"><b>Rank College Football's Best Stadiums</b></h1>
 	</div>
-	<div class="large-4 columns" style="padding-top: 0px; margin: 0px;"><br>
+	<div class="large-4 columns" style="background-color: white; padding-top: 25px;">
+			<div class="large-5 columns">
+			<img style="margin-bottom: 25px;" src='https://thenypost.files.wordpress.com/2016/02/papi.jpg?quality=90&strip=all'>
+			<img style="margin-bottom: 25px;" src='https://cdn.vox-cdn.com/thumbor/0xKmezaOILLd4zvh_0UY0xIUNp4=/0x0:3000x2000/1200x800/filters:focal(1172x263:1652x743)/cdn.vox-cdn.com/uploads/chorus_image/image/54394665/167610422.0.jpg'>
+			<img style="height: 135px; width: 100%;" src="https://nhl.bamcontent.com/images/photos/286402666/1024x576/cut.jpg">
+			</div>
+			<div class="large-7 columns">
+			<h3 style="width: 60%"><b>Debate</b></h3>
+			<h5 style="padding-bottom: 15px;">Will David Ortiz Make the Baseball Hall of Fame?</h5><hr>
+			<h3 style="width: 60%"><b>Debate</b></h3>
+			<h5 style="padding-bottom: 20px;">Best Power Forwards in NBA History</h5><hr>
+			<h3 style="width: 60%"><b>Debate</b></h3>
+			<h5>Which Selke Trophy Finalist Will Lead Their Team the Farthest in Stanley Cup Playoffs?</h5>
+		</div>
+	</div>
+	<div class="large-4 columns" style="background-color: white;"><br>
 		<h3 style="font-family: 'Catamaran', sans-serif; border-top: 3px solid #8cb2ff;"><b>The Lineup</b></h3>
 		<h4><% @posts.first(9).each do |post| %>
 			<h5 class="lineuptitle"><%= link_to (@posts.index(post)+1).to_s %>. <%= link_to post.title , post_path(post) %></h5>
 		</h4><% end %>
 	</div>
-	<div class="large-4 columns" style="margin:0px; padding: 0px;"><br>
+
+
+	<!-- <div class="large-4 columns" style="margin:0px; padding: 0px;"><br>
 		<h1>Debate:</h1>
 		<% if @debates.count != 0 %>
 			<ul>
@@ -24,27 +41,13 @@
 		</ul>
 		<% else %>
 			<h1>No debates</h1>
-		<% end %>
-<!-- 			<div class="large-5 columns">
-				<img style="margin-bottom: 20px; width: 100%;" src='https://thenypost.files.wordpress.com/2016/02/papi.jpg?quality=90&strip=all'>
-				<img style="margin-bottom: 20px; height: 135px; width: 100%;" src='https://cdn.vox-cdn.com/thumbor/0xKmezaOILLd4zvh_0UY0xIUNp4=/0x0:3000x2000/1200x800/filters:focal(1172x263:1652x743)/cdn.vox-cdn.com/uploads/chorus_image/image/54394665/167610422.0.jpg'>
-				<img style="height: 135px; width: 100%;" src="https://nhl.bamcontent.com/images/photos/286402666/1024x576/cut.jpg">
-			</div>
-			<div class="large-7 columns">
-				<h3 style="width: 60%"><b>Debate</b></h3>
-				<h3>Will David Ortiz Make the Baseball Hall of Fame?</h3><br>
-				<h3 style="width: 60%"><b>Debate</b></h3>
-				<h3>Will David Ortiz Make the Baseball Hall of Fame?</h3><br>
-				<h3 style="width: 60%"><b>Debate</b></h3>
-				<h3>Will David Ortiz Make the Baseball Hall of Fame?</h3>
-			</div> -->
-	</div>
+		<% end %> -->
 </div><br>
 
-<div style="background-color: #f7f7f7;">
-<div class="row" style="width:90%; background-color: #f7f7f7; padding-top: 20px; padding-bottom: 20px;">
+<div style="background-color: #e5e5e5;">
+<div class="row" style="width:90%; background-color: white; padding-top: 20px; padding-bottom: 20px;">
 
-	<div class="large-3 columns" style="background-color: #f7f7f7;">
+	<div class="large-3 columns">
 			<h3 class="itemheader">Baseball</h3>
 				<ul style="padding: 0px; margin: 0px;">
 					<% @top_baseball.each do |team| %>
@@ -95,22 +98,26 @@
 </div>
 
 
-<div class="row" style="width: 90%; padding-top: 25px;"><br>
-<div class="large-3 columns">
-<img style="width: 100%; height: 250px;" src='https://offthemonstersports.com/wp-content/uploads/2016/11/Tom-Brady-ten-years-10-21-15.jpg'>
-<h3 class="flashtitle">Enter Title 1 Here</h3></div>
-<div class="large-3 columns">
-<img style="width: 100%; height: 250px;" src='https://thenypost.files.wordpress.com/2016/02/papi.jpg?quality=90&strip=all'>
-<h3 class="flashtitle">Enter Title 1 Here</h3></div>
-<div class="large-3 columns">
-<img style="width: 100%; height: 250px;" src='https://cdn.vox-cdn.com/thumbor/0xKmezaOILLd4zvh_0UY0xIUNp4=/0x0:3000x2000/1200x800/filters:focal(1172x263:1652x743)/cdn.vox-cdn.com/uploads/chorus_image/image/54394665/167610422.0.jpg'>
-<h3 class="flashtitle">Enter Title 1 Here</h3></div>
-<div class="large-3 columns">
-<img style="width: 100%; height: 250px;" src='https://nhl.bamcontent.com/images/photos/286402666/1024x576/cut.jpg'>
-<h3 class="flashtitle">Enter Title 1 Here</h3></div>
+<div class="row" style="width: 90%; margin-top: 65px; background-color: white">
+	<h4 style="padding-left: 18px; padding-top: 5px;">Featured Posts</h4>
+	<div class="large-3 columns">
+	<img style="width: 100%; height: 250px;" src='https://offthemonstersports.com/wp-content/uploads/2016/11/Tom-Brady-ten-years-10-21-15.jpg'>
+	<h3 class="flashtitle">Enter Title 1 Here</h3>
+	<h5>This is a subheader that describes the basics of the article and some more information if needed</h5></div>
+	<div class="large-3 columns">
+	<img style="width: 100%; height: 250px;" src='https://thenypost.files.wordpress.com/2016/02/papi.jpg?quality=90&strip=all'>
+	<h3 class="flashtitle">Enter Title 1 Here</h3>
+	<h6>This is a subheader that describes the basics of the article and some more information if needed</h6></div>
+
+	<div class="large-3 columns">
+	<img style="width: 100%; height: 250px;" src='https://cdn.vox-cdn.com/thumbor/0xKmezaOILLd4zvh_0UY0xIUNp4=/0x0:3000x2000/1200x800/filters:focal(1172x263:1652x743)/cdn.vox-cdn.com/uploads/chorus_image/image/54394665/167610422.0.jpg'>
+	<h3 class="flashtitle">Enter Title 1 Here</h3></div>
+	<div class="large-3 columns">
+	<img style="width: 100%; height: 250px;" src='https://nhl.bamcontent.com/images/photos/286402666/1024x576/cut.jpg'>
+	<h3 class="flashtitle">Enter Title 1 Here</h3></div>
 </div>
 
-<div style="background-color: #f7f7f7;">
+<div style="background-color: #f7f7f7; margin-top: 50px;">
 <div class="row" style="width:90%; background-color: #f7f7f7; padding-top: 20px; padding-bottom: 20px;">
 
 <div class="large-3 columns" style="background-color: #f7f7f7;">
@@ -159,6 +166,7 @@
 			<hr style="margin: 5px;">
 			<% end %>
 		</ul>
+</div>
 </div>
 </div>
 </div>

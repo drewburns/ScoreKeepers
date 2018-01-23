@@ -1,0 +1,8 @@
+<h1>Leaderboard</h1>
+
+<ul>
+	<% @users.each do |user|%>
+		<li><%= user.name%> - <%= user.this_weeks_score %></li>
+	<% end %>
+
+</ul>

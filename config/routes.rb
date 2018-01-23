@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/sandbox' => 'posts#sandbox'
 
+
   resources :users, only: [:index, :show, :create, :update, :destroy]
   resources :posts, only: [:index, :show, :create, :update, :destroy, :new, :edit]
 

@@ -56,6 +56,11 @@ class TeamsController < ApplicationController
     @teams = Team.all
   end
 
+  def coach_ratings
+
+  end
+
+
   def rankings
     @teams = Team.all
     @baseball = @teams.where(sport_string: "baseball")

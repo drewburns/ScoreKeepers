@@ -27,11 +27,15 @@ class UsersController < ApplicationController
     @posts = Post.where(status: 'pending').sort_by(&:time_submitted)
   end
 
-  # def leaderboard
-  #   @users = User.all
-  #   @users.sort_by{|author| author.posts.map{|post| post.score}.inject{|sum,post| sum + post }}.reverse
+  def leaderboard
+    users = []
+    User.all.each do |user|
+      users << user if user.posts.count > 0
+    end
+    @users = users.sort_by { |author| author.posts.map(&:score).inject { |sum, post| sum + post } }.reverse
 
-  # end
+  end
+
 
   private
 

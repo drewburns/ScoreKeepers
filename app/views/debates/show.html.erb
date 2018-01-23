@@ -24,7 +24,9 @@
 <% end %>
 </br>
 <ul id="comments-list">
-<% @debate.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-	<%= render partial: 'comments/comment', locals: {comment: comment}%>
+<% if @debate.comments.count != 0 %>
+	<% @debate.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
+		<%= render partial: 'comments/comment', locals: {comment: comment}%>
+	<% end %>
 <% end %>
 </div>

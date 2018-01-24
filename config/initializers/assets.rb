@@ -18,6 +18,7 @@ Rails.application.config.assets.precompile += %w( ContentTools/build/content-too
 Rails.application.config.assets.precompile += %w( ContentTools/build/content-tools.css )
 Rails.application.config.assets.precompile += %w( ContentTools/build/content-tools.js )
 Rails.application.config.assets.precompile += %w( ContentEdit/build/content-edit.js )
+Rails.application.config.assets.precompile += %w( application.scss )
 Rails.application.config.assets.precompile += %w( editor.js )
 Rails.application.config.assets.precompile += %w( editor.css )
 Rails.application.config.assets.precompile += %w( foundation.js )

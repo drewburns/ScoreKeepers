@@ -1,4 +1,20 @@
 <%= javascript_include_tag "foundation" %>
+<style type="text/css">
+.top-bar-item {
+  background-color: #f5f5f5;
+}
+.top-bar-item:hover {
+  background-color: #C0C0C0
+}
+
+.top-bar-item label {
+  color:black;
+  font-weight: bold;
+  margin-top: -10px;
+  font-size:20px;
+  height:0px;
+}
+</style>
 <div class="contain-to-grid sticky large-12 columns" style="background-color: #404ebc;">
   <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style=" height: 50px; max-width:100rem; background-color: #404ebc;">
     <ul class="title-area" style="background-color: #404ebc; margin-left: 5%;">
@@ -62,7 +78,6 @@
   <a class="large-3 medium-3 small-3 columns top-bar-item" href="/leaderboard" style='height:50px;'>
     <label>Writer Rankings</label>
   </a>
-
 </div>
 <!-- <div class="icon-bar four-up" style="height: 45px; color: black; font-family: 'Karla', sans-serif; font-weight: bold;">
   <a class="item" href="/debates" style="color: black;">

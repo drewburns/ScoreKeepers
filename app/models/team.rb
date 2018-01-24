@@ -25,7 +25,7 @@ class Team < ApplicationRecord
   # find amount of those that are pos 
   def full_size
     if self.picture.url == nil
-      return self.picture_url
+      return self.attributes["picture_url"]
     else
       return self.picture.url
     end

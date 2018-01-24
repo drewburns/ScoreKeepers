@@ -341,6 +341,21 @@ padding-top: 10px;}
 font-size: 20px;
 margin-right: 30px;}
 
+.top-bar-item {
+  background-color: #f5f5f5;
+}
+.top-bar-item:hover {
+  background-color: #C0C0C0
+}
+
+.top-bar-item label {
+  color:black;
+  font-weight: bold;
+  margin-top: -10px;
+  font-size:20px;
+  height:0px;
+}
+
 
 /* Foundation CSS */
 

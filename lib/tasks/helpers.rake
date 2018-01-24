@@ -22,6 +22,8 @@ namespace :helpers do
     teams = Team.all.sort_by{|t| t.id}.to_a
   	(0..(image_urls.count-1)).to_a.each do |num|
   		team = teams[num]
+      puts "___________________"
+      puts image_urls[num]
   		team.picture_url = image_urls[num]
   		team.thumbnail_url = thumbnail_urls[num]
   		team.save!

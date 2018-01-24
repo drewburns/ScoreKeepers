@@ -20,7 +20,7 @@ namespace :helpers do
   	puts thumbnail_urls.count
   	puts image_urls.count
     teams = Team.all.sort_by{|t| t.id}.to_a
-  	(1..image_urls.count).to_a.each do |num|
+  	(0..(image_urls.count-1)).to_a.each do |num|
   		team = teams[num]
   		team.picture_url = image_urls[num]
   		team.thumbnail_url = thumbnail_urls[num]

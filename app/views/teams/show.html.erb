@@ -1,7 +1,7 @@
 <% provide(:title , @team.name) %>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <div class="row" style="width:90%">
-				<img src=<%= @team.picture_url %> style="height:200px;width:200px;">
+				<img src=<%= @team.full_size %> style="height:200px;width:200px;">
 
 				<h3><%= @team.users.count %> people like this team</h3>
 				<%= render partial: 'teams/graphs', locals: {team: @team}%>

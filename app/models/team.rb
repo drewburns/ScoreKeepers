@@ -23,6 +23,21 @@ class Team < ApplicationRecord
 
   # get all the reputations for a item
   # find amount of those that are pos 
+  def full_size
+    if self.picture.url == nil
+      return self.picture_url
+    else
+      return self.picture.url
+    end
+  end
+
+  def thumb
+    if self.picture.thumbnail.url == nil
+      return self.thumbnail_url
+    else
+      return self.picture.thumbnail.url
+    end
+  end
 
 
   def coach_debate

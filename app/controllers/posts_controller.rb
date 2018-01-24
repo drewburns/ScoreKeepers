@@ -15,10 +15,10 @@ class PostsController < ApplicationController
     else
       @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
     end
-    @top_baseball = Team.where(sport_string: 'baseball').sort_by{|team| team.team_score}.reverse.first(5)
-    @top_basketball = Team.where(sport_string: 'basketball').sort_by{|team| team.team_score}.reverse.first(5)
-    @top_football = Team.where(sport_string: 'football').sort_by{|team| team.team_score}.reverse.first(5)
-    @top_hockey = Team.where(sport_string: 'hockey').sort_by{|team| team.team_score}.reverse.first(5)
+    @top_baseball = Team.where(sport_string: 'baseball').sort_by{|team| team.coach_score}.reverse.first(5)
+    @top_basketball = Team.where(sport_string: 'basketball').sort_by{|team| team.coach_score}.reverse.first(5)
+    @top_football = Team.where(sport_string: 'football').sort_by{|team| team.coach_score}.reverse.first(5)
+    @top_hockey = Team.where(sport_string: 'hockey').sort_by{|team| team.coach_score}.reverse.first(5)
     @debates = Debate.where(about: nil).first(5)
 
   end

@@ -67,7 +67,7 @@ class Team < ApplicationRecord
     total_reps = self.evaluations.where(reputation_name: type2)
     yes_reps = total_reps.where(value: 1.0)
     no_reps = total_reps.where(value: -1.0)
-    puts "Total reps, " + total_reps.count 
+    # puts "Total reps, " + total_reps.count 
 
     if yes_reps.count != 0 || no_reps.count != 0
       reps = yes_reps.count.to_f / (yes_reps.count.to_f + no_reps.count.to_f)

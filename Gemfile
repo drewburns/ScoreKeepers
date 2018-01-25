@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bootstrap', '~> 4.0.0'
+# gem 'bootstrap', '~> 4.0.0'
 gem 'rails_12factor'
 gem 'friendly_id', '~> 5.1.0'
 gem "chartkick"

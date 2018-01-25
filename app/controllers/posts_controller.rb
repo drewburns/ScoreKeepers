@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # before_action :require_login , only: [:create]
   before_action :authenticate_user!, only: %i[create new]
-  before_action :correct_user!, only: [:edit,:update,:destroy, :create]
+  before_action :correct_user!, only: [:edit,:destroy,:create]
 
 
   def index

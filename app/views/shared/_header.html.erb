@@ -52,14 +52,14 @@
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
+      <li ><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
       <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
       <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
       <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
-      <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" %></li>
+<!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" %></li> -->
       <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px;"%></li>
       <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: #404ebc; color: white; font-size: 20px;"%></li>
-      <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: #404ebc; color: white; font-size: 20px;" href="/">About Us</a></li>
+<!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: #404ebc; color: white; font-size: 20px;" href="/">About Us</a></li> -->
     </ul>
     </section>
   <% end %>
@@ -70,8 +70,8 @@
   <a class="large-3 medium-3 small-6 columns top-bar-item" href="/debates" style='height:50px;'>
     <label>Debate</label>
   </a>
-  <a class="large-3 medium-3 small-6 columns top-bar-item" href="/" style='height:50px;'>
-    <label>Power Rankings</label>
+  <a class="large-3 medium-3 small-6 columns top-bar-item" href="/teams" style='height:50px;'>
+    <label>Team Index</label>
   </a>
   <a class="large-3 medium-3 small-6 columns top-bar-item" href="/rankings" style='height:50px;'>
     <label>Approval Ratings</label>

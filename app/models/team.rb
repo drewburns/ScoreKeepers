@@ -61,6 +61,8 @@ class Team < ApplicationRecord
   end
 
   def score_percentage(type)
+    puts "---------------------"
+    puts '------TEAM PERCENTAGE-------'
     type2 = type + "_score"
     total_reps = self.reputations.where(reputation_name: type2)
     yes_reps = total_reps.where(value: 1.0)

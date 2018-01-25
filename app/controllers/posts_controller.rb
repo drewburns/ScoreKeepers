@@ -72,6 +72,7 @@ class PostsController < ApplicationController
     new_params[:time_approved] = DateTime.now if post_params[:status] == 'approved'
     new_params[:time_submitted] = DateTime.now if post_params[:status] == 'submitted'
     p '---------------------------'
+    p '-------POST PARAMS---------'
     p post_params
 
     if @post.update_attributes(new_params)

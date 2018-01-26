@@ -17,33 +17,36 @@
 
 }
 .signed-in-item {
-  background-color: #404ebc
+  background-color: #404ebc;
 }
-@media only screen and (min-width: 500px) {
-    body {
+@media only screen and (min-width: 100px) {
+/*    body {
         background-color: red;
-    }
+    }*/
+    .test123 {
+    display: none;
+  }
 }
 @media only screen and (min-width: 500px) {
-    body {
+/*    body {
         background-color: black;
-    }
+    }*/
   .test123 {
     display: none;
   }
 }
 @media only screen and (min-width: 700px) {
-    body {
+/*    body {
         background-color: black;
-    }
+    }*/
   .test123 {
     display: none;
   }
 }
 @media only screen and (min-width: 1000px) {
-    body {
+/*    body {
         background-color: pink;
-    }
+    }*/
   .test123 {
     display: block;
   }
@@ -52,9 +55,9 @@
   .test123 {
     display: block;
   }
-  body {
+/*  body {
     background-color: blue;
-  }
+  }*/
 }
 </style>
 <div class="contain-to-grid sticky large-12 columns" style="background-color: #404ebc;">
@@ -83,30 +86,41 @@
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+
       <!-- <li class=""><%= link_to "Team Index" , teams_path %></li> -->
       <ul class="menu">
-      <% if current_user.admin %>
-        <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color:#404ebc;' %></li>
-      <% end %>
+        <li ><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
       </ul>
           <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
       <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color:#404ebc;' %></li>
-      <li class="" ><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:#404ebc;' %></li>
-      <!-- <li><%= link_to "Profile" , current_user %></li> -->
-          <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color:#404ebc;' %> </li>
-          <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color:#404ebc;' %></li>
+      <li class="" ></li>
 
-      <!-- <li class="has-dropdown"> -->
-        <!-- <ul class="dropdown"> -->
-        <!-- </ul> -->
-      <!-- </li> -->
+      <!-- <li><%= link_to "Profile" , current_user %></li> -->
+
+
+
+      <li class="has-dropdown">
+        <a href="#"><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:#404ebc;' %></a>
+        <ul class="dropdown">
+                <% if current_user.admin %>
+        <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color:#404ebc;' %></li>
+      <% end %>
+           <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color:#404ebc;' %> </li>
+          <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color:#404ebc;' %></li>
+        </ul>
+      </li>
     </ul>
     </section>
+
+
 
   <% else %>
     <section class="top-bar-section" >
     <!-- Right Nav Section -->
-    <div class='show-for-large test123' >
+    <div class='test123' >
       <ul class="right">
         <li ><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
         <li><a style="font-family: 'Karla', sans-serif; background-color: #404ebc; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>

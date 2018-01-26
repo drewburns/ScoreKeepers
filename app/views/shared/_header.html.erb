@@ -1,4 +1,4 @@
-<%= javascript_include_tag "foundation" %>
+<!-- <%= javascript_include_tag "foundation" %> -->
 <style type="text/css">
 .top-bar-item {
   background-color: #f5f5f5;
@@ -96,22 +96,17 @@
       </ul>
           <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
       <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color:#404ebc;' %></li>
+      <li><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:#404ebc;' %></li>
       <li class="" ></li>
+      <% if current_user.admin %>
+        <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color:#404ebc;' %></li>
+      <% end %>
+       <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color:#404ebc;' %> </li>
+      <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color:#404ebc;' %></li>
 
       <!-- <li><%= link_to "Profile" , current_user %></li> -->
 
 
-
-      <li class="has-dropdown">
-        <a href="#"><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:#404ebc;' %></a>
-        <ul class="dropdown">
-                <% if current_user.admin %>
-        <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color:#404ebc;' %></li>
-      <% end %>
-           <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color:#404ebc;' %> </li>
-          <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color:#404ebc;' %></li>
-        </ul>
-      </li>
     </ul>
     </section>
 
@@ -218,7 +213,11 @@
 
 
 <script type="text/javascript">
-  $(document).foundation();
+// alert("HEUHFUEA");
+// $(document).ready(function(){
+//   $(document).foundation();
+// });
+
 
 $('.title-bar').on('sticky.zf.stuckto:top', function(){
   $(this).addClass('shrink');

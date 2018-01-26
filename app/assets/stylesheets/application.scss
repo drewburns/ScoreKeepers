@@ -21,7 +21,6 @@
  */
 
 /* Header CSS */
-
 @import url('//fonts.googleapis.com/css?family=Baloo+Tammudu');
 @import url('//fonts.googleapis.com/css?family=Karla');
 @import url('//fonts.googleapis.com/css?family=Fugaz+One');
@@ -41,11 +40,6 @@
 .menuitem a{
   background-color: #2f5799; color: black; font-size: 30px;}
 
-label{
-  color: black;
-
-}
-
 /* Homepage CSS*/
 ul {
   list-style-type: none;}
@@ -59,10 +53,10 @@ body {
 
 
 .itemheader{
-  background-color: #f7f7f7;
   color: black;
+  font-size: 24px;
   margin-top: 0px;
-  border-bottom: 3px solid blue;}
+  border-top: 3px solid blue;}
 
 .itemheader1{
   background-color: #fed766;
@@ -72,7 +66,8 @@ body {
 .flashtitle{
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 32px;
-  padding-top: 5px;}
+  padding-top: 5px;
+  line-height: 1;}
 
 .lineupstories{
   padding-top: 15px;

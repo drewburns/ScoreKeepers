@@ -1,133 +1,24 @@
 <%= javascript_include_tag "foundation" %>
 <div class="row" style="width: 90%; padding: 7px;">
-	<div class="large-4 columns" style="background-color: white;"><br>
-			<img src='https://dalefisherphoto.com/wp-content/uploads/2016/04/umvspennstateatdusk.jpg'>
-			<h1 style="line-height: 1.1; padding-top: 5px;"><b>Rank College Football's Best Stadiums</b></h1>
-	</div>
-	<div class="large-4 columns" style="background-color: white; padding-top: 25px;">
-			<div class="large-5 columns">
-			<img style="margin-bottom: 25px;" src='https://thenypost.files.wordpress.com/2016/02/papi.jpg?quality=90&strip=all'>
-			<img style="margin-bottom: 25px;" src='https://cdn.vox-cdn.com/thumbor/0xKmezaOILLd4zvh_0UY0xIUNp4=/0x0:3000x2000/1200x800/filters:focal(1172x263:1652x743)/cdn.vox-cdn.com/uploads/chorus_image/image/54394665/167610422.0.jpg'>
-			<img style="height: 135px; width: 100%;" src="https://nhl.bamcontent.com/images/photos/286402666/1024x576/cut.jpg">
-			</div>
-			<div class="large-7 columns">
-			<h3 style="width: 60%"><b>Debate</b></h3>
-			<h5 style="padding-bottom: 15px;">Will David Ortiz Make the Baseball Hall of Fame?</h5><hr>
-			<h3 style="width: 60%"><b>Debate</b></h3>
-			<h5 style="padding-bottom: 20px;">Best Power Forwards in NBA History</h5><hr>
-			<h3 style="width: 60%"><b>Debate</b></h3>
-			<h5>Which Selke Trophy Finalist Will Lead Their Team the Farthest in Stanley Cup Playoffs?</h5>
-		</div>
-	</div>
-	<div class="large-4 columns" style="background-color: white;"><br>
+
+
+
 		<h3 style="font-family: 'Catamaran', sans-serif; border-top: 3px solid #8cb2ff;"><b>The Lineup</b></h3>
 		<h4><% @posts.first(9).each do |post| %>
 			<h5 class="lineuptitle"><%= link_to (@posts.index(post)+1).to_s %>. <%= link_to post.title , post_path(post) %></h5>
 		</h4><% end %>
 	</div>
 
-
-
-	<!-- <div class="large-4 columns" style="margin:0px; padding: 0px;"><br>
-		<h1>Debate:</h1>
-		<% if @debates.count != 0 %>
-			<ul>
-			<% @debates.each do |debate| %>
-				<li>
-					<a href=<%="/debates/" + debate.slug %>><img src=<%= debate.thumbnail %> style="height:100px;width:100px;"></a>
-					<%= link_to debate.title, debate %>
-				</li>
-				<hr>
-			<% end %>
-		</ul>
-		<% else %>
-			<h1>No debates</h1>
-		<% end %> -->
-</div><br>
-
-<div style="background-color: #e5e5e5;">
-<div class="row" style="width:90%; background-color: white; padding-top: 20px; padding-bottom: 20px;">
-
-	<div class="large-3 columns">
-			<h3 class="itemheader">Baseball</h3>
-				<ul style="padding: 0px; margin: 0px;">
-					<% @top_baseball.each do |team| %>
-						<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
-					<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-					<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
-					<hr style="margin: 5px;">
-					<% end %>
-				</ul>
-	</div>
-
-<div class="large-3 columns">
-		<h3 class="itemheader">Basketball</h3>
-			<ul style="padding: 0px; margin: 0px;">
-				<% @top_basketball.each do |team| %>
-					<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
-				<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-				<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
-				<hr style="margin: 5px;">
-				<% end %>
-			</ul>
-</div>
-
-<div class="large-3 columns">
-<h3 class="itemheader">Football</h3>
-	<ul style="padding: 0px; margin: 0px;">
-		<% @top_football.each do |team| %>
-			<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
-		<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-		<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
-		<hr style="margin: 5px;">
-		<% end %>
-	</ul>
-</div>
-
-<div class="large-3 columns">
-<h3 class="itemheader">Hockey</h3>
-	<ul style="padding: 0px; margin: 0px;">
-		<% @top_hockey.each do |team| %>
-			<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
-		<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-		<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
-		<hr style="margin: 5px;">
-		<% end %>
-	</ul>
-</div>
-</div>
-</div>
-
-
-<div class="row" style="width: 90%; margin-top: 65px; background-color: white">
-	<h4 style="padding-left: 18px; padding-top: 5px;">Featured Posts</h4>
-	<div class="large-3 columns">
-	<img style="width: 100%; height: 250px;" src='https://offthemonstersports.com/wp-content/uploads/2016/11/Tom-Brady-ten-years-10-21-15.jpg'>
-	<h3 class="flashtitle">Enter Title 1 Here</h3>
-	<h5>This is a subheader that describes the basics of the article and some more information if needed</h5></div>
-	<div class="large-3 columns">
-	<img style="width: 100%; height: 250px;" src='https://thenypost.files.wordpress.com/2016/02/papi.jpg?quality=90&strip=all'>
-	<h3 class="flashtitle">Enter Title 1 Here</h3>
-	<h6>This is a subheader that describes the basics of the article and some more information if needed</h6></div>
-
-	<div class="large-3 columns">
-	<img style="width: 100%; height: 250px;" src='https://cdn.vox-cdn.com/thumbor/0xKmezaOILLd4zvh_0UY0xIUNp4=/0x0:3000x2000/1200x800/filters:focal(1172x263:1652x743)/cdn.vox-cdn.com/uploads/chorus_image/image/54394665/167610422.0.jpg'>
-	<h3 class="flashtitle">Enter Title 1 Here</h3></div>
-	<div class="large-3 columns">
-	<img style="width: 100%; height: 250px;" src='https://nhl.bamcontent.com/images/photos/286402666/1024x576/cut.jpg'>
-	<h3 class="flashtitle">Enter Title 1 Here</h3></div>
-</div>
-
-<div style="background-color: #f7f7f7; margin-top: 50px;">
+<div style="background-color: #f5f5f5; margin-top: 30px;">
 <div class="row" style="width:90%; background-color: #f7f7f7; padding-top: 20px; padding-bottom: 20px;">
-
+<h4 style="padding-left: 17px; padding-bottom:5px;">Highest rated coaches</h4>
 <div class="large-3 columns" style="background-color: #f7f7f7;">
 		<h3 class="itemheader">Baseball</h3>
 			<ul style="padding: 0px; margin: 0px;">
 				<% @top_baseball.each do |team| %>
 					<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 				<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-				<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
+				<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 				<hr style="margin: 5px;">
 				<% end %>
 			</ul>
@@ -139,7 +30,7 @@
 			<% @top_basketball.each do |team| %>
 				<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 			<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-			<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
+			<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 			<hr style="margin: 5px;">
 			<% end %>
 		</ul>
@@ -151,7 +42,7 @@
 			<% @top_football.each do |team| %>
 				<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 			<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-			<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
+			<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 			<hr style="margin: 5px;">
 			<% end %>
 		</ul>
@@ -163,11 +54,30 @@
 			<% @top_hockey.each do |team| %>
 				<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 			<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-			<%= link_to team.name, team, :style => "font-size: 24px; margin-left: 15px; color: black;" %>
+			<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 			<hr style="margin: 5px;">
 			<% end %>
 		</ul>
 </div>
 </div>
 </div>
+
+<div class="row" style="width: 90%; margin-top: 65px; background-color: white">
+	<h4 style="padding-left: 18px; padding-top: 5px;">Featured Posts</h4>
+	<div class="large-3 columns">
+			<a href="https://www.bostonsportsjournal.com/2017/12/20/much-concern-alex-guerrerobill-belichick-rift-patriots/"><img style="width: 100%; height: 250px;" src='https://d2lzcnyuvtotl1.cloudfront.net/uploads/2017/12/USATSI_10348215_168384367_lowres.jpg'></a>
+			<h3 class="flashtitle">How much of a concern is this Alex Guerrero/Bill Belichick rift for the Patriots?</h3>
+			<h5>Greg Bedard breaks down Seth Wickersham's article on the alleged rift in the Patriots organization</h5></div>
+	<div class="large-3 columns">
+			<a href="https://www.si.com/longform/2018/nba-international-oral-history/index.html"><img style="width: 100%; height: 250px;" src='https://www.si.com/longform/2018/nba-international-oral-history/img/image1.jpg'>
+			<h3 class="flashtitle">An Oral History of How the International Game Helped Forge the Modern NBA</h3>
+			<h5>Andrew Sharp of Sports Illustrated discusses the history and impact of international players in the NBA</h5></div>
+	<div class="large-3 columns">
+			<a href="https://www.theringer.com/nfl-playoffs/2018/1/25/16931792/five-team-building-lessons-season-patriots-eagles"><img style="width: 100%; height: 250px;" src='https://cdn-s3.si.com/styles/marquee_large_2x/s3/images/blake-bortles.jpg?itok=_YPjmq_X'>
+			<h3 class="flashtitle">Five Team-Building Lessons From the 2017 NFL Season</h3>
+			<h5>A look at how the NFL's best teams have built their teams in untradtional ways</h5></div>
+	<div class="large-3 columns">
+			<a href="https://www.theringer.com/nba/2017/11/9/16626208/nba-houston-rockets-3-pointers-james-harden"><img style="width: 100%; height: 250px;" src='https://cdn-s3.si.com/s3fs-public/videos/2157889318001_4052548384001_james-harden.jpg'></a>
+			<h3 class="flashtitle">Can You Take 3s Higher?</h3>
+			<h5>The Ringer's Zach Kram analyzes the Houston Rockets record breaking 3-pt shooting pace and how it compares to the rest of the NBA</h5></div>
 </div>

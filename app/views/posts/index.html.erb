@@ -10,18 +10,27 @@ body {
   font-size: 32px;
   padding-top: 5px;
   line-height: 1;}
+
+.xy{
+	font-size: 22px;
+	width: 90%;}
+
+.xyz{
+	font-size: 26px;
+	float: right;
+	width: 10%;
+	padding: 0px;
+	margin: 0px;}
 </style>
 
 <%= javascript_include_tag "foundation" %>
 <div class="row" style="width: 90%; padding: 7px;">
-
-
-
-		<h3 style="font-family: 'Catamaran', sans-serif; border-top: 3px solid #8cb2ff;"><b>The Lineup</b></h3>
-		<h4><% @posts.first(9).each do |post| %>
+	<div class="large-6 columns">
+			<h3 style="font-family: 'Catamaran', sans-serif; border-top: 3px solid #8cb2ff;"><b>The Lineup</b></h3>
+			<h4><% @posts.first(9).each do |post| %>
 			<h5 class="lineuptitle"><%= link_to (@posts.index(post)+1).to_s %>. <%= link_to post.title , post_path(post) %></h5>
-		</h4><% end %>
-	</div>
+		</h4><% end %></div>
+</div>
 
 <div style="background-color: #f5f5f5; margin-top: 30px;">
 <div class="row" style="width:90%; background-color: #f7f7f7; padding-top: 20px; padding-bottom: 20px;">
@@ -76,7 +85,7 @@ body {
 </div>
 </div>
 
-<div class="row" style="width: 90%; margin-top: 65px; background-color: white">
+<div class="row" style="width: 90%; margin-top: 50px; margin-bottom: 50px; background-color: white">
 	<h4 style="padding-left: 18px; padding-top: 5px;">Featured Posts</h4>
 	<div class="large-3 columns">
 			<a href="https://www.bostonsportsjournal.com/2017/12/20/much-concern-alex-guerrerobill-belichick-rift-patriots/"><img style="width: 100%; height: 250px;" src='https://d2lzcnyuvtotl1.cloudfront.net/uploads/2017/12/USATSI_10348215_168384367_lowres.jpg'></a>
@@ -94,4 +103,25 @@ body {
 			<a href="https://www.theringer.com/nba/2017/11/9/16626208/nba-houston-rockets-3-pointers-james-harden"><img style="width: 100%; height: 250px;" src='https://cdn-s3.si.com/s3fs-public/videos/2157889318001_4052548384001_james-harden.jpg'></a>
 			<h3 class="flashtitle">Can You Take 3s Higher?</h3>
 			<h5>The Ringer's Zach Kram analyzes the Houston Rockets record breaking 3-pt shooting pace and how it compares to the rest of the NBA</h5></div>
+</div>
+
+<div style="background-color: #f5f5f5; padding-top: 10px;">
+<div class="row" style="width: 90%; margin-top: 25px;">
+	<div class="large-1 columns"><p></p></div>
+	<div class="large-4 columns">
+			<h5 class="itemheader">Today's Writer Leaderboard</h5>
+					<ul class="x">
+						<% @users.each do |user| %>
+						<li class="xy"><%= link_to user.name, user_path(user) %> <p class="xyz"><%= user.this_weeks_score %></p></li>
+							<hr style="margin: 1px;">
+						<% end %>
+					</ul>
+	</div>
+		<div class="large-2 columns"><p></p></div>
+	<div class="large-3 columns">
+		<h3 style="text-align: center;"><b>Want to see your name on the leaderboard?<b></h3>
+		<%= link_to "Create new", new_post_path(edit: false) , :class => 'button'%>
+	</div>
+	<div class="large-2 columns"><p></p></div>
+</div>
 </div>

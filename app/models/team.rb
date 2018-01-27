@@ -39,9 +39,9 @@ class Team < ApplicationRecord
     end
   end
 
-  def pic_name 
-    return self.picture.url.split("/").last
-  end
+  # def pic_name 
+  #   return self.picture.url.split("/").last
+  # end
 
 
   def coach_debate

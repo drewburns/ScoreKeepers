@@ -39,6 +39,10 @@ class Team < ApplicationRecord
     end
   end
 
+  def pic_name 
+    return self.picture.url.split("/").last
+  end
+
 
   def coach_debate
     self.debates.where(about: "coach").first
@@ -102,7 +106,7 @@ class Team < ApplicationRecord
 
 
   def chart_data(type)
-  	total_reps = self.reputations.where(reputation_name: type)
+  	total_reps = self.evaluations.where(reputation_name: type)
   	yes_reps = total_reps.where(value: 1.0)
     no_reps = total_reps.where(value: -1.0)
 

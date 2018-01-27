@@ -31,7 +31,7 @@
 	  </div>
 
 		<br><hr>
-		<img src= <%= @post.user.full_size %> style="border-radius:50%; width: 20%; float: left; padding-right: 20px;">
+		<img src= <%= @post.user.full_size %> style="border-radius:100%; width: 100px; height:100px; float: left; margin-right: 20px;">
 		<h3><%= link_to @post.user.name, user_path(@post.user), :style => "width: 45%; font-size: 32px; float: left; padding-top: 25px;" %></h3>
 		<h5 style="width: 70%; float: left; padding-top: 10px; font-size: 24px;"><%= @post.user.bio %></h5><br>
 		<h5 style="width:33%; float: left;"><%= render partial: 'score', locals: {post: @post}%></h5>

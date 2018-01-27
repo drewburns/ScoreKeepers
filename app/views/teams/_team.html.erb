@@ -1,5 +1,5 @@
 <li class='add_or_remove_team' id="team_<%=team.id.to_s%>" style='list-style-type:none;'>
-    <%= link_to(image_tag(team.full_size, :style => "width:100px;height:100px;"), team) %>
+    <%= link_to(cl_image_tag(team.pic_name, :width => 50, :height => 50, :crop => :fill, :style => "width:75px;height:75px;"), team) %> 
     <p style="display:inline;"><%= link_to team.name, team_path(team) %> </p>
     <% if user_signed_in? %>
         <% if current_user.teams.include?(team) %>

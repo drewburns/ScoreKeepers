@@ -105,8 +105,14 @@
        <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color:#404ebc;' %> </li>
       <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color:#404ebc;' %></li>
 
+     <li class="has-dropdown">
+        <a href="#">Right Button Dropdown</a>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+          <li class=""><a href="#">Active link in dropdown</a></li>
+        </ul>
+      </li>
       <!-- <li><%= link_to "Profile" , current_user %></li> -->
-
 
     </ul>
     </section>
@@ -215,9 +221,9 @@
 
 <script type="text/javascript">
 // alert("HEUHFUEA");
-// $(document).ready(function(){
-//   $(document).foundation();
-// });
+$(document).ready(function(){
+  $(document).foundation();
+});
 
 
 $('.title-bar').on('sticky.zf.stuckto:top', function(){

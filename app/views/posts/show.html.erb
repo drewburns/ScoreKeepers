@@ -1,3 +1,9 @@
+<style>
+@import url('//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400');
+.posttitle{
+	font-family: 'Yanone Kaffeesatz', sans-serif;}
+</style>
+
 <% provide(:title , @post.title) %>
 <div class="row" style="width: 100%; margin-top: 25px;">
 	<div class="large-2 columns"><p></p></div>
@@ -31,19 +37,13 @@
 	  </div>
 
 		<br><hr>
-		<img src= <%= @post.user.full_size %> style="border-radius:50%; width: 20%; float: left; padding-right: 20px;">
-		<h3><%= link_to @post.user.name, user_path(@post.user), :style => "width: 45%; font-size: 32px; float: left; padding-top: 25px;" %></h3>
-		<h5 style="width: 70%; float: left; padding-top: 10px; font-size: 24px;"><%= @post.user.bio %></h5><br>
-		<h5 style="width:33%; float: left;"><%= render partial: 'score', locals: {post: @post}%></h5>
-		<% if @post.sport != nil %>
-		<h5 style="width:33%; float: left;"> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></h5>
-		<% end %>
-		<% if @post.teams != nil %>
-		<h5 style="width:33%; float: left;">Teams: <% for i in @post.teams %><%= link_to i.name, team_path(:id => i.id)%></h5><% end %>
-		<% end %>
+		<img src= <%= @post.user.full_size %> style="border-radius: 100%; width: 100px; height: 100px; float: left; margin-right: 20px;">
+		<h3><%= link_to @post.user.name, user_path(@post.user), :style => "width: 70%; font-weight: bold; font-size: 32px; float: left; padding-top: 2%;" %></h3>
+		<h5 style="width: 70%; float: left; padding-top: 7px; font-size: 22px;"><%= @post.user.bio %></h5><br>
+		<h5 style="width: 33%; float: left; font-size: 20px;"><%= render partial: 'score', locals: {post: @post}%></h5>
 		<hr>
 
-		<h3>Comments:</h3>
+		<h3>Comments</h3>
 		<div style="font-size: 24px;">
 				<% if user_signed_in? %>
 					<% comment = Comment.new %>

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name, presence: true
 
-  validates :bio, presence: true
+  validates :bio
 
   mount_uploader :picture, PictureUploader
   validate  :picture_size

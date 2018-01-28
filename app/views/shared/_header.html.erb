@@ -172,14 +172,14 @@
           <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
         </ul>
             <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
-        <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color: black;' %></li>
-        <li><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:black;' %></li>
+        <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color: black; font-size: 20px; font-weight: bold;' %></li>
+        <li><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:black; font-size: 20px; font-weight: bold;' %></li>
         <li class="" ></li>
         <% if current_user.admin %>
-          <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color: black;' %></li>
+          <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color: black; font-size: 20px; font-weight: bold;' %></li>
         <% end %>
-         <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color: black;' %> </li>
-        <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color: black;' %></li>
+         <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color: black; font-size: 20px; font-weight: bold;' %> </li>
+        <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color: black; font-size: 20px; font-weight: bold;' %></li>
       </div>
 
 
@@ -190,10 +190,10 @@
           <a href="" id="features-tab" >Features</a>
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/teams">Team Index</a></li>
-            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/rankings">Approval Ratings</a></li>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/debates">Debates</a></li>
-            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/leaderboard">Writer Rankings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/teams">Team Index</a></li>
+            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/rankings">Approval Ratings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/debates">Debates</a></li>
+            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/leaderboard">Writer Rankings</a></li>
           </ul>
         </li>
 
@@ -254,10 +254,10 @@
           <a href="" id="features-tab" >Features</a>
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/teams">Team Index</a></li>
-            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/rankings">Approval Ratings</a></li>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/debates">Debates</a></li>
-            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/leaderboard">Writer Rankings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/teams">Team Index</a></li>
+            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/rankings">Approval Ratings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/debates">Debates</a></li>
+            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/leaderboard">Writer Rankings</a></li>
           </ul>
         </li>
 

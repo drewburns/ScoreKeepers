@@ -52,7 +52,7 @@ body {
 				<% @top_baseball.each do |team| %>
 					<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 				<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-				<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+				<%= link_to team.coach, team.coach_debate, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 				<hr style="margin: 5px;">
 				<% end %>
 			</ul>
@@ -64,7 +64,7 @@ body {
 			<% @top_basketball.each do |team| %>
 				<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 			<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-			<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+			<%= link_to team.coach, team.coach_debate, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 			<hr style="margin: 5px;">
 			<% end %>
 		</ul>
@@ -76,7 +76,7 @@ body {
 			<% @top_football.each do |team| %>
 				<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 			<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-			<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+			<%= link_to team.coach, team.coach_debate, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 			<hr style="margin: 5px;">
 			<% end %>
 		</ul>
@@ -88,7 +88,7 @@ body {
 			<% @top_hockey.each do |team| %>
 				<!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
 			<img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-			<%= link_to team.coach, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+			<%= link_to team.coach, team.coach_debate, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
 			<hr style="margin: 5px;">
 			<% end %>
 		</ul>

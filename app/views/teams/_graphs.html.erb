@@ -1,20 +1,25 @@
 <div class="">
-	<h3><%= link_to "Team Rating", @team.team_debate %> : <%= @team.score_percentage("team") %>% </h3>
+	<h2>Approval Ratings</h2>
+	<h3 style='text-align:center;'><%= link_to "Team Rating", @team.team_debate %></h3>
 	<!-- <%= pie_chart @team.chart_data("team_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "team_score") %>
 			<% if user_vote == nil %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-check'%>
+				<h2 style='display:inline;'><%= @team.score_percentage("team") %>%</h2> 
 				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% elsif user_vote == "approve" %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;" , :class => 'fi-check'%>
+				<h2 style='display:inline;'><%= @team.score_percentage("team") %>%</h2> 
 				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% else %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-check'%>
+				<h2 style='display:inline;'><%= @team.score_percentage("team") %>%</h2> 
 				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;" , :class => 'fi-x'%>
 			<% end %>
 		<% else %>
+			<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>
@@ -22,22 +27,26 @@
 	<% end %>
 </div>
 <div class="">
-	<h3><%= link_to @team.coach + " Rating", @team.coach_debate %> : <%= @team.score_percentage("coach") %>%  </h3>
+	<h3 style='text-align:center;'><%= link_to @team.coach, @team.coach_debate %></h3>
 	<!-- <%= pie_chart @team.chart_data("coach_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "coach_score") %>
 			<% if user_vote == nil %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-check' %>
+				<h2 style='display:inline;'><%= @team.score_percentage("coach") %>%</h2> 
 				<%= link_to "" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% elsif user_vote == "approve" %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;", :class => 'fi-check' %>
+				<h2 style='display:inline;'><%= @team.score_percentage("coach") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-x' %>
 			<% else %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "coach_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-check' %>
+				<h2 style='display:inline;'><%= @team.score_percentage("coach") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "coach_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;", :class => 'fi-x'%>
 			<% end %>
 		<% else %>
+		  <h2 style='text-align:center;'><%= @team.score_percentage("coach") %>%</h2>
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>
@@ -45,22 +54,26 @@
 	<% end %>
 </div>
 <div class="">
-	<h3><%= link_to "Front Office" + " Rating", @team.fo_debate %> : <%= @team.score_percentage("frontoffice") %>%  </h3>
+	<h3 style='text-align:center;'><%= link_to "Front Office", @team.fo_debate %></h3>
 	<!-- <%= pie_chart @team.chart_data("frontoffice_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "frontoffice_score") %>
 			<% if user_vote == nil %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-check'%>
+				<h2 style='display:inline;'><%= @team.score_percentage("frontoffice") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% elsif user_vote == "approve" %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;", :class => 'fi-check' %>
+				<h2 style='display:inline;'><%= @team.score_percentage("frontoffice") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% else %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-check' %>
+				<h2 style='display:inline;'><%= @team.score_percentage("frontoffice") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "frontoffice_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;", :class => 'fi-x'%>
 			<% end %>
 		<% else %>
+		  <h2 style='text-align:center;'><%= @team.score_percentage("frontoffice") %>%</h2>
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>
@@ -68,22 +81,26 @@
 	<% end %>
 </div>
 <div class="">
-	<h3><%= link_to @team.stadium + " Rating", @team.stadium_debate %> : <%= @team.score_percentage("stadium") %>%  </h3>
+	<h3 style='text-align:center;'><%= link_to @team.stadium, @team.stadium_debate %></h3>
 	<!-- <%= pie_chart @team.chart_data("stadium_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "stadium_score") %>
 			<% if user_vote == nil %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :class => 'fi-check' %>
+				<h2 style='display:inline;'><%= @team.score_percentage("stadium") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% elsif user_vote == "approve" %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;", :class => 'fi-check' %>
+				<h2 style='display:inline;'><%= @team.score_percentage("stadium") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% else %>
 				<%= link_to "" , vote_team_path(@team, vote_name: "stadium_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-check'%>
+				<h2 style='display:inline;'><%= @team.score_percentage("stadium") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "stadium_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :style => "color:red;", :class => 'fi-x'%>
 			<% end %>
 		<% else %>
+		  <h2 style='text-align:center;'><%= @team.score_percentage("stadium") %>%</h2>
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>

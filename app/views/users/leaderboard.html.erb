@@ -1,9 +1,22 @@
-<h1>Leaderboard</h1>
+<style>
+ol>li:nth-child(odd){
+    font-weight:bold;}
+</style>
 
-<ul>
-	<% @users.each do |user|%>
-		<li><%= user.name%> - <%= user.this_weeks_score %></li>
-	<% end %>
 
-</ul>
-<%= will_paginate @posts, :class => 'flickr_pagination' %>
+<div class='row' style="width: 90%">
+	<div class="large-2 columns"><p></p></div>
+	<div class="large-5 columns">
+		<h3>Writer Leaderboard</h3>
+		<ul>
+				<% @users.each do |user|%>
+					<li><%= user.name%> - <%= user.this_weeks_score %></li>
+				<% end %>
+				</ul>
+				<%= will_paginate @posts, :class => 'flickr_pagination' %>
+				</div>
+	<div class="large-3 columns">
+		<h3>How the leaderboard is calulcated</h3>
+		</div>
+	<div class="large-2 columns"><p></p></div>
+</div>

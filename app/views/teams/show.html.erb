@@ -1,46 +1,51 @@
+<style>
+.pcontent{
+  margin-left: 238px;}
+
+.ptitle a{
+  color: #000;}
+
+.pscore {
+  float: right;
+  font-size: 18px;
+  bottom: 5px;}
+
+.pauthor{
+  float: left;
+  font-size: 20px;}
+
+.pauthor a{
+  color: #89c0ff;
+  font-weight: bold;}
+
+.postscore {
+  float: right;}
+
+.vote {
+  float: right;}
+</style>
+
 <% provide(:title , @team.name) %>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <div class="row" style="width:90%">
-				<img src=<%= @team.full_size %> style="height:200px;width:200px;">
-				<h1>
-					Atlanta Braves
-				<% if user_signed_in? %>
-	        <% if current_user.teams.include?(@team) %>
-	        <% userTeam = current_user.userTeams.where(team_id:@team.id).first.id%>
-	            <%= link_to "" , user_team_path(id: userTeam), :remote => true, method: :delete, :class => 'fi-heart' , :style => "font-size:40px; color:red;"%>
-	        <% else %>
-	            <%= link_to "" , user_teams_path(user_id: current_user.id, team_id: @team.id), method: :post,  :remote => true, :class => 'fi-heart' , :style => "font-size:40px; color:grey;"%>
-	        <% end %>
+	<div class="large-3 columns" style="border-right: 1px solid #e5e5e5;">
+		<img src=<%= @team.full_size %>, style="width: 200px;" >
+		<h3 style="font-weight: bold; margin-top: 10px;">
+			<%= @team.name %>
+			<% if user_signed_in? %>
+        <% if current_user.teams.include?(@team) %>
+        <% userTeam = current_user.userTeams.where(team_id:@team.id).first.id%>
+            <%= link_to "" , user_team_path(id: userTeam), :remote => true, method: :delete, :class => 'fi-heart' , :style => "font-size:40px; color:red;"%>
+        <% else %>
+            <%= link_to "" , user_teams_path(user_id: current_user.id, team_id: @team.id), method: :post,  :remote => true, :class => 'fi-heart' , :style => "font-size:40px; color:grey;"%>
+        <% end %>
 
-    		<% end %>
-
-				</h1>
-				<h3><%= @team.users.count %> people like this team</h3>
-				<hr>
-				<%= render partial: 'teams/graphs', locals: {team: @team}%>
-	
-</div>
-
-<!-- <hr> -->
-<div class="row">
-	<div class="large-9 columns" style='float:right;'>
-		<h3> Recent <%= @team.name %> Posts </h3>
-		<% @posts.each do |post| %>
-		<div class='post'>
-			<img width="250px" src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
-			<div class="pcontent">
-				<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
-				<h6 class="pscore">Score: <%= post.score %></h6>
-				<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
-				<p class="date"></p>
-			</div>
-		</div>
-		<% end %>
-		<%= will_paginate @posts, :class => 'flickr_pagination' %>
-	</div>
-</div>
-
-<div class="large-3 columns" style="background-color: white;">
+  		<% end %>
+		</h3>
+		<h4><%= @team.users.count %> people like this team</h4>
+		<hr>
+		<%= render partial: 'teams/graphs', locals: {team: @team}%>
+		<hr>
 		<h3 class="itemheader"><%= @team.name %> Leaderboard</h3>
 			<ul class="lboardul">
 				<% @users.each do |user| %>
@@ -51,8 +56,21 @@
 							<p class="lbscore"><%= user.this_weeks_score_team(@team.id) %></p></li>
 						</div>
 						<hr style="margin: 12px;">
-
 						<% end %>
-
 			</ul>
+	</div>
+	<div class="large-9 columns" style='float:right;'>
+		<% @posts.each do |post| %>
+		<div class="large-3 columns">
+				<img src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
+				</div>
+		<div class="large-9 coumns">
+				<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
+				<h6 class="pscore">Score: <%= post.score %></h6>
+				<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
+				<p class="date"></p>
+				</div>
+		<% end %>
+		<%= will_paginate @posts, :class => 'flickr_pagination' %>
+	</div>
 </div>

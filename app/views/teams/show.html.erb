@@ -2,8 +2,21 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <div class="row" style="width:90%">
 				<img src=<%= @team.full_size %> style="height:200px;width:200px;">
+				<h1>
+					Atlanta Braves
+				<% if user_signed_in? %>
+	        <% if current_user.teams.include?(@team) %>
+	        <% userTeam = current_user.userTeams.where(team_id:@team.id).first.id%>
+	            <%= link_to "" , user_team_path(id: userTeam), :remote => true, method: :delete, :class => 'fi-heart' , :style => "font-size:40px; color:red;"%>
+	        <% else %>
+	            <%= link_to "" , user_teams_path(user_id: current_user.id, team_id: @team.id), method: :post,  :remote => true, :class => 'fi-heart' , :style => "font-size:40px; color:grey;"%>
+	        <% end %>
 
+    		<% end %>
+
+				</h1>
 				<h3><%= @team.users.count %> people like this team</h3>
+				<hr>
 				<%= render partial: 'teams/graphs', locals: {team: @team}%>
 	
 </div>

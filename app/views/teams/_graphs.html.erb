@@ -1,6 +1,6 @@
 <div class="">
-	<h3><%= link_to "Team Rating", @team.team_debate %></h3>
-	<%= pie_chart @team.chart_data("team_score"), :class => 'pie-chart' %>
+	<h3><%= link_to "Team Rating", @team.team_debate %> : <%= @team.score_percentage("team") %>% </h3>
+	<!-- <%= pie_chart @team.chart_data("team_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "team_score") %>
@@ -22,8 +22,8 @@
 	<% end %>
 </div>
 <div class="">
-	<h3><%= link_to @team.coach, @team.coach_debate %> Rating</h3>
-	<%= pie_chart @team.chart_data("coach_score"), :class => 'pie-chart' %>
+	<h3><%= link_to @team.coach + " Rating", @team.coach_debate %> : <%= @team.score_percentage("coach") %>%  </h3>
+	<!-- <%= pie_chart @team.chart_data("coach_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "coach_score") %>
@@ -45,8 +45,8 @@
 	<% end %>
 </div>
 <div class="">
-	<h3><%= link_to "Front Office", @team.fo_debate %> Rating</h3>
-	<%= pie_chart @team.chart_data("frontoffice_score"), :class => 'pie-chart' %>
+	<h3><%= link_to "Front Office" + " Rating", @team.fo_debate %> : <%= @team.score_percentage("frontoffice") %>%  </h3>
+	<!-- <%= pie_chart @team.chart_data("frontoffice_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "frontoffice_score") %>
@@ -68,8 +68,8 @@
 	<% end %>
 </div>
 <div class="">
-	<h3><%= link_to @team.stadium, @team.stadium_debate %> Rating</h3>
-	<%= pie_chart @team.chart_data("stadium_score"), :class => 'pie-chart' %>
+	<h3><%= link_to @team.stadium + " Rating", @team.stadium_debate %> : <%= @team.score_percentage("stadium") %>%  </h3>
+	<!-- <%= pie_chart @team.chart_data("stadium_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "stadium_score") %>

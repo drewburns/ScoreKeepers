@@ -69,12 +69,12 @@ Comment.all.each do |comment|
 	end
 end
 
-Team.all.each do |team|
-	Debate.create(team_id: team.id, title: team.coach, description: "What is your opinion?", about: "coach")
-	Debate.create(team_id: team.id, title: team.name + " Front Office", description: "What is your opinion?", about: "fo")
-	Debate.create(team_id: team.id, title: team.name, description: "What is your opinion?", about: "team")
-	Debate.create(team_id: team.id, title: team.stadium, description: "What is your opinion?", about: "stadium")
-end
+# Team.all.each do |team|
+# 	Debate.create(team_id: team.id, title: team.coach, description: "What is your opinion?", about: "coach")
+# 	Debate.create(team_id: team.id, title: team.name + " Front Office", description: "What is your opinion?", about: "fo")
+# 	Debate.create(team_id: team.id, title: team.name, description: "What is your opinion?", about: "team")
+# 	Debate.create(team_id: team.id, title: team.stadium, description: "What is your opinion?", about: "stadium")
+# end
 
 3.times do
 	Debate.create(team_id: Team.order("RANDOM()").limit(1).first.id, title: Faker::Simpsons.quote, description: Faker::Simpsons.quote)

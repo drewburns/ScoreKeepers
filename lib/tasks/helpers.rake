@@ -29,6 +29,15 @@ namespace :helpers do
   		team.save!
   	end
 
+    task create_team_debates: :environment do 
+      Team.all.each do |team|
+        Debate.create(team_id: team.id, title: team.coach, description: "What is your opinion?", about: "coach")
+        Debate.create(team_id: team.id, title: team.name + " Front Office", description: "What is your opinion?", about: "fo")
+        Debate.create(team_id: team.id, title: team.name, description: "What is your opinion?", about: "team")
+        Debate.create(team_id: team.id, title: team.stadium, description: "What is your opinion?", about: "stadium")
+      end
+    end
+
   end
 
 end

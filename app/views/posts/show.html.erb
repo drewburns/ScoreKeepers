@@ -1,7 +1,6 @@
 <style>
 @import url('//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400');
-.posttitle{
-	font-family: 'Yanone Kaffeesatz', sans-serif;}
+
 </style>
 
 <% provide(:title , @post.title) %>
@@ -37,23 +36,10 @@
 	  </div>
 
 		<br><hr>
-<<<<<<< HEAD
 		<img src= <%= @post.user.full_size %> style="border-radius: 100%; width: 100px; height: 100px; float: left; margin-right: 20px;">
 		<h3><%= link_to @post.user.name, user_path(@post.user), :style => "width: 70%; font-weight: bold; font-size: 32px; float: left; padding-top: 2%;" %></h3>
 		<h5 style="width: 70%; float: left; padding-top: 7px; font-size: 22px;"><%= @post.user.bio %></h5><br>
 		<h5 style="width: 33%; float: left; font-size: 20px;"><%= render partial: 'score', locals: {post: @post}%></h5>
-=======
-		<img src= <%= @post.user.full_size %> style="border-radius:100%; width: 100px; height:100px; float: left; margin-right: 20px;">
-		<h3><%= link_to @post.user.name, user_path(@post.user), :style => "width: 45%; font-size: 32px; float: left; padding-top: 25px;" %></h3>
-		<h5 style="width: 70%; float: left; padding-top: 10px; font-size: 24px;"><%= @post.user.bio %></h5><br>
-		<h5 style="width:33%; float: left;"><%= render partial: 'score', locals: {post: @post}%></h5>
-		<% if @post.sport != nil %>
-		<h5 style="width:33%; float: left;"> Sport: <%= link_to @post.sport, sports_path(:sport => @post.sport) %></h5>
-		<% end %>
-		<% if @post.teams != nil %>
-		<h5 style="width:33%; float: left;">Teams: <% for i in @post.teams %><%= link_to i.name, team_path(:id => i.id)%></h5><% end %>
-		<% end %>
->>>>>>> e76944b17cd574b10ba9d9d55e53388bdff370e9
 		<hr>
 
 		<h3>Comments</h3>

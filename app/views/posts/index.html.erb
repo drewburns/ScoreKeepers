@@ -25,7 +25,18 @@ body {
 
 <%= javascript_include_tag "foundation" %>
 <div class="row" style="width: 90%; padding: 7px;">
-	<div class="large-6 columns">
+	<div class="large-5 columns">
+		<img src="https://sportshub.cbsistatic.com/i/r/2016/09/07/fd606773-423f-40e7-a1ba-8387e6a863de/thumbnail/770x433/3300f361c0bb935051adcc74400a96a7/currylebron.jpg">
+		<h1 style="line-height: 1; font-weight: bold;">All-Star Game Lineups Announced</h1>
+	</div>
+	<div class="large-2 columns">
+		<img src="http://res.cloudinary.com/andrewburns/image/upload/v1516889974/yrf6mtb4ty2sxu0yh1pn.png">
+		<h5>Brad Marchand suspended 5 games by NHL</h5>
+		<img src="https://cdn-s3.si.com/s3fs-public/styles/marquee_large_2x/public/2017/11/11/kyrie-irving-mvp-case.jpg?itok=PWYqUSGf">
+		<h5>Kyrie/IT trade analyzed at halfway point</h5>
+
+	</div>
+	<div class="large-5 columns">
 			<h3 style="font-family: 'Catamaran', sans-serif; border-top: 3px solid #8cb2ff;"><b>The Lineup</b></h3>
 			<h4><% @posts.first(9).each do |post| %>
 			<h5 class="lineuptitle"><%= link_to (@posts.index(post)+1).to_s %>. <%= link_to post.title , post_path(post) %></h5>

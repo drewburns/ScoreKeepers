@@ -11,7 +11,7 @@
     <%=  javascript_include_tag 'foundation' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    
+
 
 <!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css"> -->
 
@@ -25,8 +25,8 @@
 
   <body>
     <%= render 'shared/header' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p class="notice" style='text-align:center;width:100%;color:green;'><%= notice %></p>
+  <p class="alert" style='text-align:center;width:100%;color:red;'><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag "application" %>
     <%= render 'shared/footer' %>

@@ -23,6 +23,7 @@
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 	<% end %>
 </div>
@@ -50,6 +51,7 @@
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 	<% end %>
 </div>
@@ -77,6 +79,7 @@
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 	<% end %>
 </div>
@@ -104,6 +107,7 @@
 			<p>Add to favorite teams to vote</p>
 		<% end %>
 	<% else %>
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 		<!-- <p>Log in to vote</p> -->
 	<% end %>

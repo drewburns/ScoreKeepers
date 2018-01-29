@@ -1,32 +1,30 @@
-<h1><%= @debate.title %></h1>
-<h3><%= @debate.description %></h3>
+<div class="large-6 columns large-centered">
+	<h1><b><%= @debate.title %></b></h1>
+		<h4><%= link_to @debate.team.name, @debate.team%></h4>
+		<hr>
+	<h4><%= @debate.description %></h4>
 
-<h6><%= link_to @debate.team.name, @debate.team%></h6>
 
-<% if @debate.picture != nil %>
-	<img id="blah" src=<%= @debate.full_size %> />
-<% end %>
+	<div class="large-12 columns large-centered medium-centered">
+	<% if user_signed_in? %>
+		<% comment = Comment.new %>
+		<%= form_for(comment) do |f| %>
+			<%= f.label :text %>
+		  <%= f.text_field :text %><br />
 
-<div class="large-10 columns large-centered medium-centered">
-<h3>Comments:</h3>
-<% if user_signed_in? %>
-	<% comment = Comment.new %>
-	<%= form_for(comment) do |f| %>
-		<%= f.label :text %>
-	  <%= f.text_field :text %><br />
+		  <%= f.hidden_field :target_type, :value => "Debate" %>
+		  <%= f.hidden_field :target_id, :value => @debate.id %>
+		  <%= f.hidden_field :user_id, :value => current_user.id%>
 
-	  <%= f.hidden_field :target_type, :value => "Debate" %>
-	  <%= f.hidden_field :target_id, :value => @debate.id %>
-	  <%= f.hidden_field :user_id, :value => current_user.id%>
-
-	  <%= f.submit  :class => 'button tiny success' %>
+		  <%= f.submit  :class => 'button tiny success' %>
+		<% end %>
 	<% end %>
-<% end %>
-</br>
-<ul id="comments-list">
-<% if @debate.comments.count != 0 %>
-	<% @debate.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
-		<%= render partial: 'comments/comment', locals: {comment: comment}%>
+	</br>
+	<ul id="comments-list">
+	<% if @debate.comments.count != 0 %>
+		<% @debate.comments.sort_by{|comment| comment.score}.reverse.each do |comment| %>
+			<%= render partial: 'comments/comment', locals: {comment: comment}%>
+		<% end %>
 	<% end %>
-<% end %>
+	</div>
 </div>

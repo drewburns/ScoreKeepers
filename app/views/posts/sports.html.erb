@@ -1,5 +1,6 @@
 <% provide(:title , @sport.capitalize) %>
-<div class="row"><br>
+<h6 style="text-align: center">Coming soon</h6>
+<!--<div class="row"><br>
 	<div class="large-6 columns">
 		<br>
 		<img src ="https://pbs.twimg.com/media/C385y28UcAAG5l1.jpg">
@@ -33,8 +34,8 @@
 			<ul>
 					<% Team.where(sport_string: params[:sport]).each do |team| %>
 					<div class="large-1 columns">
-						<!-- <img src=<%= team.picture_url %> style="width: 100%"> -->
-						<%= link_to(image_tag(team.thumb), team) %>
+	-->				<!-- <img src=<%= team.picture_url %> style="width: 100%"> -->
+	<!--					<%= link_to(image_tag(team.thumb), team) %>
 					</div>
 					<%end%>
 			</ul>
@@ -48,9 +49,9 @@
 			<h3 class="itemheader">Recent <%= @sport.capitalize %> Posts </h3>
 		<% end %>
 		<% @posts.each do |post| %>
-			<div class='post'>
+			<div class='post'> -->
 					<!-- <img width="250px" src=<%= post.full_size %>> -->
-									<img style="width:250px;" src ="https://img.buzzfeed.com/buzzfeed-static/static/2014-04/campaign_images/webdr08/9/22/21-soccer-stadiums-you-should-watch-a-game-in-bef-2-3662-1397095514-17_dblbig.jpg">
+	<!--								<img style="width:250px;" src ="https://img.buzzfeed.com/buzzfeed-static/static/2014-04/campaign_images/webdr08/9/22/21-soccer-stadiums-you-should-watch-a-game-in-bef-2-3662-1397095514-17_dblbig.jpg">
 					<div class="pcontent">
 						<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
 						<h6 class="pscore">Score: <%= post.score %></h6>
@@ -83,3 +84,4 @@
 			<% end %>
 	</div>
 </div>
+-->

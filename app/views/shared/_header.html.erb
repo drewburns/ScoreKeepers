@@ -12,7 +12,7 @@
 
 .top-bar-item label {
   text-align:center;
-  color: black;
+  color: #191919;
   font-weight: bold;
   margin-top: 10px;
   font-size:1em;
@@ -20,7 +20,7 @@
 }
 
 #features-tab {
-  background-color: black;
+  background-color: #191919;
   height: auto;
   width: auto;
   font-family: 'Karla', sans-serif;
@@ -34,7 +34,7 @@
  background-color: #383838;
 }
 #user-tab {
-  background-color: black;text-align:center;
+  background-color: #191919;text-align:center;
   height: auto;
   width: auto;
 }
@@ -47,7 +47,7 @@
 
 
 #sports-tab {
-  background-color: black;
+  background-color: #191919;
   height: auto;
   width: auto;
   font-family: 'Karla', sans-serif;
@@ -61,7 +61,7 @@
 }
 .sport-item {
   display: none;
-  background-color: black;
+  background-color: #191919;
 }
 
 .user-item {
@@ -70,12 +70,12 @@
 
 .feature-item {
   display: none;
-  background-color: black;
+  background-color: #191919;
 }
 
 
 .signed-in-item {
-  background-color: black;
+  background-color: #191919;
 }
 @media only screen and (min-width: 100px) {
 /*    body {
@@ -90,7 +90,7 @@
 }
 @media only screen and (min-width: 500px) {
 /*    body {
-        background-color: black;
+        background-color: #191919;
     }*/
   .test123 {
     display: none;
@@ -101,7 +101,7 @@
 }
 @media only screen and (min-width: 640px) {
 /*    body {
-        background-color: black;
+        background-color: #191919;
     }*/
 
   .test123 {
@@ -134,22 +134,22 @@
 }
 </style>
 
-<div class="contain-to-grid sticky large-12 columns" style="background-color: black;">
-  <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style=" height: 55px; max-width:100rem; background-color: black;position:fixed;margin-left:-15px;z-index:200;">
+<div class="contain-to-grid sticky large-12 columns" style="background-color: #191919;">
+  <nav class="top-bar large-12 columns" data-topbar role="navigation" data-options="sticky_on: large" style=" height: 55px; max-width:100rem; background-color: #191919;position:fixed;margin-left:-15px;z-index:200;">
     <div class='show-for-medium-only'>
-      <ul class="title-area" style="background-color: black; margin-left: 4%;">
+      <ul class="title-area" style="background-color: #191919; margin-left: 4%;">
         <li class="name"><a href="/"><img src="http://i65.tinypic.com/11u8fiq.png" style="width: 200px; height: 45px;"></a></li>
         <li class="toggle-topbar menu-icon"><a href="#" ><span></span></a></li>
       </ul>
     </div>
     <div class=' test123'>
-      <ul class="title-area" style="background-color: black; margin-left: 4%;">
+      <ul class="title-area" style="background-color: #191919; margin-left: 4%;">
         <li class="name"><a href="/"><img src="http://i65.tinypic.com/11u8fiq.png" style="width: 300px; height: 45px;"></a></li>
         <li class="toggle-topbar menu-icon"><a href="#" ><span></span></a></li>
       </ul>
     </div>
     <div class='show-for-small-only'>
-      <ul class="title-area" style="background-color: black; margin-left: 4%;">
+      <ul class="title-area" style="background-color: #191919; margin-left: 4%;">
         <li class="name"><a href="/"><img src="http://i65.tinypic.com/11u8fiq.png" style="width: 200px; height: 45px;"></a></li>
         <li class="toggle-topbar menu-icon"><a href="#" ><span></span></a></li>
       </ul>
@@ -164,20 +164,20 @@
       <!-- <li class=""><%= link_to "Team Index" , teams_path %></li> -->
       <div class='show-for-small-only' >
         <ul class="menu">
-          <li ><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
-          <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
-          <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
-          <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
+          <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
+          <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
+          <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
+          <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
         </ul>
             <!-- <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete" %></li> -->
-        <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color: black; font-size: 20px; font-weight: bold;' %></li>
-        <li><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:black; font-size: 20px; font-weight: bold;' %></li>
+        <li class=""><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color: #191919; font-size: 20px; font-weight: bold;' %></li>
+        <li><%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :style => 'background-color:#191919; font-size: 20px; font-weight: bold;' %></li>
         <li class="" ></li>
         <% if current_user.admin %>
-          <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color: black; font-size: 20px; font-weight: bold;' %></li>
+          <li class='signed-in-item'><%= link_to "Admin Panel", admin_path(id: current_user.id), :style => 'background-color: #191919; font-size: 20px; font-weight: bold;' %></li>
         <% end %>
-         <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color: black; font-size: 20px; font-weight: bold;' %> </li>
-        <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color: black; font-size: 20px; font-weight: bold;' %></li>
+         <li><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color: #191919; font-size: 20px; font-weight: bold;' %> </li>
+        <li ><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color: #191919; font-size: 20px; font-weight: bold;' %></li>
       </div>
 
 
@@ -188,10 +188,10 @@
           <a href="" id="features-tab" >Features</a>
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/teams">Team Index</a></li>
-            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/rankings">Approval Ratings</a></li>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/debates">Debates</a></li>
-            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/leaderboard">Writer Rankings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/teams">Team Index</a></li>
+            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/rankings">Approval Ratings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/debates">Debates</a></li>
+            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/leaderboard">Writer Rankings</a></li>
           </ul>
         </li>
 
@@ -200,12 +200,12 @@
           <a href="" id="sports-tab" style=''>Sports</a>
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
-            <li class='sport-item' style='clear:both;white-space: nowrap;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
-              <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
+            <li class='sport-item' style='clear:both;white-space: nowrap;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
+              <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
 
-            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
+            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
 
-            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a> </li>
+            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a> </li>
           </ul>
         </li>
 
@@ -214,14 +214,14 @@
         <%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :id => 'user-tab' %>
 
           <ul class='dropdown-list' style='position:absolute;z-index:100;'>
-            <li  class='user-item' style='clear:both;white-space: nowrap;'><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color:black;' %></li>
+            <li  class='user-item' style='clear:both;white-space: nowrap;'><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => 'background-color:#191919;' %></li>
             <% if current_user.admin %>
-              <li class='user-item' style='clear:both;'><%= link_to "Admin", admin_path(id: current_user.id), :style => 'background-color:black;' %></li>
+              <li class='user-item' style='clear:both;'><%= link_to "Admin", admin_path(id: current_user.id), :style => 'background-color:#191919;' %></li>
             <% end %>
 
-            <li class='user-item' style='clear:both;'><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color:black;' %></li>
+            <li class='user-item' style='clear:both;'><%= link_to "Settings" , edit_user_registration_path, :style => 'background-color:#191919;' %></li>
 
-            <li class='user-item' style='clear:both;'><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color:black;' %> </li>
+            <li class='user-item' style='clear:both;'><%= link_to "Logout" , destroy_user_session_path , method: "delete", :style => 'background-color:#191919;' %> </li>
           </ul>
         </li>
       </div>
@@ -252,10 +252,10 @@
           <a href="" id="features-tab" >Features</a>
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/teams">Team Index</a></li>
-            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/rankings">Approval Ratings</a></li>
-            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/debates">Debates</a></li>
-            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/leaderboard">Writer Rankings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/teams">Team Index</a></li>
+            <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/rankings">Approval Ratings</a></li>
+            <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/debates">Debates</a></li>
+            <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/leaderboard">Writer Rankings</a></li>
           </ul>
         </li>
 
@@ -263,55 +263,55 @@
           <a href="" id="sports-tab" style=''>Sports</a>
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
-            <li class='sport-item' style='clear:both;white-space: nowrap;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
-              <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
+            <li class='sport-item' style='clear:both;white-space: nowrap;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
+              <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
 
-            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
+            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
 
-            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a> </li>
+            <li class='sport-item' style='clear:both;'><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a> </li>
           </ul>
         </li>
 
-  <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" %></li> -->
-        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px;"%></li>
-        <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;"%></li>
-  <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;" href="/">About Us</a></li> -->
+  <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" %></li> -->
+        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px;"%></li>
+        <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;"%></li>
+  <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;" href="/">About Us</a></li> -->
       </ul>
     </div>
 
 
     <div class='show-for-small-only'>
       <ul class="right">
-        <li ><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
+        <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
 
-        <li ><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/teams">Team Index</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/rankings">Approval Ratings</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/debates">Debates</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/leaderboard">Writer Rankings</a></li>
-<!--         <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/teams">Team Index</a></li>
-        <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/rankings">Approval Ratings</a></li>
-        <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/debates">Debates</a></li>
-        <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/leaderboard">Writer Rankings</a></li> -->
-  <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" %></li> -->
-        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px;"%></li>
-        <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;"%></li>
-  <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;" href="/">About Us</a></li> -->
+        <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/teams">Team Index</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/rankings">Approval Ratings</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/debates">Debates</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/leaderboard">Writer Rankings</a></li>
+<!--         <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919;' href="/teams">Team Index</a></li>
+        <li  class='feature-item'style='clear:both;white-space: nowrap;'><a style='background-color:#191919;' href="/rankings">Approval Ratings</a></li>
+        <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919;' href="/debates">Debates</a></li>
+        <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:#191919;' href="/leaderboard">Writer Rankings</a></li> -->
+  <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" %></li> -->
+        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px;"%></li>
+        <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;"%></li>
+  <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;" href="/">About Us</a></li> -->
       </ul>
     </div>
 
     <div class='show-for-medium-only'>
       <ul class="right">
-        <li ><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
-        <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
-  <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" %></li> -->
-        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px;"%></li>
-<!--         <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;"%></li> -->
-  <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;" href="/">About Us</a></li> -->
+        <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
+        <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=hockey">NHL</a></li>
+  <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" %></li> -->
+        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px;"%></li>
+<!--         <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;"%></li> -->
+  <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;" href="/">About Us</a></li> -->
       </ul>
     </div>
 
@@ -337,8 +337,8 @@
     <label>Writer Rankings</label>
   </a>
 </div> -->
-<!-- <div class="icon-bar four-up" style="height: 45px; color: black; font-family: 'Karla', sans-serif; font-weight: bold;">
-  <a class="item" href="/debates" style="color: black;">
+<!-- <div class="icon-bar four-up" style="height: 45px; color: #191919; font-family: 'Karla', sans-serif; font-weight: bold;">
+  <a class="item" href="/debates" style="color: #191919;">
     <label>Debate</label>
   </a>
   <a class="item" href="/">

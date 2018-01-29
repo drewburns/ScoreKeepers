@@ -28,16 +28,14 @@ ul {
     font-size: 28px;
   }
 </style>
-<br><hr>
+<br>
 <div class='large-10 medium-10 small-12 large-centered medium-centered columns'>
-    <h4>Add your favorite teams by clicking the button next to the team name</h4>
-    <h5><i>Added teams will appear on your user profile</i></h5>
+    <h4><b>Team Index</b>: Add your favorite teams by clicking the button next to the team name</h4>
   <ul class="tabs" data-tabs id="example-tabs">
-    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Baseball</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Basketball</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">Football</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">Hockey</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel5" href="#panel5">Soccer</a></li>
+    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">MLB</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">NBA</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">NFL</a></li>
+    <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">NHL</a></li>
   </ul>
 <hr>
 
@@ -75,16 +73,6 @@ ul {
     <div class="tabs-panel" id="panel4">
       <ul id="basketball-teams" class=''>
         <% @teams.where(sport_string: "hockey").each do |team| %>
-          <div class="large-4 columns">
-            <li><%= render team %></li>
-          </div>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="tabs-panel" id="panel4">
-      <ul id="basketball-teams" class=''>
-        <% @teams.where(sport_string: "soccer").each do |team| %>
           <div class="large-4 columns">
             <li><%= render team %></li>
           </div>

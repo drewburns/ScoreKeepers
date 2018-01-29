@@ -1,15 +1,16 @@
 <li class='add_or_remove_team' id="team_<%=team.id.to_s%>" style='list-style-type:none;'>
-    <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:75px;height:75px;"), team) %> 
-    <p style="display:inline;"><%= link_to team.name, team_path(team) %> </p>
-    <% if user_signed_in? %>
-        <% if current_user.teams.include?(team) %>
-        <% userTeam = current_user.userTeams.where(team_id:team.id).first.id%>
-            <%= link_to "" , user_team_path(id: userTeam), :remote => true, method: :delete, :class => 'fi-heart' , :style => "font-size:25px; color:red;"%>
-        <% else %>
-            <%= link_to "" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post,  :remote => true, :class => 'fi-heart' , :style => "font-size:25px; color:grey;"%>
-        <% end %>
+  <% if user_signed_in? %>
+      <% if current_user.teams.include?(team) %>
+      <% userTeam = current_user.userTeams.where(team_id:team.id).first.id%>
+          <%= link_to "" , user_team_path(id: userTeam), :remote => true, method: :delete, :class => 'fi-heart' , :style => "font-size:21px; color:red;"%>
+      <% else %>
+          <%= link_to "" , user_teams_path(user_id: current_user.id, team_id: team.id), method: :post,  :remote => true, :class => 'fi-heart' , :style => "font-size:21px; margin-top: 10px; color:grey;"%>
+      <% end %>
 
-    <% end %>
+  <% end %>
+    <%= link_to(cl_image_tag(team.thumb, :width => 40, :height => 40, :crop => :fill, :style => "margin-left: 10px; width: 55px; height: 55px;"), team) %>
+    <p style="display:inline;"><%= link_to team.name, team_path(team), :style => "font-size: 19px; margin-left: 10px;"%> </p>
+
     </br>
     </br>
 </li>

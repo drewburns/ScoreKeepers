@@ -1,0 +1,32 @@
+<% provide(:title , "Team Rankings") %>
+
+<div id='tab-area'>
+	<ul class='sport-tabs'>
+		<li class='sport-tab'>Baseball</li>
+		<li class='sport-tab'>Football</li>
+		<li class='sport-tab'>Basketball</li>
+		<li class='sport-tab'>Hockey</li>
+	</ul>
+	<ul class='rating-tabs'>
+		<li class='rating-tab'>Team Rating</li>
+		<li class='rating-tab'>Coach Rating</li>
+		<li class='rating-tab'>Front Office Rating</li>
+		<li class='rating-tab'>Stadium Rating</li>
+	</ul>
+</div>
+
+<div id="teams-area">
+	<div class='sport-section' id='baseball-section'>
+		<ul id='baseball-teams'>
+			<% @baseball.each do |team| %>
+			<li ><%= @team.name %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class='sport-section' id='coach-section'>
+	</div>
+	<div class='sport-section' id='fo-section'>
+	</div>
+	<div class='sport-section' id='stadium-section'>
+	</div>
+</div>

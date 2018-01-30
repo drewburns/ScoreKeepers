@@ -1,5 +1,5 @@
 <%= provide(:title , "Team Index") %>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css"> -->
 <style type="text/css">
 ul {
   list-style-type: none;
@@ -13,8 +13,7 @@ ul {
     /*border-radius: 5px;*/
   }
   .sport-tab:hover {
-    background-color: white;
-    color: black;
+    background-color: blue;
   }
   .sport-tab {
     border-style: solid;
@@ -22,70 +21,106 @@ ul {
     cursor: pointer;
     text-align: center;
     height:50px;
-    background-color: #212121;
-    color: white;
-    text-align: center;
-    font-size: 28px;
+    background-color: #D3D3D3;
+  }
+  .showing {
+    display: block;
+  }
+  .hidden {
+    display: none;
   }
 </style>
 <br>
 <div class='large-10 medium-10 small-12 large-centered medium-centered columns'>
-    <h4><b>Team Index</b>: Add your favorite teams by clicking the button next to the team name</h4>
-  <ul class="tabs" data-tabs id="example-tabs">
-    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">MLB</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">NBA</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3">NFL</a></li>
-    <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4">NHL</a></li>
+  <h4><b>Team Index</b>: Add your favorite teams by clicking the button next to the team name</h4>
+  <ul id="sport-tabs" class='large-10 columns medium-12 small-12 large-centered small-centered medium-centered'>
+    <li>
+      <div class="large-3 medium-3 small-6 columns sport-tab" id='basketball-tab'>Basketball</div>
+    </li>
+    <li>
+      <div class="large-3 medium-3 small-6 columns sport-tab" id='hockey-tab'>Hockey</div>
+    </li>
+    <li>
+      <div class="large-3 medium-3  small-6 columns sport-tab" id='football-tab'>Football</div>
+    </li>
+    <li>
+      <div class="large-3 medium-3 small-6 columns sport-tab" id='baseball-tab'>Baseball</div>
+    </li>
   </ul>
 <hr>
 
-  <div class="tabs-content" data-tabs-content="example-tabs">
-    <div class="tabs-panel is-active" id="panel1">
-      <ul id="basketball-teams" class=''>
-        <% @teams.where(sport_string: "baseball").each do |team| %>
-          <div class="large-4 columns">
-            <li><%= render team %></li>
-          </div>
-        <% end %>
-      </ul>
+  <ul id="basketball-teams" class=''>
+  <% @basketball.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns'>
+      <li>
+      <%= render team %>
+      </li>
     </div>
-
-    <div class="tabs-panel" id="panel2">
-      <ul id="basketball-teams" class=''>
-        <% @teams.where(sport_string: "basketball").each do |team| %>
-          <div class="large-4 columns">
-            <li><%= render team %></li>
-          </div>
-        <% end %>
-      </ul>
+  <% end %>
+  </ul>
+  <ul id="hockey-teams" class='hidden'>
+  <% @hockey.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns'>
+      <li>
+      <%= render team %>
+      </li>
     </div>
-
-    <div class="tabs-panel" id="panel3">
-      <ul id="basketball-teams" class=''>
-        <% @teams.where(sport_string: "football").each do |team| %>
-          <div class="large-4 columns">
-            <li><%= render team %></li>
-          </div>
-        <% end %>
-      </ul>
+  <% end %>
+  </ul>
+  <ul id="football-teams" class='hidden'>
+  <% @football.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns'>
+      <li>
+      <%= render team %>
+      </li>
     </div>
-
-    <div class="tabs-panel" id="panel4">
-      <ul id="basketball-teams" class=''>
-        <% @teams.where(sport_string: "hockey").each do |team| %>
-          <div class="large-4 columns">
-            <li><%= render team %></li>
-          </div>
-        <% end %>
-      </ul>
+  <% end %>
+  </ul>
+  <ul id="baseball-teams" class='hidden'>
+  <% @baseball.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns'>
+      <li>
+      <%= render team %>
+      </li>
     </div>
+  <% end %>
+  </ul>
 
   </div>
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js"></script>
-<script>
-  $(document).foundation();
+
+<script type="text/javascript">
+  // $(document).foundation();
+  $( ".sport-tab" ).click(function(event) {
+    var sport = $(this).attr('id');
+    // alert(sport);
+
+    if ( sport == "basketball-tab"){
+      $("#basketball-teams").removeClass( "hidden" ).removeClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+
+    } else if (sport == "hockey-tab") {
+      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+    } else if (sport == "football-tab") {
+      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+    } else if (sport == "baseball-tab") {
+      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" );
+    }
+  });
+
 </script>
+
+

@@ -54,6 +54,11 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
+    @baseball = @teams.where(sport_string: "baseball")
+    @soccer = @teams.where(sport_string: "soccer")
+    @basketball = @teams.where(sport_string: "basketball")
+    @hockey = @teams.where(sport_string: "hockey")
+    @football = @teams.where(sport_string: "football")
   end
 
   def coach_ratings

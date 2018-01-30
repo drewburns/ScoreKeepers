@@ -23,14 +23,17 @@ body {
 
 .xy{
 	font-size: 22px;
-	width: 90%;}
+	width: 90%;
+	padding-top: 3px;
+	line-height: 1;}
 
 .xyz{
-	font-size: 26px;
+	font-size: 24px;
 	float: right;
 	width: 10%;
 	padding: 0px;
-	margin: 0px;}
+	margin: 0px;
+	line-height: 1;}
 </style>
 
 <%= javascript_include_tag "foundation" %>
@@ -45,11 +48,9 @@ body {
 		<a href="http://scorekeepers.us/posts/team-steph-vs-team-lebron-draft-results-released"><h2 style="line-height: 1; margin-top: 10px; font-weight: bold; font-family: 'Catamaran', sans-serif;">All-Star Game Lineups Announced</h2></a>
 	</div>
 	<div class="large-3 columns">
-		<a href="http://scorekeepers.us/posts/brad-marchand-suspended-5-games-by-nhl"><img src="http://res.cloudinary.com/andrewburns/image/upload/v1516889974/yrf6mtb4ty2sxu0yh1pn.png"></a>
-		<a href="http://scorekeepers.us/posts/brad-marchand-suspended-5-games-by-nhl"><h5 style="line-height: 1.1">Brad Marchand suspended 5 games by NHL</h5></a>
-		<a href="http://scorekeepers.us/posts/important-stats-heading-into-the-nhl-all-star-break"><img src="http://res.cloudinary.com/andrewburns/image/upload/v1517245669/omufxuro82hhgypcopxe.png"></a>
-		<a href="http://scorekeepers.us/posts/important-stats-heading-into-the-nhl-all-star-break"><h5 style="line-height: 1.1">Important Stats Heading Into the NHL All-Star Break</h5></a>
-
+		<a href="http://scorekeepers.us/posts/brad-marchand-suspended-5-games-by-nhl"><img src="http://i67.tinypic.com/9lg8q1.png"></a>
+		<a href="http://scorekeepers.us/posts/important-stats-heading-into-the-nhl-all-star-break"><img src="http://i66.tinypic.com/ao77a.png"></a>
+		<img src="http://i63.tinypic.com/10nynug.png">
 	</div>
 </div>
 
@@ -88,7 +89,6 @@ body {
 				<% end %>
 			</ul>
 </div>
-
 <div class="large-3 columns">
 	<h3 class="itemheader">Basketball</h3>
 		<ul style="padding: 0px; margin: 0px;">
@@ -100,7 +100,6 @@ body {
 			<% end %>
 		</ul>
 </div>
-
 <div class="large-3 columns">
 	<h3 class="itemheader">Football</h3>
 		<ul style="padding: 0px; margin: 0px;">
@@ -112,7 +111,6 @@ body {
 			<% end %>
 		</ul>
 </div>
-
 <div class="large-3 columns">
 	<h3 class="itemheader">Hockey</h3>
 		<ul style="padding: 0px; margin: 0px;">
@@ -126,6 +124,21 @@ body {
 </div>
 </div>
 
+<!-- Writer Leaderboard -->
+<div style="background-color: #f5f5f5; margin-top: 20px;">
+<div class="row" style="width: 90%; padding-top: 30px; padding-bottom: 30px;">
+	<div class='large-2 columns'><h3 style="text-align: center; line-height: 1.1;"><b>Writer Leaderboard</b></h3></div>
+	<ul class="x">
+		<% @users.each do |user| %>
+		<div class="large-2 columns" style="margin-top: 15px;">
+			<li class="xy"><%= link_to user.name, user_path(user) %> <p class="xyz"><%= user.this_weeks_score %></p></li>
+		</div>
+		<% end %>
+	</ul>
+</div>
+</div>
+
+<!-- Stadium Rankings -->
 <div class="row" style="width:90%; padding-top: 30px; padding-bottom: 20px;">
 <h4 style="padding-left: 14px; padding-bottom:5px; font-weight: bold;">Highest Rated Stadiums</h4>
 <div class="large-3 columns">
@@ -139,7 +152,6 @@ body {
 				<% end %>
 			</ul>
 </div>
-
 <div class="large-3 columns">
 	<h3 class="itemheader">Basketball</h3>
 		<ul style="padding: 0px; margin: 0px;">
@@ -151,7 +163,6 @@ body {
 			<% end %>
 		</ul>
 </div>
-
 <div class="large-3 columns">
 	<h3 class="itemheader">Football</h3>
 		<ul style="padding: 0px; margin: 0px;">
@@ -163,7 +174,6 @@ body {
 			<% end %>
 		</ul>
 </div>
-
 <div class="large-3 columns">
 	<h3 class="itemheader">Hockey</h3>
 		<ul style="padding: 0px; margin: 0px;">
@@ -177,21 +187,7 @@ body {
 </div>
 </div>
 
-
-
-<div class="row" style="width: 90%; margin-top: 25px;">
-	<div class='large-2 columns'>Leaderboard</div>
-	<ul class="x">
-		<% @users.each do |user| %>
-		<div class="large-2 columns">
-			<li class="xy"><%= link_to user.name, user_path(user) %> <p class="xyz"><%= user.this_weeks_score %></p></li>
-		</div>
-		<% end %>
-	</ul>
-</div>
-
-
-	<div class="large-3 columns">
+<div class="large-3 columns">
 		<h3 style="text-align: center;"><b>Want to see your name on the leaderboard?<b></h3>
 		<%= link_to "Create new", new_post_path(edit: false) , :class => 'button'%>
 	</div>

@@ -31,7 +31,7 @@
 			  </div>
 
 			  <div class="tabs-panel" id="baseball2">
-			    <% @baseball.sort_by{|team| team.stadium_score}.reverse.each do |team| %>
+			    <% @baseball.sort_by{|team| team.stadium_score}.reverse.each do |team| %>s
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
 				    <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:50px;height:50px;"), team) %>
@@ -193,7 +193,7 @@
 	  	</div>
 	  </div>
 
-	  <div class="tabs-panel" id="panel5">
+	<!--  <div class="tabs-panel" id="panel5">
 	  	<div class="tabs-panel is-active" id="panel1">
 	  		<ul class="tabs" data-tabs id="example-tabs">
 		  <li class="tabs-title is-active"><a href="#soccer1" aria-selected="true">Team Rating</a></li>
@@ -225,7 +225,7 @@
 
 				</div>
 	  	</div>
-	  </div>
+	  </div> -->
 
 
 	</div>

@@ -28,5 +28,5 @@ Pittsburgh Steelers, Mike Tomlin, front office, Heinz Field, http://cdn.bleacher
 San Francisco 49ers, Kyle Shanahan, front office, Levi's Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/san_francisco_49ers.png
 Seattle Seahawks, Pete Carroll, front office, CenturyLink Field, http://cdn.bleacherreport.net/images/team_logos/328x328/seattle_seahawks.png
 Tampa Bay Buccaneers, Dirk Koetter, front office, Raymond James Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/tampa_bay_buccaneers.png
-Tennessee Titans, Mike Mularkey, front office, Nissan Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/tennessee_titans.png
+Tennessee Titans, Mike Vrabel, front office, Nissan Stadium, http://cdn.bleacherreport.net/images/team_logos/328x328/tennessee_titans.png
 Washington Redskins, Jay Gruden, front office, FedEx Field, http://cdn.bleacherreport.net/images/team_logos/328x328/washington_redskins.png

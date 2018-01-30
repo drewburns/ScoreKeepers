@@ -28,9 +28,10 @@
 <% provide(:title , @team.name) %>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
-<div class="row" style="width:90%">
+<div class="row" style="width:95%">
+<div class="large-10 columns large-centered">
 	<div class="large-3 columns">
-		<img src=<%= @team.full_size %>, style="width: 250px; margin-left: auto; margin-right: auto; display: block;" >
+		<img src=<%= @team.full_size %>, style="width: 175px; margin-left: auto; margin-right: auto; display: block;" >
 		<h3 style="font-weight: bold; margin-top: 10px;">
 			<%= @team.name %>
 			<% if user_signed_in? %>
@@ -60,7 +61,7 @@
 						<% end %>
 			</ul>
 	</div>
-	<div class="large-9 columns" style='float:right;'>
+	<div class="large-9 columns">
 		<% @posts.each do |post| %>
 		<div class="large-3 columns">
 				<img src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
@@ -70,8 +71,9 @@
 				<h6 class="pscore">Score: <%= post.score %></h6>
 				<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
 				<p class="date"></p>
-				</div>
+			   </div>
 		<% end %>
 		<%= will_paginate @posts, :class => 'flickr_pagination' %>
 	</div>
+</div>
 </div>

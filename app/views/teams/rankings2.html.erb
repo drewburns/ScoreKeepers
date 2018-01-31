@@ -134,7 +134,7 @@ ul {
 
   <ul class="basketball-teams" class=''>
   <% @basketball.each do |team| %>
-    <div class='large-4 medium-6 small-12 columns basketball-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+    <div class='large-4 medium-6 small-12 columns basketball-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> team-name=<%=team.name%> coach-name=<%= team.coach%> stadium-name=<%= team.stadium%> stadium=<%= team.score_percentage("coach")%> frontoffice=<%= team.score_percentage("frontoffice")%> >
       <li>
 						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
 				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
@@ -144,7 +144,7 @@ ul {
   </ul>
   <ul class="hockey-teams" class='hidden'>
   <% @hockey.each do |team| %>
-    <div class='large-4 medium-6 small-12 columns hockey-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+    <div class='large-4 medium-6 small-12 columns hockey-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> team-name=<%=team.name%> coach-name=<%= team.coach%> stadium-name=<%= team.stadium%> stadium=<%= team.score_percentage("coach")%> frontoffice=<%= team.score_percentage("frontoffice")%>>
       <li>
 						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
 				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
@@ -154,7 +154,7 @@ ul {
   </ul>
   <ul class="football-teams" class='hidden'>
   <% @football.each do |team| %>
-    <div class='large-4 medium-6 small-12 columns football-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+    <div class='large-4 medium-6 small-12 columns football-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> team-name=<%=team.name%> coach-name=<%= team.coach%> stadium-name=<%= team.stadium%> stadium=<%= team.score_percentage("coach")%> frontoffice=<%= team.score_percentage("frontoffice")%>>
       <li>
 						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
 				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
@@ -164,7 +164,7 @@ ul {
   </ul>
   <ul class="baseball-teams" class='hidden'>
   <% @baseball.each do |team| %>
-    <div class='large-4 medium-6 small-12 columns baseball-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+    <div class='large-4 medium-6 small-12 columns baseball-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> team-name=<%=team.name%> coach-name=<%= team.coach%> stadium-name=<%= team.stadium%> stadium=<%= team.score_percentage("coach")%> frontoffice=<%= team.score_percentage("frontoffice")%> >
       <li>
 						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
 				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
@@ -220,7 +220,8 @@ $(".rating-tab").click(function(event) {
 	var sport = id[0];
 	var type = id[1];
 	$('.' + sport + '-item').sort(function (a, b) {
-			console.log($(a).children().children());
+			var item = $(a).children().children("p");
+			item.replaceWith("<p style='display:inline;'> Test </p>")
       var contentA =parseInt( $(a).attr(type));
       var contentB =parseInt( $(b).attr(type));
       return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;

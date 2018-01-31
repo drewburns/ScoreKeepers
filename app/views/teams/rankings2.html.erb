@@ -1,32 +1,230 @@
-<% provide(:title , "Team Rankings") %>
+<%= provide(:title , "Rankings") %>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css"> -->
+<style type="text/css">
+ul {
+  list-style-type: none;
+}
+  #teamlist {
+    clear:both;
+  }
 
-<div id='tab-area'>
-	<ul class='sport-tabs'>
-		<li class='sport-tab'>Baseball</li>
-		<li class='sport-tab'>Football</li>
-		<li class='sport-tab'>Basketball</li>
-		<li class='sport-tab'>Hockey</li>
-	</ul>
-	<ul class='rating-tabs'>
-		<li class='rating-tab'>Team Rating</li>
-		<li class='rating-tab'>Coach Rating</li>
-		<li class='rating-tab'>Front Office Rating</li>
-		<li class='rating-tab'>Stadium Rating</li>
-	</ul>
+
+  #sport-tabs {
+    /*border-radius: 5px;*/
+  }
+  .sport-tab:hover {
+    background-color: blue;
+  }
+  .sport-tab {
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    height:50px;
+    background-color: #D3D3D3;
+  }
+  .showing {
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+  .rating-tab:hover {
+    background-color: blue;
+  }
+  .rating-tab {
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    height:50px;
+    background-color: #D3D3D3;
+  }
+</style>
+<br>
+<div class='large-10 medium-10 small-12 large-centered medium-centered columns'>
+  <ul id="sport-tabs" class='large-10 columns medium-12 small-12 large-centered small-centered medium-centered'>
+    <li>
+      <div class="large-3 medium-3 small-6 columns sport-tab" id='basketball-tab'>Basketball</div>
+    </li>
+    <li>
+      <div class="large-3 medium-3 small-6 columns sport-tab" id='hockey-tab'>Hockey</div>
+    </li>
+    <li>
+      <div class="large-3 medium-3  small-6 columns sport-tab" id='football-tab'>Football</div>
+    </li>
+    <li>
+      <div class="large-3 medium-3 small-6 columns sport-tab" id='baseball-tab'>Baseball</div>
+    </li>
+  </ul>
+<hr>
+
+
+  <ul>
+	  <li class="basketball-teams" class=''>
+		  <ul class="rating-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='basketball-team-tab'>Team</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='basketball-coach-tab'>Coach</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3  small-6 columns rating-tab" id='basketball-stadium-tab'>Stadium</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='basketball-fo-tab'>Front Office</div>
+		    </li>
+		  </ul>
+	  </li>
+
+	  <li class="hockey-teams" class='hidden'>
+		  <ul class="rating-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='hockey-team-tab'>Team</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='hockey-coach-tab'>Coach</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3  small-6 columns rating-tab" id='hockey-stadium-tab'>Stadium</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='hockey-fo-tab'>Front Office</div>
+		    </li>
+		  </ul>
+	  </li>
+
+	  <li class="football-teams" class='hidden'>
+		  <ul class="rating-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='football-team-tab'>Team</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='football-coach-tab'>Coach</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3  small-6 columns rating-tab" id='football-stadium-tab'>Stadium</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='football-fo-tab'>Front Office</div>
+		    </li>
+		  </ul>
+	  </li>
+
+	  <li class="baseball-teams" class='hidden'>
+		  <ul class="rating-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='baseball-team-tab'>Team</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='baseball-coach-tab'>Coach</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3  small-6 columns rating-tab" id='baseball-stadium-tab'>Stadium</div>
+		    </li>
+		    <li>
+		      <div class="large-3 medium-3 small-6 columns rating-tab" id='baseball-fo-tab'>Front Office</div>
+		    </li>
+		  </ul>
+	  </li>
+
+  </ul>
+
+
+  <ul class="basketball-teams" class=''>
+  <% @basketball.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns basketball-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+      <li>
+						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
+      </li>
+    </div>
+  <% end %>
+  </ul>
+  <ul class="hockey-teams" class='hidden'>
+  <% @hockey.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns hockey-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+      <li>
+						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
+      </li>
+    </div>
+  <% end %>
+  </ul>
+  <ul class="football-teams" class='hidden'>
+  <% @football.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns football-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+      <li>
+						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
+      </li>
+    </div>
+  <% end %>
+  </ul>
+  <ul class="baseball-teams" class='hidden'>
+  <% @baseball.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns baseball-item' team=<%= team.score_percentage("team")%> coach=<%= team.score_percentage("team")%> stadium=<%= team.score_percentage("coach")%> fo=<%= team.score_percentage("frontoffice")%>>
+      <li>
+						<%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("stadium") %>% </p>
+      </li>
+    </div>
+  <% end %>
+  </ul>
+  </div>
+
 </div>
 
-<div id="teams-area">
-	<div class='sport-section' id='baseball-section'>
-		<ul id='baseball-teams'>
-			<% @baseball.each do |team| %>
-			<li ><%= @team.name %></li>
-			<% end %>
-		</ul>
-	</div>
-	<div class='sport-section' id='coach-section'>
-	</div>
-	<div class='sport-section' id='fo-section'>
-	</div>
-	<div class='sport-section' id='stadium-section'>
-	</div>
-</div>
+
+
+<script type="text/javascript">
+  // $(document).foundation();
+  $( document ).ready(function() {
+      $(".basketball-teams").removeClass( "hidden" ).removeClass( "hidden" );
+      $(".hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+		});
+  $( ".sport-tab" ).click(function(event) {
+    var sport = $(this).attr('id');
+    // alert(sport);
+
+    if ( sport == "basketball-tab"){
+      $(".basketball-teams").removeClass( "hidden" ).removeClass( "hidden" );
+      $(".hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+
+    } else if (sport == "hockey-tab") {
+    	// alert("HYE");
+      $(".basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".hockey-teams").removeClass( "hidden" );
+      $(".football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+    } else if (sport == "football-tab") {
+      $(".basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".football-teams").removeClass( "hidden" );
+      $(".baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+    } else if (sport == "baseball-tab") {
+      $(".basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $(".baseball-teams").removeClass( "hidden" );
+    }
+  });
+
+$(".rating-tab").click(function(event) {
+	var id = $(this).attr('id').split("-");
+	var sport = id[0];
+	var type = id[1];
+	$('.' + sport + '-item').sort(function (a, b) {
+			console.log($(a).children().children());
+      var contentA =parseInt( $(a).attr(type));
+      var contentB =parseInt( $(b).attr(type));
+      return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
+  });
+});
+
+</script>

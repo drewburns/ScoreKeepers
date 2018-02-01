@@ -60,6 +60,25 @@ class Post < ApplicationRecord
   end
 
   def thumbnail
-    picture.thumbnail
+    if self.picture.url == nil 
+      return 'http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder-300x300.png'
+    else
+      return self.picture.thumbnail
+    end
+  end
+  def thumb_url
+    if self.picture.url == nil 
+      return 'http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder-300x300.png'
+    else
+      return self.picture.thumbnail.url
+    end
+  end
+
+  def latest_time
+    if self.time_approved == nil 
+      return self.created_at
+    else
+      return self.time_approved
+    end
   end
 end

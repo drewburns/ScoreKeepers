@@ -29,6 +29,20 @@
   text-transform: uppercase;
 }
 
+.latest-tab {
+    background-color: #191919;
+  height: auto;
+  width: auto;
+  font-family: 'Karla', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.latest-tab:hover {
+    background-color: #383838;
+
+}
 
 
 #features-tab:hover {
@@ -165,6 +179,7 @@
       <!-- <li class=""><%= link_to "Team Index" , teams_path %></li> -->
       <div class='show-for-small-only' >
         <ul class="menu">
+          <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/latest">Latest</a></li>
           <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
           <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
           <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
@@ -184,9 +199,11 @@
 
       <div class='show-large-and-med'>
 
-        <li class='features-list' style='margin-right:30px;'>
+          <li class='latest-tab' style='margin-right:5px;clear:both;white-space: nowrap;'><a class='latest-tab' style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">Latest</a></li>
+        <li class='features-list' style='margin-right:10px;'>
           <!-- feauters -->
           <a href="" id="features-tab">Features</a>
+
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
             <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black; font-size: 20px; font-weight: bold;' href="/teams">Team Index</a></li>
@@ -197,7 +214,7 @@
         </li>
 
         <!-- sports -->
-        <li class='sports-list' style='margin-right:30px;'>
+        <li class='sports-list' style='margin-right:10px;'>
           <a href="" id="sports-tab" style=''>Sports</a>
 
           <ul class='dropdown-list' style='height:auto;width:auto;position:absolute;z-index:100;'>
@@ -211,7 +228,7 @@
         </li>
 
       <!-- user -->
-        <li class="user-list" style='margin-right:30px;'>
+        <li class="user-list" style='margin-right:35px;'>
         <%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :id => 'user-tab' %>
 
           <ul class='dropdown-list' style='position:absolute;z-index:100;'>

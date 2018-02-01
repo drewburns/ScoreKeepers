@@ -1,0 +1,16 @@
+<ul>
+	<% @posts.each do |post|%>
+		<li>
+			<div style='margin-bottom:20px;'>
+				<%= link_to image_tag(post.thumb_url, :style => "height:100px;width:100px;"), current_user %>
+				<h3 style='display:inline;'><%= link_to post.title , post%></h3> 
+				<h5 style='display:inline;'><%= link_to post.user.name, post.user%></h5>
+				<h5 style='display:inline;'><%= post.sport %></h5>
+
+				<h5 style='display:inline;'><%= time_ago_in_words(post.latest_time)%> ago </h5>
+			</div> 
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate @posts, :class => 'flickr_pagination' %>

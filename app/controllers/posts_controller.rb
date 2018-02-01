@@ -157,6 +157,11 @@ class PostsController < ApplicationController
     @posts = Post.where(sport: params[:sport]).where(status: 'approved').paginate(:page => params[:page], :per_page => 10)
   end
 
+  def latest
+    @posts = Post.where(status: 'approved').reverse.paginate(:page => params[:page], :per_page => 10)
+
+  end
+
   def teams
     # if params[:page].nil? || (params[:page].to_i == 1)
     #   team = params[:sport]

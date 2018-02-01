@@ -17,11 +17,21 @@
     margin-left: 25px;
     margin-top: 50px;
     position: fixed;
-    padding-top: 10px;
-  }
+    padding-top: 10px;}
+
+    body{background-color: #f5f5f5;}
 </style>
-<body style="background-color: white;">
-<br>
+<div class="large-9 columns large-centered">
+  <div class="large-3 columns" style="background-color: white; width: 350px; border: 1px solid #e5e5e5;">
+    <h4 style="padding-top: 10px;"><b>Instructions</b></h4>
+    <h6><b>1.</b> Make sure all sections are completed before working on the body of your post. If all parts are not filled out before saving, it may not save properly</h6>
+    <br><h6><b>2.</b> Recommended image sizes:<h6>
+      <h6 style="padding-left: 20px;">Height: larger than 750px</h6>
+      <h6 style="padding-left: 20px;">Width: larger than 425px</h6>
+    <br><h6><b>3.</b> Only one sport may be assigned for each post but unlimted teams can be assigned</h6>
+    <br><h6><b>4.</b> Be sure to submit your post in the creator center when finished</h6>
+  </div>
+<div class="large-8 medium-10 small-12 columns" style="background-color: white; border: 1px solid #e5e5e5;">
 <div class="editor">
   <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -53,7 +63,7 @@
           <input type="text" id="tags" value= "<%= Team.all.map{|team| team.name}.join(",") %>" >
           <%= f.hidden_field :teams, :value => nil %>
         </div>
-      </div>
+      </div><br>
 
       <div class="editor-headerimage">
         <label>Header Image:</label>
@@ -64,7 +74,7 @@
           <% if params[:edit] == 'true' %>
               <img id="image_preivew" src=<%= p.full_size %>>
           <% else %>
-              <img id="image_preivew" src="https://usatpatriotswire.files.wordpress.com/2017/09/usatsi_10264566.jpg?w=1000&h=600&crop=1">
+              <img id="image_preivew" src="">
           <% end %>
         </label>
 
@@ -72,27 +82,33 @@
 
       <div class="editor-divider">
         <br padding="50px">
-        <p>Any content highlighted in blue below will form the body of your post.  Hit the edit button above and hit the check when you are done.  Note: Saving a post here does NOT submit it for submission.  You must submit it in the Creator Center for it to be reviewed and posted.</p>
+        <h6>Any content highlighted in blue below will form the body of your post.</hr>
+        <h6>Hit the edit button above to start writing and hit the check when you are done.
+        <h6><b>Note:</b> Saving a post here does NOT submit it for submission.  You must submit it in the Creator Center for it to be reviewed and posted.</h6>
       </div>
 
 
-
+      <label>Body:</label><br>
       <div class="editor-content">
 
         <%= f.hidden_field :content, :value => nil %>
-        <div align="center" data-editable data-name="main-content" id="post-edit-block">
+        <div data-editable data-name="main-content" id="post-edit-block">
           <% if params[:edit] == 'true' %>
               <%== p.content %>
           <% else %>
-              <p>You should be able to edit this</p>
+              <p>post body</p>
         <% end %>
         </div>
         <!-- TODO: Fix this so that people can't self approve their own posts -->
         <%= f.hidden_field :status, :value => "draft" %>
     </div>
   <% end %>
+  <br><br><br><br><br><br><br>
+</div>
 </div>
 
+
+</div>
   <script>
         $('#micropost_picture').bind('change', function() {
           var size_in_megabytes = this.files[0].size/1024/1024;

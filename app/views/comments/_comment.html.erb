@@ -1,24 +1,26 @@
+<style>	@import url('//fonts.googleapis.com/css?family=Catamaran');</style>
+
 <li class="comment-li" id="comment_<%=comment.id.to_s%>">
-	<p style="display:inline;"><%= link_to comment.user.name , comment.user %></p> |
-	<p style="display:inline;">Score:  <span class='comment-score'><%= comment.score %></span></p> |
+	<p style="display:inline; font-family: 'Catamaran', sans-serif;"><%= link_to comment.user.name , comment.user %></p> |
+	<p style="display:inline; font-family: 'Catamaran', sans-serif;">Score:  <span class='comment-score'><%= comment.score %></span></p>
 
 	<% if user_signed_in? %>
 		<% if comment.score_for(current_user).to_i == 0 or comment.score_for(current_user).to_i == nil %>
-			<p style="display:inline;font-size:30px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => 'color:grey'%></p> |
-			<p style="display:inline;font-size:30px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => 'color:grey'%></p>
+			<p style="display:inline;font-size:20px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => 'color:grey'%></p>
+			<p style="display:inline;font-size:20px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => 'color:grey'%></p>
 		<% elsif comment.score_for(current_user).to_i == 1 %>
-					<p style="display:inline;color:green;font-size:30px;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => "color:green;font-size:30px;"%></p> |
+					<p style="display:inline;color:green;font-size:20px;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => "color:green;font-size:30px;"%></p>
 					<p style="display:inline;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => "color:gray;font-size:30px;"%></p>
 		<% elsif comment.score_for(current_user).to_i == -1 %>
-			<p style="display:inline;font-size:30px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => 'color:grey;'%></p> |
-			<p style="display:inline;color:red;font-size:30px;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => "color:red;"%></p>
+			<p style="display:inline;font-size:20px;color:grey;"><%=link_to "", comment_vote_path(comment, type: 'up', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "voteoncomment fi-arrow-up", :style => 'color:grey;'%></p>
+			<p style="display:inline;color:red;font-size:20px;"><%=link_to "", comment_vote_path(comment, type: 'down', user_id: current_user.id, id: comment.id), method: :post, :remote => true, :class => "downvoteoncomment fi-arrow-down", :style => "color:red;"%></p>
 		<% end %>
 
 	<% end %>
 
 
 
-	<p><%= comment.text %></p>
+	<h4 style="font-family: 'Catamaran', sans-serif; line-height:1; margin-bottom: 20px;"><%= comment.text %></h4>
 </li>
 
 <script type="text/javascript">
@@ -27,7 +29,7 @@
 	$( ".voteoncomment" ).click(function(event) {
 		// var something = $(this).parent().parent().find(".comment-score");
 
-		
+
 	});
 		$( ".downvoteoncomment" ).click(function(event) {
 		// var something = $(this).parent().parent().find(".comment-score");

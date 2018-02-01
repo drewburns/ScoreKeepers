@@ -30,13 +30,14 @@
 }
 
 .latest-tab {
-    background-color: #191919;
+  background-color: #191919;
   height: auto;
   width: auto;
   font-family: 'Karla', sans-serif;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
+
 }
 
 .latest-tab:hover {
@@ -68,6 +69,7 @@
   font-family: 'Karla', sans-serif;
   font-size: 20px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 
@@ -179,7 +181,7 @@
       <!-- <li class=""><%= link_to "Team Index" , teams_path %></li> -->
       <div class='show-for-small-only' >
         <ul class="menu">
-          <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/latest">Latest</a></li>
+          <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/latest">ARTICLES</a></li>
           <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
           <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
           <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
@@ -199,7 +201,7 @@
 
       <div class='show-large-and-med'>
 
-          <li class='latest-tab' style='margin-right:5px;clear:both;white-space: nowrap;'><a class='latest-tab' style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">Latest</a></li>
+          <li class='latest-tab' style='margin-right:5px;clear:both;white-space: nowrap;'><a class='latest-tab' style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">ARTICLES</a></li>
         <li class='features-list' style='margin-right:10px;'>
           <!-- feauters -->
           <a href="" id="features-tab">Features</a>
@@ -266,7 +268,7 @@
     <div class='test123' >
       <ul class="right">
 
-       <li class='latest-tab' style='margin-right:10px;clear:both;white-space: nowrap;'><a class='latest-tab' style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">Latest</a></li>
+       <li class='latest-tab' style='margin-right:10px;clear:both;white-space: nowrap;'><a class='latest-tab' style="font-family: 'Karla', sans-serif;background-color:#191919; font-size: 20px; font-weight: bold;" href="/latest">ARTICLES</a></li>
 
         <li class='features-list' style='margin-right:10px;'>
           <!-- feauters -->
@@ -295,8 +297,8 @@
         </li>
 
   <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" %></li> -->
-        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px;"%></li>
-        <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;"%></li>
+        <li><%= link_to "Sign In" , new_user_session_path, :style => "text-transform: uppercase; font-weight: bold; font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px;"%></li>
+        <li><%= link_to "Create Account" , new_user_registration_path, :style => "text-transform: uppercase; font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;"%></li>
   <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: #191919; color: white; font-size: 20px;" href="/">About Us</a></li> -->
       </ul>
     </div>
@@ -304,7 +306,7 @@
 
     <div class='show-for-small-only'>
       <ul class="right">
-                 <li class='latest-tab' style='margin-right:5px;clear:both;white-space: nowrap;'><a class='latest-tab' style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">Latest</a></li>
+        <li class='latest-tab' style='margin-right:5px;clear:both;white-space: nowrap;'><a class='latest-tab' style='font-family: 'Karla', sans-serif; background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">ARTICLES</a></li>
         <li ><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
         <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
         <li><a style="font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>
@@ -319,8 +321,8 @@
         <li class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/debates">Debates</a></li>
         <li  class='feature-item' style='clear:both;white-space: nowrap;'><a style='background-color:black;' href="/leaderboard">Writer Rankings</a></li> -->
   <!--       <li><%= link_to "Team Index" , teams_path, :style => "font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px; font-weight: bold;" %></li> -->
-        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px;"%></li>
-        <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;"%></li>
+        <li><%= link_to "Sign In" , new_user_session_path, :style => " font-weight: bold; text-transform: uppercase; font-family: 'Karla', sans-serif; background-color: black; color: white; font-size: 20px;"%></li>
+        <li><%= link_to "Create Account" , new_user_registration_path, :style => "font-family: 'Karla', sans-serif; text-transform: uppercase; font-weight: bold; background-color: black; color: white; font-size: 20px;"%></li>
   <!--       <li><a style="font-family: 'Karla', sans-serif; font-weight: bold; background-color: black; color: white; font-size: 20px;" href="/">About Us</a></li> -->
 
       </ul>
@@ -328,7 +330,7 @@
 
     <div class='show-for-medium-only'>
       <ul class="right">
-         <li class='latest-tab' style='margin-right:0px;clear:both;white-space: nowrap;'><a class='latest-tab' style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">Latest</a></li>
+         <li class='latest-tab' style='margin-right:0px;clear:both;white-space: nowrap;'><a class='latest-tab' style='background-color:#191919; font-size: 20px; font-weight: bold;' href="/latest">ArTICLES</a></li>
         <li ><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=baseball">MLB</a></li>
         <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=basketball">NBA</a></li>
         <li><a style="font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" href="/sports?sport=football">NFL</a></li>

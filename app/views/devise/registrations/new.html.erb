@@ -1,10 +1,10 @@
 <div style="background-image: url(); background-color: white; padding-top: 50px;">
   <div class="row" style="width:90%;">
     <div class="large-4 columns"><p></p></div>
-    <div class="large-4 columns" style="background-color: #f7f7f7; padding: 10px; border: 1px solid #e5e5e5;">
+    <div class="large-4 columns" style="background-color: #f9f9f9; padding: 10px; border: 1px solid #e5e5e5; border-radius: 3%;">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-      <h3 style="text-align: center;">Create Account</h3>
+      <h3 style="text-align: center; font-size: 20px; margin-bottom: 15px;">Create Account</h3>
       <div class="field">
         <%= f.text_field :name, autofocus: true, placeholder: "display name" %>
       </div>

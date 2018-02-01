@@ -1,17 +1,15 @@
-<div style="background-image: url(https://images6.alphacoders.com/404/404696.jpg); height: 850px; padding-top: 150px;">
-<div class="row" style="width:500px; background-color: white; padding: 10px;">
+<div style="background-image: url(https://images6.alphacoders.com/404/404696.jpg); height: 850px; padding-top: 150px; margin-top: -20px;">
+<div class="row" style="width:500px; background-color: white; padding: 10px; border-radius: 1%;">
 
-    <h3 style="text-align: center;">Log in</h3>
+    <h3 style="text-align: center; font-size: 24px; margin-bottom: 15px;">Log In</h3>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, autofocus: true, placeholder: "email" %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
@@ -19,10 +17,10 @@
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
-      <% end -%>
+      <% end -%><hr>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", :style => "width: 100%; height: 50px; font-weight: bold; font-size: 16px; background-color: #77aaff; color: white;" %>
       </div>
     <% end %>
     <br>

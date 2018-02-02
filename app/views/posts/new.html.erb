@@ -1,26 +1,25 @@
 <% provide(:title , "Content Editor") %>
 <head xmlns:text-align="http://www.w3.org/1999/xhtml">
   <%= stylesheet_link_tag 'ContentTools/build/content-tools.min' %>
-  <%= stylesheet_link_tag 'editor.css' %>
-
-
+  <!-- <%= stylesheet_link_tag 'editor.css' %>-->
   <%= javascript_include_tag 'ContentTools/build/content-tools' %>
   <%= javascript_include_tag 'ContentEdit/build/content-edit' %>
   <%= stylesheet_link_tag 'ContentEdit/build/content-edit.min' %>
   <%= javascript_include_tag 'editor' %>
   <%= javascript_include_tag 'selectize/dist/js/standalone/selectize.min' %>
   <%= stylesheet_link_tag 'selectize/dist/css/selectize' %>
-
 </head>
-<style type="text/css">
-  .ct-ignition {
-    margin-left: 25px;
-    margin-top: 50px;
-    position: fixed;
-    padding-top: 10px;}
 
-    body{background-color: #f5f5f5;}
+<style type="text/css">
+.ct-ignition {
+  margin-left: 25px;
+  margin-top: 50px;
+  position: fixed;
+  padding-top: 10px;}
+
+body{background-color: #f5f5f5;}
 </style>
+
 <div class="large-9 columns large-centered">
   <div class="large-3 columns" style="background-color: white; width: 350px; border: 1px solid #e5e5e5;">
     <h4 style="padding-top: 10px;"><b>Instructions</b></h4>

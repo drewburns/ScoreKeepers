@@ -18,7 +18,7 @@
   padding-top: 10px;}
 
 .editor-title{
-  padding-top: 0px;
+  padding-top: 10px;
   margin: 0px;
 }
 body{background-color: #f5f5f5;}
@@ -77,7 +77,7 @@ body{background-color: #f5f5f5;}
           <% if params[:edit] == 'true' %>
               <img id="image_preivew" src=<%= p.full_size %>>
           <% else %>
-              <img id="image_preivew" src="">
+              <img id="image_preivew" src="" style="width: 500px; height: 300px;">
           <% end %>
         </label>
 

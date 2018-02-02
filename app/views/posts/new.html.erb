@@ -5,22 +5,25 @@
   <%= javascript_include_tag 'ContentTools/build/content-tools' %>
   <%= javascript_include_tag 'ContentEdit/build/content-edit' %>
   <%= stylesheet_link_tag 'ContentEdit/build/content-edit.min' %>
-  <%= javascript_include_tag 'editor' %>
+  <!-- <%= javascript_include_tag 'editor' %> -->
   <%= javascript_include_tag 'selectize/dist/js/standalone/selectize.min' %>
   <%= stylesheet_link_tag 'selectize/dist/css/selectize' %>
 </head>
 
 <style type="text/css">
-.ct-ignition {
+  .ct-ignition {
   margin-left: 25px;
   margin-top: 50px;
   position: fixed;
   padding-top: 10px;}
 
+.editor-title{
+  margin: 0px;
+}
 body{background-color: #f5f5f5;}
 </style>
 
-<div class="large-4 columns">
+<div class="large-9 columns large-centered">
   <div class="large-3 columns" style="background-color: white; width: 350px; border: 1px solid #e5e5e5;">
     <h4 style="padding-top: 10px;"><b>Instructions</b></h4>
     <h6><b>1.</b> Make sure all sections are completed before working on the body of your post. If all parts are not filled out before saving, it may not save properly</h6>
@@ -30,10 +33,9 @@ body{background-color: #f5f5f5;}
     <br><h6><b>3.</b> Only one sport may be assigned for each post but unlimted teams can be assigned</h6>
     <br><h6><b>4.</b> Be sure to submit your post in the creator center when finished</h6>
   </div>
-</div>
-<div class="large-7 medium-10 small-12 columns" style="background-color: white; border: 1px solid #e5e5e5;">
-<!--<div class="editor">-->
-  <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
+  <div class="large-8 medium-10 small-12 columns" style="background-color: white; border: 1px solid #e5e5e5;">
+    <!--<div class="editor">-->
+    <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <% if params[:edit] == 'true' %>
         <% p = Post.find(params[:post]) %>
@@ -106,8 +108,6 @@ body{background-color: #f5f5f5;}
   <br><br><br><br><br><br><br>
 <!--</div>-->
 </div>
-
-
 </div>
   <script>
         $('#micropost_picture').bind('change', function() {

@@ -47,7 +47,7 @@ body{background-color: #f5f5f5;}
       <%end%>
 
       <!-- <div class="editor-title"> -->
-        <label for="post_title">Title:</label>
+        <label for="post_title" style="padding-top: 10px;">Title:</label>
         <%= f.hidden_field :title, :value => nil %>
         <% if params[:edit] == 'true' %>
             <%= f.text_field :title, :value => p.title %>
@@ -56,7 +56,6 @@ body{background-color: #f5f5f5;}
         <% end %>
       <!-- </div>-->
 
-      <div class="editor-tags" style="margin: 0px;">
         <div class="formrow">
           <label for="subject">Sport:</label>
           <%= f.select :sport, [['Baseball','baseball'],['Football','football'],['Hockey','hockey'],['Basketball','basketball'],['Soccer','soccer']], :html => {:id => 'sport'} %>
@@ -65,10 +64,8 @@ body{background-color: #f5f5f5;}
           <label for="tags">Teams:</label>
           <input type="text" id="tags" value= "<%= Team.all.map{|team| team.name}.join(",") %>" >
           <%= f.hidden_field :teams, :value => nil %>
-        </div>
-      </div><br>
+        </div><br>
 
-      <div class="editor-headerimage" style="margin: 0px;">
         <label>Header Image:</label>
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :id => "imgInp"  %>
         <%= f.hidden_field(:picture_cache) %>
@@ -81,18 +78,13 @@ body{background-color: #f5f5f5;}
           <% end %>
         </label>
 
-      </div>
-
-      <div class="editor-divider" style="margin: 0px; padding-top: 10px;"><br>
+        <br>
         <h6>Any content highlighted in blue below will form the body of your post.</hr>
         <h6>Hit the edit button above to start writing and hit the check when you are done.
-        <h6><b>Note:</b> Saving a post here does NOT submit it for submission.  You must submit it in the Creator Center for it to be reviewed and posted.</h6>
-      </div><br>
+        <h6><b>Note:</b> Saving a post here does NOT submit it for submission.  You must submit it in the Creator Center for it to be reviewed and posted.</h6><br>
 
 
-      <label>Body:</label><br>
-      <div class="editor-content" style="margin: 0px;">
-
+      <label>Body:</label>
         <%= f.hidden_field :content, :value => nil %>
         <div data-editable data-name="main-content" id="post-edit-block">
           <% if params[:edit] == 'true' %>
@@ -103,7 +95,6 @@ body{background-color: #f5f5f5;}
         </div>
         <!-- TODO: Fix this so that people can't self approve their own posts -->
         <%= f.hidden_field :status, :value => "draft" %>
-    </div>
   <% end %>
   <br><br><br><br><br><br><br>
 <!--</div>-->

@@ -32,7 +32,7 @@
     <br><h6><b>4.</b> Be sure to submit your post in the creator center when finished</h6>
   </div>
 <div class="large-8 medium-10 small-12 columns" style="background-color: white; border: 1px solid #e5e5e5;">
-<div class="editor">
+<!--<div class="editor">-->
   <%= form_for [@post], :html => {:id => 'postsubmit'} do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <% if params[:edit] == 'true' %>
@@ -104,7 +104,7 @@
     </div>
   <% end %>
   <br><br><br><br><br><br><br>
-</div>
+<!--</div>-->
 </div>
 
 

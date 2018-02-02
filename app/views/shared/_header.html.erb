@@ -223,7 +223,7 @@
         <!-- user -->
         <li class="user-list" style='margin-right:35px;'>
         <%= link_to image_tag(current_user.thumbnail, :style => "height:35px;width:35px;border-radius:50%;"), current_user, :id => 'user-tab' %>
-          <ul class='dropdown-list' style='position:absolute;z-index:100;'>
+          <ul class='dropdown-list' style='position:none;z-index:100;'>
             <li  class='user-item' style='clear:both;white-space: nowrap;'><%= link_to "Creator Center" ,  creator_path(id: current_user.id), :style => "font-family: 'Karla', sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;" %></li>
             <% if current_user.admin %>
             <li class='user-item' style='clear:both;'><%= link_to "Admin", admin_path(id: current_user.id), :style => 'font-family: "Karla", sans-serif; background-color: #191919; color: white; font-size: 20px; font-weight: bold;' %></li>

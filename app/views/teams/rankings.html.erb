@@ -1,10 +1,14 @@
 <% provide(:title , "Team Rankings") %>
+<style>
+
+</style>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
 <br>
 <div class='large-9 medium-10 small-12 large-centered medium-centered columns'>
 	<ul class="tabs" data-tabs id="example-tabs">
 	  <li class="tabs-title is-active"><a href="#panel1" aria-selected="true" style="font-size: 50%; color: black;">Baseball</a></li>
-	  <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2" style="font-size: 50%; color: black;">Basketball</a></li>
+	  <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2" style="font-size: 50%;  color: black;">Basketball</a></li>
 	  <li class="tabs-title"><a data-tabs-target="panel3" href="#panel3" style="font-size: 50%; color: black;">Football</a></li>
 	  <li class="tabs-title"><a data-tabs-target="panel4" href="#panel4" style="font-size: 50%; color: black;">Hockey</a></li>
 
@@ -23,8 +27,8 @@
 			    <% @baseball.sort_by{|team| team.score_percentage("team")}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
-				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:50px;height:50px;"), team) %>
-				    <p style='display:inline;'><%=link_to team.name, team, :style=> "margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 12px; margin-right: 20px;"><%= team.score_percentage("team") %>%</p>
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.name, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 3%;"><%= team.score_percentage("team") %>%</p>
 
 				    </div>
 			    <% end %>
@@ -34,8 +38,8 @@
 			    <% @baseball.sort_by{|team| team.score_percentage("stadium")}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:50px;height:50px;"), team) %>
-				    <p style='display:inline;'><%=link_to team.stadium, team, :style=> "margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 12px; margin-right: 20px;"><%= team.score_percentage("stadium") %>%</p>
+				    <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.stadium, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 2%;"><%= team.score_percentage("stadium") %>%</p>
 
 				    </div>
 			    <% end %>
@@ -45,8 +49,8 @@
 			    <% @baseball.sort_by{|team| team.score_percentage("coach")}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
-				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
-				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.score_percentage("coach") %>% </p>
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.coach, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 3%;"><%= team.score_percentage("coach") %>% </p>
 
 				    </div>
 			    <% end %>

@@ -45,7 +45,14 @@ namespace :helpers do
         split = line.split(",")
         team_name = split[0].strip
         coach_name = split[1].strip
-        Team.where(name: team_name).first.update(coach: coach_name)
+        team = Team.where(name: team_name).first
+        old_coach = team.coach
+
+        if old_coach != coach_name and coach_name != "Vacant"
+          Debate.create(title: coach_name, description: "What is your opinion?", about: "coach", team_id: team.id)
+        end
+        team.coach = coach_name
+        team.save
       end
     end
   end

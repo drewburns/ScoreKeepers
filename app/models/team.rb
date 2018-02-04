@@ -45,19 +45,19 @@ class Team < ApplicationRecord
 
 
   def coach_debate
-    self.debates.where(about: "coach").first
+    self.debates.where(about: "coach").last
   end
 
   def fo_debate
-    self.debates.where(about: "fo").first
+    self.debates.where(about: "fo").last
   end
 
   def team_debate
-    self.debates.where(about: "team").first
+    self.debates.where(about: "team").last
   end
 
   def stadium_debate
-    self.debates.where(about: "stadium").first
+    self.debates.where(about: "stadium").last
   end
 
   def team_score

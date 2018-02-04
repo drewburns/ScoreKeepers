@@ -1,0 +1,31 @@
+Boston Bruins, Bruce Cassidy
+Buffalo Sabres, Phil Housley
+Detroit Red Wings, Jeff Blashill
+Florida Panthers, Bob Boughner
+Montreal Canadiens, Claude Julien
+Ottawa Senators, Guy Boucher
+Tampa Bay Lightning, Jon Cooper
+Toronto Maple Leafs, Mike Babcock
+Carolina Hurricanes, Bill Peters
+Columbus Blue Jackets, John Tortorella
+New Jersey Devils, John Hynes
+New York Islanders, Doug Weight
+New York Rangers, Alain Vigneault
+Philadelphia Flyers, Dave Hakstol
+Pittsburgh Penguins, Mike Sullivan
+Washington Capitals, Barry Trotz
+Chicago Blackhawks, Joel Quenneville
+Colorado Avalanche, Jared Bednar
+Dallas Stars, Ken Hitchcock
+Minnesota Wild, Bruce Boudreau
+Nashville Predators, Peter Laviolette
+St. Louis Blues, Mike Yeo
+Winnipeg Jets, Paul Maurice
+Anaheim Ducks, Randy Carlyle
+Arizona Coyotes, Rick Tocchet
+Calgary Flames, Glen Gulutzan
+Edmonton Oilers, Todd McLellan
+Los Angeles Kings, John Stevens
+San Jose Sharks, Peter DeBoer
+Vancouver Canucks, Travis Green
+Vegas Golden Knights, Gerard Gallant

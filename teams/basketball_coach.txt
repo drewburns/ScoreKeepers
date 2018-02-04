@@ -1,0 +1,30 @@
+Atlanta Hawks, Mike Budenholzer
+Boston Celtics, Brad Stevens
+Brooklyn Nets, Kenny Atkinson
+Charlotte Hornets, Steve Clifford
+Chicago Bulls, Fred Hoiberg
+Cleveland Cavaliers, Tyronn Lue
+Dallas Mavericks, Rick Carlisle
+Denver Nuggets, Michael Malone
+Detroit Pistons, Stan Van Gundy
+Golden State Warriors, Steve Kerr
+Houston Rockets, Mike D'Antoni
+Indiana Pacers, Nate McMillan
+Los Angeles Clippers, Doc Rivers
+Los Angeles Lakers, Luke Walton
+Memphis Grizzlies, J.B. Bickerstaff
+Miami Heat, Erik Spoelstra
+Milwaukee Bucks, Joe Prunty
+Minnesota Timberwolves, Tom Thibodeau
+New Orleans Pelicans, Alvin Gentry
+New York Knicks, Jeff Hornacek
+Oklahoma City Thunder, Billy Donovan
+Orlando Magic, Frank Vogel
+Philadelphia 76ers, Brett Brown
+Phoenix Suns, Jay Triano
+Portland Trail Blazers, Terry Stotts
+Sacramento Kings, Dave Joerger
+San Antonio Spurs, Gregg Popovich
+Toronto Raptors, Dwane Casey
+Utah Jazz, Quin Snyder
+Washington Wizards, Scott Brooks

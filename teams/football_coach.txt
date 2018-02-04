@@ -1,0 +1,32 @@
+Arizona Cardinals, Steve Wilks
+Atlanta Falcons, Dan Quinn
+Baltimore Ravens, John Harbaugh
+Buffalo Bills, Sean McDermott
+Carolina Panthers, Ron Rivera
+Chicago Bears, Matt Nagy
+Cincinnati Bengals, Marvin Lewis
+Cleveland Browns, Hue Jackson
+Dallas Cowboys, Jason Garrett
+Denver Broncos, Vance Joseph
+Detroit Lions, Vacant
+Green Bay Packers, Mike McCarthy
+Houston Texans, Bill O'Brien
+Indianapolis Colts, Vacant
+Jacksonville Jaguars, Doug Marrone
+Kansas City Chiefs, Andy Reid
+Los Angeles Rams, Sean McVay
+Los Angeles Chargers, Anthony Lynn
+Miami Dolphins, Adam Gase
+Minnesota Vikings, Mike Zimmer
+New England Patriots, Bill Belichick
+New Orleans Saints, Sean Payton
+New York Giants, Pat Shurmur
+New York Jets, Todd Bowles
+Oakland Raiders, Jon Gruden
+Philadelphia Eagles, Doug Pederson
+Pittsburgh Steelers, Mike Tomlin
+San Francisco 49ers, Kyle Shanahan
+Seattle Seahawks, Pete Carroll
+Tampa Bay Buccaneers, Dirk Koetter
+Tennessee Titans, Mike Vrabel
+Washington Redskins, Jay Gruden

@@ -38,4 +38,16 @@ namespace :helpers do
     end
   end
 
+  task update_coaches: :environment do 
+    sports = ["basketball","football","hockey","baseball"]
+    sports.each do |sport|
+      File.readlines("teams/#{sport}_coach.txt").each do |line|
+        split = line.split(",")
+        team_name = split[0].strip
+        coach_name = split[1].strip
+        Team.where(name: team_name).first.update(coach: coach_name)
+      end
+    end
+  end
+
 end

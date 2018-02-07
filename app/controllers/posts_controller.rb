@@ -7,13 +7,13 @@ class PostsController < ApplicationController
   def index
     users = []
     User.all.each do |user|
-      users << user if user.posts.where('created_at >= ?', 1.week.ago).count > 0
+      users << user if user.posts.where('created_at >= ?', 1.month.ago).count > 0
     end
     @posts = Post.where(status: 'approved').paginate(:page => params[:page])
-    if Post.where('created_at >= ?', 1.week.ago).count == 0
+    if Post.where('created_at >= ?', 1.month.ago).count == 0
       @users = User.first(5)
     else
-      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.month.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
     end
     @top_baseball = Team.where(sport_string: 'baseball').sort_by{|team| team.coach_score}.reverse.first(5)
     @top_basketball = Team.where(sport_string: 'basketball').sort_by{|team| team.coach_score}.reverse.first(5)
@@ -32,12 +32,12 @@ class PostsController < ApplicationController
     # if (@post.status == "draft"u or @post.status == "rejected") and @post.user == current_user
       users = []
       User.all.each do |user|
-        users << user if user.posts.where('created_at >= ?', 1.week.ago).count > 0
+        users << user if user.posts.where('created_at >= ?', 1.month.ago).count > 0
       end
-      if Post.where('created_at >= ?', 1.week.ago).count == 0
+      if Post.where('created_at >= ?', 1.month.ago).count == 0
         @users = User.first(5)
       else
-        @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+        @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.month.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
       end
     # else
     #   redirect_to root_path
@@ -145,14 +145,14 @@ class PostsController < ApplicationController
     User.all.each do |user|
       users << user if user.posts.where(sport: @sport).count > 0
     end
-    count = Post.where('created_at >= ?', 1.week.ago).where(sport: params[:sport]).count
+    count = Post.where('created_at >= ?', 1.month.ago).where(sport: params[:sport]).count
     p "___________COUNT_______________"
     p count
     if count < 1
       @users = User.first(5)
       puts "NOT ENOGUh"
     else
-      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).where(sport:params[:sport]).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.month.ago).where(sport:params[:sport]).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
     end
     @posts = Post.where(sport: params[:sport]).where(status: 'approved').paginate(:page => params[:page], :per_page => 10)
   end

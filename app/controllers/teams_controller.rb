@@ -14,7 +14,7 @@ class TeamsController < ApplicationController
       p user
       p @team.id
       p user.team_posts(@team.id)
-      users << user if user.team_posts(@team.id).where('posts.created_at >= ?', 1.week.ago).count > 0
+      users << user if user.team_posts(@team.id).where('posts.created_at >= ?', 1.month.ago).count > 0
     end
     @posts = @team.posts.paginate(:page => params[:page])
     if @team.posts.count != 0
@@ -23,7 +23,7 @@ class TeamsController < ApplicationController
       # else
         # sorted = @team.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
         # @users = sorted.map { |post| post.user  }
-      @users = users.sort_by { |author| author.team_posts(@team.id).where('posts.created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      @users = users.sort_by { |author| author.team_posts(@team.id).where('posts.created_at >= ?', 1.month.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
       # end
       # sorted = @team.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }
       

@@ -49,7 +49,7 @@ class User < ApplicationRecord
 
   def this_weeks_score_team(team_id) 
     team = Team.find(team_id)
-    posts = team.posts.where('posts.created_at >= ?', 1.week.ago).where(user_id: self.id)
+    posts = team.posts.where('posts.created_at >= ?', 1.month.ago).where(user_id: self.id)
     scores = posts.map{|post| post.score}.inject{|sum, post| sum + post}
     if scores == nil
       return 0
@@ -60,7 +60,7 @@ class User < ApplicationRecord
 
 
 	def this_weeks_score
-		posts = self.posts.where('created_at >= ?', 1.week.ago)
+		posts = self.posts.where('created_at >= ?', 1.month.ago)
 		scores = posts.map{|post| post.score}.inject{|sum, post| sum + post}
     if scores == nil
       return 0
@@ -70,7 +70,7 @@ class User < ApplicationRecord
 	end
 
   def this_weeks_score_sport(sport)
-    posts = self.posts.where('created_at >= ?', 1.week.ago).where(sport: sport)
+    posts = self.posts.where('created_at >= ?', 1.month.ago).where(sport: sport)
     scores = posts.map{|post| post.score}.inject{|sum, post| sum + post}
 
     if scores == nil

@@ -83,14 +83,13 @@ body{background-color: #f5f5f5;}
         <h6>Hit the edit button above to start writing and hit the check when you are done.
         <h6><b>Note:</b> Saving a post here does NOT submit it for submission.  You must submit it in the Creator Center for it to be reviewed and posted.</h6><br>
 
-
       <label>Body:</label>
         <%= f.hidden_field :content, :value => nil %>
         <div data-editable data-name="main-content" id="post-edit-block">
           <% if params[:edit] == 'true' %>
               <%== p.content %>
           <% else %>
-              <p>post body</p>
+              <p>This is the post body. Once you click the blue edit button you can put your content in here.</p>
         <% end %>
         </div>
         <!-- TODO: Fix this so that people can't self approve their own posts -->

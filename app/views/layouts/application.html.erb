@@ -12,6 +12,7 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <% if Rails.env == "production"  %>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113741902-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,6 +21,7 @@
 
       gtag('config', 'UA-113741902-1');
     </script>
+    <% end %>
 
 
 

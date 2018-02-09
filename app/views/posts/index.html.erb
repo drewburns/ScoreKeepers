@@ -40,6 +40,7 @@ body {
 <div class="row">
 <div class="large-11 columns large-centered">
 	<div class="large-4 columns">
+			<div class='button small large-12 medium-12 small-12 columns' style='font-weight:bold;color:white;font-size:20px;background-color:black;'>About us</div>
 			<h3 style="font-family: 'Catamaran', sans-serif;"><b>The Lineup</b></h3>
 			<h4><% @posts.first(9).each do |post| %>
 			<h5 class="lineuptitle"><b><%= link_to (@posts.index(post)+1).to_s %>.</b>&nbsp;&nbsp;<%= link_to post.title , post_path(post) %></h5>

@@ -1,84 +1,54 @@
-<h1>About us:</h1>
-<div class="row" style="height:500px; width:100%;"><br>
-	<div class="large-4 columns">
-		<h1 style="text-align: center;">Rate</h1>
-		<a href="http://tinypic.com?ref=2vw6a95" target="_blank"><img src="http://i67.tinypic.com/2vw6a95.png" border="0" alt="Image and video hosting by TinyPic"></a>
-		<p>Rate your favorite team's coaches, ownership, and stadium</p>
-	</div>
-	<div class="large-4 columns">
-		<h1 style="text-align: center;">Rank</h1>
-	</div>
-	<div class="large-4 columns">
-		<h1 style="text-align: center;">Write</h1>
-	</div>
-</div>
+<img style="margin-top: -25px;" src="http://gohuskies.com/common/controls/image_handler.aspx?thumb_id=0&image_path=/images/2016/10/17/9.jpg">
+<p style="color: white; font-size: 50px; position: absolute; top: 18%; width: 100%; text-align: center;">WELCOME</p>
 
-
-<!--
-	<div class="large-4 columns">
-		<h4 class="lineups">The Lineup</h4>
-			<% @posts.each do |post| %>
-			<p class="lineupy"><%= link_to (@posts.index(post)+1) %></p><h4 class="lineupx"><%= link_to post.title, post_path(post) %></h4>
-			<% end %> -->
-	</div>
-</div>
-<br>
-
+<!-- Who we are -->
 <div class="row">
- <!-- <div class="large-8 columns">
-	<h3 class="yellow">Featured</h3>
-		<#% @posts.first(5).each do |post| %> -->
-
-
- <div class="large-2 columns" style="border-right: 1px solid grey;">
-	 <h3 class="itemheader">Welcome</h3>
- </div>
-
- <div class="large-6 columns" style="background-color: white;">
-	<h3 class="itemheader">Featured</h3>
-		<% @posts.first(3).each do |post| %>
-			<div class='post'>
-				<!-- <img width="150px" src=<%= post.full_size %>> -->
-				<img style="width:200px;" src ="https://img.buzzfeed.com/buzzfeed-static/static/2014-04/campaign_images/webdr08/9/22/21-soccer-stadiums-you-should-watch-a-game-in-bef-2-3662-1397095514-17_dblbig.jpg">
-				<div class="pcontent">
-					<h3 class="ptitle"><%= link_to post.title, post_path(post) %></h3>
-					<h6 class="pscore">Score: <%= post.score %></h6>
-					<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
-					<p class="date"></p>
-				</div>
-			</div>
-			<% end %>
-			<%= will_paginate @posts, :class => 'flickr_pagination' %>
+	<br><br><h2 style="margin-top: 25px; text-align: center; text-transform: uppercase;">What we do</h2><br><br>
+	<div class="large-10 columns large-centered">
+	<div class="large-4 columns" style="padding-right: 40px;">
+		<h4 style="font-weight: bold; text-transform: uppercase; color: #3071db;">bring sports writers together</h4>
+		<p>We host sports writers from small outlets on our platform to increase their audience. All writers are allowed to write and host their content here.</p>
+		</div>
+	<div class="large-4 columns" style="padding-right: 40px;">
+		<h4 style="font-weight: bold; text-transform: uppercase; color: #3071db;">give fans a voice</h4>
+		<p>The approval ratings, debates, and comment sections allow fans to have a stronger voice than other platforms.</p>
+		</div>
+	<div class="large-4 columns" style="padding-right: 40px;">
+		<h4 style="font-weight: bold; text-transform: uppercase; color: #3071db;">reader controlled content</h4>
+		<p>From the lineup to the writer leaderboard, readers determine which articles and writers they want to read.</p>
 	</div>
-<!-- 	<div class="large-4 columns">
-		<h3 class="blue">Today's Leaderboard</h3>
-		<ul class="lboardul">
-			<% @users.first(10).each do |user| %>
-			<li class="lboard"><%= link_to user.name, user_path(user) %> <p class="lbscore"><%= user.this_weeks_score %></p></li>
-			<% end %>
-		</ul>
-
-		<h3 class="itemheader1">Leaderboard</h3>
-		<% @users.each do |user| %>
-		<p><%= link_to user.name, user_path(user) %> | <%= user.this_weeks_score %></p>
-		<% end %>
-	</div>
-</div> -->
-
-<div class="row">
-<div class="large-3 columns" style="background-color: white;">
-		<h3 class="itemheader">Today's Leaderboard</h3>
-			<ul class="lboardul">
-				<% @users.each do |user| %>
-					<!-- <img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
-					<img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;">
-						<div class="lcell">
-							<li class="lboard"><%= link_to user.name, user_path(user) %>
-							<p class="lbscore"><%= user.this_weeks_score %></p></li>
-						</div>
-						<hr style="margin: 12px;">
-
-						<% end %>
-
-			</ul>
 </div>
+</div><br><br><br><br>
+
+<!-- Start Writing -->
+<div class="row" style="background-color: #256adb; padding-bottom: 50px;">
+<div class="large-10 columns large-centered"><br><br>
+	<div class="large-6 columns">
+	<h3 style="text-transform: uppercase; color: white; font-weight: bold; padding-top: 20px;">Start Writing Today</h3>
+	</div>
+	<div class="large-3 columns"><h4 style="border: 4px solid white; width: 200px; height: 60px; color: white; font-weight: bold; padding-top: 10px; text-align: center;">Sign up</h4></div>
+	<div class="large-3 columns"><h4 style="border: 4px solid white; width: 200px; height: 60px; color: white; font-weight: bold; padding-top: 10px; text-align: center;">Creator Center</h4></div>
+</div></div>
+
+<!-- Features -->
+<div class="row">
+	<br><br><h2 style="margin-top: 25px; text-align: center; text-transform: uppercase;">Features</h2><br><br>
+	<div class="large-10 columns large-centered">
+	<div class="large-4 columns" style="padding-right: 40px;">
+		<h4 style="font-weight: bold; text-transform: uppercase; color: #3071db;">Original Content</h4>
+		<p>We host original articles, podcasts, and videos from writers, fans, and content producers all over the country. Sign up and visit the creator center to post your content today.</p>
+		</div>
+	<div class="large-4 columns" style="padding-right: 40px;">
+		<h4 style="font-weight: bold; text-transform: uppercase; color: #3071db;">Approval Ratings</h4>
+		<p>Rate the coach, front office, and ownership of your favorite teams and see how they compare to the rest of the league on the Approval Rating page.</p>
+		</div>
+	<div class="large-4 columns" style="padding-right: 40px;">
+		<h4 style="font-weight: bold; text-transform: uppercase; color: #3071db;">Writer Leaderbaord</h4>
+		<p>The best writers on the website will appear at the top of the writer leaderboard. There are also writer leaderboards for each teams which allows fans to read their team's best writers</p>
+	</div>
+</div>
+</div><br><br><br><br>
+
+<!-- Contact Us -->
+<div style="height: 100px; width: 100%; background-color: #f5f5f5;">
+	<h4 style="text-align: center; padding-top: 35px; "><b>contact us</b>&nbsp;&nbsp; scorekeeper.us@gmail.com</h4></div>

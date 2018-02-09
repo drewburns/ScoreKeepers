@@ -37,25 +37,26 @@ body {
 </style>
 
 <%= javascript_include_tag "foundation" %>
-<div class="row" style="width: 90%; padding: 7px;">
-	<div class="large-3 columns">
+<div class="row">
+<div class="large-11 columns large-centered">
+	<div class="large-4 columns">
 			<h3 style="font-family: 'Catamaran', sans-serif;"><b>The Lineup</b></h3>
 			<h4><% @posts.first(9).each do |post| %>
 			<h5 class="lineuptitle"><b><%= link_to (@posts.index(post)+1).to_s %>.</b>&nbsp;&nbsp;<%= link_to post.title , post_path(post) %></h5>
 		</h4><% end %></div>
-	<div class="large-6 columns">
+	<div class="large-5 columns">
 <!-- 		<div style='width:100%;background-color:black;color:white;font-weight:bold;font-size:20px;' class='button'><a href="/posts/new">Write an article!</a></div> -->
 		<a href="http://scorekeepers.us/posts/team-steph-vs-team-lebron-draft-results-released"><img src="https://sportshub.cbsistatic.com/i/r/2016/09/07/fd606773-423f-40e7-a1ba-8387e6a863de/thumbnail/770x433/3300f361c0bb935051adcc74400a96a7/currylebron.jpg"></a>
 		<a href="http://scorekeepers.us/posts/team-steph-vs-team-lebron-draft-results-released"><h2 style="line-height: 1; margin-top: 10px; font-weight: bold; font-family: 'Catamaran', sans-serif;">All-Star Game Lineups Announced</h2></a>
 		<h5>LeBron drafts former teammate Kyrie, Westbrook and Durant while Curry gets Harden and Giannis in All-Star game draft</h5>
 		<h5><a href="http://www.nba.com/allstar/2018/schedule#/View">View the full list of NBA All-Star weekend evetns here</a></h5>
 	</div>
-	<div class="large-3 columns" style="padding-right: 15px; padding-left: 10p;x">
+	<div class="large-3 columns" style="padding-right: 15px; padding-left: 10px">
 		<a href="http://scorekeepers.us/rankings"><img style="padding-bottom: 15px;" src="http://i66.tinypic.com/2ega077.png"></a>
 		<a href="http://scorekeepers.us/leaderboard"><img style="padding-bottom: 15px;" src="http://i64.tinypic.com/2q8u26s.png"></a>
 		<a href="http://scorekeepers.us/teams"><img src="http://i65.tinypic.com/2nlwlmf.png"></a>
 	</div>
-</div>
+</div></div>
 
 <div style="background-color: #f5f5f5; margin-top: 20px;">
 <div class="row" style="width: 90%; padding-top: 20px; padding-bottom: 25px;">

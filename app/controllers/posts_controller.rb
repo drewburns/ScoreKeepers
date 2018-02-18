@@ -3,7 +3,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create new]
   before_action :correct_user!, only: [:edit,:destroy,:create]
 
-
+  def newmedia
+  end
+  
   def index
     users = []
     User.all.each do |user|
@@ -94,7 +96,7 @@ class PostsController < ApplicationController
         teams_list = post_params[:teams].split(",")
         teams_list.each do |team_string|
           team = Team.where('name LIKE ?', "%#{team_string}%")
-          3.times do 
+          3.times do
               puts "-" * 20
           end
           p team
@@ -221,7 +223,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:user_id, :title, :content, :thumbnail_url, :sport, :status, :time_approved, :admin_message, :teams, :exists, :picture, :post_id)
   end
 
-  def real_post_params 
+  def real_post_params
     return {user_id: post_params[:user_id], title: post_params[:title],content: post_params[:content],thumbnail_url: post_params[:thumbnail_url], sport: post_params[:sport],
       status: post_params[:status], time_approved: post_params[:time_approved], admin_message: post_params[:admin_message], picture: post_params[:picture]}
   end

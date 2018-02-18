@@ -48,6 +48,8 @@ Rails.application.routes.draw do
   post '/postTeams' => "post_teams#create"
   delete '/postTeams' => "post_teams#destroy"
 
+  get '/newmedia' => "posts#newmedia"
+
   # post '/userTeams' => "user_teams#create"
   # delete '/userTeams' => "user_teams#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

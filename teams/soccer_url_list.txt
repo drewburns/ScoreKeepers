@@ -1,0 +1,51 @@
+Barcelona
+http://res.cloudinary.com/andrewburns/image/upload/v1519058152/unlmxldwwpjfvehqtwy1.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/unlmxldwwpjfvehqtwy1.png
+Real Madrid
+http://res.cloudinary.com/andrewburns/image/upload/v1519058155/qogyhicsxl4j18njfvfc.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/qogyhicsxl4j18njfvfc.png
+Man United
+http://res.cloudinary.com/andrewburns/image/upload/v1519058159/mz7qw5uho7yqwhuffqhc.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/mz7qw5uho7yqwhuffqhc.png
+Chelsea
+http://res.cloudinary.com/andrewburns/image/upload/v1519058164/darl2fk9rmmbadvcxpsq.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/darl2fk9rmmbadvcxpsq.png
+Arsenal
+http://res.cloudinary.com/andrewburns/image/upload/v1519058168/slswqfeafi8ufhhvtckz.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/slswqfeafi8ufhhvtckz.png
+Bayern Munich
+http://res.cloudinary.com/andrewburns/image/upload/v1519058173/blalwec1yxjgxos3hvwn.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/blalwec1yxjgxos3hvwn.png
+Liverpool
+http://res.cloudinary.com/andrewburns/image/upload/v1519058178/xhcuyamgpzkiv6xoday8.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/xhcuyamgpzkiv6xoday8.png
+PSG
+http://res.cloudinary.com/andrewburns/image/upload/v1519058184/flcejjsrbyocew2nlp74.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/flcejjsrbyocew2nlp74.png
+Juventus
+http://res.cloudinary.com/andrewburns/image/upload/v1519058195/zuer1csfbhq3sc4457l8.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/zuer1csfbhq3sc4457l8.png
+AC Milan
+http://res.cloudinary.com/andrewburns/image/upload/v1519058200/ivjaplkptgzitjw9ywom.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/ivjaplkptgzitjw9ywom.png
+Man City
+http://res.cloudinary.com/andrewburns/image/upload/v1519058204/o6eigg9yhdcokdwdewpx.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/o6eigg9yhdcokdwdewpx.png
+Dortmund
+http://res.cloudinary.com/andrewburns/image/upload/v1519058210/w2obqgwculsbfoak2qbi.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/w2obqgwculsbfoak2qbi.png
+Atletico
+http://res.cloudinary.com/andrewburns/image/upload/v1519058214/wq63i6t7pnvjcq4o7f5v.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/wq63i6t7pnvjcq4o7f5v.png
+Tottenham
+http://res.cloudinary.com/andrewburns/image/upload/v1519058219/tkhvxopv6f3ihwcdsilv.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/tkhvxopv6f3ihwcdsilv.png
+Roma
+http://res.cloudinary.com/andrewburns/image/upload/v1519058225/s6tsse579irakzeuyosh.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/s6tsse579irakzeuyosh.png
+Leicester
+http://res.cloudinary.com/andrewburns/image/upload/v1519058233/mxd5u1wkbtztl2vnhrib.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/mxd5u1wkbtztl2vnhrib.png
+Inter
+http://res.cloudinary.com/andrewburns/image/upload/v1519058242/vhjawzrl5hvdke6nnazd.png
+http://res.cloudinary.com/andrewburns/image/upload/c_fit,h_150,w_150/vhjawzrl5hvdke6nnazd.png

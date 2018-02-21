@@ -63,10 +63,10 @@
 	</div>
 	<div class="large-9 columns">
 		<% @posts.each do |post| %>
-		<div class="large-3 columns">
+		<div class="large-4 columns">
 				<img src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
 				</div>
-		<div class="large-9 columns">
+		<div class="large-8 columns">
 				<h3 class="ptitle"> <%= link_to post.title, post_path(post) %></h3>
 				<h6 class="pscore">Score: <%= post.score %></h6>
 				<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>

@@ -1,15 +1,15 @@
 <div class="">
-	<h3 style='text-align:center;'><%= link_to "Team Rating", @team.team_debate %></h3>
+	<h3><%= link_to "Team Rating", @team.team_debate %></h3>
 	<!-- <%= pie_chart @team.chart_data("team_score"), :class => 'pie-chart' %> -->
 	<% if user_signed_in? %>
 		<% if current_user.has_favorite_team(@team) %>
 			<% user_vote = current_user.vote_status_on(@team, "team_score") %>
 			<% if user_vote == nil %>
-				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-check'%>
+				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-check' , :style => 'width: 10px;'%>
 				<h2 style='display:inline;'><%= @team.score_percentage("team") %>%</h2>
-				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
+				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x' , :style => 'width: 10px;'%>
 			<% elsif user_vote == "approve" %>
-				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green;" , :class => 'fi-check'%>
+				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'approve', user_id: current_user.id, id: @team.id), method: :post, :remote => true, :style => "color:green; width: 10px;" , :class => 'fi-check'%>
 				<h2 style='display:inline;'><%= @team.score_percentage("team") %>%</h2>
 				<%= link_to "" , vote_team_path(@team, vote_name: "team_score", type: 'disapprove', user_id: current_user.id, id: @team.id), method: :post, :remote => true , :class => 'fi-x'%>
 			<% else %>
@@ -21,7 +21,7 @@
 			<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2>
 		<% end %>
 	<% else %>
-		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2>
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 	<% end %>
 </div>
@@ -48,7 +48,7 @@
 		  <h2 style='text-align:center;'><%= @team.score_percentage("coach") %>%</h2>
 		<% end %>
 	<% else %>
-		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2>
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 	<% end %>
 </div>
@@ -75,7 +75,7 @@
 		  <h2 style='text-align:center;'><%= @team.score_percentage("frontoffice") %>%</h2>
 		<% end %>
 	<% else %>
-		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2>
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 	<% end %>
 </div>
@@ -102,7 +102,7 @@
 		  <h2 style='text-align:center;'><%= @team.score_percentage("stadium") %>%</h2>
 		<% end %>
 	<% else %>
-		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2> 
+		<h2 style='text-align:center;'><%= @team.score_percentage("team") %>%</h2>
 		<%= link_to "Log in to vote" , new_user_session_path , :class => "button tiny"%>
 		<!-- <p>Log in to vote</p> -->
 	<% end %>

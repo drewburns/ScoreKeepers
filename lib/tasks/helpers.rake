@@ -7,6 +7,53 @@ namespace :helpers do
   	end
   end
 
+  task get_soccer_url_list: :environment do
+    Team.where(sport_string: 'soccer').each do |t|
+      puts t.name
+      puts t.picture.url
+      puts t.picture.thumbnail.url
+    end
+  end
+
+  task soccer_images_from_cloud: :environment do 
+    array = []
+    File.readlines('teams/soccer_url_list.txt').each do |line|
+      # p line
+      array << line.strip
+    end
+    split_array = array.each_slice(3).to_a
+    p split_array
+
+    split_array.each do |team_array|
+      team = Team.where(name: team_array[0]).first
+      team.picture_url = team_array[1]
+      team.thumbnail_url = team_array[2]
+      team.save!
+    end
+
+
+  end
+
+  task soccer_image_to_cloud: :environment do
+    # puts "TEHEIHR"
+    array = []
+    teams = []
+    urls = []
+    File.readlines("teams/soccer_logos.txt").each do |line|
+      array << line.strip
+    end
+
+    array.each {|x| array.index(x).even? ? teams << x : urls << x}
+    (0..(urls.count-1)).to_a.each do |num|
+      team = Team.where(name: teams[num]).first
+      puts "___________________"
+      puts urls[num]
+      puts team.name
+      team.remote_picture_url = urls[num]
+      team.save!
+    end
+  end
+
   task image_urls: :environment do
   	array = []
   	image_urls = []
@@ -54,6 +101,14 @@ namespace :helpers do
         team.coach = coach_name
         team.save
       end
+    end
+  end
+
+  task add_soccer_teams: :environment do
+    File.readlines("teams/soccer.txt").each do |line|
+      name = line.strip
+      team = Team.new(name: name , sport_string: 'soccer')
+      team.save!
     end
   end
 

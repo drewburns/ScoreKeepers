@@ -37,16 +37,19 @@ ul {
   <h4 style="padding-left: 1.5%;"><b>Team Index</b>: Add your favorite teams by clicking the button next to the team name</h4>
   <ul id="sport-tabs" class='large-12 columns medium-12 small-12 large-centered small-centered medium-centered'>
     <li>
-      <div class="large-3 medium-3 small-6 columns sport-tab" id='basketball-tab'>Basketball</div>
+      <div class="large-2 medium-4 small-6 columns sport-tab" id='basketball-tab'>Basketball</div>
     </li>
     <li>
-      <div class="large-3 medium-3 small-6 columns sport-tab" id='hockey-tab'>Hockey</div>
+      <div class="large-2 medium-4 small-6 columns sport-tab" id='hockey-tab'>Hockey</div>
     </li>
     <li>
-      <div class="large-3 medium-3  small-6 columns sport-tab" id='football-tab'>Football</div>
+      <div class="large-2 medium-4  small-6 columns sport-tab" id='football-tab'>Football</div>
     </li>
     <li>
-      <div class="large-3 medium-3 small-6 columns sport-tab" id='baseball-tab'>Baseball</div>
+      <div class="large-2 medium-4 small-6 columns sport-tab" id='baseball-tab'>Baseball</div>
+    </li>
+    <li>
+      <div class="large-2 medium-4 small-6 columns sport-tab" id='soccer-tab'>Soccer</div>
     </li>
   </ul>
 <br><br><br>
@@ -87,6 +90,16 @@ ul {
   <% end %>
   </ul>
 
+  <ul id="soccer-teams" class='hidden'>
+  <% @soccer.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns'>
+      <li>
+      <%= render team %>
+      </li>
+    </div>
+  <% end %>
+  </ul>
+
   </div>
 </div>
 
@@ -103,22 +116,36 @@ ul {
       $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#soccer-teams").removeClass( "hidden" ).addClass( "hidden" );
+
 
     } else if (sport == "hockey-tab") {
       $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#hockey-teams").removeClass( "hidden" );
       $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#soccer-teams").removeClass( "hidden" ).addClass( "hidden" );
+
     } else if (sport == "football-tab") {
       $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#football-teams").removeClass( "hidden" );
       $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#soccer-teams").removeClass( "hidden" ).addClass( "hidden" );
+
     } else if (sport == "baseball-tab") {
       $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
       $("#baseball-teams").removeClass( "hidden" );
+      $("#soccer-teams").removeClass( "hidden" ).addClass( "hidden" );
+
+    } else if (sport = "soccer-tab") {
+      $("#basketball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#hockey-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#football-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#baseball-teams").removeClass( "hidden" ).addClass( "hidden" );
+      $("#soccer-teams").removeClass( "hidden" );
     }
   });
 

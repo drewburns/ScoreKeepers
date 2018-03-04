@@ -62,9 +62,9 @@
 	  <div class="tabs-panel" id="panel2">
 	  	<div class="tabs-panel is-active" id="panel1">
 	  		<ul class="tabs" data-tabs id="example-tabs">
-					<li class="tabs-title is-active" style="width: 33%"><a href="#baseball1" aria-selected="true">Team Rating</a></li>
-				  <li class="tabs-title" style="width: 34%"><a data-tabs-target="baseball2" href="#baseball2">Stadium Rating</a></li>
-				  <li class="tabs-title" style="width: 33%"><a data-tabs-target="baseball3" href="#baseball3">Coach Rating</a></li>
+		  <li class="tabs-title is-active"><a href="#basketball1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="basketball2" href="#basketball2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="basketball3" href="#basketball3">Coach Rating</a></li>
 		  <hr>
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
@@ -72,7 +72,7 @@
 			    <% @basketball.sort_by{|team| team.score_percentage("team")}.reverse.each do |team| %>
 			    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 			    <!-- <%= render team %> -->
-				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
 			    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("team") %>% </p>
 
 			    </div>
@@ -83,19 +83,19 @@
 			    <% @basketball.sort_by{|team| team.score_percentage("stadium")}.reverse.each do |team| %>
 				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
 				    <!-- <%= render team %> -->
-				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
 				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.score_percentage("stadium") %>% </p>
 
 				    </div>
 			    <% end %>
 			  </div>
 
-				<div class="tabs-panel is-active" id="baseball1">
-			    <% @baseball.sort_by{|team| team.score_percentage("coach")}.reverse.each do |team| %>
-				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
+			  <div class="tabs-panel" id="basketball3">
+			    <% @basketball.sort_by{|team| team.score_percentage("coach")}.reverse.each do |team| %>
+				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
-				    <p style='display:inline;'><%=link_to team.coach, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 3%;"><%= team.score_percentage("coach") %>%</p>
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.score_percentage("coach") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -108,29 +108,29 @@
 	  <div class="tabs-panel" id="panel3">
 	  	<div class="tabs-panel is-active" id="panel1">
 	  		<ul class="tabs" data-tabs id="example-tabs">
-					<li class="tabs-title is-active" style="width: 33%"><a href="#baseball1" aria-selected="true">Team Rating</a></li>
-				  <li class="tabs-title" style="width: 34%"><a data-tabs-target="baseball2" href="#baseball2">Stadium Rating</a></li>
-				  <li class="tabs-title" style="width: 33%"><a data-tabs-target="baseball3" href="#baseball3">Coach Rating</a></li>
+		  <li class="tabs-title is-active"><a href="#football1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="football2" href="#football2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="football3" href="#football3">Coach Rating</a></li>
 		  <hr>
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 
-				<div class="tabs-panel is-active" id="football">
+		  	<div class="tabs-panel is-active" id="football1">
 			    <% @football.sort_by{|team| team.score_percentage("team")}.reverse.each do |team| %>
-				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
-				    <!-- <%= render team %> -->
-				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
-				    <p style='display:inline;'><%=link_to team.name, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 3%;"><%= team.score_percentage("team") %>%</p>
+					    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
+					    <!-- <%= render team %> -->
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+					    <p style='display:inline;'><%=link_to team.name, team %> - <%= team.score_percentage("team") %>% </p>
 
-				    </div>
+					    </div>
 			    <% end %>
 			  </div>
 
 			  <div class="tabs-panel" id="football2">
 			    <% @football.sort_by{|team| team.score_percentage("stadium")}.reverse.each do |team| %>
-				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
+				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				    <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
-				    <p style='display:inline;'><%=link_to team.stadium, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 2%;"><%= team.score_percentage("stadium") %>%</p>
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.stadium, team %> - <%= team.score_percentage("stadium") %>% </p>
 
 				    </div>
 			    <% end %>
@@ -138,14 +138,15 @@
 
 			  <div class="tabs-panel" id="football3">
 			    <% @football.sort_by{|team| team.score_percentage("coach")}.reverse.each do |team| %>
-				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
+				    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:50px;'>
 				    <!-- <%= render team %> -->
-				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
-				    <p style='display:inline;'><%=link_to team.coach, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 3%;"><%= team.score_percentage("coach") %>% </p>
+				        <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:65px;height:65px;"), team) %>
+				    <p style='display:inline;'><%=link_to team.coach, team %> - <%= team.score_percentage("coach") %>% </p>
 
 				    </div>
 			    <% end %>
 			  </div>
+
 				</div>
 	  	</div>
 	  </div>
@@ -153,9 +154,9 @@
 	  <div class="tabs-panel" id="panel4">
 	  	<div class="tabs-panel is-active" id="panel1">
 	  		<ul class="tabs" data-tabs id="example-tabs">
-					<li class="tabs-title is-active" style="width: 33%"><a href="#baseball1" aria-selected="true">Team Rating</a></li>
-		 		 <li class="tabs-title" style="width: 34%"><a data-tabs-target="baseball2" href="#baseball2">Stadium Rating</a></li>
-		 		 <li class="tabs-title" style="width: 33%"><a data-tabs-target="baseball3" href="#baseball3">Coach Rating</a></li>
+		  <li class="tabs-title is-active"><a href="#hockey1" aria-selected="true">Team Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="hockey2" href="#hockey2">Stadium Rating</a></li>
+		  <li class="tabs-title"><a data-tabs-target="hockey3" href="#hockey3">Coach Rating</a></li>
 		  <hr>
 		  <div class="tabs-content" data-tabs-content="example-tabs">
 

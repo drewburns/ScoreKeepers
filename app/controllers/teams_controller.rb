@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
       @users = users.sort_by { |author| author.team_posts(@team.id).where('posts.created_at >= ?', 1.month.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
       # end
       # sorted = @team.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }
-      
+
       # users.sort_by { |author| author.posts.where('created_at >= ?', 1.week.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
     else
       @users = User.first(5)
@@ -76,6 +76,10 @@ class TeamsController < ApplicationController
     # render 'teams/rankings2.html.erb'
 
 
+  end
+
+  def rankings2
+    @basketball = @teams.where(sport_string: "basketball")
   end
 
 end

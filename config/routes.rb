@@ -50,6 +50,8 @@ Rails.application.routes.draw do
 
   get '/newmedia' => "posts#newmedia"
 
+  get '/rankings2' => "teams#rankings2"
+
   # post '/userTeams' => "user_teams#create"
   # delete '/userTeams' => "user_teams#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

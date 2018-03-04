@@ -83,7 +83,7 @@ class TeamsController < ApplicationController
   end
 
   def NBArankings
-    @basketball = @teams.where(sport_string: "basketball")
+    @top_basketball = Team.where(sport_string: 'basketball').sort_by{|team| team.coach_score}.reverse.first(5)
   end
 
 end

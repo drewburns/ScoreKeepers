@@ -1,11 +1,11 @@
 <h1>Hello World</h1>
 <div class="row">
-<% @baseball.sort_by{|team| team.score_percentage("team")}.reverse.each do |team| %>
-  <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
-  <!-- <%= render team %> -->
-      <%= link_to(cl_image_tag(team.thumb, :width => 50, :height => 50, :crop => :fill, :style => "width:45px;height:45px;"), team) %>
-  <p style='display:inline;'><%=link_to team.name, team, :style=> "font-size: 17px; margin-left: 7px;"%></p><p style="font-size: 18px; float: right; margin-top: 8px; margin-right: 3%;"><%= team.score_percentage("team") %>%</p>
-
-  </div>
-<% end %>
+  <ul style="padding: 0px; margin: 0px;">
+    <% @top_baseball.each do |team| %>
+      <!-- <img src="https://ih0.redbubble.net/image.318539865.1262/flat,800x800,075,f.u1.jpg" style="width:75px; height:75px; border-radius:50%;"> -->
+    <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
+    <%= link_to team.coach, team.coach_debate, :style => "font-size: 21px; margin-left: 15px; color: black; font-family: 'Catamaran', sans-serif;" %>
+    <hr style="margin: 5px;">
+    <% end %>
+  </ul>
 </div>

@@ -2,11 +2,11 @@ class UserTeamsController < ApplicationController
 	before_action :authenticate_user!
 
 	def create
-		5.times do 
+		5.times do
 			puts "ADDED"
 		end
 		@userTeam = UserTeam.new(user_team_params)
-		if @userTeam.save 
+		if @userTeam.save
 			@team = @userTeam.team
 			render :file => "teams/change.js.erb"
 			# redirect_back fallback_location: root_path, :notice => "Team added"
@@ -17,7 +17,7 @@ class UserTeamsController < ApplicationController
 	end
 
 	def destroy
-		5.times do 
+		5.times do
 			puts "DESTROY"
 		end
 		@userTeam = UserTeam.find(params[:id])

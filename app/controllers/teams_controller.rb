@@ -82,4 +82,7 @@ class TeamsController < ApplicationController
     @basketball = @teams.where(sport_string: "basketball")
   end
 
+  def NBArankings
+  end
+  
 end

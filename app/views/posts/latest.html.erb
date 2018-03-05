@@ -28,7 +28,8 @@
 	<% @posts.each do |post|%>
 		<li style="margin-bottom: 20px;">
 				<div class="large-4 columns">
-					<%= link_to image_tag(post.full, :style => "width: 100%; max-height: 230px;"), current_user %></div>
+				<%= @post.full_size, :style=> "width: 100%; max-height: 230px;" %>
+					<!--<%= link_to image_tag(post.full, :style => "width: 100%; max-height: 230px;"), current_user %>--></div>
 				<div class="large-8 columns">
 					<h5 class="sport"><%= post.sport %></h5>
 					<h3 class="title"><%= link_to post.title , post, :style => "color: #353535;"%></h3>

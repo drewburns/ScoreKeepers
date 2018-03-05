@@ -1,9 +1,50 @@
-<h1>Hello World</h1>
-<div class="row">
+<div class="large-9 columns large-centered">
+  <div class="box">
+  <h3 style="text-align: center; margin-top: 40px; margin-bottom: 15px;">team approval ratings</h3>
   <ul style="padding: 0px; margin: 0px;">
     <% @top_basketball.each do |team| %>
-    <%= link_to team.coach, team.coach_debate, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
-    <hr style="margin: 5px;">
+    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
+      <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
+      <%= link_to team.name, team, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+       <p style='display:inline;'><%= team.score_percentage("team") %>%</p>
+      <hr style="margin: 5px;">
+    </div>
+    <% end %>
+  </ul></div>
+
+  <h3 style="text-align: center; margin-top: 40px; margin-bottom: 15px;">Head Coach Approval Ratings</h3>
+  <ul style="padding: 0px; margin: 0px;">
+    <% @top_basketball.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
+      <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
+      <%= link_to team.coach, team.coach_debate, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+       <p style='display:inline;'><%= team.score_percentage("coach") %>%</p>
+      <hr style="margin: 5px;">
+    </div>
+    <% end %>
+  </ul><br>
+
+  <h3>Front Office Approval Ratings</h3>
+  <ul style="padding: 0px; margin: 0px;">
+    <% @top_basketball.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
+      <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
+      <%= link_to team.frontoffice, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+       <p style='display:inline;'><%= team.score_percentage("frontoffice") %>%</p>
+      <hr style="margin: 5px;">
+    </div>
+    <% end %>
+  </ul>
+
+  <h3>Stadium Rating</h3>
+  <ul style="padding: 0px; margin: 0px;">
+    <% @top_basketball.each do |team| %>
+    <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
+      <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
+      <%= link_to team.stadium, team.stadium_debate, :style => "font-size: 21px; margin-left: 15px; color: black;" %>
+       <p style='display:inline;'><%= team.score_percentage("stadium") %>%</p>
+      <hr style="margin: 5px;">
+    </div>
     <% end %>
   </ul>
 </div>

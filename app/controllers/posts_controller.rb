@@ -6,13 +6,13 @@ class PostsController < ApplicationController
   def index
     users = []
     User.all.each do |user|
-      users << user if user.posts.where('created_at >= ?', 1.month.ago).count > 0
+      users << user if user.posts.where('created_at >= ?', 1.year.ago).count > 0
     end
     @posts = Post.where(status: 'approved').paginate(:page => params[:page])
-    if Post.where('created_at >= ?', 1.month.ago).count == 0
+    if Post.where('created_at >= ?', 1.year.ago).count == 0
       @users = User.first(5)
     else
-      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.month.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.year.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
     end
     @top_baseball = Team.where(sport_string: 'baseball').sort_by{|team| team.coach_score}.reverse.first(5)
     @top_basketball = Team.where(sport_string: 'basketball').sort_by{|team| team.coach_score}.reverse.first(5)

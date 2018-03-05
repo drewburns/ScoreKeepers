@@ -1,7 +1,31 @@
 <div class="large-9 columns large-centered">
-  <div class="box">
+  <div class="large-2 columns">
+    <h4>NBA</h4>
+    <h5>Head Coach</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+    <h4>NHL</h4>
+    <h5>Head Coach</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+    <h4>MLB</h4>
+    <h5>Head Coach</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+    <h4>NFL</h4>
+    <h5>Head Coach</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+    <h5>Other</h5>
+  </div>
+
+<div class="large-10 columns">
+
   <h3 style="text-align: center; margin-top: 40px; margin-bottom: 15px;">team approval ratings</h3>
-  <ul style="padding: 0px; margin: 0px;">
+
     <% @top_basketball.each do |team| %>
     <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
       <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
@@ -10,10 +34,10 @@
       <hr style="margin: 5px;">
     </div>
     <% end %>
-  </ul></div>
 
-  <h3 style="text-align: center; margin-top: 40px; margin-bottom: 15px;">Head Coach Approval Ratings</h3>
-  <ul style="padding: 0px; margin: 0px;">
+
+
+  <h3 style="text-align: center; padding-top: 40px; margin-bottom: 15px; height: 50px;">Head Coach Approval Ratings</h3>
     <% @top_basketball.each do |team| %>
     <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
       <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
@@ -22,7 +46,7 @@
       <hr style="margin: 5px;">
     </div>
     <% end %>
-  </ul><br>
+
 
   <h3>Front Office Approval Ratings</h3>
   <ul style="padding: 0px; margin: 0px;">
@@ -36,6 +60,7 @@
     <% end %>
   </ul>
 
+
   <h3>Stadium Rating</h3>
   <ul style="padding: 0px; margin: 0px;">
     <% @top_basketball.each do |team| %>
@@ -47,4 +72,6 @@
     </div>
     <% end %>
   </ul>
+
+</div>
 </div>

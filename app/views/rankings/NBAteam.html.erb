@@ -6,10 +6,10 @@
     <h6>Front Office</h6>
     <h6>Ballpark</h6>
     <h5><b>NBA</b></h5>
-    <h6><a href="scorekeepers.us/nba-team-rankings">Team</a></h6>
-    <h6><a href="scorekeepers.us/nba-coach-rankings">Coach</a></h6>
-    <h6><a href="scorekeepers.us/nba-frontoffice-rankings">Front Office</a></h6>
-    <h6><a href="scorekeepers.us/nba-stadium-rankings">Stadium</a></h6>
+    <h6><a href="/nba-team-rankings">Team</a></h6>
+    <h6><a href="/nba-coach-rankings">Coach</a></h6>
+    <h6><a href="/nba-frontoffice-rankings">Front Office</a></h6>
+    <h6><a href="/nba-stadium-rankings">Stadium</a></h6>
     <h5><b>NFL</b></h5>
     <h6>Team</h6>
     <h6>Coach</h6>
@@ -24,7 +24,7 @@
 
 <div class="large-10 columns">
   <h3 style="text-align: center; margin-top: 20px; margin-bottom: 15px;">team approval ratings</h3>
-    <% @top_basketball.each do |team| %>
+    <% @basketball.sort_by{|team| team.score_percentage("team")}.reverse.each do |team| %>
     <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
       <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
       <%= link_to team.name, team, :style => "font-size: 20px; margin-left: 10px; color: black;" %>

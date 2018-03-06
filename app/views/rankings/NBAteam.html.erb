@@ -23,7 +23,7 @@
   </div>
 
 <div class="large-10 columns">
-  <h3 style="text-align: center; margin-top: 20px; margin-bottom: 15px;">Team Approval Ratings</h3>
+  <h3 style="text-align: center; margin-top: 20px; margin-bottom: 15px;"><b>Team Approval Ratings</b></h3>
     <% @basketball.sort_by{|team| team.score_percentage("team")}.reverse.each do |team| %>
     <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
       <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">

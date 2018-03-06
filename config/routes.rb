@@ -56,10 +56,15 @@ Rails.application.routes.draw do
 
   get 'podcasts' => "statics#podcasts"
 
-  get '/NBAcoach' => "rankings#NBAcoach"
 
-  get '/NBAteam' => "rankings#NBAteam"
 
+  get '/nba-coach-rankings' => "rankings#NBAcoach"
+
+  get '/nba-team-rankings' => "rankings#NBAteam"
+
+  get '/nba-frontoffice-rankings' => "rankings#NBAfrontoffice"
+
+  get '/nba-stadium-rankings' => "rankings#NBAstadium"
   # post '/userTeams' => "user_teams#create"
   # delete '/userTeams' => "user_teams#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -65,6 +65,30 @@ Rails.application.routes.draw do
   get '/nba-frontoffice-rankings' => "rankings#NBAfrontoffice"
 
   get '/nba-stadium-rankings' => "rankings#NBAstadium"
+
+  get '/mlb-coach-rankings' => "rankings#MLBcoach"
+
+  get '/mlb-team-rankings' => "rankings#MLBteam"
+
+  get '/mlb-frontoffice-rankings' => "rankings#MLBfrontoffice"
+
+  get '/mlb-stadium-rankings' => "rankings#MLBstadium"
+
+  get '/nfl-coach-rankings' => "rankings#NFLcoach"
+
+  get '/nfl-team-rankings' => "rankings#NFLteam"
+
+  get '/nfl-frontoffice-rankings' => "rankings#NFLfrontoffice"
+
+  get '/nfl-stadium-rankings' => "rankings#NFLstadium"
+
+  get '/nhl-coach-rankings' => "rankings#NHLcoach"
+
+  get '/nhl-team-rankings' => "rankings#NHLteam"
+
+  get '/nhl-frontoffice-rankings' => "rankings#NHLfrontoffice"
+
+  get '/nhl-stadium-rankings' => "rankings#NHLstadium"
   # post '/userTeams' => "user_teams#create"
   # delete '/userTeams' => "user_teams#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

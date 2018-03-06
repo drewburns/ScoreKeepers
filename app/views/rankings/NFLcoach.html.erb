@@ -1,4 +1,4 @@
-<div class="large-10 columns large-centered">
+<div class="large-9 columns large-centered">
   <div class="large-2 columns" style="padding-top: 75px;">
     <h5><b>MLB</b></h5>
     <h6><a href="/mlb-team-rankings">Team</a></h6>
@@ -23,12 +23,12 @@
   </div>
 
 <div class="large-10 columns">
-  <h3 style="text-align: center; margin-top: 20px; margin-bottom: 15px;"><b>Arena Ratings</b></h3>
-    <% @basketball.sort_by{|team| team.score_percentage("stadium")}.reverse.each do |team| %>
+  <h3 style="text-align: center; margin-top: 20px; margin-bottom: 15px;"><b>Coach Approval Ratings</b></h3>
+    <% @football.sort_by{|team| team.score_percentage("coach")}.reverse.each do |team| %>
     <div class='large-4 medium-6 small-12 columns' style='margin-bottom:10px;'>
       <img src=<%= team.thumb %> style="width:40px; height:40px; border-radius:50%;">
-      <%= link_to team.stadium, team, :style => "font-size: 18px; margin-left: 10px; color: black;" %>
-       <p style='display:inline; float: right; padding-top: 5px;'><%= team.score_percentage("stadium") %>%</p>
+      <%= link_to team.coach, team, :style => "font-size: 19px; margin-left: 15px; color: black;" %>
+       <p style='display:inline; float: right; padding-top: 5px;'><%= team.score_percentage("coach") %>%</p>
       <hr style="margin: 5px;">
     </div>
     <% end %>

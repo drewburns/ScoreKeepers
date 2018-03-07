@@ -63,17 +63,17 @@
             <hr style="margin: 12px;">
 			</ul> -->
 	</div>
-	<div class="large-9 columns">
+	<div class="large-9 columns" style>
 		<% @posts.each do |post| %>
-		<div class="large-4 columns">
-				<!-- <img/> -->
-				</div>
-		<div class="large-8 columns">
+		<div class="large-4 columns" style=''>
+			<img src=<%= post.thumb_url %> style='height:150px;width:150px;'>
+		</div>
+		<div class="large-8 columns" style='height:150px;margin-top:20px;'>
 				<h3 class="ptitle"> <%= link_to post.title, post_path(post) %></h3>
 				<h6 class="pscore">Score: <%= post.score %></h6>
 				<p class="pauthor">By: <%= link_to post.user.name, post.user %></p><hr>
 				<p></p>
-			   </div>
+		</div>
 		<% end %>
 		<%= will_paginate @posts, :class => 'flickr_pagination' %>
 </div>

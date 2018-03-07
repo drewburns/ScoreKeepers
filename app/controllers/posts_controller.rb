@@ -10,9 +10,13 @@ class PostsController < ApplicationController
     end
     @posts = Post.where(status: 'approved').paginate(:page => params[:page])
     if Post.where('created_at >= ?', 1.year.ago).count == 0
-      @users = User.first(5)
+      @users = []
     else
       @users = users.sort_by { |author| author.posts.where('created_at >= ?', 1.year.ago).map(&:score).inject { |sum, post| sum + post } }.reverse.first(5)
+      puts "BEFORE"
+      p @users
+      @users = @users.reject {|user| user.this_weeks_score == 0}
+      p @users
     end
     @top_baseball = Team.where(sport_string: 'baseball').sort_by{|team| team.coach_score}.reverse.first(5)
     @top_basketball = Team.where(sport_string: 'basketball').sort_by{|team| team.coach_score}.reverse.first(5)

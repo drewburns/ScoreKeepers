@@ -56,7 +56,11 @@ class Post < ApplicationRecord
   end
 
   def full_size
-    picture
+    if self.picture.url == nil 
+      return 'http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder-300x300.png' 
+    else
+      picture.url
+    end
   end
 
   def thumbnail

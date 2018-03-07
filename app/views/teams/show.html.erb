@@ -2,6 +2,10 @@
 .pcontent{
   margin-left: 238px;}
 
+.ptitle{
+  line-height: 1.1;
+  font-weight: bold;}
+
 .ptitle a{
   color: #000;}
 
@@ -44,27 +48,25 @@
 
   		<% end %>
 		</h3>
-		<h4><%= @team.users.count %> people like this team</h4>
+		<h6><%= @team.users.count %> people like this team</h6>
 		<hr>
 		<%= render partial: 'teams/graphs', locals: {team: @team}%>
-		<hr>
-		<h3 class="itemheader"><%= @team.name %> Leaderboard</h3>
+
+		<!--<h3 class="itemheader"><%= @team.name %> Leaderboard</h3>
 			<ul class="lboardul">
 				<% @users.each do |user| %>
-					<!--<img src=<%= user.thumbnail %> style="width:75px; height:75px; border-radius:50%;"> -->
-
-						<div class="lcell">
+						  <div class="lcell">
 							<li class="lboard"><%= link_to user.name, user_path(user) %>
 							<p class="lbscore"><%= user.this_weeks_score_team(@team.id) %></p></li>
 						</div>
-						<hr style="margin: 12px;">
 						<% end %>
-			</ul>
+            <hr style="margin: 12px;">
+			</ul> -->
 	</div>
 	<div class="large-9 columns">
 		<% @posts.each do |post| %>
 		<div class="large-4 columns">
-				<img src="http://static2.businessinsider.com/image/561d966d6bb3f7da6687deee-1200/new-england-patriots-v-dallas-cowboys.jpg">
+				<%= @team.full_size %>
 				</div>
 		<div class="large-8 columns">
 				<h3 class="ptitle"> <%= link_to post.title, post_path(post) %></h3>
